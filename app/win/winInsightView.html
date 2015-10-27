@@ -1,0 +1,25 @@
+<div id='insight' class='win'>
+	<p class='success'>Success!<br/>You found the right set of HSL values.</p>
+	<div id='answer' class='flexrow'>
+		<div class='shotcolor' style='background: hsl({{tH}}, {{tS}}%, {{tL}}%)'></div>
+		<p>HSL({{tH}}, {{tS}}%, {{tL}}%)</p>
+	</div>
+	<div id='shotstaken'>
+		<p>You took {{shots}} shots.</p>
+		<div id='shotcolors' class='flexrow' >
+			<div ng-repeat="color in history.content" class='shotcolor' style='background: hsl({{color.H}}, {{color.S}}%, {{color.L}}%)'></div>
+		</div>
+	</div>
+	<div id='ready'>
+	<h2>Ready for next round?</h2>
+	<a href='#/start'>Back to start</a>
+	</div>
+	<div id='highscores'>
+		<h2>Hall of fame</h2>
+		<div ng-repeat='score in highscores' class='score flexrow'>
+			<p class='username'>{{score.username}}</p>
+			<div class='shotcolor' style='background: hsl({{score.targetH}}, {{score.targetS}}%, {{score.targetL}}%)'></div>
+			<p class='shotscore'>{{score.shots}} shots</p>
+		</div>
+	</div>
+</div>

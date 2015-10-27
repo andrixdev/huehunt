@@ -1,0 +1,37 @@
+/**
+ * CSS for Hue Hunt
+ * Others
+ * Alexandre Andrieux @2015 (September)
+ */
+
+/** Fonts **/
+@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(//fonts.googleapis.com/css?family=Playball);
+@import url(//fonts.googleapis.com/css?family=Poiret+One);
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+* {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Playball', sans-serif;
+  font-family: 'Poiret One', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+*:not(input) {
+  /* No selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* No unwanted drag */
+  -webkit-user-drag: none;
+  user-drag: none;
+  cursor: default;
+}
+.targetcolor {
+  border-radius: 5px;
+  border: #111 2px solid;
+  margin: 5px;
+}
+

@@ -1,0 +1,89 @@
+/**
+ * CSS for Hue Hunt
+ * Skeleton (for dev purposes only)
+ * Alexandre Andrieux @2015 (September)
+ */
+
+* {
+
+}
+html,
+body {
+
+}
+
+/** Header **/
+#header {
+
+}
+#header #user {
+
+}
+#header #user #avatar{
+
+}
+#header #user p.username {
+
+}
+#header #target {
+
+}
+#header #target p {
+
+}
+#header #target #targetcolor {
+
+}
+#header #shots {
+
+}
+#header #shots p.taken {
+
+}
+#header #shots p.shotscount {
+
+}
+
+/** Insight **/
+#insight {
+
+}
+#insight #current {
+
+}
+#insight #current p {
+
+}
+#insight #current p.hsl {
+
+}
+
+/** Clue **/
+#clue {
+
+}
+#clue p {
+
+}
+#clue p.istoo {
+
+}
+#clue p.istoo span {
+
+}
+
+/** Instructions **/
+#instructions {
+
+}
+#instructions p {
+
+}
+
+/** Footer **/
+#footer {
+
+}
+#footer p {
+
+}

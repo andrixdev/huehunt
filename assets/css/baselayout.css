@@ -1,0 +1,176 @@
+/**
+ * CSS for Hue Hunt
+ * Layout
+ * Alexandre Andrieux @2015 (September)
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.flexcol {
+	display: -webkit-flex;/* Safari, douchebag */
+	display: -ms-flex;/* IE <3 */
+	display: flex;
+	-ms-flex-flow: column nowrap;
+	-webkit-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.flexrow {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-ms-flex-flow: row nowrap;
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+html, body.flexcol {
+  justify-content: flex-start;
+  align-items: center;
+}
+p {
+  white-space: pre-wrap;
+}
+
+/** Header **/
+#header {
+  height: 100px;
+  width: 100%;
+}
+#header #user {
+  width: 20%;
+}
+#avatar {
+  width: 50px;
+  height: 50px;
+  margin: 0px 10px;
+  border-radius: 12.5px;
+  border: solid 3px #111;
+  overflow: hidden;
+  position: relative;/* For kids */
+}
+#avatar .square {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+#avatar .square:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+#avatar .square:nth-of-type(2) {
+  top: 0px;
+  left: 25px;
+}
+#avatar .square:nth-of-type(3) {
+  top: 25px;
+  left: 0px;
+}
+#avatar .square:nth-of-type(4) {
+  top: 25px;
+  left: 25px;
+}
+#header #user p.username {
+  font-size: 2.5em;
+}
+#header #target {
+  width: 30%;
+}
+#header #target p {
+  font-size: 1.7em;
+}
+.targetcolor {
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+}
+#header #shots {
+  width: 20%;
+}
+#header #shots p.taken {
+  font-size: 1.7em;
+}
+#header #shots p.shotscount {
+  font-size: 2.5em;
+}
+
+/** Center **/
+#center {
+  flex-basis: 300px;
+  width: 100%;
+}
+/** Insight **/
+#insight,
+#clue {
+  margin-top: 20px;
+}
+#insight {
+  flex-basis: 60%;
+  min-height: 300px;
+  margin-right: 5%;
+  position: relative;
+}
+#insight #current {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+#insight #current p {
+  font-size: 1.5em;
+}
+#insight #current p.hsl {
+  font-weight: bold;
+}
+#insight .targetcolor {
+
+}
+
+/** Clue **/
+#clue {
+  flex-basis: 20%;
+  height: auto;
+  padding: 5px 0px;
+}
+#clue p.hint {
+  font-size: 1em;
+}
+#clue p.which {
+  font-size: 8em;
+}
+#clue p.istoo {
+  font-size: 1.5em;
+}
+#clue p.istoo span {
+
+}
+
+/** Instructions **/
+#instructions {
+  width: 100%;
+  margin-top: 0px;
+}
+#instructions p {
+  font-size: 1.2em;
+  text-align: left;
+  margin-left: 50px;
+}
+
+/** Footer **/
+#footer {
+  width: 100%;
+  padding: 10px 0px;
+}
+#footer p {
+  font-size: 1em;
+}

@@ -1,0 +1,113 @@
+/**
+ * CSS for Hue Hunt
+ * /win
+ * Alexandre Andrieux @2015 (September)
+ */
+
+.shotcolor {
+  width: 30px;
+  height: 30px;
+  margin: 0px 2px; 
+  border-radius: 4px;
+  border: solid #111 2px;
+}
+
+/** Center **/
+#center.flexrow {
+  flex-basis: 200px;
+}
+#insight.win {
+  padding: 20px 10px;
+  background: #222;
+  flex-basis: 600px;
+  margin-right: 0px;
+}
+#insight.win h2 {
+  color: #eee;
+  font-size: 2em;
+  font-family: Poiret One;
+  background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0));
+}
+#insight.win > div {
+  margin-top: 20px;
+}
+#insight.win p.success {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 0px 0px 30px;
+  font-family: Poiret One;
+  margin-bottom: 30px;
+}
+#answer .shotcolor {
+  width: 40px;
+  height: 40px;
+}
+#answer p {
+  margin-left: 10px;
+  font-size: 2em;
+}
+#shotstaken {
+  
+}
+#shotstaken p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#shotcolors {
+  flex-flow: row wrap;
+}
+#ready h2 {
+  margin-bottom: 15px;
+}
+#ready a {
+  color: black;
+  text-decoration: none;
+  background: transparent linear-gradient(hsl(0, 0%, 67%), hsl(0, 0%, 27%)) repeat scroll 0% 0%;
+  border-radius: 2px;
+  padding: 2px 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 15px 0px 0px;
+  border: medium none;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px hsl(0, 0%, 0%);
+}
+#ready a:hover {
+  background: transparent linear-gradient(hsl(200, 100%, 50%), hsl(201, 100%, 20%)) repeat scroll 0% 0%;
+}
+#highscores h2 {
+  margin-bottom: 10px;
+}
+#highscores .score p {
+  width: 100px;
+  font-size: 1.3em;
+  margin: 5px;
+}
+#highscores .score p.username {
+  text-align: right;
+}
+#highscores .score p.shotscore {
+  text-align: left;
+}
+#highscores .score:nth-of-type(1) p {
+  font-size: 2.3em;
+}
+#highscores .score:nth-of-type(1) .shotcolor {
+  width: 45px;
+  height: 45px;
+}
+#highscores .score:nth-of-type(2) p {
+  font-size: 1.9em;
+}
+#highscores .score:nth-of-type(2) .shotcolor {
+  width: 40px;
+  height: 40px;
+}
+#highscores .score:nth-of-type(3) p {
+  font-size: 1.5em;
+}
+#highscores .score:nth-of-type(3) .shotcolor {
+  width: 35px;
+  height: 35px;
+}
+

@@ -1,0 +1,89 @@
+/**
+ * CSS for Hue Hunt
+ * /start
+ * Alexandre Andrieux @2015 (September)
+ */
+
+/** Center **/
+#center.flexrow {
+  flex-basis: 200px;
+}
+#insight.start {
+  padding: 20px 10px;
+  background: #222;
+  flex-basis: 600px;
+  margin-right: 0px;
+}
+#insight.start h2 {
+  color: #eee;
+  font-size: 1.7em;
+  font-family: Poiret One;
+  background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0));
+}
+#insight.start > div {
+  margin-top: 10px;
+}
+#insight.start p.welcome {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-shadow: 0px 0px 30px;
+  font-family: Poiret One;
+  margin-bottom: 10px;
+}
+#mission {
+  
+}
+#mission p {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+#mission .target {
+
+}
+#ready {
+
+}
+#ready p {
+  font-size: 1.5em;
+}
+#playername {
+  margin-top: 5px;
+}
+#playername p {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+#playername input {
+  background: #777;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.5em;
+}
+#playername input:focus {
+  background: #bbb;
+}
+#playbutton button {
+  background: transparent linear-gradient(hsl(0, 0%, 67%), hsl(0, 0%, 27%)) repeat scroll 0% 0%;
+  border-radius: 2px;
+  padding: 2px 10px;
+  width: 150px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 15px 0px 0px;
+  border: medium none;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px hsl(0, 0%, 0%);
+}
+#playbutton button:hover {
+  background: transparent linear-gradient(hsl(200, 100%, 50%), hsl(201, 100%, 20%)) repeat scroll 0% 0%;
+}
+#reminder {
+
+}
+#reminder p {
+  color: #bbb;
+  font-size: 0.9em;
+}
+
+
