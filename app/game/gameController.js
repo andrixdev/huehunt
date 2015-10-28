@@ -1,14 +1,15 @@
 window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', function($scope, $location, nav, colorCookies, gameVars, hueser) {
-	
+
 	// Views
 	$scope.templatePaths = {
 		header: 'app/game/gameHeaderView.html',
 		insight: 'app/game/gameInsightView.html',
 		clue: 'app/game/gameClueView.html',
-		instructions: 'app/game/gameInstructionsView.html',
+		instructions: '',
+		interactionarea: 'app/game/gameInteractionareaView.html',
 		footer: 'app/footer/footerView.html'
 	};
-	
+
 	// Get all user variables
 	var username = hueser.getUsername();
 	var vars = gameVars.getGameVars(),
@@ -19,25 +20,25 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		tH = targetHSL.H,
 		tS = targetHSL.S,
 		tL = targetHSL.L;
-		
+
 	// Redirect to /start if username not defined (uncomment when form works)
 	/*
 	if (!username) {
 		$location.path('/start');
 	}
 	*/
-	
+
 	// Redirect to /win if already won
 	if (win == 'true') {
 		$location.path('/win');
 	}
-	
+
 	// Update/set session variables H, S and L based on url
 	var current = $location.path().split('/');
 	var cH = current[1],// 'c' stands for 'current'
 		cS = current[2],
 		cL = current[3];
-		
+
 	// Add new HSL set to history and to navigation memory service
 	gameVars.addHistory({
 		H: cH,
@@ -48,12 +49,12 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	// Increment shots counter
 	shots++;
 	gameVars.addShot();
-	
+
 	// Target distance
 	var dH = tH - cH,// 'd' stands for 'delta'
 		dS = tS - cS,
 		dL = tL - cL;
-	
+
 	// If target reached, set win variable to true and redirect to /win
 	if (Math.abs(dH) < 6 && Math.abs(dS) < 3 && Math.abs(dL) < 3) {
 		gameVars.setWin();
@@ -83,10 +84,10 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 			}
 		}
 	}
-	
+
 	// Save current path
 	nav.addPath($location.path());
-	
+
 	// Store in $scope all the remaining necessary parameters to render the views
 	$scope.style = ".targetcolor {"
 	+ "  background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
@@ -102,7 +103,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	+ "#insight {"
 	+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
 	+ "}";
-	
+
 	$scope.username = username;
 	$scope.shots = shots;
 	$scope.currentURL = $location.absUrl();

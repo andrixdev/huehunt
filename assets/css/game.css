@@ -1,0 +1,73 @@
+/**
+ * CSS for Hue Hunt
+ * /hsl
+ * Alexandre Andrieux @2015 (October)
+ */
+
+/** Interactionarea **/
+#interactionarea {
+  background: #222;
+  width: 100%;
+  padding: 10px 0px;
+}
+#controls {
+
+}
+#controls > div {
+  width: 120px;
+  height: 120px;
+  margin: 0px 10px;
+  border-radius: 50%;
+  box-shadow: #111 -10px 0px 5px;
+}
+#controls > div p {
+  font-size: 2.5em;
+}
+@keyframes huerot {
+  from {filter: hue-rotate(-70deg);}
+  to {filter: hue-rotate(70deg);}
+}
+@-webkit-keyframes huerot {
+  from {-webkit-filter: hue-rotate(0deg);}
+  to {-webkit-filter: hue-rotate(100deg);}
+}
+#hcontrol {
+  background: radial-gradient(circle closest-side, #181818, #181818, #181818, #181818, #181818, #181818, #181818, hsl(220,50%,30%), hsl(220,50%,37%), hsl(220,50%,20%));
+  -webkit-animation: huerot 3s linear alternate infinite;
+  animation: huerot 3s linear alternate infinite;
+}
+@keyframes satrot {
+  from {filter: saturate(100%);}
+  50% {filter: saturate(0%);}
+  to {filter: saturate(100%);}
+}
+@-webkit-keyframes satrot {
+  from {-webkit-filter: saturate(0%);}
+  50% {-webkit-filter: saturate(100%);}
+  to {-webkit-filter: saturate(0%);}
+}
+#scontrol {
+  background: radial-gradient(circle closest-side, #181818, #181818, #181818, #181818, #181818, #181818, #181818, hsl(220,100%,30%), hsl(220,100%,37%), hsl(220,100%,20%));
+  -webkit-animation: satrot 3s infinite;
+  animation: satrot 3s infinite;
+}
+@keyframes ligrot {
+  from {filter: brightness(130%);}
+  50% {filter: brightness(50%);}
+  to {filter: brightness(130%);}
+}
+@-webkit-keyframes ligrot {
+  from {-webkit-filter: brightness(150%);}
+  50% {-webkit-filter: brightness(50%);}
+  to {-webkit-filter: brightness(150%);}
+}
+#lcontrol {
+  background: radial-gradient(circle closest-side, #181818, #181818, #181818, #181818, #181818, #181818, #181818, hsl(220,50%,30%), hsl(220,50%,37%), hsl(220,50%,20%));
+  -webkit-animation: ligrot 3s linear infinite;
+  animation: ligrot 3s linear infinite 1.5s;
+}
+#guess {
+  width: 100px;
+  background: hsl(200, 80%, 40%);
+  height: 20px;
+}
