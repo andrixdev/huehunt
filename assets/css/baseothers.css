@@ -5,10 +5,10 @@
  */
 
 /** Fonts **/
-@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-@import url(//fonts.googleapis.com/css?family=Playball);
-@import url(//fonts.googleapis.com/css?family=Poiret+One);
-@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz");
+@import url("https://fonts.googleapis.com/css?family=Playball");
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
 
 * {
   font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -34,4 +34,3 @@
   border: #111 2px solid;
   margin: 5px;
 }
-
