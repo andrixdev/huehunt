@@ -4,14 +4,70 @@
  * Alexandre Andrieux @2015 (October)
  */
 
+/** Header **/
+#header {
+   height: 100px;
+   width: 100%;
+  background: #222;
+}
+#header #user {
+  width: 20%;
+}
+#avatar {
+   /* Colors defined in controllers */
+   width: 50px;
+   height: 50px;
+   margin: 0px 10px;
+   border-radius: 12.5px;
+   border: solid 3px #111;
+   overflow: hidden;
+   position: relative;/* For kids */
+}
+#avatar .square {
+   position: absolute;
+   width: 25px;
+   height: 25px;
+}
+#avatar .square:nth-of-type(1) {
+   top: 0;
+   left: 0;
+}
+#avatar .square:nth-of-type(2) {
+   top: 0px;
+   left: 25px;
+}
+#avatar .square:nth-of-type(3) {
+   top: 25px;
+   left: 0px;
+}
+#avatar .square:nth-of-type(4) {
+   top: 25px;
+   left: 25px;
+}
+#header #user p.username {
+   font-size: 2.5em;
+}
+#header #target {
+   width: 30%;
+}
+#header #target p {
+   font-size: 1.7em;
+}
+#header #shots {
+   width: 20%;
+}
+#header #shots p.taken {
+   font-size: 1.7em;
+}
+#header #shots p.shotscount {
+   font-size: 2.5em;
+}
+
 /** Interactionarea **/
 #interactionarea {
   background: #222;
   width: 100%;
   padding: 10px 0px;
-}
-#controls {
-
 }
 #controls > div {
   width: 120px;
