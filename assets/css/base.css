@@ -1,20 +1,49 @@
 /**
  * CSS for Hue Hunt
- * Layout
- * Alexandre Andrieux @2015 (September)
+ * Base
+ * Alexandre Andrieux @2015 (October)
  */
 
+ /** Fonts **/
+ @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz");
+ @import url("https://fonts.googleapis.com/css?family=Playball");
+ @import url("https://fonts.googleapis.com/css?family=Poiret+One");
+ @import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+
+/** Boilerplate style **/
 * {
   margin: 0;
   padding: 0;
   white-space: nowrap;
   text-align: center;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Playball', sans-serif;
+  font-family: 'Poiret One', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+*:not(input) {
+  /* No selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* No unwanted drag */
+  -webkit-user-drag: none;
+  user-drag: none;
+  cursor: default;
 }
 html,
 body {
   height: 100%;
   width: 100%;
 }
+p {
+  white-space: pre-wrap;
+}
+
+/** Useful classes **/
 .flexcol {
 	display: -webkit-flex;/* Safari, douchebag */
 	display: -ms-flex;/* IE <3 */
@@ -35,23 +64,37 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-html, body.flexcol {
+.targetcolor {
+  /* Color defined in controllers */
+  border-radius: 5px;
+  border: #111 2px solid;
+  margin: 5px;
+}
+
+/** Base style **/
+html,
+body.flexcol {
   justify-content: flex-start;
   align-items: center;
 }
+body {
+  background: #111;
+}
 p {
-  white-space: pre-wrap;
+  color: #ddd;
 }
 
 /** Header **/
 #header {
   height: 100px;
   width: 100%;
+  background: #222;
 }
 #header #user {
   width: 20%;
 }
 #avatar {
+  /* Colors defined in controllers */
   width: 50px;
   height: 50px;
   margin: 0px 10px;
@@ -116,6 +159,7 @@ p {
   margin-top: 20px;
 }
 #insight {
+  /* Color defined in controllers */
   flex-basis: 60%;
   min-height: 300px;
   margin-right: 5%;
@@ -128,6 +172,7 @@ p {
 }
 #insight #current p {
   font-size: 1.5em;
+  text-shadow: black 0px 0px 5px;
 }
 #insight #current p.hsl {
   font-weight: bold;
@@ -141,6 +186,7 @@ p {
   flex-basis: 20%;
   height: auto;
   padding: 5px 0px;
+  background: #222;
 }
 #clue p.hint {
   font-size: 1em;
@@ -159,6 +205,7 @@ p {
 #instructions {
   width: 100%;
   margin-top: 0px;
+  background: #333;
 }
 #instructions p {
   font-size: 1.2em;
@@ -173,4 +220,5 @@ p {
 }
 #footer p {
   font-size: 1em;
+  color: #555;
 }
