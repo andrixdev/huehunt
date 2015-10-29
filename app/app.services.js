@@ -147,6 +147,27 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 					}
 				});
 			}, 1000);/* Promisifying cheat */
+		},
+		handleGameForm: function() {
+			$timeout(function() {
+				jQuery('#hcontrol input, #scontrol input, #lcontrol input').off().on('change', function(event) {
+					var h = jQuery('#hcontrol input').val();
+					var s = jQuery('#scontrol input').val();
+					var l = jQuery('#lcontrol input').val();
+					console.log(h, s, l);
+				});
+				jQuery('#guess a').off().on('click', function() {
+					var h = jQuery('#hcontrol input').val();
+					var s = jQuery('#scontrol input').val();
+					var l = jQuery('#lcontrol input').val();
+					location = location.pathname + '#/' + h + '/' + s + '/' + l;
+				});
+				jQuery('#hcontrol input, #scontrol input, #lcontrol input').off().on('keyup', function(event) {
+					if (event.which == 13) {/* Enter key */
+						jQuery('#guess a').trigger('click');
+					}
+				});
+			}, 1000);/* Promisifying cheat */
 		}
 	};
 }]);

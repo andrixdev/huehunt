@@ -4,6 +4,19 @@
  * Alexandre Andrieux @2015 (October)
  */
 
+/** Useful class **/
+.hslinput {
+  background: #181818;
+  border: none;
+  border-radius: 2px;
+  font-size: 2em;
+  width: 60px;
+  text-align: center;
+  color: #ddd;
+}
+.hslinput:focus {
+  background: #282828;
+}
 /** Header **/
 #header {
    height: 100px;
@@ -77,8 +90,15 @@
   box-shadow: #111 -10px 0px 5px;
 }
 #controls > div p {
-  font-size: 2.5em;
+  font-size: 1.8em;
+  margin-left: 2px;
 }
+#scontrol input,
+#lcontrol input {
+  width: 50px;
+  font-size: 1.8em;
+}
+
 @keyframes huerot {
   from {filter: hue-rotate(-70deg);}
   to {filter: hue-rotate(70deg);}

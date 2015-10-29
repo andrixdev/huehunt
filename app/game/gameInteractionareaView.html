@@ -1,19 +1,18 @@
 <div id='interactionarea' class='game flexrow'>
 	<div id='controls' class='flexrow'>
 		<div id='hcontrol' class='flexrow'>
-			<!--<p>220</p>-->
-
-			<input type='text' ng-model='stock.inputhue'/>
-
+			<input type='number' autofocus value='{{cH}}' min='0' max='360' class='hslinput'/>
 		</div>
 		<div id='scontrol' class='flexrow'>
-			<p>50%</p>
+			<input type='number' value='{{cS}}' min='0' max='100' class='hslinput'/>
+			<p>%</p>
 		</div>
 		<div id='lcontrol' class='flexrow'>
-			<p>{{inputhue}}</p>
+			<input type='number' value='{{cL}}' min='0' max='100' class='hslinput'/>
+			<p>%</p>
 		</div>
 	</div>
 	<div id='guess'>
-		<a href='#/{{cH}}/{{cS}}/{{cL}}' class='acidbutton'>Check</a>
+		<a class='acidbutton'>Check</a>
 	</div>
 </div>

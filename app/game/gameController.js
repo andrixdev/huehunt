@@ -1,4 +1,4 @@
-window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', '$interval', function($scope, $location, nav, colorCookies, gameVars, hueser, $interval) {
+window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', function($scope, $location, nav, colorCookies, gameVars, hueser, forms) {
 
 	// Views
 	$scope.templatePaths = {
@@ -22,11 +22,9 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		tL = targetHSL.L;
 
 	// Redirect to /start if username not defined (uncomment when form works)
-	/*
 	if (!username) {
 		$location.path('/start');
 	}
-	*/
 
 	// Redirect to /win if already won
 	if (win == 'true') {
@@ -85,15 +83,9 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		}
 	}
 
-	// Tests with forms
-
-	//$interval(callAtInterval, 2000);
-
-	function callAtInterval() {
-		 console.log($scope.stock.inputhue);
-	}
-	$scope.stock = {};
-	$scope.stock.inputhue = 185;
+	// Handle interactionarea with 'forms' custom service
+	forms.handleGameForm();
+	
 	// Save current path
 	nav.addPath($location.path());
 
