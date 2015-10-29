@@ -129,18 +129,24 @@ window.app.factory('jQuery', ['$window', function($window) {
 }]);
 
 // Service for forms using jQuery
-window.app.factory('forms', ['jQuery', '$timeout', 'hueser', function(jQuery, $timeout, hueser) {
+window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', function(jQuery, $timeout, hueser, gameVars) {
 	return {
 		handleStartForm: function() {
 			$timeout(function() {
-				jQuery('#playernameInput').off().on('keyup change', function() {
-					console.log(jQuery(this).val());
-				});
-				console.log('start form handled');
 				jQuery('#playbutton a').off().on('click', function() {
-					hueser.setUsername(jQuery('#playernameInput').val());
+					hueser.setUsername(jQuery('#playername input').val());
+					gameVars.setGameVars();
 				});
-			}, 1000);
+				jQuery('#playername input').off().on('keyup', function(event) {
+					if (event.which == 13) {/* Enter key */
+						jQuery('#playbutton a').trigger('click');
+						// on('click', ...) has been triggered by force, but there's still a need to redirect
+						var newHash = jQuery('#playbutton a').attr('href');
+						// 100% async so no angular business here!
+						location = location.pathname + newHash;
+					}
+				});
+			}, 1000);/* Promisifying cheat */
 		}
 	};
 }]);

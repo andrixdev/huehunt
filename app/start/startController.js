@@ -1,4 +1,4 @@
-window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', function($scope, $location, nav, colorCookies, gameVars, hueser, forms) {
+window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'forms', function($scope, $location, nav, colorCookies, forms) {
 
 	// Views
 	$scope.templatePaths = {
@@ -23,22 +23,8 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		cS = randomHSL.S,
 		cL = randomHSL.L;
 
-	// Form handling
-	// If valid, set username variable, set all unset session variables
-	// This puzzling part of the app still has to be sorted out
-
-	// Using custom service
+	// Form handling (custom service 'forms')
 	forms.handleStartForm();
-
-	/*
-	$scope.goForm = function(username) {
-	*/
-		gameVars.setGameVars();
-		//hueser.setUsername("Guest" + Math.floor(Math.random()*100));
-		//$location.path('/' + cH + '/' + cS + '/' + cL);
-	/*
-	};
-	*/
 
 	// Clear previous paths in nav service (prevents cookie overload)
 	nav.clearPaths();

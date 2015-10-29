@@ -63,6 +63,9 @@
 #playername input:focus {
   background: #bbb;
 }
+#playbutton {
+  margin: 10px 0px 20px;
+}
 #reminder {
 
 }
