@@ -9,47 +9,11 @@
 	</div>
 	<div id='ready'>
 		<h2>Ready?</h2>
-		<!-- Form attempt 1
-		<form name='goForm'>
-			<div id='playername'>
-				<p>Player Name</p>
-				<input type='text' name='username' ng-model='goForm.username' required>
-			</div>
-			<div id='playbutton'>
-				<button ng-click='validate(goForm)' role='button'>Play</button>
-			</div>
-		</form>
-		-->
-		
-		<!-- Form attempt 2
-		<div id='playername'>
-			<p>Player Name</p>
-			<p>{{go.username}}</p>
-			<input type='text' ng-model='go.username'>
-		</div>
+		<p>Player Name</p>
+		<input id='playernameInput'/>
 		<div id='playbutton'>
-			<button ng-click='go.validate(go.username)' role='button'>Play</button>
+			<a href='#/{{cH}}/{{cS}}/{{cL}}' class='acidbutton'>Play</a>
 		</div>
-		-->
-		
-		<div id='playbutton'>
-			<a href='#/{{cH}}/{{cS}}/{{cL}}'>Play</a>
-		</div>
-		
-		<!-- Form attempt 3
-		<p>I am {{whoAmI}}</p>
-		<p>{{formgo.toSource()}}</p>
-		<form name="formName" role="search" ng-submit="formgo()" novalidate>
-			<div>
-				
-				<p>{{formgo.toSource()}}</p>
-				<input ng-model="inputName" type="text" required>
-			</div>
-			
-			<p>{{formgo.toSource()}}</p>
-			<button role='button' type="submit">Get Started!</button>
-		</form>
-		-->
 	</div>
 	<div id='reminder'>
 		<h2>Reminder</h2>

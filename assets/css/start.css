@@ -31,7 +31,7 @@
   margin-bottom: 10px;
 }
 #mission {
-  
+
 }
 #mission p {
   font-size: 1.2em;
@@ -63,21 +63,6 @@
 #playername input:focus {
   background: #bbb;
 }
-#playbutton button {
-  background: transparent linear-gradient(hsl(0, 0%, 67%), hsl(0, 0%, 27%)) repeat scroll 0% 0%;
-  border-radius: 2px;
-  padding: 2px 10px;
-  width: 150px;
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 15px 0px 0px;
-  border: medium none;
-  cursor: pointer;
-  box-shadow: 0px 0px 3px hsl(0, 0%, 0%);
-}
-#playbutton button:hover {
-  background: transparent linear-gradient(hsl(200, 100%, 50%), hsl(201, 100%, 20%)) repeat scroll 0% 0%;
-}
 #reminder {
 
 }
@@ -85,5 +70,3 @@
   color: #bbb;
   font-size: 0.9em;
 }
-
-

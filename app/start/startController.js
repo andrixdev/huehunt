@@ -1,4 +1,4 @@
-window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', '$firebaseArray', function($scope, $location, nav, colorCookies, gameVars, hueser, $firebaseArray) {
+window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', function($scope, $location, nav, colorCookies, gameVars, hueser, forms) {
 
 	// Views
 	$scope.templatePaths = {
@@ -27,11 +27,14 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	// If valid, set username variable, set all unset session variables
 	// This puzzling part of the app still has to be sorted out
 
+	// Using custom service
+	forms.handleStartForm();
+
 	/*
 	$scope.goForm = function(username) {
 	*/
 		gameVars.setGameVars();
-		hueser.setUsername("Guest" + Math.floor(Math.random()*100));
+		//hueser.setUsername("Guest" + Math.floor(Math.random()*100));
 		//$location.path('/' + cH + '/' + cS + '/' + cL);
 	/*
 	};

@@ -1,4 +1,4 @@
-window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', function($scope, $location, nav, colorCookies, gameVars, hueser) {
+window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', '$interval', function($scope, $location, nav, colorCookies, gameVars, hueser, $interval) {
 
 	// Views
 	$scope.templatePaths = {
@@ -85,6 +85,15 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		}
 	}
 
+	// Tests with forms
+
+	//$interval(callAtInterval, 2000);
+
+	function callAtInterval() {
+		 console.log($scope.stock.inputhue);
+	}
+	$scope.stock = {};
+	$scope.stock.inputhue = 185;
 	// Save current path
 	nav.addPath($location.path());
 

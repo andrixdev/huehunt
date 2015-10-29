@@ -102,7 +102,7 @@ window.app.factory('nav', ['$cookies', function($cookies) {
 		},
 		getLastPath: function() {
 			var nav = $cookies.getObject('nav');
-			if (!nav) { 
+			if (!nav) {
 				return '/';
 			}
 			else {
@@ -118,7 +118,29 @@ window.app.factory('nav', ['$cookies', function($cookies) {
 	};
 }]);
 
-// Service for underscore
+// Service for Underscore
 window.app.factory('_', ['$window', function($window) {
   return $window._; // assumes underscore has already been loaded on the page
+}]);
+
+// Service for jQuery
+window.app.factory('jQuery', ['$window', function($window) {
+  return $window.jQuery; // assumes underscore has already been loaded on the page
+}]);
+
+// Service for forms using jQuery
+window.app.factory('forms', ['jQuery', '$timeout', 'hueser', function(jQuery, $timeout, hueser) {
+	return {
+		handleStartForm: function() {
+			$timeout(function() {
+				jQuery('#playernameInput').off().on('keyup change', function() {
+					console.log(jQuery(this).val());
+				});
+				console.log('start form handled');
+				jQuery('#playbutton a').off().on('click', function() {
+					hueser.setUsername(jQuery('#playernameInput').val());
+				});
+			}, 1000);
+		}
+	};
 }]);
