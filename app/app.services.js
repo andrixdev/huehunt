@@ -14,8 +14,26 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 			};
 		},
 		generateRandomHSL: function() {
+			var tH = $cookies.get('targetH');
+			var tS = $cookies.get('targetS');
+			var tL = $cookies.get('targetL');
+
+			// Generate ininital HSL out of target HSL
+			// Hue
+			var beforeOrAfter = Math.floor(Math.random() * 2);
+			var cH;
+
+			if (beforeOrAfter == 1) {
+				// Relative hue between -100 and -50
+				cH = parseInt(tH) - 50 - Math.floor(50 * Math.random());
+			} else {
+				// Relative hue between 50 and 100
+				cH = parseInt(tH) + 50 + Math.floor(50 * Math.random());
+			}
+			console.log(cH - tH);
+
 			return {
-				H: Math.floor(Math.random() * 360),
+				H: cH,
 				S: 20 + Math.floor(80 * Math.random()),
 				L: 20 + Math.floor(60 * Math.random())
 			};
