@@ -82,6 +82,9 @@
   width: 100%;
   padding: 10px 0px;
 }
+#controls {
+  padding-right: 75px;
+}
 #controls > div {
   width: 120px;
   height: 120px;
@@ -146,4 +149,5 @@
   width: 100px;
   background: hsl(200, 80%, 40%);
   height: 20px;
+  margin-left: 30px;
 }

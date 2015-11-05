@@ -139,10 +139,10 @@ p {
 /** Insightwrapper **/
 #insight {
   /* Color defined in controllers */
-  height: 90%;
-  width: 93%;
-  margin-top: 2.5%;
-  margin-left:3%;
+  height: 92%;
+  width: 95%;
+  margin-top: 2%;
+  margin-left: 2%;
   padding: 0.5%;
   border-radius: 2px;
 }
