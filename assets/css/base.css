@@ -117,27 +117,39 @@ p {
   color: #ddd;
 }
 
-/** Center **/
+/** Center and insightwrapper **/
 #center {
   flex-basis: 300px;
   width: 100%;
 }
-/** Insight **/
-#insight,
+#insightwrapper {
+  flex-basis: 60%;
+  min-height: 300px;
+  height: 300px;
+  margin-right: 5%;
+  position: relative;
+  border-radius: 5px 5px 0px 0px;
+  background: #222;
+}
+#insightwrapper,
 #clue {
   margin-top: 20px;
 }
+
+/** Insightwrapper **/
 #insight {
   /* Color defined in controllers */
-  flex-basis: 60%;
-  min-height: 300px;
-  margin-right: 5%;
-  position: relative;
+  height: 90%;
+  width: 93%;
+  margin-top: 2.5%;
+  margin-left:3%;
+  padding: 0.5%;
+  border-radius: 2px;
 }
 #insight #current {
-  bottom: 0;
+  bottom: 6%;
   position: absolute;
-  width: 100%;
+  width: 94%;
 }
 #insight #current p {
   font-size: 1.5em;
