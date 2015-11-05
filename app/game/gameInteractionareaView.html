@@ -1,15 +1,20 @@
 <div id='interactionarea' class='game flexrow'>
-	<div id='controls' class='flexrow'>
-		<div id='hcontrol' class='flexrow'>
-			<input type='number' autofocus value='{{cH}}' min='0' max='360' class='hslinput'/>
+	<div id='controlsarea' class='flexcol'>
+		<div id='controltop'>
+			<p>What is the target color HSL?</p>
 		</div>
-		<div id='scontrol' class='flexrow'>
-			<input type='number' value='{{cS}}' min='0' max='100' class='hslinput'/>
-			<p>%</p>
-		</div>
-		<div id='lcontrol' class='flexrow'>
-			<input type='number' value='{{cL}}' min='0' max='100' class='hslinput'/>
-			<p>%</p>
+		<div id='controls' class='flexrow'>
+			<div id='hcontrol' class='flexrow'>
+				<input type='number' autofocus value='{{cH}}' min='0' max='360' class='hslinput'/>
+			</div>
+			<div id='scontrol' class='flexrow'>
+				<input type='number' value='{{cS}}' min='0' max='100' class='hslinput'/>
+				<p>%</p>
+			</div>
+			<div id='lcontrol' class='flexrow'>
+				<input type='number' value='{{cL}}' min='0' max='100' class='hslinput'/>
+				<p>%</p>
+			</div>
 		</div>
 	</div>
 	<div id='guess'>
