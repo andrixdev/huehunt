@@ -1,5 +1,7 @@
-window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'forms', function($scope, $location, nav, colorCookies, forms) {
+window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'forms', 'DOM', function($scope, $location, nav, colorCookies, forms, DOM) {
 
+	// Debug
+	window.scopee = $scope;
 	// Views
 	$scope.templatePaths = {
 		header: 'app/header/headerView.html',
@@ -32,10 +34,20 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	// Save current path
 	nav.addPath($location.path());
 
+	// Show level function
+	$scope.showLevel = function(level) {
+		$scope.activeLevel = level;
+		console.log('showLevel called with ' + level);
+	}
+
+	// Listeners for tabs
+	DOM.levelTabs();
+
 	// Store in $scope all the remaining necessary parameters to render the views
 	$scope.cH = cH;
 	$scope.cS = cS;
 	$scope.cL = cL;
+	$scope.activeLevel = 1;
 	$scope.style = ".targetcolor {"
 		+ "background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
 	+ "}";

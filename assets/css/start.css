@@ -41,6 +41,40 @@
 #mission .target {
 
 }
+/* Levels panel */
+#levels {
+  background: #333;
+}
+#leveltabs {
+  height: 30px;
+  justify-content: space-around;
+}
+#leveltabs > div {
+  background: #444;
+  width: 25%;
+  cursor: pointer;
+}
+#leveltabs > div p  {
+    cursor: pointer;
+}
+#leveltabs > div:hover,
+#leveltabs > div p:hover{
+    background: #555;
+}
+#levelcontents {
+  min-height: 150px;
+  height: 150px;
+}
+/* Level contents */
+#lvl1,
+#lvl2,
+#lvl3,
+#lvlX {
+  display: none;
+}
+#lvl1 {
+  display: inherit;
+}
 #ready {
 
 }

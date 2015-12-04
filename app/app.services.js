@@ -189,3 +189,37 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 		}
 	};
 }]);
+
+// Service for DOM listeners using jQuery (because ng-include basically breaks Angular)
+window.app.factory('DOM', ['jQuery', '$timeout', function(jQuery, $timeout) {
+	return {
+		levelTabs: function() {
+			$timeout(function() {
+				jQuery('#tab1').off().on('click', function() {
+					jQuery('#levelcontents > div').css('display', 'none');
+					jQuery('#lvl1').css('display', 'inherit');
+				});
+				jQuery('#tab2').off().on('click', function() {
+					jQuery('#levelcontents > div').css('display', 'none');
+					jQuery('#lvl2').css('display', 'inherit');
+				});
+				jQuery('#tab3').off().on('click', function() {
+					jQuery('#levelcontents > div').css('display', 'none');
+					jQuery('#lvl3').css('display', 'inherit');
+				});
+				jQuery('#tabX').off().on('click', function() {
+					jQuery('#levelcontents > div').css('display', 'none');
+					jQuery('#lvlX').css('display', 'inherit');
+				});
+			}, 1000);/* Promisifying cheat */
+		},
+		/**
+		 * @param (string|int) tabId
+		 */
+		showTab: function (tabId) {
+			jQuery('#levelcontents > div').hide(200, function() {
+				jQuery('#lvl' + tabId).show(200);
+			});
+		}
+	}
+}]);
