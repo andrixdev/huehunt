@@ -1,4 +1,4 @@
-window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'forms', 'DOM', function($scope, $location, nav, colorCookies, forms, DOM) {
+window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'hueser', 'forms', 'DOM', function($scope, $location, nav, colorCookies, hueser, forms, DOM) {
 
 	// Debug
 	window.scopee = $scope;
@@ -34,10 +34,10 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	// Save current path
 	nav.addPath($location.path());
 
-	// Show level function
-	$scope.showLevel = function(level) {
-		$scope.activeLevel = level;
-		console.log('showLevel called with ' + level);
+	// Check maximum playable level
+	var maxLevel = hueser.getMaxLevel();
+	if (!maxLevel) {
+		maxLevel = 1;
 	}
 
 	// Listeners for tabs
@@ -47,7 +47,12 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	$scope.cH = cH;
 	$scope.cS = cS;
 	$scope.cL = cL;
-	$scope.activeLevel = 1;
+	maxLevel = 2; // @todo Remove
+	// @todo Add CSS for intuitive tab mechanics including unlocked leveling
+	$scope.level1status = (maxLevel >= 1 ? 'unlocked' : 'locked');
+	$scope.level2status = (maxLevel >= 2 ? 'unlocked' : 'locked');
+	$scope.level3status = (maxLevel >= 3 ? 'unlocked' : 'locked');
+	$scope.levelXstatus = (maxLevel >= 4 ? 'unlocked' : 'locked');
 	$scope.style = ".targetcolor {"
 		+ "background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
 	+ "}";

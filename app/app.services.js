@@ -52,6 +52,15 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		},
 		getUsername: function() {
 			return $cookies.get('username');
+		},
+		/**
+		 * @param String maxLevel The maximal authorized game level
+		 */
+		setMaxLevel: function(maxLevel) {
+			$cookies.put('maxLevel', maxLevel);
+		},
+		getMaxLevel: function() {
+			return $cookies.get('maxLevel');
 		}
 	};
 }]);
@@ -152,6 +161,7 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 		handleStartForm: function() {
 			$timeout(function() {
 				jQuery('#playbutton a').off().on('click', function() {
+					// On-submit actions lay here
 					hueser.setUsername(jQuery('#playername input').val());
 					gameVars.setGameVars();
 				});
@@ -191,7 +201,7 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 }]);
 
 // Service for DOM listeners using jQuery (because ng-include basically breaks Angular)
-window.app.factory('DOM', ['jQuery', '$timeout', function(jQuery, $timeout) {
+window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hueser, $timeout) {
 	return {
 		levelTabs: function() {
 			$timeout(function() {
