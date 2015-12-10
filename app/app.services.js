@@ -206,20 +206,44 @@ window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hues
 		levelTabs: function() {
 			$timeout(function() {
 				jQuery('#tab1').off().on('click', function() {
-					jQuery('#levelcontents > div').css('display', 'none');
-					jQuery('#lvl1').css('display', 'inherit');
+					if (jQuery(this).hasClass('unlocked')) {
+						// Hide other levels and deactivate tab
+						jQuery('#levelcontents > div').css('display', 'none');
+						jQuery('#leveltabs > div').removeClass('active');
+						// Show level and activate tab
+						jQuery('#lvl1').css('display', 'inherit');
+						jQuery('#tab1').addClass('active');
+					}
 				});
 				jQuery('#tab2').off().on('click', function() {
-					jQuery('#levelcontents > div').css('display', 'none');
-					jQuery('#lvl2').css('display', 'inherit');
+					if (jQuery(this).hasClass('unlocked')) {
+						// Hide other levels and deactivate tab
+						jQuery('#levelcontents > div').css('display', 'none');
+						jQuery('#leveltabs > div').removeClass('active');
+						// Show level and activate tab
+						jQuery('#lvl2').css('display', 'inherit');
+						jQuery('#tab2').addClass('active');
+					}
 				});
 				jQuery('#tab3').off().on('click', function() {
-					jQuery('#levelcontents > div').css('display', 'none');
-					jQuery('#lvl3').css('display', 'inherit');
+					if (jQuery(this).hasClass('unlocked')) {
+						// Hide other levels and deactivate tab
+						jQuery('#levelcontents > div').css('display', 'none');
+						jQuery('#leveltabs > div').removeClass('active');
+						// Show level and activate tab
+						jQuery('#lvl3').css('display', 'inherit');
+						jQuery('#tab3').addClass('active');
+					}
 				});
 				jQuery('#tabX').off().on('click', function() {
-					jQuery('#levelcontents > div').css('display', 'none');
-					jQuery('#lvlX').css('display', 'inherit');
+					if (jQuery(this).hasClass('unlocked')) {
+						// Hide other levels and deactivate tab
+						jQuery('#levelcontents > div').css('display', 'none');
+						jQuery('#leveltabs > div').removeClass('active');
+						// Show level and activate tab
+						jQuery('#lvlX').css('display', 'inherit');
+						jQuery('#tabX').addClass('active');
+					}
 				});
 			}, 1000);/* Promisifying cheat */
 		},

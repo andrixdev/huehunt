@@ -4,16 +4,20 @@
 		<h2>Your mission</h2>
 		<div id='levels'>
 			<div id='leveltabs' class='flexrow'>
-				<div id='tab1' class='{{ level1status }}'>
+				<div id='tab1' class='flexrow {{ level1status }} active'>
+					<img src='assets/img/lock.png' ng-show="level1status == 'locked'"/>
 					<p>Level 1</p>
 				</div>
-				<div id='tab2' class='{{ level2status }}'>
+				<div id='tab2' class='flexrow {{ level2status }}'>
+					<img src='assets/img/lock.png' ng-show="level2status == 'locked'"/>
 					<p>Level 2</p>
 				</div>
-				<div id='tab3' class='{{ level3status }}'>
+				<div id='tab3' class='flexrow {{ level3status }}'>
+					<img src='assets/img/lock.png' ng-show="level3status == 'locked'"/>
 					<p>Level 3</p>
 				</div>
-				<div id='tabX' class='{{ levelXstatus }}'>
+				<div id='tabX' class='flexrow {{ levelXstatus }}'>
+					<img src='assets/img/lock.png' ng-show="levelXstatus == 'locked'"/>
 					<p>Level X</p>
 				</div>
 			</div>

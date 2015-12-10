@@ -48,7 +48,8 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	$scope.cS = cS;
 	$scope.cL = cL;
 	maxLevel = 2; // @todo Remove
-	// @todo Add CSS for intuitive tab mechanics including unlocked leveling
+	// @todo Add little lock logo
+	// @todo Design & add hue, lightness and saturation tips
 	$scope.level1status = (maxLevel >= 1 ? 'unlocked' : 'locked');
 	$scope.level2status = (maxLevel >= 2 ? 'unlocked' : 'locked');
 	$scope.level3status = (maxLevel >= 3 ? 'unlocked' : 'locked');

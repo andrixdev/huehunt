@@ -41,36 +41,71 @@
 #mission .target {
 
 }
-/* Levels panel */
-#levels {
-  background: #333;
-}
+
+/* Level tabs */
 #leveltabs {
   height: 30px;
   justify-content: space-around;
 }
 #leveltabs > div {
-  background: #444;
+  background: #333;
   width: 25%;
-  cursor: pointer;
 }
-#leveltabs > div p  {
+
+/* Unlocked levels */
+#leveltabs > div.unlocked p {
+    text-shadow: rgba(0,0,0,0.2) -2px -1px 0px;
+}
+#leveltabs > div.unlocked,
+#leveltabs > div.unlocked p {
     cursor: pointer;
 }
-#leveltabs > div:hover,
-#leveltabs > div p:hover{
+#leveltabs > div.unlocked:hover,
+#leveltabs > div.unlocked p:hover{
     background: #555;
 }
+
+/* Locked levels */
+#leveltabs > div.locked {
+  background: #2a2a2a;
+  text-shadow: rgba(0,0,0,0.5) -1px 0px 0px;
+}
+#leveltabs > div.locked img {
+  width: 14px;
+  margin-right: 10px;
+  filter: brightness(0.7);
+}
+#leveltabs > div.locked p {
+  color: #4a4a4a;
+}
+
+/* Active level */
+#leveltabs > div.active {
+  background: #444;
+}
+#leveltabs > div.active:hover,
+#leveltabs > div.active p:hover {
+  background: #444;
+}
+#leveltabs > div.active,
+#leveltabs > div.active p {
+    cursor: default;
+}
+
+/* Level contents */
 #levelcontents {
   min-height: 150px;
   height: 150px;
 }
-/* Level contents */
+#levels {
+  margin: 10px 0px 20px;
+}
 #lvl1,
 #lvl2,
 #lvl3,
 #lvlX {
   display: none;
+  background: #444;
 }
 #lvl1 {
   display: inherit;
