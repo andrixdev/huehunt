@@ -44,7 +44,6 @@
 
 /* Level tabs */
 #leveltabs {
-  height: 30px;
   justify-content: space-around;
 }
 #leveltabs > div {
@@ -95,7 +94,6 @@
 /* Level contents */
 #levelcontents {
   min-height: 150px;
-  height: 150px;
 }
 #levels {
   margin: 10px 0px 20px;
@@ -106,10 +104,35 @@
 #lvlX {
   display: none;
   background: #444;
+  padding: 5px 0px;
 }
 #lvl1 {
   display: inherit;
 }
+#levels hr {
+  margin: 5px 30px;
+  border: 0;
+  border-top: solid 1px #3a3a3a;
+}
+
+/* Level 1 */
+#lvl1 .reminder {
+  padding: 10px;
+}
+#lvl1 .reminder img {
+  width: 80px;
+  height: 80px;
+  -webkit-animation: huuue 8s linear infinite;
+  -moz-animation: huuue 8s linear infinite;
+  animation: huuue 8s linear infinite;
+  -webkit-filter: saturate(0.8);
+  filter: saturate(0.8);
+}
+@-moz-keyframes huuue { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes huuue { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes huuue { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+/* Ready? */
 #ready {
 
 }
