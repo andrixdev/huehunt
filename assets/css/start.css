@@ -116,7 +116,10 @@
 }
 
 /* Level 1 */
-#lvl1 .reminder {
+#lvl1 .reminder,
+#lvl2 .reminder,
+#lvl3 .reminder,
+#lvl4 .reminder {
   padding: 10px;
 }
 #lvl1 .reminder img {
@@ -127,11 +130,70 @@
   animation: huuue 8s linear infinite;
   -webkit-filter: saturate(0.8);
   filter: saturate(0.8);
+  box-shadow: rgba(0,0,0,0.3) 0px 0px 5px;
+  border-radius: 50%
 }
 @-moz-keyframes huuue { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes huuue { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes huuue { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 
+/* Levels 2 & 3 */
+#lvl2 .reminder .ligcircle,
+#lvl3 .reminder .satcircle {
+  min-width: 80px;
+  width: 80px;
+  min-height: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: solid 2px #333;
+}
+#lvl2 .reminder .ligcircle {
+  background: hsl(200, 50%, 50%);
+  -webkit-animation: liiig 1.5s linear infinite alternate;
+  -moz-animation: liiig 1.5s linear infinite alternate;
+  animation: liiig 1.5s linear infinite alternate;
+}
+
+@-moz-keyframes liiig { 100% { background: hsl(200, 100%, 0%); } }
+@-webkit-keyframes liiig { 100% { background: hsl(200, 100%, 0%); } }
+@keyframes liiig {
+  0% { background: hsl(200, 100%, 0%); }
+  10% { background: hsl(200, 100%, 0%); }
+  50% { background: hsl(200, 100%, 50%); }
+  90% { background: hsl(200, 100%, 100%); }
+  100% { background: hsl(200, 100%, 100%); }
+}
+
+#lvl3 .reminder .satcircle {
+  background: hsl(200, 100%, 50%);
+  -webkit-animation: saaat 1.5s linear infinite alternate;
+  -moz-animation: saaat 1.5s linear infinite alternate;
+  animation: saaat 1.5s linear infinite alternate;
+}
+@-moz-keyframes saaat { 100% { background: hsl(200, 0%, 50%); } }
+@-webkit-keyframes saaat { 100% { background: hsl(200, 0%, 50%); } }
+@keyframes saaat {
+  0% { background: hsl(200, 0%, 50%); }
+  10% { background: hsl(200, 0%, 50%); }
+  50% { background: hsl(200, 50%, 50%); }
+  90% { background: hsl(200, 100%, 50%); }
+  100% { background: hsl(200, 100%, 50%); }
+}
+
+#lvl2 .reminder p:nth-of-type(1) {
+  width: 30%;
+}
+#lvl2 .reminder p:nth-of-type(2) {
+  margin-left: 3%;
+  width: 30%;
+}
+#lvl3 .reminder p:nth-of-type(1) {
+  width: 30%;
+}
+#lvl3 .reminder p:nth-of-type(2) {
+  margin-left: 3%;
+  width: 30%;
+}
 /* Ready? */
 #ready {
 

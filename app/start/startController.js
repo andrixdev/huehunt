@@ -47,7 +47,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	$scope.cH = cH;
 	$scope.cS = cS;
 	$scope.cL = cL;
-	maxLevel = 2; // @todo Remove
+	maxLevel = 3; // @todo Remove
 	// @todo Add little lock logo
 	// @todo Design & add hue, lightness and saturation tips
 	$scope.level1status = (maxLevel >= 1 ? 'unlocked' : 'locked');
