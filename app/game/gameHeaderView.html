@@ -12,8 +12,10 @@
 		<p>Target color</p>
 		<div class='targetcolor'></div>
 	</div>
-	<div id='shots' class='flexcol'>
-		<p class='taken'>Shots taken</p>
-		<p class='shotscount'>{{shots}}</p>
+	<div id='shotsLeft' class='flexcol'>
+		<p class='taken'>Shots left</p>
+		<div class='shots flexrow'>
+			<p class='shot' ng-repeat="n in shotsLoop"></p>
+		</div>
 	</div>
 </div>

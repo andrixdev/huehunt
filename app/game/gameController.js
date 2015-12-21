@@ -1,11 +1,13 @@
-window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', function($scope, $location, nav, colorCookies, gameVars, hueser, forms) {
+window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', '_', function($scope, $location, nav, colorCookies, gameVars, hueser, forms, _) {
 
 	// Views
 	$scope.templatePaths = {
 		header: 'app/game/gameHeaderView.html',
 		insight: 'app/game/gameInsightView.html',
 		clue: 'app/game/gameClueView.html',
+		// @todo Remove clue mechanism
 		instructions: '',
+		// @todo Remove instructions mechanism?
 		interactionarea: 'app/game/gameInteractionareaView.html',
 		footer: 'app/footer/footerView.html'
 	};
@@ -58,8 +60,9 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		gameVars.setWin();
 		$location.path('/win');
 	}
-	// If target not reached, think of a good hint for the user
+	// If target not reached, display new game phase
 	else {
+		// @todo Remove clue mechanism
 		// If the player is far from reaching H
 		if (Math.abs(dH) >= Math.abs(dS) && Math.abs(dH) >= Math.abs(dL)) {
 			$scope.clue = {
@@ -85,7 +88,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Handle interactionarea with 'forms' custom service
 	forms.handleGameForm();
-	
+
 	// Save current path
 	nav.addPath($location.path());
 
@@ -106,6 +109,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	+ "}";
 
 	$scope.username = username;
+	$scope.shotsLoop = _.range(1, shots);
 	$scope.shots = shots;
 	$scope.currentURL = $location.absUrl();
 	$scope.cH = cH;

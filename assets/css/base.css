@@ -159,23 +159,6 @@ p {
   font-weight: bold;
 }
 
-/** Clue **/
-#clue {
-  flex-basis: 20%;
-  height: auto;
-  padding: 5px 0px;
-  background: #222;
-}
-#clue p.hint {
-  font-size: 1em;
-}
-#clue p.which {
-  font-size: 8em;
-}
-#clue p.istoo {
-  font-size: 1.5em;
-}
-
 /** Instructions **/
 #instructions {
   width: 100%;

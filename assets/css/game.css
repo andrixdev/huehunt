@@ -66,14 +66,42 @@
 #header #target p {
    font-size: 1.7em;
 }
-#header #shots {
+#header #shotsLeft {
    width: 20%;
 }
-#header #shots p.taken {
+#header #shotsLeft p.taken {
    font-size: 1.7em;
 }
-#header #shots p.shotscount {
-   font-size: 2.5em;
+#header #shotsLeft .shots {
+   height: 50px;
+   width: 140px;
+   flex-flow: row wrap;
+}
+#header #shotsLeft p.shot {
+   width: 15px;
+   height: 15px;
+   margin: 0px 2px;
+   background: radial-gradient(hsl(200, 50%, 20%), hsl(200, 50%, 60%));
+   border: solid 1px black;
+   border-radius: 50%;
+}
+
+/** Clue **/
+#clue {
+  flex-basis: 20%;
+  height: auto;
+  padding: 5px 0px;
+  background: #222;
+  display: none;
+}
+#clue p.hint {
+  font-size: 1em;
+}
+#clue p.which {
+  font-size: 8em;
+}
+#clue p.istoo {
+  font-size: 1.5em;
 }
 
 /** Interactionarea **/

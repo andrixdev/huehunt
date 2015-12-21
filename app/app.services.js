@@ -75,6 +75,9 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			$cookies.putObject('history', {
 				content: []
 			});
+			$cookies.putObject('currentLevel', {
+				content: []
+			});
 			$cookies.put('win', 'false');//Cookies are strings
 			$cookies.put('saved', 'false');
 		},
