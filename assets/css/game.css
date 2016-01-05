@@ -122,13 +122,21 @@
   width: 120px;
   height: 120px;
   margin: 0px 10px;
-  border-radius: 50%;
-  box-shadow: #111 -10px 0px 5px;
 }
-#controls > div p {
-  font-size: 1.8em;
-  margin-left: 2px;
+#controls .title {
+  position: relative;
 }
+#controls .title p {
+  font-size: 2.2em;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: black 0px 0px 5px;
+  background: url('../../assets/img/wheel.png');
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #scontrol input,
 #lcontrol input {
   width: 50px;
@@ -143,11 +151,13 @@
   from {-webkit-filter: hue-rotate(0deg);}
   to {-webkit-filter: hue-rotate(100deg);}
 }
+/*
 #hcontrol {
   background: radial-gradient(circle closest-side, #181818, #181818, #181818, #181818, #181818, #181818, #181818, hsl(220,50%,30%), hsl(220,50%,37%), hsl(220,50%,20%));
   -webkit-animation: huerot 3s linear alternate infinite;
   animation: huerot 3s linear alternate infinite;
 }
+*/
 @keyframes satrot {
   from {filter: saturate(100%);}
   50% {filter: saturate(0%);}
