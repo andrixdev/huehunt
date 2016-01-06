@@ -5,18 +5,27 @@
 		</div>
 		<div id='controls' class='flexrow'>
 			<div id='hcontrol'>
+				<input type='number' autofocus value='{{cH}}' min='0' max='360' class='hslinput'/>
 				<div class='title'>
+					<img class='huecircle' src='assets/img/wheel.png' alt='Hue color wheel'/>
 					<p>Hue</p>
 				</div>
-				<input type='number' autofocus value='{{cH}}' min='0' max='360' class='hslinput'/>
 			</div>
-			<div id='scontrol' class='flexrow'>
+			<div id='scontrol'>
 				<input type='number' value='{{cS}}' min='0' max='100' class='hslinput'/>
 				<p>%</p>
+				<div class='title'>
+					<div class='satcircle'></div>
+					<p>Saturation</p>
+				</div>
 			</div>
-			<div id='lcontrol' class='flexrow'>
+			<div id='lcontrol'>
 				<input type='number' value='{{cL}}' min='0' max='100' class='hslinput'/>
 				<p>%</p>
+				<div class='title'>
+					<div class='ligcircle'></div>
+					<p>Lightness</p>
+				</div>
 			</div>
 		</div>
 	</div>

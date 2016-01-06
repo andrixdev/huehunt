@@ -10,7 +10,9 @@
   border: none;
   border-radius: 2px;
   font-size: 2em;
-  width: 60px;
+  width: 80px;
+  height: 50px;
+  margin-top: 4px;
   text-align: center;
   color: #ddd;
 }
@@ -108,7 +110,7 @@
 #interactionarea {
   background: #222;
   width: 100%;
-  padding: 10px 0px;
+  padding: 10px 0px 30px;
 }
 #controlsarea {
 }
@@ -121,28 +123,62 @@
 #controls > div {
   width: 120px;
   height: 120px;
-  margin: 0px 10px;
+  margin: 0px 15px;
+}
+#controls > div input,
+#controls > div > p {
+  display: inline-block;
+  vertical-align: middle;
+}
+#controls > div > p {
+  font-size: 2em;
 }
 #controls .title {
   position: relative;
+  background: yellow;
+  margin-top: 10px;
+}
+#controls img.huecircle,
+#controls .satcircle,
+#controls .ligcircle {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  position: absolute;
 }
 #controls .title p {
   font-size: 2.2em;
-  text-align: center;
   font-weight: bold;
   text-shadow: black 0px 0px 5px;
-  background: url('../../assets/img/wheel.png');
   background-size: 40px;
   background-repeat: no-repeat;
   background-position: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
-
-#scontrol input,
-#lcontrol input {
-  width: 50px;
-  font-size: 1.8em;
+#hcontrol img.huecircle {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  top: 0px;
 }
-
+#hcontrol .title p {
+  top: 10px;
+}
+#scontrol .title,
+#lcontrol .title {
+  margin-top: 20px;
+}
+/*
 @keyframes huerot {
   from {filter: hue-rotate(-70deg);}
   to {filter: hue-rotate(70deg);}
@@ -151,13 +187,13 @@
   from {-webkit-filter: hue-rotate(0deg);}
   to {-webkit-filter: hue-rotate(100deg);}
 }
-/*
+
 #hcontrol {
   background: radial-gradient(circle closest-side, #181818, #181818, #181818, #181818, #181818, #181818, #181818, hsl(220,50%,30%), hsl(220,50%,37%), hsl(220,50%,20%));
   -webkit-animation: huerot 3s linear alternate infinite;
   animation: huerot 3s linear alternate infinite;
 }
-*/
+
 @keyframes satrot {
   from {filter: saturate(100%);}
   50% {filter: saturate(0%);}
@@ -168,11 +204,13 @@
   50% {-webkit-filter: saturate(100%);}
   to {-webkit-filter: saturate(0%);}
 }
+
 #scontrol {
   background: radial-gradient(circle closest-side, #181818, #181818, #181818, #181818, #181818, #181818, #181818, hsl(220,100%,30%), hsl(220,100%,37%), hsl(220,100%,20%));
   -webkit-animation: satrot 3s infinite;
   animation: satrot 3s infinite;
 }
+
 @keyframes ligrot {
   from {filter: brightness(130%);}
   50% {filter: brightness(50%);}
@@ -183,11 +221,13 @@
   50% {-webkit-filter: brightness(50%);}
   to {-webkit-filter: brightness(150%);}
 }
+
 #lcontrol {
   background: radial-gradient(circle closest-side, #181818, #181818, #181818, #181818, #181818, #181818, #181818, hsl(220,50%,30%), hsl(220,50%,37%), hsl(220,50%,20%));
   -webkit-animation: ligrot 3s linear infinite;
   animation: ligrot 3s linear infinite 1.5s;
 }
+*/
 #guess {
   width: 100px;
   background: hsl(200, 80%, 40%);
