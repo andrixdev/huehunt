@@ -65,14 +65,13 @@
 #header #target {
    width: 30%;
 }
-#header #target p {
+#header #target p,
+#header #shotsLeft p.taken,
+#header #precision p.label {
    font-size: 1.7em;
 }
 #header #shotsLeft {
    width: 20%;
-}
-#header #shotsLeft p.taken {
-   font-size: 1.7em;
 }
 #header #shotsLeft .shots {
    height: 50px;
@@ -87,7 +86,10 @@
    border: solid 1px black;
    border-radius: 50%;
 }
-
+#header #precision p.value {
+  height: 50px;
+  font-size: 40px;
+}
 /** Clue **/
 #clue {
   flex-basis: 20%;

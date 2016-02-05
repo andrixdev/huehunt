@@ -1,5 +1,5 @@
 /**
- * HueHunt, a game for hawk-eyes designers
+ * HueHunt, a game for hawk-eyed designers
  * by Alexandre Andrieux @October2105
  */
 

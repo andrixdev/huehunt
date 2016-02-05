@@ -51,39 +51,16 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	gameVars.addShot();
 
 	// Target distance
-	var dH = tH - cH,// 'd' stands for 'delta'
-		dS = tS - cS,
-		dL = tL - cL;
-
+	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
+	var targetDist = 3;
 	// If target reached, set win variable to true and redirect to /win
-	if (Math.abs(dH) < 6 && Math.abs(dS) < 3 && Math.abs(dL) < 3) {
+	if (dist < targetDist) {
 		gameVars.setWin();
 		$location.path('/win');
 	}
 	// If target not reached, display new game phase
 	else {
-		// @todo Remove clue mechanism
-		// If the player is far from reaching H
-		if (Math.abs(dH) >= Math.abs(dS) && Math.abs(dH) >= Math.abs(dL)) {
-			$scope.clue = {
-				which: 'H',
-				isToo: (dH > 0 ? 'LOW' : 'HIGH')
-			}
-		}
-		// If the player is far from reaching S
-		else if (Math.abs(dS) >= Math.abs(dH) && Math.abs(dS) >= Math.abs(dL)) {
-			$scope.clue = {
-				which: 'S',
-				isToo: (dS > 0 ? 'LOW' : 'HIGH')
-			}
-		}
-		// If the player is far from reaching L
-		else if (Math.abs(dL) >= Math.abs(dH) && Math.abs(dL) >= Math.abs(dS)) {
-			$scope.clue = {
-				which: 'L',
-				isToo: (dL > 0 ? 'LOW' : 'HIGH')
-			}
-		}
+
 	}
 
 	// Handle interactionarea with 'forms' custom service
@@ -111,6 +88,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	$scope.username = username;
 	$scope.shotsLoop = _.range(1, shots);
 	$scope.shots = shots;
+	$scope.precision = Math.round(10 * (100 - dist + targetDist)) / 10;
 	$scope.currentURL = $location.absUrl();
 	$scope.cH = cH;
 	$scope.cS = cS;

@@ -109,6 +109,13 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		setSaved: function() {
 			$cookies.put('saved', 'true');
 		},
+		getColorDistance: function(h1, s1, l1, h2, s2, l2) {
+			var D = 0;
+			var dH = h2 - h1,// 'd' stands for 'delta'
+				dS = s2 - s1,
+				dL = l2 - l1;
+			return Math.sqrt(dH*dH / (2*2) + dS*dS + dL*dL);
+		}
 	};
 }]);
 
