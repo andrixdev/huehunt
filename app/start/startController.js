@@ -12,6 +12,22 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		footer: 'app/footer/footerView.html'
 	};
 
+	// Form handling (custom service 'forms')
+	forms.handleStartForm();
+
+	// Listeners for tabs
+	DOM.levelTabs();
+
+	// Check user existence
+	var username = hueser.getUsername();
+	var maxLevel = hueser.getMaxLevel();
+	if (!username) {
+		// Initialize game parameters
+		hueser.setMaxLevel(1);
+		maxLevel = 1;
+		hueset.setExperience(0);
+	}
+
 	// Set Target HSL session variables
 	colorCookies.setTargetHSL();
 	var targetHSL = colorCookies.getTargetHSL(),
@@ -19,14 +35,11 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		tS = targetHSL.S,
 		tL = targetHSL.L;
 
-	// Pre-generate random start HSL values
+	// Pre-generate random start HSL values (move when designing no-first-color feature)
 	var randomHSL = colorCookies.generateRandomHSL(),
 		cH = randomHSL.H,// 'c' stands for 'current'
 		cS = randomHSL.S,
 		cL = randomHSL.L;
-
-	// Form handling (custom service 'forms')
-	forms.handleStartForm();
 
 	// Clear previous paths in nav service (prevents cookie overload)
 	nav.clearPaths();
@@ -34,22 +47,13 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	// Save current path
 	nav.addPath($location.path());
 
-	// Check maximum playable level
-	var maxLevel = hueser.getMaxLevel();
-	if (!maxLevel) {
-		maxLevel = 1;
-	}
-
-	// Listeners for tabs
-	DOM.levelTabs();
-
 	// Store in $scope all the remaining necessary parameters to render the views
 	$scope.cH = cH;
 	$scope.cS = cS;
 	$scope.cL = cL;
+
 	maxLevel = 3; // @todo Remove
-	// @todo Add little lock logo
-	// @todo Design & add hue, lightness and saturation tips
+
 	$scope.level1status = (maxLevel >= 1 ? 'unlocked' : 'locked');
 	$scope.level2status = (maxLevel >= 2 ? 'unlocked' : 'locked');
 	$scope.level3status = (maxLevel >= 3 ? 'unlocked' : 'locked');

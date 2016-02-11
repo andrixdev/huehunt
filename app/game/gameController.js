@@ -14,8 +14,8 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Get all user variables
 	var username = hueser.getUsername();
-	var vars = gameVars.getGameVars(),
-		avatarBaseHue = vars.avatarBaseHue,
+	var avatarBaseHue = hueser.getAvatarBaseHue();
+	var vars = gameVars.getRoundGameVars(),
 		shots = vars.shots,
 		win = vars.win;
 	var targetHSL = colorCookies.getTargetHSL(),
@@ -23,7 +23,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		tS = targetHSL.S,
 		tL = targetHSL.L;
 
-	// Redirect to /start if username not defined (uncomment when form works)
+	// Redirect to /start if username not defined
 	if (!username) {
 		$location.path('/start');
 	}
@@ -52,7 +52,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Target distance
 	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
-	var targetDist = 3;
+	var targetDist = 15;
 	// If target reached, set win variable to true and redirect to /win
 	if (dist < targetDist) {
 		gameVars.setWin();

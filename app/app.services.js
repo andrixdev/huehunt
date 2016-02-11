@@ -53,6 +53,14 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		getUsername: function() {
 			return $cookies.get('username');
 		},
+
+		setAvatarBaseHue: function() {
+			$cookies.put('avatarBaseHue', Math.floor(Math.random() * 360));
+		},
+		getAvatarBaseHue: function() {
+			return $cookies.get('avatarBaseHue');
+		},
+
 		/**
 		 * @param String maxLevel The maximal authorized game level
 		 */
@@ -61,6 +69,33 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		},
 		getMaxLevel: function() {
 			return $cookies.get('maxLevel');
+		},
+
+		/**
+		 * @param Number experience The gained experience of the player
+		 */
+		setExperience: function(experience) {
+			$cookies.put('experience', experience);
+		},
+		getExperience: function() {
+			return $cookies.get('experience');
+		},
+
+		maybeLevelUp: function() {
+			var thresholds = [50, 100, 150];
+			var xp = $cookies.get('experience', experience);
+			var newLevel = 1;
+			if (xp > thresholds[0]) {
+				newLevel = 2;
+			}
+			if (xp > threshold[1]) {
+				newLevel = 3;
+			}
+			if (xp > thresholds[2]) {
+				newLevel = 4;
+			}
+			$cookies.put('maxLevel', newLevel);
+			console.log('New level: ', newLevel);
 		}
 	};
 }]);
@@ -68,8 +103,7 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 // Cookie service for game variables
 window.app.factory('gameVars', ['$cookies', function($cookies) {
 	return {
-		setGameVars: function() {
-			$cookies.put('avatarBaseHue', Math.floor(Math.random() * 360));
+		setRoundGameVars: function() {
 			$cookies.put('shots', 0);
 			$cookies.put('startTime', new Date().getTime());
 			$cookies.putObject('roundHistory', {
@@ -78,9 +112,8 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			$cookies.put('win', 'false');//Cookies are strings
 			$cookies.put('saved', 'false');
 		},
-		getGameVars: function() {
+		getRoundGameVars: function() {
 			return {
-				avatarBaseHue: $cookies.get('avatarBaseHue'),
 				shots: $cookies.get('shots'),
 				startTime: $cookies.get('startTime'),
 				roundHistory: $cookies.getObject('roundHistory'),
@@ -170,7 +203,8 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 				jQuery('#playbutton a').off().on('click', function() {
 					// On-submit actions lay here
 					hueser.setUsername(jQuery('#playername input').val());
-					gameVars.setGameVars();
+					gameVars.setRoundGameVars();
+					console.log('gameVars service is ', gameVars);
 				});
 				jQuery('#playername input').off().on('keyup', function(event) {
 					if (event.which == 13) {/* Enter key */

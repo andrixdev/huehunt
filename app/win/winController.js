@@ -12,7 +12,7 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 
 	// Get all user variables
 	var username = hueser.getUsername();
-	var vars = gameVars.getGameVars(),
+	var vars = gameVars.getRoundGameVars(),
 		avatarBaseHue = vars.avatarBaseHue,
 		shots = vars.shots,
 		startTime = vars.startTime,
@@ -23,6 +23,7 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 		tH = targetHSL.H,
 		tS = targetHSL.S,
 		tL = targetHSL.L;
+	var experience = hueser.getExperience();
 
 	// Redirect to /start if username not defined
 	if (!username) {
@@ -51,6 +52,10 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 		gameVars.setSaved();
 	}
 
+	// Increase player experience
+	hueser.setExperience(parseInt(experience) + 10);
+	hueser.maybeLevelUp();
+
 	// Load highscores
 	$scope.highscores = {};
 	roundsRef.on('value', function(data) {
@@ -66,7 +71,7 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 
 	// Save current path
 	nav.addPath($location.path());
-	
+
 	// Store in $scope all the necessary parameters to render the views
 	$scope.shots = shots;
 	$scope.roundHistory = roundHistory;
