@@ -1,4 +1,4 @@
-window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', '_', function($scope, $location, nav, colorCookies, gameVars, hueser, forms, _) {
+window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', '_', 'DOM', function($scope, $location, nav, colorCookies, gameVars, hueser, forms, _, DOM) {
 
 	// Views
 	$scope.templatePaths = {
@@ -14,6 +14,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Get all user variables
 	var username = hueser.getUsername();
+	var maxLevel = hueser.getMaxLevel();
 	var avatarBaseHue = hueser.getAvatarBaseHue();
 	var vars = gameVars.getRoundGameVars(),
 		shots = vars.shots,
@@ -52,7 +53,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Target distance
 	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
-	var targetDist = 15;
+	var targetDist = 50;
 	// If target reached, set win variable to true and redirect to /win
 	if (dist < targetDist) {
 		gameVars.setWin();
@@ -68,6 +69,14 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Save current path
 	nav.addPath($location.path());
+
+	// Fix saturation or lightness, or both if necessary
+	if (maxLevel == 1) {
+		DOM.blockSaturationInput(100);
+		DOM.blockLightnessInput(50);
+	} else if (maxLevel == 2) {
+		DOM.blockLightnessInput(50);
+	}
 
 	// Store in $scope all the remaining necessary parameters to render the views
 	$scope.style = ".targetcolor {"

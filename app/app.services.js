@@ -83,12 +83,12 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 
 		maybeLevelUp: function() {
 			var thresholds = [50, 100, 150];
-			var xp = $cookies.get('experience', experience);
+			var xp = $cookies.get('experience');
 			var newLevel = 1;
 			if (xp > thresholds[0]) {
 				newLevel = 2;
 			}
-			if (xp > threshold[1]) {
+			if (xp > thresholds[1]) {
 				newLevel = 3;
 			}
 			if (xp > thresholds[2]) {
@@ -204,7 +204,6 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 					// On-submit actions lay here
 					hueser.setUsername(jQuery('#playername input').val());
 					gameVars.setRoundGameVars();
-					console.log('gameVars service is ', gameVars);
 				});
 				jQuery('#playername input').off().on('keyup', function(event) {
 					if (event.which == 13) {/* Enter key */
@@ -223,7 +222,6 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 					var h = jQuery('#hcontrol input').val();
 					var s = jQuery('#scontrol input').val();
 					var l = jQuery('#lcontrol input').val();
-					console.log(h, s, l);
 				});
 				jQuery('#guess a').off().on('click', function() {
 					var h = jQuery('#hcontrol input').val();
@@ -295,6 +293,26 @@ window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hues
 			jQuery('#levelcontents > div').hide(200, function() {
 				jQuery('#lvl' + tabId).show(200);
 			});
+		},
+		/**
+		 * @param Number sat Saturation to stick to
+		 */
+		blockSaturationInput(sat) {
+			$timeout(function() {
+				jQuery('#scontrol').addClass('fixed-value');
+				jQuery('#scontrol input').hide();
+				jQuery('#scontrol p.fixed-hidden-value').html(sat).show();
+			}, 500);/* Promisifying cheat */
+		},
+		/**
+		 * @param Number lig Lightness to stick to
+		 */
+		blockLightnessInput(lig) {
+			$timeout(function() {
+				jQuery('#lcontrol').addClass('fixed-value');
+				jQuery('#lcontrol input').hide();
+				jQuery('#lcontrol p.fixed-hidden-value').html(lig).show();
+			}, 500);/* Promisifying cheat */
 		}
 	}
 }]);

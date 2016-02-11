@@ -115,6 +115,7 @@
   padding: 10px 0px 30px;
 }
 #controlsarea {
+
 }
 #controltop p {
   font-size: 1.5em;
@@ -128,7 +129,8 @@
   margin: 0px 15px;
 }
 #controls > div input,
-#controls > div > p {
+#controls > div.fixed-value p.fixed-hidden-value,
+#controls > div > p.percent {
   display: inline-block;
   vertical-align: middle;
 }
@@ -180,6 +182,25 @@
 #lcontrol .title {
   margin-top: 20px;
 }
+
+/* Fixed-values state */
+#scontrol p.fixed-hidden-value,
+#lcontrol p.fixed-hidden-value {
+  display: none;
+}
+#scontrol.fixed-value p.fixed-hidden-value,
+#lcontrol.fixed-value p.fixed-hidden-value {
+  display: inherit;
+}
+#scontrol.fixed-value p.fixed-hidden-value,
+#lcontrol.fixed-value p.fixed-hidden-value,
+#scontrol.fixed-value p.percent,
+#lcontrol.fixed-value p.percent {
+  color: #444;
+  font-weight: bold;
+  font-size: 3em;
+}
+
 /*
 @keyframes huerot {
   from {filter: hue-rotate(-70deg);}

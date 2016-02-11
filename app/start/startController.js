@@ -25,7 +25,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		// Initialize game parameters
 		hueser.setMaxLevel(1);
 		maxLevel = 1;
-		hueset.setExperience(0);
+		hueser.setExperience(0);
 	}
 
 	// Set Target HSL session variables
