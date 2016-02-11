@@ -72,10 +72,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			$cookies.put('avatarBaseHue', Math.floor(Math.random() * 360));
 			$cookies.put('shots', 0);
 			$cookies.put('startTime', new Date().getTime());
-			$cookies.putObject('history', {
-				content: []
-			});
-			$cookies.putObject('currentLevel', {
+			$cookies.putObject('roundHistory', {
 				content: []
 			});
 			$cookies.put('win', 'false');//Cookies are strings
@@ -86,7 +83,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 				avatarBaseHue: $cookies.get('avatarBaseHue'),
 				shots: $cookies.get('shots'),
 				startTime: $cookies.get('startTime'),
-				history: $cookies.getObject('history'),
+				roundHistory: $cookies.getObject('roundHistory'),
 				win: $cookies.get('win'),
 				saved: $cookies.get('saved')
 			};
@@ -98,10 +95,10 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		/**
 		 * @param Object score Javascript object with scores data
 		 */
-		addHistory: function(score) {
-			var hist = $cookies.getObject('history');
+		addRoundHistory: function(score) {
+			var hist = $cookies.getObject('roundHistory');
 			hist.content.push(score);
-			$cookies.putObject('history', hist);
+			$cookies.putObject('roundHistory', hist);
 		},
 		setWin: function() {
 			$cookies.put('win', 'true');

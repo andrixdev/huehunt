@@ -16,7 +16,7 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 		avatarBaseHue = vars.avatarBaseHue,
 		shots = vars.shots,
 		startTime = vars.startTime,
-		history = vars.history,
+		roundHistory = vars.roundHistory,
 		win = vars.win,
 		saved = vars.saved;
 	var targetHSL = colorCookies.getTargetHSL(),
@@ -66,10 +66,10 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 
 	// Save current path
 	nav.addPath($location.path());
-
+	
 	// Store in $scope all the necessary parameters to render the views
 	$scope.shots = shots;
-	$scope.history = history;
+	$scope.roundHistory = roundHistory;
 	$scope.tH = tH;
 	$scope.tS = tS;
 	$scope.tL = tL;

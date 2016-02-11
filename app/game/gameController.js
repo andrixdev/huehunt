@@ -40,7 +40,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		cL = current[3];
 
 	// Add new HSL set to history and to navigation memory service
-	gameVars.addHistory({
+	gameVars.addRoundHistory({
 		H: cH,
 		S: cS,
 		L: cL
