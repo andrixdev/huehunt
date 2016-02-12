@@ -30,10 +30,9 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 				// Relative hue between 50 and 100
 				cH = parseInt(tH) + 50 + Math.floor(50 * Math.random());
 			}
-			console.log(cH - tH);
 
 			return {
-				H: cH,
+				H: (cH + 360) % 360,
 				S: 20 + Math.floor(80 * Math.random()),
 				L: 20 + Math.floor(60 * Math.random())
 			};
@@ -71,6 +70,7 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 			return $cookies.get('maxLevel');
 		},
 
+		thresholds: [25, 50, 80, 50000],
 		/**
 		 * @param Number experience The gained experience of the player
 		 */
@@ -80,22 +80,25 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		getExperience: function() {
 			return $cookies.get('experience');
 		},
-
+		getNextLevelXP: function() {
+			var nextLevel = this.getMaxLevel();
+			console.log('nextLevel', nextLevel);
+			console.log('returned', this.thresholds[nextLevel - 1]);
+			return this.thresholds[nextLevel - 1];
+		},
 		maybeLevelUp: function() {
-			var thresholds = [50, 100, 150];
 			var xp = $cookies.get('experience');
 			var newLevel = 1;
-			if (xp > thresholds[0]) {
+			if (xp > this.thresholds[0]) {
 				newLevel = 2;
 			}
-			if (xp > thresholds[1]) {
+			if (xp > this.thresholds[1]) {
 				newLevel = 3;
 			}
-			if (xp > thresholds[2]) {
+			if (xp > this.thresholds[2]) {
 				newLevel = 4;
 			}
-			$cookies.put('maxLevel', newLevel);
-			console.log('New level: ', newLevel);
+			this.setMaxLevel(newLevel);
 		}
 	};
 }]);
@@ -103,8 +106,9 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 // Cookie service for game variables
 window.app.factory('gameVars', ['$cookies', function($cookies) {
 	return {
+		roundShots: 6,
 		setRoundGameVars: function() {
-			$cookies.put('shots', 0);
+			$cookies.put('shots', this.roundShots);
 			$cookies.put('startTime', new Date().getTime());
 			$cookies.putObject('roundHistory', {
 				content: []
@@ -122,8 +126,14 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			};
 		},
 		// Specific setters
-		addShot: function() {
-			$cookies.put('shots', parseInt($cookies.get('shots')) + 1);
+		/**
+		 * @param Number howmany Number of shots to add
+		 */
+		addShots: function(howmany) {
+			$cookies.put('shots', parseInt($cookies.get('shots')) + howmany);
+		},
+		getShots: function() {
+			return $cookies.get('shots');
 		},
 		/**
 		 * @param Object score Javascript object with scores data
@@ -202,7 +212,7 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 			$timeout(function() {
 				jQuery('#playbutton a').off().on('click', function() {
 					// On-submit actions lay here
-					hueser.setUsername(jQuery('#playername input').val());
+					hueser.setUsername(jQuery('#newplayername input').val());
 					gameVars.setRoundGameVars();
 				});
 				jQuery('#playername input').off().on('keyup', function(event) {

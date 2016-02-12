@@ -16,6 +16,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	var username = hueser.getUsername();
 	var maxLevel = hueser.getMaxLevel();
 	var avatarBaseHue = hueser.getAvatarBaseHue();
+
 	var vars = gameVars.getRoundGameVars(),
 		shots = vars.shots,
 		win = vars.win;
@@ -47,13 +48,13 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		L: cL
 	});
 
-	// Increment shots counter
-	shots++;
-	gameVars.addShot();
+	// Update shots counter
+	gameVars.addShots(-1);
+	shots--;
 
 	// Target distance
 	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
-	var targetDist = 50;
+	var targetDist = 25;
 	// If target reached, set win variable to true and redirect to /win
 	if (dist < targetDist) {
 		gameVars.setWin();
@@ -73,21 +74,27 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	// Fix saturation or lightness, or both if necessary
 	if (maxLevel == 1) {
 		DOM.blockSaturationInput(100);
+		tS = 100;
+		cS = 100;
 		DOM.blockLightnessInput(50);
+		tL = 50;
+		cL = 50;
 	} else if (maxLevel == 2) {
 		DOM.blockLightnessInput(50);
+		tL = 50;
+		cL = 50;
 	}
 
 	// Store in $scope all the remaining necessary parameters to render the views
 	$scope.style = ".targetcolor {"
 	+ "  background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
 	+ "}"
-	+ "#avatar .square:nth-of-type(1),"
-	+ "#avatar .square:nth-of-type(4) {"
+	+ ".avatar .square:nth-of-type(1),"
+	+ ".avatar .square:nth-of-type(4) {"
 	+ "  background: hsl(" + avatarBaseHue + ", 100%, 60%);"
 	+ "}"
-	+ "#avatar .square:nth-of-type(2),"
-	+ "#avatar .square:nth-of-type(3) {"
+	+ ".avatar .square:nth-of-type(2),"
+	+ ".avatar .square:nth-of-type(3) {"
 	+ "  background: hsl(" + (avatarBaseHue - 15) + ", 80%, 50%);"
 	+ "}"
 	+ "#insight {"
@@ -95,8 +102,8 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	+ "}";
 
 	$scope.username = username;
-	$scope.shotsLoop = _.range(1, shots);
-	$scope.shots = shots;
+	$scope.shotsLoop = _.range(1, shots + 2);
+	$scope.shots = shots + 1;
 	$scope.precision = Math.round(10 * (100 - dist + targetDist)) / 10;
 	$scope.currentURL = $location.absUrl();
 	$scope.cH = cH;

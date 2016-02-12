@@ -1,6 +1,6 @@
 window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'hueser', 'forms', 'DOM', function($scope, $location, nav, colorCookies, hueser, forms, DOM) {
 
-	// Debug
+	// Debug @ todo.later Remove
 	window.scopee = $scope;
 	// Views
 	$scope.templatePaths = {
@@ -20,13 +20,18 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 
 	// Check user existence
 	var username = hueser.getUsername();
-	var maxLevel = hueser.getMaxLevel();
+	var playerStatus = 'known';
 	if (!username) {
 		// Initialize game parameters
 		hueser.setMaxLevel(1);
-		maxLevel = 1;
 		hueser.setExperience(0);
+		hueser.setAvatarBaseHue();
+		playerStatus = 'unknown';
 	}
+
+	// Get avatar base hue and max level
+	var avatarBaseHue = hueser.getAvatarBaseHue();
+	var maxLevel = hueser.getMaxLevel();
 
 	// Set Target HSL session variables
 	colorCookies.setTargetHSL();
@@ -52,13 +57,29 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	$scope.cS = cS;
 	$scope.cL = cL;
 
-	maxLevel = 3; // @todo Remove
-
 	$scope.level1status = (maxLevel >= 1 ? 'unlocked' : 'locked');
 	$scope.level2status = (maxLevel >= 2 ? 'unlocked' : 'locked');
 	$scope.level3status = (maxLevel >= 3 ? 'unlocked' : 'locked');
 	$scope.levelXstatus = (maxLevel >= 4 ? 'unlocked' : 'locked');
+
+	$scope.playerStatus = playerStatus;
+	$scope.playerName = username;
+	$scope.playerLevel = maxLevel;
+	$scope.playerXP = hueser.getExperience();
+	$scope.playerNextLevelXP = hueser.getNextLevelXP();
+
 	$scope.style = ".targetcolor {"
-		+ "background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
+	+ "background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
+	+ "}"
+	+ ".avatar .square:nth-of-type(1),"
+	+ ".avatar .square:nth-of-type(4) {"
+	+ "  background: hsl(" + avatarBaseHue + ", 100%, 60%);"
+	+ "}"
+	+ ".avatar .square:nth-of-type(2),"
+	+ ".avatar .square:nth-of-type(3) {"
+	+ "  background: hsl(" + (avatarBaseHue - 15) + ", 80%, 50%);"
+	+ "}"
+	+ "#insight {"
+	+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
 	+ "}";
 }]);

@@ -1,7 +1,7 @@
 /**
  * CSS for Hue Hunt
  * /start
- * Alexandre Andrieux @2015 (September)
+ * Alexandre Andrieux @2015 (September) and @2016 (February)
  */
 
 /** Center **/
@@ -196,29 +196,71 @@ img.huecircle {
   margin-left: 3%;
   width: 30%;
 }
-/* Ready? */
-#ready {
 
+/** Ready? **/
+#ready.unknown #playerinfo {
+  display: none;
 }
+#ready.known #newplayername {
+  display: none;
+}
+/* Title */
 #ready p {
   font-size: 1.5em;
 }
-#playername {
+/* New player */
+#newplayername {
   margin-top: 5px;
 }
-#playername p {
+#newplayername p {
   font-size: 1.3em;
   margin-bottom: 5px;
 }
-#playername input {
+#newplayername input {
   background: #777;
   border: none;
   border-radius: 2px;
   font-size: 1.5em;
 }
-#playername input:focus {
+#newplayername input:focus {
   background: #bbb;
 }
+
+/* Known player details */
+.playerdetails {
+  width: 150px;
+}
+.playerdetails p.playername {
+  text-align: left;
+  margin-top: -10px;
+}
+.xpbar {
+  background: #1A1A1A;
+  border-radius: 4px;
+  border: solid 1px #151515;
+  height: 15px;
+  width: 100%;
+}
+.xpbar .xpliquid {
+  width: 70%;
+  height: 100%;
+  border-radius: 4px 0px 0px 4px;
+  background: transparent linear-gradient(hsl(200, 100%, 50%), hsl(200, 100%, 20%)) repeat scroll 0% 0%;
+}
+.playerdetails p.playerstats {
+  font-size: 1em !important;
+  margin-top: -5px;
+  text-align: left;
+  display: none;
+}
+.playerdetails:hover .xpbar {
+  display: none;
+}
+.playerdetails:hover p.playerstats {
+  display: inherit;
+}
+
+/* Go button */
 #playbutton {
   margin: 10px 0px 20px;
 }

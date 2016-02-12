@@ -67,11 +67,26 @@
 			</div>
 		</div>
 	</div>
-	<div id='ready'>
+	<div id='ready' class='{{ playerStatus }}'>
 		<h2>Ready?</h2>
-		<div id='playername'>
+		<div id='newplayername'>
 			<p>Player Name</p>
 			<input type='text'/>
+		</div>
+		<div id='playerinfo' class='flexrow'>
+			<div class='avatar'>
+				<div class='square'></div>
+				<div class='square'></div>
+				<div class='square'></div>
+				<div class='square'></div>
+			</div>
+			<div class='playerdetails'>
+				<p class='playername'>{{ playerName }}</p>
+				<div class='xpbar'>
+					<div class='xpliquid'></div>
+				</div>
+				<p class='playerstats'>LEVEL {{ playerLevel }}  -  {{ playerXP }}/{{ playerNextLevelXP }} XP</p>
+			</div>
 		</div>
 		<div id='playbutton'>
 			<a href='#/{{cH}}/{{cS}}/{{cL}}' class='acidbutton'>Play</a>

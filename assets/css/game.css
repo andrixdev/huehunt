@@ -28,7 +28,7 @@
 #header #user {
   width: 20%;
 }
-#avatar {
+.avatar {
    /* Colors defined in controllers */
    width: 50px;
    height: 50px;
@@ -38,24 +38,24 @@
    overflow: hidden;
    position: relative;/* For kids */
 }
-#avatar .square {
+.avatar .square {
    position: absolute;
    width: 25px;
    height: 25px;
 }
-#avatar .square:nth-of-type(1) {
+.avatar .square:nth-of-type(1) {
    top: 0;
    left: 0;
 }
-#avatar .square:nth-of-type(2) {
+.avatar .square:nth-of-type(2) {
    top: 0px;
    left: 25px;
 }
-#avatar .square:nth-of-type(3) {
+.avatar .square:nth-of-type(3) {
    top: 25px;
    left: 0px;
 }
-#avatar .square:nth-of-type(4) {
+.avatar .square:nth-of-type(4) {
    top: 25px;
    left: 25px;
 }
@@ -82,8 +82,7 @@
    width: 15px;
    height: 15px;
    margin: 0px 2px;
-   background: radial-gradient(hsl(200, 50%, 20%), hsl(200, 50%, 60%));
-   border: solid 1px black;
+   background: radial-gradient(#555, #FFF);
    border-radius: 50%;
 }
 #header #precision p.value {
@@ -196,11 +195,23 @@
 #lcontrol.fixed-value p.fixed-hidden-value,
 #scontrol.fixed-value p.percent,
 #lcontrol.fixed-value p.percent {
-  color: #444;
+  color: #3A3A3A;
   font-weight: bold;
   font-size: 3em;
 }
-
+#scontrol.fixed-value .title,
+#lcontrol.fixed-value .title {
+  margin-top: 10px;
+}
+#scontrol.fixed-value .title p,
+#lcontrol.fixed-value .title p {
+  color: #444;
+}
+#scontrol.fixed-value .satcircle,
+#lcontrol.fixed-value .ligcircle {
+  animation: none;
+  background: #333;
+}
 /*
 @keyframes huerot {
   from {filter: hue-rotate(-70deg);}
