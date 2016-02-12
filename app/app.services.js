@@ -106,9 +106,10 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 // Cookie service for game variables
 window.app.factory('gameVars', ['$cookies', function($cookies) {
 	return {
-		roundShots: 6,
+		roundShots: [6, 6, 6, 3],
+		selectedLevel: 1,
 		setRoundGameVars: function() {
-			$cookies.put('shots', this.roundShots);
+			$cookies.put('shots', this.roundShots[this.selectedLevel - 1]);
 			$cookies.put('startTime', new Date().getTime());
 			$cookies.putObject('roundHistory', {
 				content: []
@@ -125,7 +126,15 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 				saved: $cookies.get('saved')
 			};
 		},
-		// Specific setters
+		/**
+		 * @param Number level Selected level on start page
+		 */
+		setSelectedLevel: function(level) {
+			this.selectedLevel = level;
+		},
+		getSelectedLevel: function() {
+			return this.selectedLevel;
+		},
 		/**
 		 * @param Number howmany Number of shots to add
 		 */
@@ -212,8 +221,12 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 			$timeout(function() {
 				jQuery('#playbutton a').off().on('click', function() {
 					// On-submit actions lay here
-					hueser.setUsername(jQuery('#newplayername input').val());
-					gameVars.setRoundGameVars();
+					if (jQuery('#ready').hasClass('unknown')) {
+						hueser.setUsername(jQuery('#newplayername input').val());
+						gameVars.setRoundGameVars();
+					} else {
+						gameVars.setRoundGameVars();
+					}
 				});
 				jQuery('#playername input').off().on('keyup', function(event) {
 					if (event.which == 13) {/* Enter key */
@@ -262,6 +275,8 @@ window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hues
 						// Show level and activate tab
 						jQuery('#lvl1').css('display', 'inherit');
 						jQuery('#tab1').addClass('active');
+						// Edit selectedLevel in hueser service
+						hueser.setSelectedLevel(1);
 					}
 				});
 				jQuery('#tab2').off().on('click', function() {
@@ -272,6 +287,8 @@ window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hues
 						// Show level and activate tab
 						jQuery('#lvl2').css('display', 'inherit');
 						jQuery('#tab2').addClass('active');
+						// Edit selectedLevel in hueser service
+						hueser.setSelectedLevel(2);
 					}
 				});
 				jQuery('#tab3').off().on('click', function() {
@@ -282,6 +299,8 @@ window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hues
 						// Show level and activate tab
 						jQuery('#lvl3').css('display', 'inherit');
 						jQuery('#tab3').addClass('active');
+						// Edit selectedLevel in hueser service
+						hueser.setSelectedLevel(3);
 					}
 				});
 				jQuery('#tabX').off().on('click', function() {
@@ -292,6 +311,8 @@ window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hues
 						// Show level and activate tab
 						jQuery('#lvlX').css('display', 'inherit');
 						jQuery('#tabX').addClass('active');
+						// Edit selectedLevel in hueser service
+						hueser.setSelectedLevel(4);
 					}
 				});
 			}, 1000);/* Promisifying cheat */

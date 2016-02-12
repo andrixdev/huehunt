@@ -81,5 +81,9 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	+ "}"
 	+ "#insight {"
 	+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
+	+ "}"
+	+ ".xpbar .xpliquid {"
+	+ "  width: " + 50 + "%"
 	+ "}";
+
 }]);
