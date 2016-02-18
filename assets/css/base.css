@@ -105,11 +105,6 @@ p {
 }*/
 
 /** Base style **/
-html,
-body.flexcol {
-  justify-content: flex-start;
-  align-items: center;
-}
 body {
   background: #111;
 }
