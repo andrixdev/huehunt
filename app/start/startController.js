@@ -62,11 +62,18 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	$scope.level3status = (maxLevel >= 3 ? 'unlocked' : 'locked');
 	$scope.level4status = (maxLevel >= 4 ? 'unlocked' : 'locked');
 
+	var playerXP = hueser.getExperience();
+	var currentLevelXP = hueser.getCurrentLevelXP();
+	var nextLevelXP = hueser.getNextLevelXP();
+	var sinceLastLevelXP = playerXP - currentLevelXP;
+	var currentLevelNeededXP = nextLevelXP - currentLevelXP;
+	console.log(playerXP, currentLevelXP, nextLevelXP, sinceLastLevelXP, currentLevelNeededXP);
+
 	$scope.playerStatus = playerStatus;
 	$scope.playerName = username;
 	$scope.playerLevel = maxLevel;
-	$scope.playerXP = hueser.getExperience();
-	$scope.playerNextLevelXP = hueser.getNextLevelXP();
+	$scope.sinceLastLevelXP = sinceLastLevelXP;
+	$scope.currentLevelNeededXP = currentLevelNeededXP;
 
 	$scope.style = ".targetcolor {"
 	+ "background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
@@ -83,7 +90,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
 	+ "}"
 	+ ".xpbar .xpliquid {"
-	+ "  width: " + 50 + "%"
+	+ "  width: " + (100 * sinceLastLevelXP / currentLevelNeededXP) + "%"
 	+ "}";
 
 }]);

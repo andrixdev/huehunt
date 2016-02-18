@@ -76,13 +76,7 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		getMaxLevel: function() {
 			return $cookies.get('maxLevel');
 		},
-		setSelectedLevel: function(level) {
-			$cookies.put('selectedLevel', level);
-		},
-		getSelectedLevel: function() {
-			return $cookies.get('selectedLevel');
-		},
-		thresholds: [25, 50, 80, 50000],
+		thresholds: [0, 25, 75, 155, 5155],
 		setExperience: function(experience) {
 			$cookies.put('experience', experience);
 		},
@@ -91,18 +85,24 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		},
 		getNextLevelXP: function() {
 			var nextLevel = parseInt(this.getMaxLevel()) + 1;
-			return this.thresholds[nextLevel - 2];
+			console.log('nextLevel is ', nextLevel);
+			return this.thresholds[nextLevel - 1];
+		},
+		getCurrentLevelXP: function() {
+			var currentLevel = parseInt(this.getMaxLevel());
+			console.log('currentLevel is ', currentLevel);
+			return this.thresholds[currentLevel - 1];
 		},
 		maybeLevelUp: function() {
 			var xp = $cookies.get('experience');
 			var newLevel = 1;
-			if (xp > this.thresholds[0]) {
+			if (xp > this.thresholds[1]) {
 				newLevel = 2;
 			}
-			if (xp > this.thresholds[1]) {
+			if (xp > this.thresholds[2]) {
 				newLevel = 3;
 			}
-			if (xp > this.thresholds[2]) {
+			if (xp > this.thresholds[3]) {
 				newLevel = 4;
 			}
 			this.setMaxLevel(newLevel);
@@ -113,7 +113,7 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 // Cookie service for game variables
 window.app.factory('gameVars', ['$cookies', function($cookies) {
 	return {
-		roundShots: [6, 6, 6, 3],
+		roundShots: [6,6,6,3],
 		selectedLevel: 1,
 		setRoundGameVars: function() {
 			$cookies.put('shots', this.roundShots[this.selectedLevel - 1]);
@@ -134,15 +134,6 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			};
 		},
 		/**
-		 * @param Number level Selected level on start page
-		 */
-		setSelectedLevel: function(level) {
-			this.selectedLevel = level;
-		},
-		getSelectedLevel: function() {
-			return this.selectedLevel;
-		},
-		/**
 		 * @param Number howmany Number of shots to add
 		 */
 		addShots: function(howmany) {
@@ -150,6 +141,15 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		},
 		getShots: function() {
 			return $cookies.get('shots');
+		},
+		/**
+		 * @param int level Selected level
+		 */
+		setSelectedLevel: function(level) {
+			this.selectedLevel = level;
+		},
+		getSelectedLevel: function() {
+			return this.selectedLevel;
 		},
 		/**
 		 * @param Object score Javascript object with scores data
@@ -270,7 +270,7 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 }]);
 
 // Service for DOM listeners using jQuery (because ng-include basically breaks Angular)
-window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', '$timeout', function(jQuery, hueser, colorCookies, $timeout) {
+window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', 'gameVars', '$timeout', function(jQuery, hueser, colorCookies, gameVars, $timeout) {
 	return {
 		levelTabs: function() {
 			var self = this;
@@ -303,7 +303,7 @@ window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', '$timeout', funct
 				thisLevel.css('display', 'inherit');
 				thisTab.addClass('active');
 				// Edit selectedLevel in hueser service and generate new target colors
-				hueser.setSelectedLevel(level);
+				gameVars.setSelectedLevel(level);
 				colorCookies.generateTargetHSL(level);
 				var newTargetHSL = colorCookies.getTargetHSL();
 				this.updateTargetColorSquare(newTargetHSL.H, newTargetHSL.S, newTargetHSL.L);

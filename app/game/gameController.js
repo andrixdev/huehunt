@@ -70,7 +70,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
 	var targetDist = 25;
 	// If target reached, set win variable to true and redirect to /win
-	if (dist < targetDist) {
+	if (shots <= -1 || dist < targetDist) {
 		gameVars.setWin();
 		$location.path('/win');
 	}
