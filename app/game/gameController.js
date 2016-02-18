@@ -52,6 +52,20 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	gameVars.addShots(-1);
 	shots--;
 
+	// Fix saturation or lightness, or both if necessary
+	if (maxLevel == 1) {
+		DOM.blockSaturationInput(100);
+		tS = 100;
+		cS = 100;
+		DOM.blockLightnessInput(50);
+		tL = 50;
+		cL = 50;
+	} else if (maxLevel == 2) {
+		DOM.blockLightnessInput(50);
+		tL = 50;
+		cL = 50;
+	}
+
 	// Target distance
 	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
 	var targetDist = 25;
@@ -70,20 +84,6 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Save current path
 	nav.addPath($location.path());
-
-	// Fix saturation or lightness, or both if necessary
-	if (maxLevel == 1) {
-		DOM.blockSaturationInput(100);
-		tS = 100;
-		cS = 100;
-		DOM.blockLightnessInput(50);
-		tL = 50;
-		cL = 50;
-	} else if (maxLevel == 2) {
-		DOM.blockLightnessInput(50);
-		tL = 50;
-		cL = 50;
-	}
 
 	// Store in $scope all the remaining necessary parameters to render the views
 	$scope.style = ".targetcolor {"

@@ -1,10 +1,24 @@
 // Cookie service for target colors
 window.app.factory('colorCookies', ['$cookies', function($cookies) {
 	return {
-		setTargetHSL: function() {
-			$cookies.put('targetH', Math.floor(Math.random() * 360));
-			$cookies.put('targetS', 20 + Math.floor(80 * Math.random()));
-			$cookies.put('targetL', 20 + Math.floor(60 * Math.random()));
+		generateTargetHSL: function(level) {
+			// Base target HSL within correct ranges
+			var targetH = Math.floor(Math.random() * 360);
+			var targetS = 20 + Math.floor(80 * Math.random());
+			var targetL = 20 + Math.floor(60 * Math.random());
+
+			// Level-based override
+			if (level == 1) {
+				targetS = 100;
+				targetL = 50;
+			} else if (level == 2) {
+				targetL = 50;
+			} else { }
+
+			// Save in cookies
+			$cookies.put('targetH', targetH);
+			$cookies.put('targetS', targetS);
+			$cookies.put('targetL', targetL);
 		},
 		getTargetHSL: function() {
 			return {
@@ -13,7 +27,7 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 				L: $cookies.get('targetL')
 			};
 		},
-		generateRandomHSL: function() {
+		generateCurrentHSL: function() {
 			var tH = $cookies.get('targetH');
 			var tS = $cookies.get('targetS');
 			var tL = $cookies.get('targetL');
@@ -43,9 +57,6 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 // Cookie service for user information
 window.app.factory('hueser', ['$cookies', function($cookies) {
 	return {
-		/**
-		 * @param String username The username
-		 */
 		setUsername: function(username) {
 			$cookies.put('username', username);
 		},
@@ -59,21 +70,19 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		getAvatarBaseHue: function() {
 			return $cookies.get('avatarBaseHue');
 		},
-
-		/**
-		 * @param String maxLevel The maximal authorized game level
-		 */
 		setMaxLevel: function(maxLevel) {
 			$cookies.put('maxLevel', maxLevel);
 		},
 		getMaxLevel: function() {
 			return $cookies.get('maxLevel');
 		},
-
+		setSelectedLevel: function(level) {
+			$cookies.put('selectedLevel', level);
+		},
+		getSelectedLevel: function() {
+			return $cookies.get('selectedLevel');
+		},
 		thresholds: [25, 50, 80, 50000],
-		/**
-		 * @param Number experience The gained experience of the player
-		 */
 		setExperience: function(experience) {
 			$cookies.put('experience', experience);
 		},
@@ -81,10 +90,8 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 			return $cookies.get('experience');
 		},
 		getNextLevelXP: function() {
-			var nextLevel = this.getMaxLevel();
-			console.log('nextLevel', nextLevel);
-			console.log('returned', this.thresholds[nextLevel - 1]);
-			return this.thresholds[nextLevel - 1];
+			var nextLevel = parseInt(this.getMaxLevel()) + 1;
+			return this.thresholds[nextLevel - 2];
 		},
 		maybeLevelUp: function() {
 			var xp = $cookies.get('experience');
@@ -263,72 +270,57 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 }]);
 
 // Service for DOM listeners using jQuery (because ng-include basically breaks Angular)
-window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hueser, $timeout) {
+window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', '$timeout', function(jQuery, hueser, colorCookies, $timeout) {
 	return {
 		levelTabs: function() {
+			var self = this;
 			$timeout(function() {
 				jQuery('#tab1').off().on('click', function() {
-					if (jQuery(this).hasClass('unlocked')) {
-						// Hide other levels and deactivate tab
-						jQuery('#levelcontents > div').css('display', 'none');
-						jQuery('#leveltabs > div').removeClass('active');
-						// Show level and activate tab
-						jQuery('#lvl1').css('display', 'inherit');
-						jQuery('#tab1').addClass('active');
-						// Edit selectedLevel in hueser service
-						hueser.setSelectedLevel(1);
-					}
+					self.tabClickAction(1);
 				});
 				jQuery('#tab2').off().on('click', function() {
-					if (jQuery(this).hasClass('unlocked')) {
-						// Hide other levels and deactivate tab
-						jQuery('#levelcontents > div').css('display', 'none');
-						jQuery('#leveltabs > div').removeClass('active');
-						// Show level and activate tab
-						jQuery('#lvl2').css('display', 'inherit');
-						jQuery('#tab2').addClass('active');
-						// Edit selectedLevel in hueser service
-						hueser.setSelectedLevel(2);
-					}
+					self.tabClickAction(2);
 				});
 				jQuery('#tab3').off().on('click', function() {
-					if (jQuery(this).hasClass('unlocked')) {
-						// Hide other levels and deactivate tab
-						jQuery('#levelcontents > div').css('display', 'none');
-						jQuery('#leveltabs > div').removeClass('active');
-						// Show level and activate tab
-						jQuery('#lvl3').css('display', 'inherit');
-						jQuery('#tab3').addClass('active');
-						// Edit selectedLevel in hueser service
-						hueser.setSelectedLevel(3);
-					}
+					self.tabClickAction(3);
 				});
-				jQuery('#tabX').off().on('click', function() {
-					if (jQuery(this).hasClass('unlocked')) {
-						// Hide other levels and deactivate tab
-						jQuery('#levelcontents > div').css('display', 'none');
-						jQuery('#leveltabs > div').removeClass('active');
-						// Show level and activate tab
-						jQuery('#lvlX').css('display', 'inherit');
-						jQuery('#tabX').addClass('active');
-						// Edit selectedLevel in hueser service
-						hueser.setSelectedLevel(4);
-					}
+				jQuery('#tab4').off().on('click', function() {
+					self.tabClickAction(4);
 				});
 			}, 1000);/* Promisifying cheat */
 		},
 		/**
-		 * @param (string|int) tabId
+		 * @param int level
 		 */
-		showTab: function (tabId) {
+		tabClickAction: function(level) {
+			var thisTab = jQuery('#tab' + level);
+			var thisLevel = jQuery('#lvl' + level);
+			if (thisTab.hasClass('unlocked') && !thisTab.hasClass('active')) {
+				// Hide other levels and deactivate tab
+				jQuery('#levelcontents > div').css('display', 'none');
+				jQuery('#leveltabs > div').removeClass('active');
+				// Show level and activate tab
+				thisLevel.css('display', 'inherit');
+				thisTab.addClass('active');
+				// Edit selectedLevel in hueser service and generate new target colors
+				hueser.setSelectedLevel(level);
+				colorCookies.generateTargetHSL(level);
+				var newTargetHSL = colorCookies.getTargetHSL();
+				this.updateTargetColorSquare(newTargetHSL.H, newTargetHSL.S, newTargetHSL.L);
+			}
+		},
+		/**
+		 * @param int level
+		 */
+		showTab: function(level) {
 			jQuery('#levelcontents > div').hide(200, function() {
-				jQuery('#lvl' + tabId).show(200);
+				jQuery('#lvl' + level).show(200);
 			});
 		},
 		/**
 		 * @param Number sat Saturation to stick to
 		 */
-		blockSaturationInput(sat) {
+		blockSaturationInput: function(sat) {
 			$timeout(function() {
 				jQuery('#scontrol').addClass('fixed-value');
 				jQuery('#scontrol input').hide();
@@ -338,12 +330,15 @@ window.app.factory('DOM', ['jQuery', 'hueser', '$timeout', function(jQuery, hues
 		/**
 		 * @param Number lig Lightness to stick to
 		 */
-		blockLightnessInput(lig) {
+		blockLightnessInput: function(lig) {
 			$timeout(function() {
 				jQuery('#lcontrol').addClass('fixed-value');
 				jQuery('#lcontrol input').hide();
 				jQuery('#lcontrol p.fixed-hidden-value').html(lig).show();
 			}, 500);/* Promisifying cheat */
+		},
+		updateTargetColorSquare: function(h, s, l) {
+			jQuery('.targetcolor').css('background', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');
 		}
 	}
 }]);

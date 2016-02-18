@@ -34,14 +34,14 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	var maxLevel = hueser.getMaxLevel();
 
 	// Set Target HSL session variables
-	colorCookies.setTargetHSL();
+	colorCookies.generateTargetHSL(1);
 	var targetHSL = colorCookies.getTargetHSL(),
 		tH = targetHSL.H,
 		tS = targetHSL.S,
 		tL = targetHSL.L;
 
 	// Pre-generate random start HSL values (move when designing no-first-color feature)
-	var randomHSL = colorCookies.generateRandomHSL(),
+	var randomHSL = colorCookies.generateCurrentHSL(),
 		cH = randomHSL.H,// 'c' stands for 'current'
 		cS = randomHSL.S,
 		cL = randomHSL.L;
@@ -60,7 +60,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	$scope.level1status = (maxLevel >= 1 ? 'unlocked' : 'locked');
 	$scope.level2status = (maxLevel >= 2 ? 'unlocked' : 'locked');
 	$scope.level3status = (maxLevel >= 3 ? 'unlocked' : 'locked');
-	$scope.levelXstatus = (maxLevel >= 4 ? 'unlocked' : 'locked');
+	$scope.level4status = (maxLevel >= 4 ? 'unlocked' : 'locked');
 
 	$scope.playerStatus = playerStatus;
 	$scope.playerName = username;
