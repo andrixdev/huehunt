@@ -343,7 +343,7 @@ window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', 'gameVars', '$tim
 				jQuery('#scontrol').addClass('fixed-value');
 				jQuery('#scontrol input').hide();
 				jQuery('#scontrol p.fixed-hidden-value').html(sat).show();
-			}, 500);/* Promisifying cheat */
+			}, 100);/* Promisifying cheat */
 		},
 		/**
 		 * @param Number lig Lightness to stick to
@@ -353,7 +353,7 @@ window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', 'gameVars', '$tim
 				jQuery('#lcontrol').addClass('fixed-value');
 				jQuery('#lcontrol input').hide();
 				jQuery('#lcontrol p.fixed-hidden-value').html(lig).show();
-			}, 500);/* Promisifying cheat */
+			}, 100);/* Promisifying cheat */
 		},
 		updateTargetColorSquare: function(h, s, l) {
 			jQuery('.targetcolor').css('background', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');

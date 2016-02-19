@@ -92,22 +92,10 @@
 #header #performance p.value span.points {
   font-size: 30px;
 }
-/** Clue **/
-#clue {
-  flex-basis: 20%;
-  height: auto;
-  padding: 5px 0px;
-  background: #222;
-  display: none;
-}
-#clue p.hint {
-  font-size: 1em;
-}
-#clue p.which {
-  font-size: 8em;
-}
-#clue p.istoo {
-  font-size: 1.5em;
+
+/** First shot insight view **/
+#insight.firstshot {
+    background: #191919;
 }
 
 /** Interactionarea **/

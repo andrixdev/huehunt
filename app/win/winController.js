@@ -1,15 +1,5 @@
 window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', '$firebaseArray', '_', function($scope, $location, nav, colorCookies, gameVars, hueser, $firebaseArray, _) {
 
-	// Views
-	$scope.templatePaths = {
-		header: "app/header/headerView.html",
-		insight: "app/win/winInsightView.html",
-		clue: "",
-		instructions: "",
-		interactionarea: '',
-		footer: "app/footer/footerView.html"
-	};
-
 	// Get all user variables
 	var username = hueser.getUsername();
 	var roundLevel = gameVars.getSelectedLevel();
@@ -87,4 +77,15 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	$scope.tH = tH;
 	$scope.tS = tS;
 	$scope.tL = tL;
+
+	// Views
+	$scope.templatePaths = {
+		header: "app/header/headerView.html",
+		insight: "app/win/winInsightView.html",
+		clue: "",
+		instructions: "",
+		interactionarea: '',
+		footer: "app/footer/footerView.html"
+	};
+	
 }]);

@@ -1,17 +1,5 @@
 window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'hueser', 'forms', 'DOM', function($scope, $location, nav, colorCookies, hueser, forms, DOM) {
 
-	// Debug @ todo.later Remove
-	window.scopee = $scope;
-	// Views
-	$scope.templatePaths = {
-		header: 'app/header/headerView.html',
-		insight: 'app/start/startInsightView.html',
-		clue: '',
-		instructions: '',
-		interactionarea: '',
-		footer: 'app/footer/footerView.html'
-	};
-
 	// Form handling (custom service 'forms')
 	forms.handleStartForm();
 
@@ -93,5 +81,15 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	+ ".xpbar .xpliquid {"
 	+ "  width: " + (100 * sinceLastLevelXP / currentLevelNeededXP) + "%"
 	+ "}";
+
+	// Views
+	$scope.templatePaths = {
+		header: 'app/header/headerView.html',
+		insight: 'app/start/startInsightView.html',
+		clue: '',
+		instructions: '',
+		interactionarea: '',
+		footer: 'app/footer/footerView.html'
+	};
 
 }]);

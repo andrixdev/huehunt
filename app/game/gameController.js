@@ -1,17 +1,5 @@
 window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', '_', 'DOM', function($scope, $location, nav, colorCookies, gameVars, hueser, forms, _, DOM) {
 
-	// Views
-	$scope.templatePaths = {
-		header: 'app/game/gameHeaderView.html',
-		insight: 'app/game/gameInsightView.html',
-		clue: 'app/game/gameClueView.html',
-		// @todo Remove clue mechanism
-		instructions: '',
-		// @todo Remove instructions mechanism?
-		interactionarea: 'app/game/gameInteractionareaView.html',
-		footer: 'app/footer/footerView.html'
-	};
-
 	// Get all user variables
 	var username = hueser.getUsername();
 	var selectedLevel = gameVars.getSelectedLevel();
@@ -122,4 +110,21 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	$scope.cH = cH;
 	$scope.cS = cS;
 	$scope.cL = cL;
+
+	// Views
+	var insightView = 'app/game/gameInsightView.html';
+	if (ithShot == 0) {
+		insightView = 'app/game/gameFirstShotInsightView.html';
+	}
+	$scope.templatePaths = {
+		header: 'app/game/gameHeaderView.html',
+		insight: insightView,
+		clue: 'app/game/gameClueView.html',
+		// @todo Remove clue mechanism
+		instructions: '',
+		// @todo Remove instructions mechanism?
+		interactionarea: 'app/game/gameInteractionareaView.html',
+		footer: 'app/footer/footerView.html'
+	};
+
 }]);
