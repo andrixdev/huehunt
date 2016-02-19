@@ -67,7 +67,8 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	var nextLevelXP = hueser.getNextLevelXP();
 	var sinceLastLevelXP = playerXP - currentLevelXP;
 	var currentLevelNeededXP = nextLevelXP - currentLevelXP;
-	console.log(playerXP, currentLevelXP, nextLevelXP, sinceLastLevelXP, currentLevelNeededXP);
+
+	console.log('startController XP vars: ', playerXP, currentLevelXP, nextLevelXP, sinceLastLevelXP, currentLevelNeededXP);
 
 	$scope.playerStatus = playerStatus;
 	$scope.playerName = username;

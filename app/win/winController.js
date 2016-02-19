@@ -12,10 +12,10 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 
 	// Get all user variables
 	var username = hueser.getUsername();
+	var roundLevel = gameVars.getSelectedLevel();
 	var vars = gameVars.getRoundGameVars(),
 		avatarBaseHue = vars.avatarBaseHue,
-		shots = vars.shots,
-		startTime = vars.startTime,
+		performance = vars.performance,
 		roundHistory = vars.roundHistory,
 		win = vars.win,
 		saved = vars.saved;
@@ -43,8 +43,8 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 		$scope.rounds = $firebaseArray(roundsRef);
 		$scope.rounds.$add({
 			username: username,
-			shots: shots,
-			startTime: startTime,
+			roundLevel: roundLevel,
+			performance: performance,
 			targetH: tH,
 			targetS: tS,
 			targetL: tL
@@ -53,16 +53,24 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	}
 
 	// Increase player experience
-	hueser.setExperience(parseInt(experience) + 10);
+	hueser.setExperience(parseInt(experience) + parseInt(performance));
 	hueser.maybeLevelUp();
 
 	// Load highscores
 	$scope.highscores = {};
 	roundsRef.on('value', function(data) {
 		var rounds = data.val();
-		var sortedRounds = _.sortBy(rounds, function(value) {
-			return parseInt(value.shots);
+		// Remove scores that are not for this level
+		var thisLevelRounds = _.filter(rounds, function(value) {
+			return value.roundLevel == roundLevel;
 		});
+		// Sort them by ascending performance
+		var sortedRounds = _.sortBy(thisLevelRounds, function(value) {
+			return parseInt(value.performance);
+		});
+		// Put the best performances on top
+		sortedRounds = sortedRounds.reverse();
+		// Pick the very bests
 		$scope.highscores = sortedRounds.splice(0, 10);
 
 		// Notify Angular (because we use native Firebase code and not specific Angular version, so the code is not wrapped in the digest cycle by default)
@@ -73,7 +81,8 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	nav.addPath($location.path());
 
 	// Store in $scope all the necessary parameters to render the views
-	$scope.shots = shots;
+	$scope.roundLevel = roundLevel;
+	$scope.performance = performance;
 	$scope.roundHistory = roundHistory;
 	$scope.tH = tH;
 	$scope.tS = tS;

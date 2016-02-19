@@ -14,7 +14,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 
 	// Get all user variables
 	var username = hueser.getUsername();
-	var maxLevel = hueser.getMaxLevel();
+	var selectedLevel = gameVars.getSelectedLevel();
 	var avatarBaseHue = hueser.getAvatarBaseHue();
 
 	var vars = gameVars.getRoundGameVars(),
@@ -52,25 +52,38 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	gameVars.addShots(-1);
 	shots--;
 
+	console.log('shots is ' + shots);
+
+	// Distance to target
+	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
+
+	// Inscrease performance
+	var ithShot = 6 - (shots + 1);
+	var performance = 0;
+	if (ithShot != 0) {
+		var previousPerformance = gameVars.getPerformance();
+		var extraPerformance = gameVars.howMuchExtraPerformanceForThisShot(999, ithShot, dist);
+		gameVars.addPerformance(extraPerformance);
+		performance = parseInt(previousPerformance) + parseInt(extraPerformance);
+		console.log('gameController.js vars: ', performance);
+	}
+
 	// Fix saturation or lightness, or both if necessary
-	if (maxLevel == 1) {
+	if (selectedLevel == 1) {
 		DOM.blockSaturationInput(100);
 		tS = 100;
 		cS = 100;
 		DOM.blockLightnessInput(50);
 		tL = 50;
 		cL = 50;
-	} else if (maxLevel == 2) {
+	} else if (selectedLevel == 2) {
 		DOM.blockLightnessInput(50);
 		tL = 50;
 		cL = 50;
 	}
 
-	// Target distance
-	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
-	var targetDist = 25;
-	// If target reached, set win variable to true and redirect to /win
-	if (shots <= -1 || dist < targetDist) {
+	// If all shots are taken, set win variable to true and redirect to /win
+	if (shots <= -1) {
 		gameVars.setWin();
 		$location.path('/win');
 	}
@@ -104,7 +117,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	$scope.username = username;
 	$scope.shotsLoop = _.range(1, shots + 2);
 	$scope.shots = shots + 1;
-	$scope.precision = Math.round(10 * (100 - dist + targetDist)) / 10;
+	$scope.performance = performance;
 	$scope.currentURL = $location.absUrl();
 	$scope.cH = cH;
 	$scope.cS = cS;

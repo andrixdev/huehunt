@@ -67,7 +67,7 @@
 }
 #header #target p,
 #header #shotsLeft p.taken,
-#header #precision p.label {
+#header #performance p.label {
    font-size: 1.7em;
 }
 #header #shotsLeft {
@@ -85,9 +85,12 @@
    background: radial-gradient(#555, #FFF);
    border-radius: 50%;
 }
-#header #precision p.value {
+#header #performance p.value {
   height: 50px;
   font-size: 40px;
+}
+#header #performance p.value span.points {
+  font-size: 30px;
 }
 /** Clue **/
 #clue {

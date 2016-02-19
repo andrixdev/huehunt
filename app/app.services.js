@@ -76,7 +76,7 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		getMaxLevel: function() {
 			return $cookies.get('maxLevel');
 		},
-		thresholds: [0, 25, 75, 155, 5155],
+		thresholds: [0, 250, 750, 1550, 3550, 8550],
 		setExperience: function(experience) {
 			$cookies.put('experience', experience);
 		},
@@ -117,6 +117,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		selectedLevel: 1,
 		setRoundGameVars: function() {
 			$cookies.put('shots', this.roundShots[this.selectedLevel - 1]);
+			$cookies.put('performance', 0);
 			$cookies.put('startTime', new Date().getTime());
 			$cookies.putObject('roundHistory', {
 				content: []
@@ -127,6 +128,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		getRoundGameVars: function() {
 			return {
 				shots: $cookies.get('shots'),
+				performance: $cookies.get('performance'),
 				startTime: $cookies.get('startTime'),
 				roundHistory: $cookies.getObject('roundHistory'),
 				win: $cookies.get('win'),
@@ -141,6 +143,16 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		},
 		getShots: function() {
 			return $cookies.get('shots');
+		},
+		/**
+		 * @param Number howmuch Buy how much to increase performance
+		 */
+		addPerformance: function(howmuch) {
+			$cookies.put('performance', parseInt($cookies.get('performance')) + parseInt(howmuch));
+			console.log(howmuch + ' performance added.');
+		},
+		getPerformance: function() {
+			return $cookies.get('performance');
 		},
 		/**
 		 * @param int level Selected level
@@ -171,6 +183,12 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 				dS = s2 - s1,
 				dL = l2 - l1;
 			return Math.sqrt(dH*dH / (2*2) + dS*dS + dL*dL);
+		},
+		howMuchExtraPerformanceForThisShot: function(level, ithShot, distance) {
+			var extraPerformance = (100 - distance) / Math.pow(2, ithShot - 1);
+			var extraPerformance = Math.floor(Math.max(0, extraPerformance) / 3);
+			console.log(extraPerformance + ' XP earned.');
+			return extraPerformance;
 		}
 	};
 }]);

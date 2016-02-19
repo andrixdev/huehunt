@@ -5,7 +5,7 @@
 		<p>HSL({{tH}}, {{tS}}%, {{tL}}%)</p>
 	</div>
 	<div id='shotstaken'>
-		<p>You took {{shots}} shots.</p>
+		<p>You scored {{performance}} points.</p>
 		<div id='shotcolors' class='flexrow' >
 			<div ng-repeat="color in roundHistory.content" class='shotcolor' style='background: hsl({{color.H}}, {{color.S}}%, {{color.L}}%)'></div>
 		</div>
@@ -16,10 +16,11 @@
 	</div>
 	<div id='highscores'>
 		<h2>Hall of fame</h2>
+		<h3>Level {{ roundLevel }}</h3>
 		<div ng-repeat='score in highscores' class='score flexrow'>
 			<p class='username'>{{score.username}}</p>
 			<div class='shotcolor' style='background: hsl({{score.targetH}}, {{score.targetS}}%, {{score.targetL}}%)'></div>
-			<p class='shotscore'>{{score.shots}} shots</p>
+			<p class='performance'>{{score.performance}} <span class='points'>points</span></p>
 		</div>
 	</div>
 </div>

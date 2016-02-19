@@ -196,6 +196,9 @@ img.huecircle {
   margin-left: 3%;
   width: 30%;
 }
+#lvl4 .reminder p {
+  font-size: 3.7em;
+}
 
 /** Ready? **/
 #ready.unknown #playerinfo {
