@@ -97,6 +97,30 @@
 #insight.firstshot {
     background: #191919;
 }
+#insight.firstshot p {
+  font-size: 1.5em;
+  color: #aaa;
+  margin: 20px;
+}
+#insight.firstshot p.questionmark {
+  position: absolute;
+  top: -25px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 20em;
+  color: #222;
+  font-family: Arial;
+  z-index: 2;
+}
+#insight.firstshot > * {
+  z-index: 3;
+}
+#insight.firstshot .targetcolor {
+  width: 80px;
+  height: 80px;
+}
 
 /** Interactionarea **/
 #interactionarea {
