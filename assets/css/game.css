@@ -144,7 +144,8 @@
 }
 #controls > div input,
 #controls > div.fixed-value p.fixed-hidden-value,
-#controls > div > p.percent {
+#controls > div > p.percent,
+#hcontrol p.degrees {
   display: inline-block;
   vertical-align: middle;
 }
