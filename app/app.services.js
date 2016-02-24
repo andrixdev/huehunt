@@ -1,3 +1,7 @@
+// Cookies last 1 year in HueHunt
+var now = new Date();
+window.app.cookieExpires = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
+
 // Cookie service for target colors
 window.app.factory('colorCookies', ['$cookies', function($cookies) {
 	return {
@@ -16,9 +20,9 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 			} else { }
 
 			// Save in cookies
-			$cookies.put('targetH', targetH);
-			$cookies.put('targetS', targetS);
-			$cookies.put('targetL', targetL);
+			$cookies.put('targetH', targetH, {expires: window.app.cookieExpires});
+			$cookies.put('targetS', targetS, {expires: window.app.cookieExpires});
+			$cookies.put('targetL', targetL, {expires: window.app.cookieExpires});
 		},
 		getTargetHSL: function() {
 			return {
@@ -58,39 +62,37 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 window.app.factory('hueser', ['$cookies', function($cookies) {
 	return {
 		setUsername: function(username) {
-			$cookies.put('username', username);
+			$cookies.put('username', username, {expires: window.app.cookieExpires});
 		},
 		getUsername: function() {
 			return $cookies.get('username');
 		},
 
 		setAvatarBaseHue: function() {
-			$cookies.put('avatarBaseHue', Math.floor(Math.random() * 360));
+			$cookies.put('avatarBaseHue', Math.floor(Math.random() * 360), {expires: window.app.cookieExpires});
 		},
 		getAvatarBaseHue: function() {
 			return $cookies.get('avatarBaseHue');
 		},
 		setMaxLevel: function(maxLevel) {
-			$cookies.put('maxLevel', maxLevel);
+			$cookies.put('maxLevel', maxLevel, {expires: window.app.cookieExpires});
 		},
 		getMaxLevel: function() {
 			return $cookies.get('maxLevel');
 		},
 		thresholds: [0, 250, 750, 1550, 3550, 8550],
 		setExperience: function(experience) {
-			$cookies.put('experience', experience);
+			$cookies.put('experience', experience, {expires: window.app.cookieExpires});
 		},
 		getExperience: function() {
 			return $cookies.get('experience');
 		},
 		getNextLevelXP: function() {
 			var nextLevel = parseInt(this.getMaxLevel()) + 1;
-			console.log('nextLevel is ', nextLevel);
 			return this.thresholds[nextLevel - 1];
 		},
 		getCurrentLevelXP: function() {
 			var currentLevel = parseInt(this.getMaxLevel());
-			console.log('currentLevel is ', currentLevel);
 			return this.thresholds[currentLevel - 1];
 		},
 		maybeLevelUp: function() {
@@ -116,14 +118,14 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		roundShots: [6,6,6,3],
 		selectedLevel: 1,
 		setRoundGameVars: function() {
-			$cookies.put('shots', this.roundShots[this.selectedLevel - 1]);
-			$cookies.put('performance', 0);
-			$cookies.put('startTime', new Date().getTime());
+			$cookies.put('shots', this.roundShots[this.selectedLevel - 1], {expires: window.app.cookieExpires});
+			$cookies.put('performance', 0, {expires: window.app.cookieExpires});
+			$cookies.put('startTime', new Date().getTime(), {expires: window.app.cookieExpires});
 			$cookies.putObject('roundHistory', {
 				content: []
-			});
-			$cookies.put('win', 'false');//Cookies are strings
-			$cookies.put('saved', 'false');
+			}, {expires: window.app.cookieExpires});
+			$cookies.put('win', 'false', {expires: window.app.cookieExpires});//Cookies are strings
+			$cookies.put('saved', 'false', {expires: window.app.cookieExpires});
 		},
 		getRoundGameVars: function() {
 			return {
@@ -139,7 +141,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		 * @param Number howmany Number of shots to add
 		 */
 		addShots: function(howmany) {
-			$cookies.put('shots', parseInt($cookies.get('shots')) + howmany);
+			$cookies.put('shots', parseInt($cookies.get('shots')) + howmany, {expires: window.app.cookieExpires});
 		},
 		getShots: function() {
 			return $cookies.get('shots');
@@ -148,8 +150,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		 * @param Number howmuch Buy how much to increase performance
 		 */
 		addPerformance: function(howmuch) {
-			$cookies.put('performance', parseInt($cookies.get('performance')) + parseInt(howmuch));
-			console.log(howmuch + ' performance added.');
+			$cookies.put('performance', parseInt($cookies.get('performance')) + parseInt(howmuch), {expires: window.app.cookieExpires});
 		},
 		getPerformance: function() {
 			return $cookies.get('performance');
@@ -169,13 +170,13 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		addRoundHistory: function(score) {
 			var hist = $cookies.getObject('roundHistory');
 			hist.content.push(score);
-			$cookies.putObject('roundHistory', hist);
+			$cookies.putObject('roundHistory', hist, {expires: window.app.cookieExpires});
 		},
 		setWin: function() {
-			$cookies.put('win', 'true');
+			$cookies.put('win', 'true', {expires: window.app.cookieExpires});
 		},
 		setSaved: function() {
-			$cookies.put('saved', 'true');
+			$cookies.put('saved', 'true', {expires: window.app.cookieExpires});
 		},
 		getColorDistance: function(h1, s1, l1, h2, s2, l2) {
 			var D = 0;
@@ -187,7 +188,6 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		howMuchExtraPerformanceForThisShot: function(level, ithShot, distance) {
 			var extraPerformance = (100 - distance) / Math.pow(2, ithShot - 1);
 			var extraPerformance = Math.floor(Math.max(0, extraPerformance) / 3);
-			console.log(extraPerformance + ' XP earned.');
 			return extraPerformance;
 		}
 	};
@@ -209,7 +209,7 @@ window.app.factory('nav', ['$cookies', function($cookies) {
 			else {
 				nav.content.push(path);
 			}
-			$cookies.putObject('nav', nav);
+			$cookies.putObject('nav', nav, {expires: window.app.cookieExpires});
 		},
 		getLastPath: function() {
 			var nav = $cookies.getObject('nav');
@@ -224,7 +224,7 @@ window.app.factory('nav', ['$cookies', function($cookies) {
 			var nav = {
 				content: []
 			};
-			$cookies.putObject('nav', nav);
+			$cookies.putObject('nav', nav, {expires: window.app.cookieExpires});
 		}
 	};
 }]);
