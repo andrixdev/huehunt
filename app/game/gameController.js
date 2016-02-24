@@ -29,31 +29,30 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		cS = current[2],
 		cL = current[3];
 
-	// Add new HSL set to history and to navigation memory service
-	gameVars.addRoundHistory({
-		H: cH,
-		S: cS,
-		L: cL
-	});
-
 	// Update shots counter
 	gameVars.addShots(-1);
 	shots--;
+	var ithShot = 6 - (shots + 1);
 
-	console.log('shots is ' + shots);
+	// Add new HSL set to history and to navigation memory service
+	if (ithShot != 0) {
+		gameVars.addRoundHistory({
+			H: cH,
+			S: cS,
+			L: cL
+		});
+	}
 
 	// Distance to target
 	var dist = gameVars.getColorDistance(cH, cS, cL, tH, tS, tL);
 
 	// Inscrease performance
-	var ithShot = 6 - (shots + 1);
 	var performance = 0;
 	if (ithShot != 0) {
 		var previousPerformance = gameVars.getPerformance();
 		var extraPerformance = gameVars.howMuchExtraPerformanceForThisShot(999, ithShot, dist);
 		gameVars.addPerformance(extraPerformance);
 		performance = parseInt(previousPerformance) + parseInt(extraPerformance);
-		console.log('gameController.js vars: ', performance);
 	}
 
 	// Fix saturation or lightness, or both if necessary
