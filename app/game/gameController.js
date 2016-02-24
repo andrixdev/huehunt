@@ -1,4 +1,4 @@
-window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', '_', 'DOM', function($scope, $location, nav, colorCookies, gameVars, hueser, forms, _, DOM) {
+window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', '_', 'DOM', '$timeout', function($scope, $location, nav, colorCookies, gameVars, hueser, forms, _, DOM, $timeout) {
 
 	// Get all user variables
 	var username = hueser.getUsername();
@@ -32,7 +32,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	// Update shots counter
 	gameVars.addShots(-1);
 	shots--;
-	var ithShot = 6 - (shots + 1);
+	var ithShot = gameVars.roundShots[selectedLevel - 1] - (shots + 1);
 
 	// Add new HSL set to history and to navigation memory service
 	if (ithShot != 0) {
@@ -55,7 +55,27 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		performance = parseInt(previousPerformance) + parseInt(extraPerformance);
 	}
 
-	// Fix saturation or lightness, or both if necessary
+	// Save current path
+	nav.addPath($location.path());
+
+	// If all shots are taken, set win variable to true and redirect to /win
+	if (shots <= -1) {
+		gameVars.setWin();
+		$location.path('/win');
+	}
+	// If target not reached, display new game phase
+	else {
+
+	}
+
+	// View things 1 - Replace view parametes by ??? if first shot (currently not accepted by browser as input type is number)
+	if (ithShot == 0) {
+		cH = '???';
+		cS = '??';
+		cL = '??';
+	}
+
+	// View things 2 - Fix saturation or lightness, or both if necessary
 	if (selectedLevel == 1) {
 		DOM.blockSaturationInput(100);
 		tS = 100;
@@ -69,23 +89,15 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 		cL = 50;
 	}
 
-	// If all shots are taken, set win variable to true and redirect to /win
-	if (shots <= -1) {
-		gameVars.setWin();
-		$location.path('/win');
-	}
-	// If target not reached, display new game phase
-	else {
-
-	}
-
-	// Handle interactionarea with 'forms' custom service
+	// View things 3 - Handle interactionarea with 'forms' custom service
 	forms.handleGameForm();
 
-	// Save current path
-	nav.addPath($location.path());
+	// View thing 4 - Force focus on first input
+	$timeout(function() {
+		DOM.inputFocus();
+	}, 100);/* Promisifying cheat */
 
-	// Store in $scope all the remaining necessary parameters to render the views
+	// View things 5 - Store in $scope all the remaining necessary parameters to render the views
 	$scope.style = ".targetcolor {"
 	+ "  background: hsl(" + tH + ", " + tS + "%, " + tL + "%);"
 	+ "}"
@@ -96,10 +108,14 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	+ ".avatar .square:nth-of-type(2),"
 	+ ".avatar .square:nth-of-type(3) {"
 	+ "  background: hsl(" + (avatarBaseHue - 15) + ", 80%, 50%);"
-	+ "}"
-	+ "#insight {"
-	+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
 	+ "}";
+
+	// Add color background to #insight if not first shot
+	if (ithShot != 0) {
+		$scope.style += "#insight {"
+		+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
+		+ "}";
+	}
 
 	$scope.username = username;
 	$scope.shotsLoop = _.range(1, shots + 2);

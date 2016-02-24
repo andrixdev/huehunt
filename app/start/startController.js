@@ -1,4 +1,4 @@
-window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'hueser', 'forms', 'DOM', function($scope, $location, nav, colorCookies, hueser, forms, DOM) {
+window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'hueser', 'forms', 'DOM', '$timeout', function($scope, $location, nav, colorCookies, hueser, forms, DOM, $timeout) {
 
 	// Form handling (custom service 'forms')
 	forms.handleStartForm();
@@ -16,34 +16,30 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		hueser.setAvatarBaseHue();
 		playerStatus = 'unknown';
 	}
+	/* If you feel like cheating (for dev purposes of course)
+	hueser.setExperience(9999);
+	hueser.setMaxLevel(4);
+	*/
 
 	// Get avatar base hue and max level
 	var avatarBaseHue = hueser.getAvatarBaseHue();
 	var maxLevel = hueser.getMaxLevel();
 
-	// Set Target HSL session variables
-	colorCookies.generateTargetHSL(1);
+	// Force activation of max possible level
+	$timeout(function() {
+		DOM.tabClickAction(maxLevel);
+	}, 100);/* Promisifying cheat */
+
 	var targetHSL = colorCookies.getTargetHSL(),
 		tH = targetHSL.H,
 		tS = targetHSL.S,
 		tL = targetHSL.L;
-
-	// Pre-generate random start HSL values (move when designing no-first-color feature)
-	var randomHSL = colorCookies.generateCurrentHSL(),
-		cH = randomHSL.H,// 'c' stands for 'current'
-		cS = randomHSL.S,
-		cL = randomHSL.L;
 
 	// Clear previous paths in nav service (prevents cookie overload)
 	nav.clearPaths();
 
 	// Save current path
 	nav.addPath($location.path());
-
-	// Store in $scope all the remaining necessary parameters to render the views
-	$scope.cH = cH;
-	$scope.cS = cS;
-	$scope.cL = cL;
 
 	$scope.level1status = (maxLevel >= 1 ? 'unlocked' : 'locked');
 	$scope.level2status = (maxLevel >= 2 ? 'unlocked' : 'locked');
@@ -55,8 +51,6 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	var nextLevelXP = hueser.getNextLevelXP();
 	var sinceLastLevelXP = playerXP - currentLevelXP;
 	var currentLevelNeededXP = nextLevelXP - currentLevelXP;
-
-	console.log('startController XP vars: ', playerXP, currentLevelXP, nextLevelXP, sinceLastLevelXP, currentLevelNeededXP);
 
 	$scope.playerStatus = playerStatus;
 	$scope.playerName = username;
@@ -74,9 +68,6 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	+ ".avatar .square:nth-of-type(2),"
 	+ ".avatar .square:nth-of-type(3) {"
 	+ "  background: hsl(" + (avatarBaseHue - 15) + ", 80%, 50%);"
-	+ "}"
-	+ "#insight {"
-	+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
 	+ "}"
 	+ ".xpbar .xpliquid {"
 	+ "  width: " + (100 * sinceLastLevelXP / currentLevelNeededXP) + "%"

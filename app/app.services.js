@@ -31,7 +31,7 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 				L: $cookies.get('targetL')
 			};
 		},
-		generateCurrentHSL: function() {
+		generateCurrentHSL: function() {/* @todo Remove this unused method? */
 			var tH = $cookies.get('targetH');
 			var tS = $cookies.get('targetS');
 			var tL = $cookies.get('targetL');
@@ -334,6 +334,12 @@ window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', 'gameVars', '$tim
 			jQuery('#levelcontents > div').hide(200, function() {
 				jQuery('#lvl' + level).show(200);
 			});
+		},
+		/**
+		 * @param int level
+		 */
+		inputFocus: function() {
+			jQuery('#hcontrol input').focus();
 		},
 		/**
 		 * @param Number sat Saturation to stick to
