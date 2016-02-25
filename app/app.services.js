@@ -276,7 +276,10 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 					var h = jQuery('#hcontrol input').val();
 					var s = jQuery('#scontrol input').val();
 					var l = jQuery('#lcontrol input').val();
-					location = location.pathname + '#/' + h + '/' + s + '/' + l;
+					var regexInt = /^[-+]?\d+$/;
+					if (regexInt.test(h) && regexInt.test(s) && regexInt.test(l)) {
+						location = location.pathname + '#/' + h + '/' + s + '/' + l;
+					}
 				});
 				jQuery('#hcontrol input, #scontrol input, #lcontrol input').off().on('keyup', function(event) {
 					if (event.which == 13) {/* Enter key */
