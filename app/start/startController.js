@@ -16,7 +16,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		hueser.setAvatarBaseHue();
 		playerStatus = 'unknown';
 	}
-	/* If you feel like cheating (for dev purposes of course)
+	/*
 	hueser.setExperience(9999);
 	hueser.setMaxLevel(4);
 	*/
@@ -27,7 +27,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 
 	// Force activation of max possible level
 	$timeout(function() {
-		DOM.tabClickAction(maxLevel);
+		DOM.tabClickAction(maxLevel, true);
 	}, 100);/* Promisifying cheat */
 
 	var targetHSL = colorCookies.getTargetHSL(),

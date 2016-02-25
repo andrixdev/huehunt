@@ -58,6 +58,30 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	// Save current path
 	nav.addPath($location.path());
 
+	// If player is really close to target, terminate round with max XP for remaining shots
+	var winDist = 3;
+	if (dist <= winDist) {
+		for (var j = shots - 1; j >= -1 ; j--) {
+			// Get ithShot
+			ithShotLoop = gameVars.roundShots[selectedLevel - 1] - (j + 1);
+			// Increase performance
+			var previousPerformance = gameVars.getPerformance();
+			var extraPerformance = gameVars.howMuchExtraPerformanceForThisShot(999, ithShotLoop, 0);// Zero distance
+			gameVars.addPerformance(extraPerformance);
+			performance = parseInt(previousPerformance) + parseInt(extraPerformance);
+
+			// Add the target color to history
+			gameVars.addRoundHistory({
+				H: cH,
+				S: cS,
+				L: cL
+			});
+
+			// Decrease shot count
+			shots--;
+		}
+	}
+
 	// If all shots are taken, set win variable to true and redirect to /win
 	if (shots <= -1) {
 		gameVars.setWin();

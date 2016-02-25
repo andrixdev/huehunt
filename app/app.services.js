@@ -180,7 +180,8 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		},
 		getColorDistance: function(h1, s1, l1, h2, s2, l2) {
 			var D = 0;
-			var dH = h2 - h1,// 'd' stands for 'delta'
+			var dH = Math.min(Math.abs(h2 - h1), Math.abs(h2 - h1 + 360), Math.abs(h2 - h1 - 360));// "Circular" distance
+			console.log('dH is ' + dH);
 				dS = s2 - s1,
 				dL = l2 - l1;
 			return Math.sqrt(dH*dH / (2*2) + dS*dS + dL*dL);
@@ -294,26 +295,27 @@ window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', 'gameVars', '$tim
 			var self = this;
 			$timeout(function() {
 				jQuery('#tab1').off().on('click', function() {
-					self.tabClickAction(1);
+					self.tabClickAction(1, false);
 				});
 				jQuery('#tab2').off().on('click', function() {
-					self.tabClickAction(2);
+					self.tabClickAction(2, false);
 				});
 				jQuery('#tab3').off().on('click', function() {
-					self.tabClickAction(3);
+					self.tabClickAction(3, false);
 				});
 				jQuery('#tab4').off().on('click', function() {
-					self.tabClickAction(4);
+					self.tabClickAction(4, false);
 				});
 			}, 1000);/* Promisifying cheat */
 		},
 		/**
 		 * @param int level
+		 * @param bool force Set to true if re-clicking on the already active tab regenerates target color
 		 */
-		tabClickAction: function(level) {
+		tabClickAction: function(level, force) {
 			var thisTab = jQuery('#tab' + level);
 			var thisLevel = jQuery('#lvl' + level);
-			if (thisTab.hasClass('unlocked') && !thisTab.hasClass('active')) {
+			if ((thisTab.hasClass('unlocked') && !thisTab.hasClass('active')) || force) {
 				// Hide other levels and deactivate tab
 				jQuery('#levelcontents > div').css('display', 'none');
 				jQuery('#leveltabs > div').removeClass('active');
