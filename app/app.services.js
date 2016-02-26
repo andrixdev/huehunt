@@ -368,6 +368,26 @@ window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', 'gameVars', '$tim
 		},
 		updateTargetColorSquare: function(h, s, l) {
 			jQuery('.targetcolor').css('background', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');
+		},
+		animateShotsInJS: function() {
+			var shotsHeight = jQuery('#header #shotsLeft .shots').height();
+			var shotsWidth = jQuery('#header #shotsLeft .shots').width();
+			var xC = shotsWidth / 2;
+			var yC = shotsHeight / 2;
+			var allShots = jQuery('#header #shotsLeft .shot');
+			var shotRad = allShots.height() / 2;
+			var rotRad = shotsHeight/2 - shotRad;
+			var nbShots = allShots.length;
+			allShots.css('position', 'absolute');
+			var t = 0;
+			setInterval(function() {
+			    t++;
+			    for (var s = 1; s <= nbShots; s++) {
+			        var thisShot = jQuery('#header #shotsLeft .shot:nth-of-type(' + s + ')');
+			        thisShot.css('left', xC + rotRad * Math.cos(2*Math.PI / nbShots * s + t/(10*nbShots)) - shotRad + 'px');
+			        thisShot.css('top', yC - rotRad * Math.sin(2*Math.PI / nbShots * s + t/(10*nbShots)) - shotRad + 'px');
+			    }
+			}, 50);
 		}
 	}
 }]);

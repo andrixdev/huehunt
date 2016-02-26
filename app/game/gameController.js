@@ -134,12 +134,33 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	+ "  background: hsl(" + (avatarBaseHue - 15) + ", 80%, 50%);"
 	+ "}";
 
-	// Add color background to #insight if not first shot
+	// View things 6 - Add color background to #insight if not first shot
 	if (ithShot != 0) {
 		$scope.style += "#insight {"
 		+ "  background: hsl(" + cH + ", " + cS + "%, " + cL + "%);"
 		+ "}";
 	}
+
+	// View things 7 - Give number of last shots to header
+	$scope.style += "#header #shotsLeft .shots::after {"
+	+ "content: '" + (parseInt(shots) + 1) + "'"
+	+ "}";
+
+	// View things 8 - Animate shots
+	for (var l = 0; l < shots + 1; l++) {
+		var angle = 360 / (shots + 1) * l;
+		console.log(angle);
+		$scope.style += "#header #shotsLeft p.shot:nth-of-type(" + (l + 1) + ") {"
+		+ "  transform: rotate(" + angle + "deg);"
+		+ "  -webkit-animation: rot-" + angle + " " + (1 + 1.5 * shots) + "s linear infinite;"
+		+ "  animation: rot-" + angle + " " + (1 + 1.5 * shots) + "s linear infinite;"
+		+ "}"
+		+ "@-webkit-keyframes rot-" + angle + " { 100% { -webkit-transform: rotate(" + (360 + angle) + "deg); } }"
+		+ "@keyframes rot-" + angle + " { 100% { transform: rotate(" + (360 + angle) + "deg); } }";
+	}
+	/*$timeout(function() {
+		DOM.animateShotsinJS();
+	}, 100);*/
 
 	$scope.username = username;
 	$scope.shotsLoop = _.range(1, shots + 2);
