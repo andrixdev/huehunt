@@ -182,16 +182,11 @@ img.huecircle {
   100% { background: hsl(210, 100%, 50%); }
 }
 
-#lvl2 .reminder p:nth-of-type(1) {
-  width: 30%;
-}
-#lvl2 .reminder p:nth-of-type(2) {
-  margin-left: 3%;
-  width: 30%;
-}
+#lvl2 .reminder p:nth-of-type(1),
 #lvl3 .reminder p:nth-of-type(1) {
   width: 30%;
 }
+#lvl2 .reminder p:nth-of-type(2),
 #lvl3 .reminder p:nth-of-type(2) {
   margin-left: 3%;
   width: 30%;
