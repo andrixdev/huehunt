@@ -81,8 +81,15 @@ p {
 .huehunt-results {
   height: 100%;
   width: 100%;
+  background: linear-gradient(hsl(0, 0%, 20%), hsl(0, 0%, 10%)) repeat scroll 0% 0%;
+  .loading-icon {
+    height: 100%;
+    p {
+      font-size: 100px;
+    }
+  }
   .side-menu {
-    background: linear-gradient(to right, #555, #292929);
+    display: none;
     background: linear-gradient(hsl(200, 100%, 50%), hsl(200, 100%, 25%)) repeat scroll 0% 0%;
     box-shadow: #555 0px 0px 15px;
     width: 20%;
@@ -93,7 +100,7 @@ p {
       font-size: 20px;
       text-transform: uppercase;
       font-weight: bold;
-      border-bottom: solid 2px #222;
+      border-bottom: solid 2px #151515;
       cursor: pointer;
       &:hover,
       &.selected {
@@ -103,11 +110,19 @@ p {
     }
   }
   .content {
+    display: none;
     position: absolute;
     left: 20%;
     top: 0;
     width: 80%;
     height: 100%;
+    & > div {
+      display: none;
+      height: 100%;
+      & > div {
+        height: 100%;
+      }
+    }
     .tile-container {
       width: 50%;
       height: 50%;

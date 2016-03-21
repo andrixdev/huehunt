@@ -34,13 +34,19 @@ function getData() {
 }
 
 function buildUI() {
+  // Content-1 - Players
 
+  // Content-1 - Rounds
 }
 function showUI() {
   // Undo loading icon
-
+  jQuery('.huehunt-results .loading-icon').css('display', 'none');
   // Display UI
-
+  jQuery('.huehunt-results .side-menu').show();
+  jQuery('.huehunt-results .content').show();
+  // Show first tab content
+  jQuery('.huehunt-results .content .content-1').show();
+  jQuery('.huehunt-results .side-menu p.tab:nth-of-type(1)').addClass('selected');
 }
 
 jQuery(document).ready(function() {
@@ -48,8 +54,8 @@ jQuery(document).ready(function() {
   jQuery('.huehunt-results').on('click', '.side-menu p.tab', function() {
     var tabNumber = 1 + jQuery(this).index('.side-menu p.tab');
     // Show according content
-    jQuery('.huehunt-results .content').hide();
-    jQuery('.huehunt-results .content.content-' + tabNumber).show();
+    jQuery('.huehunt-results .content > div').hide();
+    jQuery('.huehunt-results .content .content-' + tabNumber).show();
     // Highlight clicked tab
     jQuery('.huehunt-results .side-menu p.tab').removeClass('selected');
     jQuery(this).addClass('selected');
