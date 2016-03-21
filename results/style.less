@@ -82,10 +82,24 @@ p {
   height: 100%;
   width: 100%;
   .side-menu {
-    background: linear-gradient(to right, #F4F4F4, #DDD);
+    background: linear-gradient(to right, #555, #292929);
+    background: linear-gradient(hsl(200, 100%, 50%), hsl(200, 100%, 25%)) repeat scroll 0% 0%;
     box-shadow: #555 0px 0px 15px;
     width: 20%;
     height: 100%;
+    p.tab {
+      padding: 10px 0;
+      color: #181818;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-bottom: solid 2px #222;
+      cursor: pointer;
+      &:hover {
+        background: #151515;
+        color: hsl(200, 100%, 50%);
+      }
+    }
   }
   .content {
     position: absolute;
@@ -96,10 +110,11 @@ p {
     .tile-container {
       width: 50%;
       height: 50%;
-      background: red;
+      background: #333;
       position: relative;
-      &:nth-child(odd) {
-        background: pink;
+      &:nth-child(2),
+      &:nth-child(3) {
+        background: #222;
       }
       .data-tile {
         position: absolute;
@@ -110,17 +125,21 @@ p {
         bottom: 0;
         p.data-label {
           font-size: 20px;
-          color: #999;
+          height: 30px;
+          color: #DDD;
+          text-shadow: rgba(0, 0, 0, 0.5) 0px 0.5px 0px;
         }
         .data-data {
-          background: linear-gradient(to right, #F4F4F4, #DDD);
           border-radius: 3px;
           width: 100px;
           height: 66px;
+          background: linear-gradient(hsl(200, 100%, 50%), hsl(200, 100%, 35%)) repeat scroll 0% 0%;
         }
         .data-data p {
-          font-size: 30px;
-          color: #555;
+          font-size: 40px;
+          color: #181818;
+          font-weight: bold;
+          text-shadow: rgba(255, 255, 255, 0.5) 0px 0.5px 0px;
         }
       }
     }
