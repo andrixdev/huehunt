@@ -34,7 +34,7 @@ function getData() {
 }
 
 function buildUI() {
-  
+
 }
 function showUI() {
   // Undo loading icon
@@ -42,3 +42,16 @@ function showUI() {
   // Display UI
 
 }
+
+jQuery(document).ready(function() {
+  // Menu tabs
+  jQuery('.huehunt-results').on('click', '.side-menu p.tab', function() {
+    var tabNumber = 1 + jQuery(this).index('.side-menu p.tab');
+    // Show according content
+    jQuery('.huehunt-results .content').hide();
+    jQuery('.huehunt-results .content.content-' + tabNumber).show();
+    // Highlight clicked tab
+    jQuery('.huehunt-results .side-menu p.tab').removeClass('selected');
+    jQuery(this).addClass('selected');
+  });
+});
