@@ -5,8 +5,37 @@
  * @since 03-2016
  */
 
-var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
 var rounds;
+var players = [];
+
+rounds = {
+  "KBxE015HXj3bV0jEenb" : {
+    "performance" : "41",
+    "roundLevel" : "1",
+    "targetH" : "268",
+    "targetL" : "50",
+    "targetS" : "100",
+    "username" : "Lindrox"
+  },
+  "KBxEDPJXxshVCk0Sl1t" : {
+    "performance" : "62",
+    "roundLevel" : "1",
+    "targetH" : "26",
+    "targetL" : "50",
+    "targetS" : "100",
+    "username" : "Lindrox"
+  },
+  "KCu4Ucc0bW5kjMf3mY1" : {
+    "performance" : "59",
+    "roundLevel" : "1",
+    "targetH" : "318",
+    "targetL" : "50",
+    "targetS" : "100",
+    "username" : "Icosacid"
+  }
+};
+
+var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
 
 myFirebaseRef.on("value", function(data) {
   rounds = data.val();
@@ -14,6 +43,7 @@ myFirebaseRef.on("value", function(data) {
   buildUI();
   showUI();
 });
+
 
 function getData() {
   // Remove scores that are not for this level
@@ -31,12 +61,33 @@ function getData() {
   // Pick the very bests
   var bestRounds = sortedRounds.splice(0, 10);
   console.log(bestRounds);
+
+  // Content-1 - Players
+  for (var prop in rounds) {
+    // Get username
+    var username = rounds[prop].username;
+    // Check if already in players
+    var alreadyInPlayers = false;
+    for (var j = 0; j < players.length; j++) {
+      if (username == players[j]) {
+        alreadyInPlayers = true;
+      }
+    }
+    // If so, don't add player to list, otherwise do
+    if (!alreadyInPlayers) {
+      players.push(username);
+    }
+  }
 }
 
 function buildUI() {
   // Content-1 - Players
-
+  jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
   // Content-1 - Rounds
+  console.log(rounds);
+  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(Object.keys(rounds).length);
+  // ...
+
 }
 function showUI() {
   // Undo loading icon
