@@ -80,7 +80,7 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		getMaxLevel: function() {
 			return $cookies.get('maxLevel');
 		},
-		thresholds: [0, 250, 750, 1550, 3550, 8550],
+		thresholds: [0, 750, 1500, 3900, 9900, 24900],
 		setExperience: function(experience) {
 			$cookies.put('experience', experience, {expires: window.app.cookieExpires});
 		},
