@@ -188,7 +188,8 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		},
 		howMuchExtraPerformanceForThisShot: function(level, ithShot, distance) {
 			var extraPerformance = (100 - distance) / Math.pow(2, ithShot - 1);
-			var extraPerformance = Math.floor(Math.max(0, extraPerformance) / 3);
+			var multiplicator = 1;
+			extraPerformance = Math.floor(Math.max(0, extraPerformance) * multiplicator);
 			return extraPerformance;
 		}
 	};

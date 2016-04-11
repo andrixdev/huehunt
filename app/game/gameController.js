@@ -149,7 +149,6 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	// View things 8 - Animate shots
 	for (var l = 0; l < shots + 1; l++) {
 		var angle = 360 / (shots + 1) * l;
-		console.log(angle);
 		$scope.style += "#header #shotsLeft p.shot:nth-of-type(" + (l + 1) + ") {"
 		+ "  transform: rotate(" + angle + "deg);"
 		+ "  -webkit-animation: rot-" + angle + " " + (1 + 1.5 * shots) + "s linear infinite;"

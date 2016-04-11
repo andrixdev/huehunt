@@ -44,7 +44,7 @@ myFirebaseRef.on("value", function(data) {
   showUI();
 });
 
-
+/* Base rendering functions */
 function getData() {
   // Remove scores that are not for this level
   var thisLevelRounds = _.filter(rounds, function(value) {
@@ -79,7 +79,6 @@ function getData() {
     }
   }
 }
-
 function buildUI() {
   // Content-1 - Players
   jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
@@ -98,6 +97,23 @@ function showUI() {
   // Show first tab content
   jQuery('.huehunt-results .content .content-1').show();
   jQuery('.huehunt-results .side-menu p.tab:nth-of-type(1)').addClass('selected');
+}
+
+/* Data processing functions */
+function filterHueRange(minHue, maxHue) {
+  [355, 05] ->
+}
+function isInHueRange(inputHue, minHue, maxHue) {
+  // Only accept positive velues between 0 and 360
+  if (minHue < maxHue) {
+    if (inputHue >= minHue && inputHue <= maxHue) {
+      return true;
+    } else return false;
+  } else {
+    if (inputHue >= minHue || inputHue <= maxHue) {
+      return true;
+    } else return false;
+  }
 }
 
 jQuery(document).ready(function() {

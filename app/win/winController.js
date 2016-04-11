@@ -37,7 +37,8 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 			performance: performance,
 			targetH: tH,
 			targetS: tS,
-			targetL: tL
+			targetL: tL,
+			dataVersion: 1
 		});
 		gameVars.setSaved();
 	}
@@ -87,5 +88,5 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 		interactionarea: '',
 		footer: "app/footer/footerView.html"
 	};
-	
+
 }]);
