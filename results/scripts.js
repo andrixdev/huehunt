@@ -101,7 +101,7 @@ function showUI() {
 
 /* Data processing functions */
 function filterHueRange(minHue, maxHue) {
-  [355, 05] ->
+
 }
 function isInHueRange(inputHue, minHue, maxHue) {
   // Only accept positive velues between 0 and 360
@@ -114,6 +114,11 @@ function isInHueRange(inputHue, minHue, maxHue) {
       return true;
     } else return false;
   }
+}
+function isPlayer(inputPlayerName, playerNameToMatch) {
+  if (inputPlayerName == playerNameToMatch) {
+    return true;
+  } else return false;
 }
 
 jQuery(document).ready(function() {

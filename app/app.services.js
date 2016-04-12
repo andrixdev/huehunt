@@ -184,7 +184,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			console.log('dH is ' + dH);
 				dS = s2 - s1,
 				dL = l2 - l1;
-			return Math.sqrt(dH*dH / (2*2) + dS*dS + dL*dL);
+			return Math.sqrt(dH*dH / (1*1) + dS*dS + dL*dL);
 		},
 		howMuchExtraPerformanceForThisShot: function(level, ithShot, distance) {
 			var extraPerformance = (100 - distance) / Math.pow(2, ithShot - 1);
