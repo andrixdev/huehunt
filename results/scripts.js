@@ -7,11 +7,18 @@
 
 var rounds;
 var players = [];
-var acidLevel1basePerf;
-var acidLevel1learning;
-var acidLevel1finalLearning;
-var acidLevel1roundsNumber;
-var acidLevel1learningPace;
+var bestRounds;
+
+var focus = {};
+focus.player = 'Lindrox';
+focus.level = 1;
+focus.minHue = 120;
+focus.maxHue = 180;
+focus.basePerf = '';
+focus.learning = '';
+focus.finalLearning = '';
+focus.roundsNumber = '';
+focus.learningPace = '';
 
 rounds = {
   "KBxE015HXj3bV0jEenb" : {
@@ -51,20 +58,19 @@ myFirebaseRef.on("value", function(data) {
 
 /* Base rendering functions */
 function getData() {
-  // Remove scores that are not for this level
+  // Content 0 - Highscores
   var thisLevelRounds = _.filter(rounds, function(value) {
+    // Remove scores that are not for this level
     return value.roundLevel == 1;
   });
-
-  // Sort them by ascending performance
   var sortedRounds = _.sortBy(thisLevelRounds, function(value) {
+    // Sort them by ascending performance
     return parseInt(value.performance);
   });
   // Put the best performances on top
   sortedRounds = sortedRounds.reverse();
-
   // Pick the very bests
-  var bestRounds = sortedRounds.splice(0, 10);
+  bestRounds = sortedRounds.splice(0, 10);
 
   // Content 1-1 - Players
   for (var prop in rounds) {
@@ -83,59 +89,59 @@ function getData() {
     }
   }
 
-  // Content 2-1 - Acid baseperf
-  var minHue = 0, maxHue = 30;
-  var significantPerfCount = Math.floor(1 + (maxHue - minHue) / 30);
-  acidLevel1basePerf = 0;
-  var acidLevel1Rounds = [];
-  // Filter Acid rounds
+  // Content 2-1 - Focus baseperf
+  var significantPerfCount = Math.floor(1 + (focus.maxHue - focus.minHue) / 30);
+  focus.basePerf = 0;
+  var focusRounds = [];
+  // Filter rounds by username
   for (var prop in rounds) {
     var round = rounds[prop];
-    if ((isPlayer(round.username, 'Lindrox') || false) && (round.roundLevel == 1 || true) && (isInHueRange(round.targetH, 0, 120)|| true)) {
-      acidLevel1Rounds.push(rounds[prop]);
+    if ((isPlayer(round.username, focus.player) || false) && (round.roundLevel == focus.level || true) && (isInHueRange(round.targetH, focus.minHue, focus.maxHue) || false)) {
+      focusRounds.push(rounds[prop]);
     }
   }
-  console.log(acidLevel1Rounds);
+  console.log(focusRounds);
   // Check if enough perf data
-  if (acidLevel1Rounds.length < significantPerfCount) {
-    acidLevel1basePerf = '/';
+  if (focusRounds.length < significantPerfCount) {
+    focus.basePerf = '/';
   } else {
     // OK, let's get the first perfs and average them
     for (var i = 0; i < significantPerfCount; i++) {
-      acidLevel1basePerf += parseFloat(acidLevel1Rounds[i].performance);
+      focus.basePerf += parseFloat(focusRounds[i].performance);
     }
-    acidLevel1basePerf /= significantPerfCount;
+    focus.basePerf /= significantPerfCount;
   }
 
-  // Content 2-2 and 2-3 - Acid current learning and final learning
+  // Content 2-2 and 2-3 - Focus current learning and final learning
   var learningRoundScope = 3; // the last 3 rounds and the 3 before
-  if (acidLevel1Rounds.length < 2 * learningRoundScope) {
-    acidLevel1learning = '/';
-    acidLevel1finalLearning = '/';
+  if (focusRounds.length < 2 * learningRoundScope) {
+    focus.learning = '/';
+    focus.finalLearning = '/';
   } else {
     // Get most recent average perf
     var mostRecentAveragePerf = 0;
-    var roundsNumber = acidLevel1Rounds.length;
+    var roundsNumber = focusRounds.length;
     for (var i = 0; i < learningRoundScope; i++) {
-      var roundPerf = acidLevel1Rounds[roundsNumber - 1 - i].performance;
+      var roundPerf = focusRounds[roundsNumber - 1 - i].performance;
       mostRecentAveragePerf += parseFloat(roundPerf);
     }
     mostRecentAveragePerf /= learningRoundScope;
     // Get previous average perf
     var previousAveragePerf = 0;
     for (var i = 0; i < learningRoundScope; i++) {
-      var roundPerf = acidLevel1Rounds[roundsNumber - 1 - learningRoundScope - i].performance;
+      var roundPerf = focusRounds[roundsNumber - 1 - learningRoundScope - i].performance;
       previousAveragePerf += parseFloat(roundPerf);
     }
     previousAveragePerf /= learningRoundScope;
     // Current learning: do the diff, and make sure it's not negative (0 at worse)
-    acidLevel1learning = Math.max(0, mostRecentAveragePerf - previousAveragePerf);
+    focus.learning = Math.max(0, mostRecentAveragePerf - previousAveragePerf);
     // Final learning: diff with basePerf
-    acidLevel1finalLearning = Math.max(0, mostRecentAveragePerf - acidLevel1basePerf);
+    focus.finalLearning = Math.max(0, mostRecentAveragePerf - focus.basePerf);
   }
   // Content 2-4 - Acid rounds number (for learning pace)
-  acidLevel1roundsNumber = acidLevel1Rounds.length;
-  acidLevel1learningPace = acidLevel1finalLearning / acidLevel1roundsNumber;
+  focus.roundsNumber = focusRounds.length;
+  focus.learningPace = focus.finalLearning / focus.roundsNumber;
+  console.log(focus);
 }
 function buildUI() {
   // Content 1-1 - Players
@@ -144,13 +150,13 @@ function buildUI() {
   jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(Object.keys(rounds).length);
 
   // Content 2-1 - Acid baseperf
-  jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(0.01 * Math.floor(100*acidLevel1basePerf));
+  jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
   // Content 2-2 - Acid learning
-  jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(0.01 * Math.floor(100*acidLevel1learning));
+  jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(twoDecimalsOf(focus.learning));
   // Content 2-3 - Acid final learning
-  jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(0.01 * Math.floor(100*acidLevel1finalLearning));
+  jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(twoDecimalsOf(focus.finalLearning));
   // Content 2-4 - Acid learning pace
-  jQuery('.content-2 .tile-container:nth-of-type(4) .data-data p').html(0.01 * Math.floor(100*acidLevel1learningPace));
+  jQuery('.content-2 .tile-container:nth-of-type(4) .data-data p').html(twoDecimalsOf(focus.learningPace));
 
 }
 function showUI() {
@@ -182,7 +188,9 @@ function isPlayer(inputPlayerName, playerNameToMatch) {
     return true;
   } else return false;
 }
-
+function twoDecimalsOf(inputFloat) {
+  return Math.floor(parseInt(100 * inputFloat)) / 100;
+}
 jQuery(document).ready(function() {
   // Menu tabs
   jQuery('.huehunt-results').on('click', '.side-menu p.tab', function() {
