@@ -38,7 +38,8 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 			targetH: tH,
 			targetS: tS,
 			targetL: tL,
-			dataVersion: 1
+			dataVersion: 1,
+			timestamp: new Date().getTime()
 		});
 		gameVars.setSaved();
 	}

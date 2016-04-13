@@ -80,7 +80,8 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 		getMaxLevel: function() {
 			return $cookies.get('maxLevel');
 		},
-		thresholds: [0, 750, 1500, 3900, 9900, 24900],
+		diffThreshold: ["not used, just reminder", 0, 1200, 1500, 1800, 9999999],
+		thresholds: [0, 1200, 2700, 4500, 24500],
 		setExperience: function(experience) {
 			$cookies.put('experience', experience, {expires: window.app.cookieExpires});
 		},
@@ -187,7 +188,9 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			return Math.sqrt(dH*dH / (1*1) + dS*dS + dL*dL);
 		},
 		howMuchExtraPerformanceForThisShot: function(level, ithShot, distance) {
-			var extraPerformance = (100 - distance) / Math.pow(2, ithShot - 1);
+			var D = distance;
+			var extraPerformance = (D < 25 ? 100-2*D : (D < 75 ? 75-1*D : 0));
+			extraPerformance /= Math.pow(2, ithShot - 1);
 			var multiplicator = 1;
 			extraPerformance = Math.floor(Math.max(0, extraPerformance) * multiplicator);
 			return extraPerformance;
