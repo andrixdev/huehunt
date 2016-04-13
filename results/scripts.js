@@ -12,11 +12,11 @@ var bestRounds;
 var focus = {};
 focus.player = 'Lindrox';
 focus.level = 1;
-focus.minHue = 120;
-focus.maxHue = 180;
+focus.minHue = 0;
+focus.maxHue = 360;
 focus.basePerf = '';
-focus.learning = '';
-focus.finalLearning = '';
+focus.learning = [];
+focus.overallLearning = '';
 focus.roundsNumber = '';
 focus.learningPace = '';
 
@@ -112,35 +112,49 @@ function getData() {
     focus.basePerf /= significantPerfCount;
   }
 
-  // Content 2-2 and 2-3 - Focus current learning and final learning
+  // Content 2-2 and 2-3 - Focus current learning and overall learning
   var learningRoundScope = 3; // the last 3 rounds and the 3 before
+  var roundsNumber = focusRounds.length;
+
   if (focusRounds.length < 2 * learningRoundScope) {
     focus.learning = '/';
-    focus.finalLearning = '/';
+    focus.overallLearning = '/';
   } else {
-    // Get most recent average perf
-    var mostRecentAveragePerf = 0;
-    var roundsNumber = focusRounds.length;
-    for (var i = 0; i < learningRoundScope; i++) {
-      var roundPerf = focusRounds[roundsNumber - 1 - i].performance;
-      mostRecentAveragePerf += parseFloat(roundPerf);
+    // For each round on the way (starting from 6th round, when enough data)
+    for (var r = 2 * learningRoundScope; r <= roundsNumber; r++) {
+      var mostRecentAveragePerf = 0;
+
+      // Get most recent average perf
+      for (var i = 0; i < learningRoundScope; i++) {
+        var roundPerf = focusRounds[r - 1 - i].performance;
+        mostRecentAveragePerf += parseFloat(roundPerf);
+      }
+      mostRecentAveragePerf /= learningRoundScope;
+
+      // Then get previous average perf
+      var previousAveragePerf = 0;
+      for (var i = 0; i < learningRoundScope; i++) {
+        var roundPerf = focusRounds[r - 1 - learningRoundScope - i].performance;
+        previousAveragePerf += parseFloat(roundPerf);
+      }
+      previousAveragePerf /= learningRoundScope;
+
+      // Round current learning: do the diff, and make sure it's not negative (0 at worse)
+      focus.learning.push({
+        'round': r,
+        'learning': Math.max(0, mostRecentAveragePerf - previousAveragePerf)
+      });
+
+      // Update overall learning: diff with basePerf (in the loop because more convenient)
+      focus.overallLearning = Math.max(0, mostRecentAveragePerf - focus.basePerf);
+
     }
-    mostRecentAveragePerf /= learningRoundScope;
-    // Get previous average perf
-    var previousAveragePerf = 0;
-    for (var i = 0; i < learningRoundScope; i++) {
-      var roundPerf = focusRounds[roundsNumber - 1 - learningRoundScope - i].performance;
-      previousAveragePerf += parseFloat(roundPerf);
-    }
-    previousAveragePerf /= learningRoundScope;
-    // Current learning: do the diff, and make sure it's not negative (0 at worse)
-    focus.learning = Math.max(0, mostRecentAveragePerf - previousAveragePerf);
-    // Final learning: diff with basePerf
-    focus.finalLearning = Math.max(0, mostRecentAveragePerf - focus.basePerf);
+
+
   }
-  // Content 2-4 - Acid rounds number (for learning pace)
+  // Content 2-4 - Focus rounds number (for learning pace)
   focus.roundsNumber = focusRounds.length;
-  focus.learningPace = focus.finalLearning / focus.roundsNumber;
+  focus.learningPace = focus.overallLearning / focus.roundsNumber;
   console.log(focus);
 }
 function buildUI() {
@@ -149,13 +163,13 @@ function buildUI() {
   // Content 1-2 - Rounds
   jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(Object.keys(rounds).length);
 
-  // Content 2-1 - Acid baseperf
+  // Content 2-1 - Focus baseperf
   jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
-  // Content 2-2 - Acid learning
+  // Content 2-2 - Focus learning
   jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(twoDecimalsOf(focus.learning));
-  // Content 2-3 - Acid final learning
-  jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(twoDecimalsOf(focus.finalLearning));
-  // Content 2-4 - Acid learning pace
+  // Content 2-3 - Focus overall learning
+  jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(twoDecimalsOf(focus.overallLearning));
+  // Content 2-4 - Focus learning pace
   jQuery('.content-2 .tile-container:nth-of-type(4) .data-data p').html(twoDecimalsOf(focus.learningPace));
 
 }
