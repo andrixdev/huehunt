@@ -54,7 +54,9 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 
 	$scope.playerStatus = playerStatus;
 	$scope.playerName = username;
-	$scope.playerLevel = maxLevel;
+	$scope.playerXP = playerXP;
+	$scope.playerLevel = (maxLevel == 4 ? 'X' : maxLevel);
+	$scope.nextLevel = (maxLevel == 3 ? 'X' : maxLevel - (-1));
 	$scope.sinceLastLevelXP = sinceLastLevelXP;
 	$scope.currentLevelNeededXP = currentLevelNeededXP;
 

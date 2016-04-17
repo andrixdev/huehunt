@@ -16,9 +16,11 @@
 }
 #insight.start h2 {
   color: #eee;
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-family: Poiret One;
   background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0));
+  text-transform: uppercase;
+  text-shadow: black 1px 1px 2px;
 }
 #insight.start > div {
   margin-top: 10px;
@@ -30,6 +32,61 @@
   font-family: Poiret One;
   margin-bottom: 10px;
 }
+#insight.start.player-known p.welcome {
+  display: none;
+}
+
+/* Known player details */
+#playerinfo {
+  margin-top: 0 !important;
+}
+#insight.start.player-unknown #playerinfo {
+  display: none;
+}
+#playerinfo .playername p {
+  font-size: 2em;
+}
+#playerinfo .playerdetails {
+  margin-left: 40px;
+}
+#playerinfo .playerdetails .totalxp p {
+  font-size: 1.5em;
+}
+#playerinfo .playerdetails .totalxp p span {
+  font-weight: bold;
+  font-size: 1.7em;
+  text-shadow: 1px 2px 3px black;
+}
+#playerinfo .playerdetails .xpbar-and-levels {
+
+}
+#playerinfo .playerdetails .xpbar-and-levels p.current-level,
+#playerinfo .playerdetails .xpbar-and-levels p.next-level {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin: 0 7px;
+}
+.xpbar {
+  background: #1A1A1A;
+  border-radius: 4px;
+  border: solid 1px #151515;
+  height: 15px;
+  width: 150px;
+}
+.xpbar .xpliquid {
+  height: 100%;
+  border-radius: 4px 0px 0px 4px;
+  background: transparent linear-gradient(hsl(200, 100%, 50%), hsl(200, 100%, 20%)) repeat scroll 0% 0%;
+}
+#playerinfo .playerdetails p.progression {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
 #mission {
 
 }
@@ -195,14 +252,7 @@ img.huecircle {
   font-size: 3.7em;
 }
 
-/** Display user info or input field to fill **/
-#insight.start.player-unknown #playerinfo {
-  display: none;
-}
-#insight.start.player-known #newplayername {
-  display: none;
-}
-/* Title */
+/** Ready? section **/
 #ready p {
   font-size: 1.5em;
 }
@@ -223,38 +273,8 @@ img.huecircle {
 #newplayername input:focus {
   background: #bbb;
 }
-
-/* Known player details */
-.playerdetails {
-  width: 150px;
-}
-.playerdetails p.playername {
-  text-align: left;
-  margin-top: -10px;
-}
-.xpbar {
-  background: #1A1A1A;
-  border-radius: 4px;
-  border: solid 1px #151515;
-  height: 15px;
-  width: 100%;
-}
-.xpbar .xpliquid {
-  height: 100%;
-  border-radius: 4px 0px 0px 4px;
-  background: transparent linear-gradient(hsl(200, 100%, 50%), hsl(200, 100%, 20%)) repeat scroll 0% 0%;
-}
-.playerdetails p.playerstats {
-  font-size: 1em !important;
-  margin-top: -5px;
-  text-align: left;
+#insight.start.player-known #newplayername {
   display: none;
-}
-.playerdetails:hover .xpbar {
-  display: none;
-}
-.playerdetails:hover p.playerstats {
-  display: inherit;
 }
 
 /* Go button */
