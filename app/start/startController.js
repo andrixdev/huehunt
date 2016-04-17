@@ -8,13 +8,13 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 
 	// Check user existence
 	var username = hueser.getUsername();
-	var playerStatus = 'known';
+	var playerStatus = 'player-known';
 	if (!username) {
 		// Initialize game parameters
 		hueser.setMaxLevel(1);
 		hueser.setExperience(0);
 		hueser.setAvatarBaseHue();
-		playerStatus = 'unknown';
+		playerStatus = 'player-unknown';
 	}
 	/*
 	hueser.setExperience(9999);

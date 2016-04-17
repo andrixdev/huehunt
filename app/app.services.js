@@ -251,7 +251,7 @@ window.app.factory('forms', ['jQuery', '$timeout', 'hueser', 'gameVars', functio
 			$timeout(function() {
 				jQuery('#playbutton a').off().on('click', function() {
 					// On-submit actions lay here
-					if (jQuery('#ready').hasClass('unknown')) {
+					if (jQuery('#insight.start').hasClass('player-unknown')) {
 						hueser.setUsername(jQuery('#newplayername input').val());
 						gameVars.setRoundGameVars();
 					} else {

@@ -195,11 +195,11 @@ img.huecircle {
   font-size: 3.7em;
 }
 
-/** Ready? **/
-#ready.unknown #playerinfo {
+/** Display user info or input field to fill **/
+#insight.start.player-unknown #playerinfo {
   display: none;
 }
-#ready.known #newplayername {
+#insight.start.player-known #newplayername {
   display: none;
 }
 /* Title */

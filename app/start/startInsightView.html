@@ -1,5 +1,20 @@
-<div id='insight' class='start'>
+<div id='insight' class='start {{ playerStatus }}'>
 	<p class='welcome'>Welcome to HUE HUNT<br/>The ultimate color game for hawk-eyed designers</p>
+	<div id='playerinfo' class='flexrow'>
+		<div class='avatar'>
+			<div class='square'></div>
+			<div class='square'></div>
+			<div class='square'></div>
+			<div class='square'></div>
+		</div>
+		<div class='playerdetails'>
+			<p class='playername'>{{ playerName }}</p>
+			<div class='xpbar'>
+				<div class='xpliquid'></div>
+			</div>
+			<p class='playerstats'>LEVEL {{ playerLevel }}  -  {{ sinceLastLevelXP }}/{{ currentLevelNeededXP }} XP</p>
+		</div>
+	</div>
 	<div id='mission'>
 		<h2>Your mission</h2>
 		<div id='levels'>
@@ -71,26 +86,11 @@
 			</div>
 		</div>
 	</div>
-	<div id='ready' class='{{ playerStatus }}'>
+	<div id='ready'>
 		<h2>Ready?</h2>
 		<div id='newplayername'>
 			<p>Player Name</p>
 			<input type='text'/>
-		</div>
-		<div id='playerinfo' class='flexrow'>
-			<div class='avatar'>
-				<div class='square'></div>
-				<div class='square'></div>
-				<div class='square'></div>
-				<div class='square'></div>
-			</div>
-			<div class='playerdetails'>
-				<p class='playername'>{{ playerName }}</p>
-				<div class='xpbar'>
-					<div class='xpliquid'></div>
-				</div>
-				<p class='playerstats'>LEVEL {{ playerLevel }}  -  {{ sinceLastLevelXP }}/{{ currentLevelNeededXP }} XP</p>
-			</div>
 		</div>
 		<div id='playbutton'>
 			<a href='#/0/0/0' class='acidbutton'>Play</a>
