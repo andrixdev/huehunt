@@ -1,26 +1,40 @@
 <div id='insight' class='win'>
-	<p class='success'>Success!<br/>You found the right set of HSL values.</p>
-	<div id='answer' class='flexrow'>
-		<div class='shotcolor' style='background: hsl({{tH}}, {{tS}}%, {{tL}}%)'></div>
-		<p>HSL({{tH}}, {{tS}}%, {{tL}}%)</p>
-	</div>
-	<div id='shotstaken'>
-		<p>You scored {{performance}} points.</p>
-		<div id='shotcolors' class='flexrow' >
-			<div ng-repeat="color in roundHistory.content" class='shotcolor' style='background: hsl({{color.H}}, {{color.S}}%, {{color.L}}%)'></div>
+
+	<div class='leftside'>
+		<p class='success'>Success!<br/>You found the right set of HSL values.</p>
+		<div id='answer' class='flexrow'>
+			<div class='shotcolor' style='background: hsl({{tH}}, {{tS}}%, {{tL}}%)'></div>
+			<p>HSL({{tH}}, {{tS}}%, {{tL}}%)</p>
+		</div>
+		<div id='shotstaken'>
+			<p>You scored {{performance}} points.</p>
+			<div id='shotcolors' class='flexrow' >
+				<div ng-repeat="color in roundHistory.content" class='shotcolor' style='background: hsl({{color.H}}, {{color.S}}%, {{color.L}}%)'></div>
+			</div>
+		</div>
+		<div class='achievements'>
+			<h2>Achievements</h2>
+			<div class='achis flexrow'>
+				<div></div> <div></div> <div></div> <div></div> <div></div>
+			</div>
+			<p><i>Coming soon...</i></p>
+		</div>
+		<div id='ready'>
+			<h2>Ready for next round?</h2>
+			<a href='#/start' class='acidbutton'>Choose level</a>
 		</div>
 	</div>
-	<div id='ready'>
-	<h2>Ready for next round?</h2>
-	<a href='#/start' class='acidbutton'>Back to start</a>
-	</div>
-	<div id='highscores'>
-		<h2>Hall of fame</h2>
-		<h3>Level {{ roundLevel }}</h3>
-		<div ng-repeat='score in highscores' class='score flexrow'>
-			<p class='username'>{{score.username}}</p>
-			<div class='shotcolor' style='background: hsl({{score.targetH}}, {{score.targetS}}%, {{score.targetL}}%)'></div>
-			<p class='performance'>{{score.performance}} <span class='points'>points</span></p>
+
+	<div class='rightside'>
+		<div id='highscores'>
+			<h2>Hall of fame</h2>
+			<h3>Level {{ roundLevel }}</h3>
+			<div ng-repeat='score in highscores' class='score flexrow'>
+				<p class='username'>{{score.username}}</p>
+				<div class='shotcolor' style='background: hsl({{score.targetH}}, {{score.targetS}}%, {{score.targetL}}%)'></div>
+				<p class='performance'>{{score.performance}} <span class='points'>points</span></p>
+			</div>
 		</div>
 	</div>
+
 </div>

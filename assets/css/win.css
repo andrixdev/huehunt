@@ -20,8 +20,7 @@
 #insight.win {
   padding: 20px 10px;
   background: #222;
-  flex-basis: 600px;
-  margin-right: 0px;
+  flex-basis: 900px;
 }
 #insight.win h2,
 #insight.win h3 {
@@ -39,7 +38,12 @@
   text-transform: uppercase;
   background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0));
 }
-#insight.win > div {
+#insight.win .leftside,
+#insight.win .rightside {
+  display: inline-block;
+  vertical-align: middle;
+}
+#insight.win .leftside > div {
   margin-top: 20px;
 }
 #insight.win p.success {
@@ -67,8 +71,23 @@
 #shotcolors {
   flex-flow: row wrap;
 }
+/* Achievements */
+#insight.win .achievements {
+
+}
+#insight.win .achievements .achis div {
+  width: 40px;
+  height: 40px;
+  background: #444;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 2px;
+}
 #ready h2 {
   margin-bottom: 15px;
+}
+#highscores {
+  width: 420px;
 }
 #highscores h2 {
   margin-bottom: 10px;
