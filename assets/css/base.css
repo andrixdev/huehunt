@@ -136,6 +136,14 @@ h2 {
   font-size: 1em;
   color: #555;
 }
+#footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #777;
+}
+#footer a:hover {
+  color: #BBB;
+}
 
 #insight .targetcolor.smallsquare {
   width: 50px;
@@ -179,4 +187,23 @@ h2 {
    border-radius: 0 0 9.5px 0;
    top: 25px;
    left: 25px;
+}
+.avatar .head,
+.avatar .body {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+.avatar .head {
+  width: 20px;
+  height: 20px;
+  left: 15px;
+  top: 8px;
+}
+.avatar .body {
+  width: 30px;
+  height: 40px;
+  left: 10px;
+  top: 26px;
+
 }

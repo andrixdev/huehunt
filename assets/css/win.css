@@ -22,15 +22,12 @@
   background: #222;
   flex-basis: 900px;
 }
-#insight.win h2,
 #insight.win h3 {
   color: #eee;
   font-family: Poiret One;
-}
-#insight.win h3 {
   margin-top: -10px;
   margin-bottom: 10px;
-  font-size: 1.2em;
+  font-size: 1em;
   text-transform: uppercase;
   background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0));
 }
@@ -47,7 +44,6 @@
   font-weight: bold;
   text-shadow: 0px 0px 30px;
   font-family: Poiret One;
-  margin-bottom: 30px;
 }
 #answer .shotcolor {
   width: 40px;

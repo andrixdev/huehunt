@@ -240,8 +240,10 @@ img.huecircle {
   margin-left: 3%;
   width: 30%;
 }
+/* Level 4 */
 #lvl4 .reminder p {
   font-size: 3.7em;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
 }
 
 /** Ready? section **/

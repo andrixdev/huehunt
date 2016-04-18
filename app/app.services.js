@@ -119,7 +119,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		roundShots: [6,6,6,3],
 		selectedLevel: 1,
 		winMessage1: "It's over!",
-		winMessage2: "Your final guess is:",
+		winMessage2: "The color target was:",
 		setRoundGameVars: function() {
 			$cookies.put('shots', this.roundShots[this.selectedLevel - 1], {expires: window.app.cookieExpires});
 			$cookies.put('performance', 0, {expires: window.app.cookieExpires});
@@ -194,7 +194,6 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		getColorDistance: function(h1, s1, l1, h2, s2, l2) {
 			var D = 0;
 			var dH = Math.min(Math.abs(h2 - h1), Math.abs(h2 - h1 + 360), Math.abs(h2 - h1 - 360));// "Circular" distance
-			console.log('dH is ' + dH);
 				dS = s2 - s1,
 				dL = l2 - l1;
 			return Math.sqrt(dH*dH / (1*1) + dS*dS + dL*dL);
