@@ -1,13 +1,13 @@
 <div id='insight' class='win'>
 
 	<div class='leftside'>
-		<p class='success'>Success!<br/>You found the right set of HSL values.</p>
+		<p class='success'>{{ winMessage1 }}<br/>{{ winMessage2 }}</p>
 		<div id='answer' class='flexrow'>
 			<div class='shotcolor' style='background: hsl({{tH}}, {{tS}}%, {{tL}}%)'></div>
 			<p>HSL({{tH}}, {{tS}}%, {{tL}}%)</p>
 		</div>
 		<div id='shotstaken'>
-			<p>You scored {{performance}} points.</p>
+			<p>You scored {{ performance }} points.</p>
 			<div id='shotcolors' class='flexrow' >
 				<div ng-repeat="color in roundHistory.content" class='shotcolor' style='background: hsl({{color.H}}, {{color.S}}%, {{color.L}}%)'></div>
 			</div>

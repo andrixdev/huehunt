@@ -14,14 +14,6 @@
   flex-basis: 600px;
   margin-right: 0px;
 }
-#insight.start h2 {
-  color: #eee;
-  font-size: 1.5em;
-  font-family: Poiret One;
-  background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0));
-  text-transform: uppercase;
-  text-shadow: black 1px 1px 2px;
-}
 #insight.start > div {
   margin-top: 20px;
 }

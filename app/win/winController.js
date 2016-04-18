@@ -79,6 +79,8 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	$scope.tH = tH;
 	$scope.tS = tS;
 	$scope.tL = tL;
+	$scope.winMessage1 = gameVars.getWinMessages().message1;
+	$scope.winMessage2 = gameVars.getWinMessages().message2;
 
 	// Views
 	$scope.templatePaths = {

@@ -118,6 +118,8 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 	return {
 		roundShots: [6,6,6,3],
 		selectedLevel: 1,
+		winMessage1: "It's over!",
+		winMessage2: "Your final guess is:",
 		setRoundGameVars: function() {
 			$cookies.put('shots', this.roundShots[this.selectedLevel - 1], {expires: window.app.cookieExpires});
 			$cookies.put('performance', 0, {expires: window.app.cookieExpires});
@@ -175,6 +177,16 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		},
 		setWin: function() {
 			$cookies.put('win', 'true', {expires: window.app.cookieExpires});
+		},
+		setWinMessages: function(msg1, msg2) {
+			this.winMessage1 = msg1 || this.winMessage1;
+			this.winMessage2 = msg2 || this.winMessage2;
+		},
+		getWinMessages: function() {
+			return {
+				message1: this.winMessage1,
+				message2: this.winMessage2
+			};
 		},
 		setSaved: function() {
 			$cookies.put('saved', 'true', {expires: window.app.cookieExpires});
