@@ -66,10 +66,7 @@
 #header #user p.username {
    font-size: 2.5em;
 }
-#header #target {
 
-}
-#header #target p,
 #header #shotsLeft p.taken,
 #header #performance p.label {
    font-size: 1.7em;
@@ -123,7 +120,23 @@
   font-size: 30px;
 }
 
-/** First shot insight view **/
+/** Insight views (first shot and normal) **/
+.game-insight-wrapper {
+  flex-basis: 60%;
+  min-height: 300px;
+  height: 300px;
+  padding: 15px 15px 5px;
+  margin-top: 20px;
+  position: relative;
+  border-radius: 5px 5px 0px 0px;
+  background: #222;
+}
+#insight.game {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 2px;
+}
 #insight.firstshot {
     background: #191919;
 }
@@ -147,9 +160,16 @@
 #insight.firstshot > * {
   z-index: 3;
 }
-#insight.firstshot .targetcolor {
+#insight.firstshot .targetcolor.smallsquare {
   width: 80px;
   height: 80px;
+}
+
+/* Target color spread */
+#insight.game .targetcolor.spread {
+  width: 30%;
+  height: 100%;
+  border-radius: 2px 0 0 2px;
 }
 
 /** Interactionarea **/

@@ -84,8 +84,6 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	$scope.templatePaths = {
 		header: "app/header/headerView.html",
 		insight: "app/win/winInsightView.html",
-		clue: "",
-		instructions: "",
 		interactionarea: '',
 		footer: "app/footer/footerView.html"
 	};

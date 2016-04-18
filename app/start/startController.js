@@ -79,8 +79,6 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 	$scope.templatePaths = {
 		header: 'app/header/headerView.html',
 		insight: 'app/start/startInsightView.html',
-		clue: '',
-		instructions: '',
 		interactionarea: '',
 		footer: 'app/footer/footerView.html'
 	};

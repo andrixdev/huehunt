@@ -66,11 +66,6 @@ p {
 }
 .targetcolor {
   /* Color defined in controllers */
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  border-radius: 5px;
-  border: #111 2px solid;
 }
 .acidbutton {
   color: black;
@@ -117,19 +112,6 @@ p {
   flex-basis: 300px;
   width: 100%;
 }
-#insightwrapper {
-  flex-basis: 60%;
-  min-height: 300px;
-  height: 300px;
-  margin-right: 5%;
-  position: relative;
-  border-radius: 5px 5px 0px 0px;
-  background: #222;
-}
-#insightwrapper,
-#clue {
-  margin-top: 20px;
-}
 
 /** Insightwrapper **/
 #insight {
@@ -138,7 +120,6 @@ p {
   width: 95%;
   margin-top: 2%;
   margin-left: 2%;
-  padding: 0.5%;
   border-radius: 2px;
 }
 #insight #current {
@@ -174,4 +155,12 @@ p {
 #footer p {
   font-size: 1em;
   color: #555;
+}
+
+#insight .targetcolor.smallsquare {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  border: #111 2px solid;
 }

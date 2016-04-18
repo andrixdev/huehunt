@@ -178,10 +178,6 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	$scope.templatePaths = {
 		header: 'app/game/gameHeaderView.html',
 		insight: insightView,
-		clue: 'app/game/gameClueView.html',
-		// @todo Remove clue mechanism
-		instructions: '',
-		// @todo Remove instructions mechanism?
 		interactionarea: 'app/game/gameInteractionareaView.html',
 		footer: 'app/footer/footerView.html'
 	};
