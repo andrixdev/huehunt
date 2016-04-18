@@ -4,10 +4,6 @@
  * Alexandre Andrieux @2015 (September) and @2016 (February)
  */
 
-/** Center **/
-#center.flexrow {
-  flex-basis: 200px;
-}
 #insight.start {
   padding: 20px 10px;
   background: #222;

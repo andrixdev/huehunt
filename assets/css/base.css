@@ -78,7 +78,7 @@ p {
   margin: 15px 0px 0px;
   border: medium none;
   cursor: pointer;
-  box-shadow: 0px 0px 3px hsl(0, 0%, 0%);
+  box-shadow: 0px 0px 3px black;
 }
 .acidbutton:hover {
   background: transparent linear-gradient(hsl(200, 100%, 50%), hsl(200, 100%, 20%)) repeat scroll 0% 0%;
@@ -98,11 +98,6 @@ h2 {
   background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0));
   text-transform: uppercase;
   text-shadow: black 1px 1px 2px;
-}
-/** Center and insightwrapper **/
-#center {
-  flex-basis: 300px;
-  width: 100%;
 }
 
 /** Insightwrapper **/

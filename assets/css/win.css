@@ -13,10 +13,6 @@
   border: solid #111 2px;
 }
 
-/** Center **/
-#center.flexrow {
-  flex-basis: 200px;
-}
 #insight.win {
   padding: 20px 10px;
   background: #222;
