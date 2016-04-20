@@ -109,7 +109,13 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 				newLevel = 4;
 			}
 			this.setMaxLevel(newLevel);
-		},
+		}
+	};
+}]);
+
+// Cookie service for user achievements
+window.app.factory('achievements', ['$cookies', function($cookies) {
+	return {
 		startAchievements: function() {
 			for (var i = 1; i <= 5; i++) {
 				$cookies.put('achievement' + i, false, {expires: window.app.cookieExpires});
@@ -127,6 +133,22 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 				achie.push(this.getAchievement(i));
 			}
 			return achie;
+		},
+		updateAchievements: function() {
+			this.updateAchievement1();
+		},
+		increaseRoundsCountForAchievement1: function() {
+			var roundsPlayed = $cookies.get('achievement-rounds-played');
+			roundsPlayed++;
+			$cookies.put('achievement-rounds-played', roundsPlayed, {expires: window.app.cookieExpires});
+			if (roundsPlayed >= 5) {
+				this.unlockAchievement(1);
+			}
+		},
+		checkPerformanceForAchievement2: function(performance) {
+			if (performance >= 150) {
+				this.unlockAchievement(2);
+			}
 		}
 	};
 }]);

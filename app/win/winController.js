@@ -1,4 +1,4 @@
-window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', '$firebaseArray', '_', function($scope, $location, nav, colorCookies, gameVars, hueser, $firebaseArray, _) {
+window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'achievements', '$firebaseArray', '_', function($scope, $location, nav, colorCookies, gameVars, hueser, achievements, $firebaseArray, _) {
 
 	// Get all user variables
 	var username = hueser.getUsername();
@@ -44,6 +44,10 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 		gameVars.setSaved();
 	}
 
+	// Update Achievements
+	achievements.increaseRoundsCountForAchievement1();
+	achievements.checkPerformanceForAchievement2(performance);
+
 	// Increase player experience
 	hueser.setExperience(parseInt(experience) + parseInt(performance));
 	hueser.maybeLevelUp();
@@ -82,7 +86,7 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	$scope.winMessage1 = gameVars.getWinMessages().message1;
 	$scope.winMessage2 = gameVars.getWinMessages().message2;
 	gameVars.setSuccess(false);// Reset win message
-	$scope.achievements = hueser.getAchievements();
+	$scope.achievements = achievements.getAchievements();
 
 	// Views
 	$scope.templatePaths = {
