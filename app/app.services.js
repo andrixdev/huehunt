@@ -197,7 +197,6 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 			$cookies.put('saved', 'true', {expires: window.app.cookieExpires});
 		},
 		getColorDistance: function(h1, s1, l1, h2, s2, l2) {
-			var D = 0;
 			var dH = Math.min(Math.abs(h2 - h1), Math.abs(h2 - h1 + 360), Math.abs(h2 - h1 - 360));// "Circular" distance
 				dS = s2 - s1,
 				dL = l2 - l1;
@@ -206,7 +205,7 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		howMuchExtraPerformanceForThisShot: function(level, ithShot, distance) {
 			var D = distance;
 			var extraPerformance = (D < 25 ? 100-2*D : (D < 75 ? 75-1*D : 0));
-			extraPerformance /= Math.pow(2, ithShot - 1);
+			extraPerformance /= Math.pow(2, ithShot - 1);// First rounds have more value
 			var multiplicator = 1;
 			extraPerformance = Math.floor(Math.max(0, extraPerformance) * multiplicator);
 			return extraPerformance;

@@ -59,7 +59,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	nav.addPath($location.path());
 
 	// If player is really close to target, terminate round with max XP for remaining shots
-	var winDist = 2;
+	var winDist = (selectedLevel == 1 ? 2 : (selectedLevel == 2 ? 5 : 10));
 	if (dist <= winDist) {
 		for (var j = shots - 1; j >= -1 ; j--) {
 			// Get ithShot
