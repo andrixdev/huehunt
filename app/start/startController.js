@@ -14,6 +14,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		hueser.setMaxLevel(1);
 		hueser.setExperience(0);
 		hueser.setAvatarBaseHue();
+		hueser.startAchievements();
 		playerStatus = 'player-unknown';
 	}
 	/*

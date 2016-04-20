@@ -109,6 +109,24 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 				newLevel = 4;
 			}
 			this.setMaxLevel(newLevel);
+		},
+		startAchievements: function() {
+			for (var i = 1; i <= 5; i++) {
+				$cookies.put('achievement' + i, false, {expires: window.app.cookieExpires});
+			}
+		},
+		unlockAchievement: function(achievementID) {
+			$cookies.put('achievement' + achievementID, true, {expires: window.app.cookieExpires});
+		},
+		getAchievement: function(achievementID) {
+			return $cookies.get('achievement' + achievementID);
+		},
+		getAchievements: function() {
+			var achie = [];
+			for (var i = 1; i <= 5; i++) {
+				achie.push(this.getAchievement(i));
+			}
+			return achie;
 		}
 	};
 }]);

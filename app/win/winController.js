@@ -82,6 +82,8 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	$scope.winMessage1 = gameVars.getWinMessages().message1;
 	$scope.winMessage2 = gameVars.getWinMessages().message2;
 	gameVars.setSuccess(false);// Reset win message
+	$scope.achievements = hueser.getAchievements();
+
 	// Views
 	$scope.templatePaths = {
 		header: "app/header/headerView.html",
