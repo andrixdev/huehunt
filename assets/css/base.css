@@ -187,7 +187,7 @@ h2 {
 .avatar .body {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.25);
 }
 .avatar .head {
   width: 20px;

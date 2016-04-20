@@ -48,6 +48,7 @@
   width: 40px;
   height: 40px;
 }
+
 #answer p {
   margin-left: 10px;
   font-size: 2em;
@@ -62,6 +63,24 @@
 #shotcolors {
   flex-flow: row wrap;
 }
+#shotcolors .shotcolor {
+  position: relative;
+}
+#shotcolors .shotcolor p.colordetails {
+  position: absolute;
+  top: 33px;
+  font-size: 1em;
+  left: -60px;
+  width: 150px;
+  display: none;
+}
+#shotcolors .shotcolor:hover {
+  border-color: transparent;
+}
+#shotcolors .shotcolor:hover p.colordetails {
+  display: inherit;
+}
+
 /* Achievements */
 #insight.win .achievements {
 

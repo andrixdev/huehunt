@@ -71,11 +71,11 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 			performance = parseInt(previousPerformance) + parseInt(extraPerformance);
 
 			// Add the target color to history
-			gameVars.addRoundHistory({
+			/*gameVars.addRoundHistory({
 				H: cH,
 				S: cS,
 				L: cL
-			});
+			});*/
 
 			// Decrease shot count
 			shots--;

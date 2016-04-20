@@ -8,8 +8,10 @@
 		</div>
 		<div id='shotstaken'>
 			<p>You scored {{ performance }} points.</p>
-			<div id='shotcolors' class='flexrow' >
-				<div ng-repeat="color in roundHistory.content" class='shotcolor' style='background: hsl({{color.H}}, {{color.S}}%, {{color.L}}%)'></div>
+			<div id='shotcolors' class='flexrow'>
+				<div ng-repeat="color in roundHistory.content" class='shotcolor' style='background: hsl({{color.H}}, {{color.S}}%, {{color.L}}%)'>
+					<p class='colordetails'>HSL({{color.H}}, {{color.S}}%, {{color.L}}%)</p>
+				</div>
 			</div>
 		</div>
 		<div class='achievements'>
