@@ -80,7 +80,7 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 			// Decrease shot count
 			shots--;
 		}
-		gameVars.setWinMessages("Success!", "You found the right set of HSL values.");
+		gameVars.setSuccess(true);
 	}
 
 	// If all shots are taken, set win variable to true and redirect to /win

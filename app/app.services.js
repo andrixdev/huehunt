@@ -118,8 +118,11 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 	return {
 		roundShots: [6,6,6,3],
 		selectedLevel: 1,
-		winMessage1: "It's over!",
-		winMessage2: "The color target was:",
+		winMessageSuccess1: "Success!",
+		winMessageSuccess2: "You found the right set of HSL values.",
+		winMessageFail1: "It's over!",
+		winMessageFail2: "The color target was:",
+		success: false,
 		setRoundGameVars: function() {
 			$cookies.put('shots', this.roundShots[this.selectedLevel - 1], {expires: window.app.cookieExpires});
 			$cookies.put('performance', 0, {expires: window.app.cookieExpires});
@@ -178,15 +181,17 @@ window.app.factory('gameVars', ['$cookies', function($cookies) {
 		setWin: function() {
 			$cookies.put('win', 'true', {expires: window.app.cookieExpires});
 		},
-		setWinMessages: function(msg1, msg2) {
-			this.winMessage1 = msg1 || this.winMessage1;
-			this.winMessage2 = msg2 || this.winMessage2;
-		},
 		getWinMessages: function() {
 			return {
-				message1: this.winMessage1,
-				message2: this.winMessage2
+				message1: (this.getSuccess() ? this.winMessageSuccess1 : this.winMessageFail1),
+				message2: (this.getSuccess() ? this.winMessageSuccess2 : this.winMessageFail2)
 			};
+		},
+		getSuccess: function() {
+			return this.success;
+		},
+		setSuccess: function(isSuccess) {
+			this.success = isSuccess;
 		},
 		setSaved: function() {
 			$cookies.put('saved', 'true', {expires: window.app.cookieExpires});

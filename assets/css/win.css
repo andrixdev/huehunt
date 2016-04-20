@@ -35,6 +35,9 @@
 #insight.win .leftside > div {
   margin-top: 20px;
 }
+#insight.win .leftside h2 {
+  margin-top: 30px;
+}
 #insight.win p.success {
   font-size: 1.5em;
   font-weight: bold;
