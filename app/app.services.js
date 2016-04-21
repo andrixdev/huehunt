@@ -500,6 +500,17 @@ window.app.factory('DOM', ['jQuery', 'hueser', 'colorCookies', 'gameVars', '$tim
 			        thisShot.css('top', yC - rotRad * Math.sin(2*Math.PI / nbShots * s + t/(10*nbShots)) - shotRad + 'px');
 			    }
 			}, 50);
+		},
+		achievementsHover: function() {
+			$timeout(function() {
+				jQuery('.achi').hover(function() {
+					var achindex = 1 + parseInt(jQuery(this).index());
+					jQuery('.achievements-descriptions p').hide();
+					jQuery('.descachi-' + achindex).show();
+				}, function(){
+					jQuery('.achievements-descriptions p').hide();
+				});
+			}, 1000);/* Promisifying cheat */
 		}
 	}
 }]);

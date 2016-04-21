@@ -1,4 +1,4 @@
-window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'achievements', '$firebaseArray', '_', function($scope, $location, nav, colorCookies, gameVars, hueser, achievements, $firebaseArray, _) {
+window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'achievements', 'DOM', '$firebaseArray', '_', function($scope, $location, nav, colorCookies, gameVars, hueser, achievements, DOM, $firebaseArray, _) {
 
 	// Get all user variables
 	var username = hueser.getUsername();
@@ -90,6 +90,8 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	$scope.winMessage2 = gameVars.getWinMessages().message2;
 	gameVars.setSuccess(false);// Reset win message
 	$scope.achievements = achievements.getAchievements();
+
+	DOM.achievementsHover();
 
 	// Views
 	$scope.templatePaths = {

@@ -202,3 +202,17 @@
     font-weight: bold;
     text-shadow: rgba(255, 255, 255, 0.3) -1px 1px 0px;
 }
+#insight.win .achievements-descriptions {
+  height: 40px;
+}
+#insight.win .achievements-descriptions p {
+  display: none;
+}
+#insight.win .achievements-descriptions p {
+
+}
+#insight.win .achievements-descriptions p.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: -5px;
+}
