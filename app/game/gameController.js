@@ -1,4 +1,4 @@
-window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'forms', '_', 'DOM', '$timeout', function($scope, $location, nav, colorCookies, gameVars, hueser, forms, _, DOM, $timeout) {
+window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCookies', 'gameVars', 'hueser', 'achievements', 'forms', '_', 'DOM', '$timeout', function($scope, $location, nav, colorCookies, gameVars, hueser, achievements, forms, _, DOM, $timeout) {
 
 	// Get all user variables
 	var username = hueser.getUsername();
@@ -61,6 +61,9 @@ window.app.controller('GameController', ['$scope', '$location', 'nav', 'colorCoo
 	// If player is really close to target, terminate round with max XP for remaining shots
 	var winDist = (selectedLevel == 1 ? 2 : (selectedLevel == 2 ? 5 : 10));
 	if (dist <= winDist) {
+		if (ithShot == 1) {
+			achievements.oneShotOKforAchievement3();
+		}
 		for (var j = shots - 1; j >= -1 ; j--) {
 			// Get ithShot
 			ithShotLoop = gameVars.roundShots[selectedLevel - 1] - (j + 1);

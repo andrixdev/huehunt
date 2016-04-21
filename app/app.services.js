@@ -59,7 +59,7 @@ window.app.factory('colorCookies', ['$cookies', function($cookies) {
 }]);
 
 // Cookie service for user information
-window.app.factory('hueser', ['$cookies', function($cookies) {
+window.app.factory('hueser', ['$cookies', 'achievements', function($cookies, achievements) {
 	return {
 		setUsername: function(username) {
 			$cookies.put('username', username, {expires: window.app.cookieExpires});
@@ -107,6 +107,7 @@ window.app.factory('hueser', ['$cookies', function($cookies) {
 			}
 			if (xp > this.thresholds[3]) {
 				newLevel = 4;
+				achievements.unlockAchievement(5);
 			}
 			this.setMaxLevel(newLevel);
 		}
@@ -119,6 +120,12 @@ window.app.factory('achievements', ['$cookies', function($cookies) {
 		startAchievements: function() {
 			for (var i = 1; i <= 5; i++) {
 				$cookies.put('achievement' + i, false, {expires: window.app.cookieExpires});
+			}
+			// Achievement 1: play 5 rounds
+			$cookies.put('achievement-rounds-played', 0, {expires: window.app.cookieExpires});
+			// Achievement 4: color master
+			for (var i = 1; i <= 6; i++) {
+				$cookies.put('achievement-4-range-' + i, false, {expires: window.app.cookieExpires});
 			}
 		},
 		unlockAchievement: function(achievementID) {
@@ -149,6 +156,52 @@ window.app.factory('achievements', ['$cookies', function($cookies) {
 			if (performance >= 150) {
 				this.unlockAchievement(2);
 			}
+		},
+		oneShotOKforAchievement3: function() {
+			this.unlockAchievement(3);
+		},
+		unlockAchievement4range: function(roundHue) {
+			// colorRangeIndex == 1: 340° 360° and 0° 20° reds
+			// colorRangeIndex == 2: 20° 60° oranges
+			// colorRangeIndex == 3: 60° 100° yellows
+			// colorRangeIndex == 5: 100° 180° greens
+			// colorRangeIndex == 6: 180° 260° blues
+			// colorRangeIndex == 6: 260° 340° purples
+			var colorRangeIndex = 0;
+			if (roundHue > 340 || roundHue <= 20) {
+				colorRangeIndex = 1;
+			} else if (roundHue > 20 && roundHue <= 60) {
+				colorRangeIndex = 2;
+			} else if (roundHue > 60 && roundHue <= 100) {
+				colorRangeIndex = 3;
+			} else if (roundHue > 100 && roundHue <= 180) {
+				colorRangeIndex = 4;
+			} else if (roundHue > 180 && roundHue <= 260) {
+				colorRangeIndex = 5;
+			} else if (roundHue > 260 && roundHue <= 340) {
+				colorRangeIndex = 6;
+			} else {}
+			$cookies.put('achievement-4-range-' + colorRangeIndex, true, {expires: window.app.cookieExpires});
+			// Check if all ranges are completed
+			var isAchievement4unlocked = true;
+			for (var i = 1; i <= 6; i++) {
+				if (this.getAchievement4range(i) == 'false') {
+					isAchievement4unlocked = false;
+				}
+			}
+			// If so, unlock achievement 4
+			if (isAchievement4unlocked) {
+				this.unlockAchievement(4);
+			}
+		},
+		getAchievement4range: function(rangeIndex) {
+			// colorRangeIndex == 1: 340° 360° and 0° 20° reds
+			// colorRangeIndex == 2: 20° 60° oranges
+			// colorRangeIndex == 3: 60° 100° yellows
+			// colorRangeIndex == 4: 100° 180° greens
+			// colorRangeIndex == 5: 180° 260° blues
+			// colorRangeIndex == 6: 260° 340° purples
+			return $cookies.get('achievement-4-range-' + rangeIndex);
 		}
 	};
 }]);

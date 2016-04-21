@@ -1,4 +1,4 @@
-window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'hueser', 'forms', 'DOM', '$timeout', function($scope, $location, nav, colorCookies, hueser, forms, DOM, $timeout) {
+window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCookies', 'hueser', 'achievements', 'forms', 'DOM', '$timeout', function($scope, $location, nav, colorCookies, hueser, achievements, forms, DOM, $timeout) {
 
 	// Form handling (custom service 'forms')
 	forms.handleStartForm();
@@ -14,7 +14,7 @@ window.app.controller('StartController', ['$scope', '$location', 'nav', 'colorCo
 		hueser.setMaxLevel(1);
 		hueser.setExperience(0);
 		hueser.setAvatarBaseHue();
-		hueser.startAchievements();
+		achievements.startAchievements();
 		playerStatus = 'player-unknown';
 	}
 	/*
