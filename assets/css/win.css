@@ -109,6 +109,7 @@
 }
 #highscores .score p.username {
   text-align: right;
+  text-transform: capitalize;
 }
 #highscores .score p.performance {
   text-align: left;

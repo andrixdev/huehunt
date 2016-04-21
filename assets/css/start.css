@@ -33,6 +33,7 @@
 }
 #playerinfo .playername p {
   font-size: 2em;
+  text-transform: capitalize;
 }
 #playerinfo .playerdetails {
   margin-left: 40px;

@@ -30,6 +30,7 @@
 }
 #header #user p.username {
   font-size: 2.5em;
+  text-transform: capitalize;
 }
 #header #shotsLeft p.taken,
 #header #performance p.label {
