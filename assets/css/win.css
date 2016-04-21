@@ -85,7 +85,7 @@
 #insight.win .achievements {
 
 }
-#insight.win .achievements .achis div {
+#insight.win .achievements .achis > div {
   width: 40px;
   height: 40px;
   background: #444;
@@ -136,4 +136,69 @@
 #highscores .score:nth-of-type(3) .shotcolor {
   width: 35px;
   height: 35px;
+}
+
+/* Achievements designs */
+#insight.win .achievements .achi.unlocked-true:hover {
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 0px 50px;
+    transition: box-shadow 500ms;
+}
+#insight.win .achievements .achi-1 p,
+#insight.win .achievements .achi-2 p,
+#insight.win .achievements .achi-5 p {
+    font-size: 1.6em;
+    padding-top: 2px;
+    color: #555;
+}
+#insight.win .achievements .achi-1.unlocked-true {
+    background: radial-gradient(hsl(60, 0%, 80%), hsl(30, 0%, 30%));
+}
+#insight.win .achievements .achi-1.unlocked-true p {
+    color: hsl(200, 20%, 30%);
+    font-weight: bold;
+    text-shadow: rgba(255, 255, 255, 0.3) -1px 1px 0px;
+}
+#insight.win .achievements .achi-2.unlocked-true {
+    background: radial-gradient(hsl(60, 70%, 50%), hsl(30, 70%, 50%));
+}
+#insight.win .achievements .achi-2.unlocked-true p {
+    color: hsl(20, 90%, 30%);
+    font-weight: bold;
+    text-shadow: rgba(255, 255, 255, 0.3) -1px 1px 0px;
+}
+#insight.win .achievements .achis .achi-3 {
+    background: #555;
+}
+#insight.win .achievements .achis .achi-3 > div {
+    background: radial-gradient(hsl(250, 0%, 30%), hsl(200, 0%, 50%));
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    margin-left: 30%;
+    margin-top: 30%;
+}
+#insight.win .achievements .achi-3.unlocked-true {
+    background: radial-gradient(hsl(180, 70%, 50%), hsl(250, 100%, 50%));
+}
+#insight.win .achievements .achi-3.unlocked-true > div {
+    background: radial-gradient(hsl(250, 50%, 30%), hsl(200, 100%, 50%));
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    margin-left: 30%;
+    margin-top: 30%;
+}
+#insight.win .achievements .achis .achi-4 {
+    background: linear-gradient(to right bottom, hsl(0, 0%, 40%), hsl(20, 0%, 30%), hsl(100, 0%, 40%), hsl(200, 0%, 25%), hsl(270, 0%, 30%), hsl(340, 0%, 20%), hsl(20, 0%, 40%));
+}
+#insight.win .achievements .achis .achi-4.unlocked-true {
+    background: linear-gradient(to right bottom, hsl(0, 80%, 50%), hsl(20, 80%, 50%), hsl(100, 80%, 50%), hsl(200, 80%, 50%), hsl(270, 80%, 50%), hsl(340, 80%, 50%), hsl(20, 80%, 50%));
+}
+#insight.win .achievements .achi-5.unlocked-true {
+    background: radial-gradient(hsl(30, 70%, 50%), hsl(0, 100%, 50%));
+}
+#insight.win .achievements .achi-5.unlocked-true p {
+    color: hsl(0, 90%, 30%);
+    font-weight: bold;
+    text-shadow: rgba(255, 255, 255, 0.3) -1px 1px 0px;
 }
