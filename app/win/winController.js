@@ -31,7 +31,7 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 	// Store current round in scores database
 	if (saved == 'false') {
 		$scope.rounds = $firebaseArray(roundsRef);
-		/*$scope.rounds.$add({
+		$scope.rounds.$add({
 			username: username,
 			roundLevel: roundLevel,
 			performance: performance,
@@ -40,7 +40,7 @@ window.app.controller('WinController', ['$scope', '$location', 'nav', 'colorCook
 			targetL: tL,
 			dataVersion: 2,
 			timestamp: new Date().getTime()
-		});*/
+		});
 		gameVars.setSaved();
 	}
 
