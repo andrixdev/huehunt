@@ -152,10 +152,10 @@
     color: #555;
 }
 #insight.win .achievements .achi-1.unlocked-true {
-    background: radial-gradient(hsl(60, 0%, 80%), hsl(30, 0%, 30%));
+    background: radial-gradient(hsl(100, 70%, 60%), hsl(100, 80%, 20%));
 }
 #insight.win .achievements .achi-1.unlocked-true p {
-    color: hsl(200, 20%, 30%);
+    color: hsl(100, 50%, 25%);
     font-weight: bold;
     text-shadow: rgba(255, 255, 255, 0.3) -1px 1px 0px;
 }
