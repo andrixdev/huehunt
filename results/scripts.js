@@ -100,7 +100,6 @@ function getData() {
       focusRounds.push(rounds[prop]);
     }
   }
-  console.log(focusRounds);
   // Check if enough perf data
   if (focusRounds.length < significantPerfCount) {
     focus.basePerf = '/';
@@ -155,7 +154,29 @@ function getData() {
   // Content 2-4 - Focus rounds number (for learning pace)
   focus.roundsNumber = focusRounds.length;
   focus.learningPace = focus.overallLearning / focus.roundsNumber;
-  console.log(focus);
+
+
+  // Content 3 - Players that reached level 4 (exclude cheaters)
+  var reachedLevel4players = [];
+  var reachedLevel4 = _.filter(rounds, function(value) {
+    if (value.roundLevel == 4) {
+      // Check if already in reachedLevel4players
+      var alreadyInPlayers = false;
+      for (var j = 0; j < reachedLevel4players.length; j++) {
+        if (value.username == reachedLevel4players[j]) {
+          alreadyInPlayers = true;
+        }
+      }
+      // If so, don't add player to list, otherwise do
+      if (!alreadyInPlayers) {
+        reachedLevel4players.push(value.username);
+      }
+    }
+    // Remove scores that are not for this level
+    return value.roundLevel == 4;
+  });
+
+  console.log(reachedLevel4players);
 }
 function buildUI() {
   // Content 1-1 - Players
