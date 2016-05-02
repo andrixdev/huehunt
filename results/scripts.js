@@ -8,8 +8,9 @@
 var rounds;
 var players = [];
 var bestRounds;
-
 var focus = {};
+var filters = {};
+
 focus.player = 'Lindrox';
 focus.level = 1;
 focus.minHue = 0;
@@ -20,19 +21,12 @@ focus.overallLearning = '';
 focus.roundsNumber = '';
 focus.learningPace = '';
 
+// Input dataset model
 rounds = {
   "KBxE015HXj3bV0jEenb" : {
     "performance" : "41",
     "roundLevel" : "1",
     "targetH" : "268",
-    "targetL" : "50",
-    "targetS" : "100",
-    "username" : "Lindrox"
-  },
-  "KBxEDPJXxshVCk0Sl1t" : {
-    "performance" : "62",
-    "roundLevel" : "1",
-    "targetH" : "26",
     "targetL" : "50",
     "targetS" : "100",
     "username" : "Lindrox"
@@ -55,6 +49,26 @@ myFirebaseRef.on("value", function(data) {
   buildUI();
   showUI();
 });
+
+filters.formatFirebaseDataset = function(firebaseRounds) {
+  // Remove the unnecessary random object names and make an array of objects
+  var rounds = [];
+  for (var prop in firebaseRounds) {
+    // Add round to array
+    rounds.push(firebaseRounds[prop]);
+  }
+  return rounds;
+}
+filters.matchUsername = function(rounds, username) {
+  var outputRounds = [];
+  for (var i in rounds) {
+    // Get username
+    if (rounds[i].username == username) {
+      outputRounds.push(rounds[i]);
+    }
+  }
+  return outputRounds;
+}
 
 /* Base rendering functions */
 function getData() {
