@@ -10,17 +10,21 @@ var firebaseRounds,
     players = [],
     bestRounds,
     focus = {},
-    filters = {};
+    filters = {},
+    analysis = {},
+    interaction = {};
 
 focus.player = 'Lindrox';
 focus.level = 1;
 focus.minHue = 0;
 focus.maxHue = 360;
+focus.rounds = [];
 focus.basePerf = '';
 focus.learning = [];
 focus.overallLearning = '';
-focus.roundsNumber = '';
 focus.learningPace = '';
+
+focus.roundsNumber = '';
 
 // Input dataset model
 firebaseRounds = {
@@ -41,16 +45,16 @@ firebaseRounds = {
     "username" : "Icosacid"
   }
 };
-/*
+
 var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
 
 myFirebaseRef.on("value", function(data) {
   firebaseRounds = data.val();
+  rounds = firebaseRounds;
   getData();
   buildUI();
   showUI();
 });
-*/
 
 filters.formatFirebaseDataset = function(firebaseRounds) {
   // Remove the unnecessary random object names and make an array of objects
@@ -60,7 +64,7 @@ filters.formatFirebaseDataset = function(firebaseRounds) {
     rounds.push(firebaseRounds[prop]);
   }
   return rounds;
-}
+};
 filters.matchUsername = function(rounds, username) {
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
@@ -69,16 +73,16 @@ filters.matchUsername = function(rounds, username) {
     }
   }
   return outputRounds;
-}
+};
 filters.matchLevel = function(rounds, level) {
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
-    if (rounds[i].level == level) {
+    if (rounds[i].roundLevel == level) {
       outputRounds.push(rounds[i]);
     }
   }
   return outputRounds;
-}
+};
 filters.inHueRange = function(rounds, minHue, maxHue) {
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
@@ -88,14 +92,32 @@ filters.inHueRange = function(rounds, minHue, maxHue) {
     }
   }
   return outputRounds;
-}
+};
 filters.getUsernames = function(rounds) {
   var outputUsernames = [];
   for (var i = 0; i < rounds.length; i++) {
     outputUsernames.push(rounds[i].username);
   }
   return outputUsernames;
-}
+};
+filters.getUniqueUsernames = function(rounds) {
+  var outputUsernames = [];
+  for (var i = 0; i < rounds.length; i++) {
+    var username = rounds[i].username;
+    // Check if already in outputUsernames
+    var alreadyInResult = false;
+    for (var j = 0; j < outputUsernames.length; j++) {
+      if (username == outputUsernames[j]) {
+        alreadyInResult = true;
+      }
+    }
+    // If so, don't add player to list, otherwise do
+    if (!alreadyInResult) {
+      outputUsernames.push(username);
+    }
+  }
+  return outputUsernames;
+};
 filters.sortByPerformance = function(rounds) {
   var sortedRounds = _.sortBy(rounds, function(value) {
     // Sort them by ascending performance
@@ -103,14 +125,75 @@ filters.sortByPerformance = function(rounds) {
   });
   // Put the best performances first
   return sortedRounds.reverse();
-}
+};
 filters.sortByDate = function(rounds) {
     var sortedRounds = _.sortBy(rounds, function(value) {
         // Sort them by ascending performance
         return (value.timestamp ? parseInt(value.timestamp) : false);
     });
     return sortedRounds;
-}
+};
+
+analysis.getBasePerf = function(rounds) {
+  var basePerf = 0;
+  var significantPerfCount = Math.floor(1 + (focus.maxHue - focus.minHue) / 30);
+  // Check if enough perf data
+  if (rounds.length < significantPerfCount) {
+    basePerf = '/';
+  } else {
+    // OK, let's get the first perfs and average them
+    for (var i = 0; i < significantPerfCount; i++) {
+      basePerf += parseFloat(rounds[i].performance);
+    }
+    basePerf /= significantPerfCount;
+  }
+  return basePerf;
+};
+analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
+  var learning = [],
+      overallLearning = 0;
+  var learningRoundScope = 3; // the last 3 rounds and the 3 before
+  var roundsNumber = rounds.length;
+
+  if (rounds.length < 2 * learningRoundScope) {
+    learning = '/';
+    overallLearning = '/';
+  } else {
+    // For each round on the way (starting from 6th round, when enough data)
+    for (var r = 2 * learningRoundScope; r <= roundsNumber; r++) {
+      var mostRecentAveragePerf = 0;
+
+      // Get most recent average perf
+      for (var i = 0; i < learningRoundScope; i++) {
+        var roundPerf = rounds[r - 1 - i].performance;
+        mostRecentAveragePerf += parseFloat(roundPerf);
+      }
+      mostRecentAveragePerf /= learningRoundScope;
+
+      // Then get previous average perf
+      var previousAveragePerf = 0;
+      for (var i = 0; i < learningRoundScope; i++) {
+        var roundPerf = rounds[r - 1 - learningRoundScope - i].performance;
+        previousAveragePerf += parseFloat(roundPerf);
+      }
+      previousAveragePerf /= learningRoundScope;
+
+      // Round current learning: do the diff, and make sure it's not negative (0 at worse)
+      learning.push({
+        'round': r,
+        'learning': Math.max(0, mostRecentAveragePerf - previousAveragePerf)
+      });
+
+      // Update overall learning: diff with basePerf (in the loop because more convenient)
+      overallLearning = Math.max(0, mostRecentAveragePerf - basePerf);
+    }
+  }
+  return [learning, overallLearning];
+};
+
+interaction.updateFocusRounds = function(rounds) {
+  focus.rounds = filters.sortByDate(filters.inHueRange(filters.matchLevel(filters.matchUsername(rounds, focus.player), focus.level), focus.minHue, focus.maxHue));
+};
 
 /* Base rendering functions */
 function getData() {
@@ -232,7 +315,6 @@ function getData() {
     return value.roundLevel == 4;
   });
 
-  console.log(reachedLevel4players);
 }
 function buildUI() {
   // Content 1-1 - Players
@@ -282,6 +364,7 @@ function isPlayer(inputPlayerName, playerNameToMatch) {
 function twoDecimalsOf(inputFloat) {
   return Math.floor(parseInt(100 * inputFloat)) / 100;
 }
+
 jQuery(document).ready(function() {
   // Menu tabs
   jQuery('.huehunt-results').on('click', '.side-menu p.tab', function() {
