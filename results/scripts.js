@@ -5,11 +5,12 @@
  * @since 03-2016
  */
 
-var rounds;
-var players = [];
-var bestRounds;
-var focus = {};
-var filters = {};
+var firebaseRounds,
+    rounds,
+    players = [],
+    bestRounds,
+    focus = {},
+    filters = {};
 
 focus.player = 'Lindrox';
 focus.level = 1;
@@ -22,7 +23,7 @@ focus.roundsNumber = '';
 focus.learningPace = '';
 
 // Input dataset model
-rounds = {
+firebaseRounds = {
   "KBxE015HXj3bV0jEenb" : {
     "performance" : "41",
     "roundLevel" : "1",
@@ -40,15 +41,16 @@ rounds = {
     "username" : "Icosacid"
   }
 };
-
+/*
 var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
 
 myFirebaseRef.on("value", function(data) {
-  rounds = data.val();
+  firebaseRounds = data.val();
   getData();
   buildUI();
   showUI();
 });
+*/
 
 filters.formatFirebaseDataset = function(firebaseRounds) {
   // Remove the unnecessary random object names and make an array of objects
@@ -61,13 +63,53 @@ filters.formatFirebaseDataset = function(firebaseRounds) {
 }
 filters.matchUsername = function(rounds, username) {
   var outputRounds = [];
-  for (var i in rounds) {
-    // Get username
+  for (var i = 0; i < rounds.length; i++) {
     if (rounds[i].username == username) {
       outputRounds.push(rounds[i]);
     }
   }
   return outputRounds;
+}
+filters.matchLevel = function(rounds, level) {
+  var outputRounds = [];
+  for (var i = 0; i < rounds.length; i++) {
+    if (rounds[i].level == level) {
+      outputRounds.push(rounds[i]);
+    }
+  }
+  return outputRounds;
+}
+filters.inHueRange = function(rounds, minHue, maxHue) {
+  var outputRounds = [];
+  for (var i = 0; i < rounds.length; i++) {
+    // Get username
+    if (isInHueRange(rounds[i].targetH, minHue, maxHue)) {
+      outputRounds.push(rounds[i]);
+    }
+  }
+  return outputRounds;
+}
+filters.getUsernames = function(rounds) {
+  var outputUsernames = [];
+  for (var i = 0; i < rounds.length; i++) {
+    outputUsernames.push(rounds[i].username);
+  }
+  return outputUsernames;
+}
+filters.sortByPerformance = function(rounds) {
+  var sortedRounds = _.sortBy(rounds, function(value) {
+    // Sort them by ascending performance
+    return parseInt(value.performance);
+  });
+  // Put the best performances first
+  return sortedRounds.reverse();
+}
+filters.sortByDate = function(rounds) {
+    var sortedRounds = _.sortBy(rounds, function(value) {
+        // Sort them by ascending performance
+        return (value.timestamp ? parseInt(value.timestamp) : false);
+    });
+    return sortedRounds;
 }
 
 /* Base rendering functions */
