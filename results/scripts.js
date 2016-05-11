@@ -5,28 +5,29 @@
  * @since 03-2016
  */
 
+/* Global data */
 var firebaseRounds,
     rounds,
     players = [],
     bestRounds,
+    reachedLevel4players = [],
     focus = {},
     filters = {},
     analysis = {},
     interaction = {};
 
-focus.player = 'Lindrox';
-focus.level = 1;
+/* Data specific to the current focus */
+focus.player = 'maelys';
+focus.level = 2;
 focus.minHue = 0;
-focus.maxHue = 360;
+focus.maxHue = 60;
 focus.rounds = [];
 focus.basePerf = '';
 focus.learning = [];
 focus.overallLearning = '';
 focus.learningPace = '';
 
-focus.roundsNumber = '';
-
-// Input dataset model
+/* Input dataset model */
 firebaseRounds = {
   "KBxE015HXj3bV0jEenb" : {
     "performance" : "41",
@@ -46,12 +47,13 @@ firebaseRounds = {
   }
 };
 
+/* Get the data! */
 var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
-
 myFirebaseRef.on("value", function(data) {
   firebaseRounds = data.val();
-  rounds = firebaseRounds;
-  getData();
+  // Cleanup data format (from dirty JSON to array of objects)
+  rounds = filters.formatFirebaseDataset(firebaseRounds);
+  processData();
   buildUI();
   showUI();
 });
@@ -137,6 +139,7 @@ filters.sortByDate = function(rounds) {
 analysis.getBasePerf = function(rounds) {
   var basePerf = 0;
   var significantPerfCount = Math.floor(1 + (focus.maxHue - focus.minHue) / 30);
+  console.log(significantPerfCount);
   // Check if enough perf data
   if (rounds.length < significantPerfCount) {
     basePerf = '/';
@@ -155,7 +158,7 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
   var learningRoundScope = 3; // the last 3 rounds and the 3 before
   var roundsNumber = rounds.length;
 
-  if (rounds.length < 2 * learningRoundScope) {
+  if (rounds.length < 2 * learningRoundScope || typeof(basePerf) == 'string') {
     learning = '/';
     overallLearning = '/';
   } else {
@@ -194,133 +197,41 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
 interaction.updateFocusRounds = function(rounds) {
   focus.rounds = filters.sortByDate(filters.inHueRange(filters.matchLevel(filters.matchUsername(rounds, focus.player), focus.level), focus.minHue, focus.maxHue));
 };
+interaction.updateFocusData = function() {
+  // Focus baseperf
+  focus.basePerf = analysis.getBasePerf(focus.rounds);
+
+  // Focus current learning and overall learning
+  var learnings = analysis.getCurrentLearningAndOverallLearning(rounds, focus.basePerf);
+  focus.learning = learnings[0];
+  focus.overallLearning = learnings[1];
+
+  // Focus learning pace
+  focus.learningPace = focus.overallLearning / focus.rounds.length || '/';
+};
 
 /* Base rendering functions */
-function getData() {
-  // Content 0 - Highscores
-  var thisLevelRounds = _.filter(firebaseRounds, function(value) {
-    // Remove scores that are not for this level
-    return value.roundLevel == 1;
-  });
-  var sortedRounds = _.sortBy(thisLevelRounds, function(value) {
-    // Sort them by ascending performance
-    return parseInt(value.performance);
-  });
-  // Put the best performances on top
-  sortedRounds = sortedRounds.reverse();
-  // Pick the very bests
-  bestRounds = sortedRounds.splice(0, 10);
+function processData() {
+  /** Global data **/
+  // Highscores
+  bestRounds = filters.sortByPerformance(rounds).splice(0, 10);
 
-  // Content 1-1 - Players
-  for (var prop in firebaseRounds) {
-    // Get username
-    var username = firebaseRounds[prop].username;
-    // Check if already in players
-    var alreadyInPlayers = false;
-    for (var j = 0; j < players.length; j++) {
-      if (username == players[j]) {
-        alreadyInPlayers = true;
-      }
-    }
-    // If so, don't add player to list, otherwise do
-    if (!alreadyInPlayers) {
-      players.push(username);
-    }
-  }
+  // Players
+  players = filters.getUniqueUsernames(rounds);
 
-  // Content 2-1 - Focus baseperf
-  var significantPerfCount = Math.floor(1 + (focus.maxHue - focus.minHue) / 30);
-  focus.basePerf = 0;
-  var focusRounds = [];
-  // Filter rounds by username
-  for (var prop in firebaseRounds) {
-    var round = firebaseRounds[prop];
-    if ((isPlayer(round.username, focus.player) || false) && (round.roundLevel == focus.level || true) && (isInHueRange(round.targetH, focus.minHue, focus.maxHue) || false)) {
-      focusRounds.push(firebaseRounds[prop]);
-    }
-  }
-  // Check if enough perf data
-  if (focusRounds.length < significantPerfCount) {
-    focus.basePerf = '/';
-  } else {
-    // OK, let's get the first perfs and average them
-    for (var i = 0; i < significantPerfCount; i++) {
-      focus.basePerf += parseFloat(focusRounds[i].performance);
-    }
-    focus.basePerf /= significantPerfCount;
-  }
+  // Players that reached level 4
+  reachedLevel4players = filters.getUniqueUsernames(filters.matchLevel(rounds, 4));
 
-  // Content 2-2 and 2-3 - Focus current learning and overall learning
-  var learningRoundScope = 3; // the last 3 rounds and the 3 before
-  var roundsNumber = focusRounds.length;
-
-  if (focusRounds.length < 2 * learningRoundScope) {
-    focus.learning = '/';
-    focus.overallLearning = '/';
-  } else {
-    // For each round on the way (starting from 6th round, when enough data)
-    for (var r = 2 * learningRoundScope; r <= roundsNumber; r++) {
-      var mostRecentAveragePerf = 0;
-
-      // Get most recent average perf
-      for (var i = 0; i < learningRoundScope; i++) {
-        var roundPerf = focusRounds[r - 1 - i].performance;
-        mostRecentAveragePerf += parseFloat(roundPerf);
-      }
-      mostRecentAveragePerf /= learningRoundScope;
-
-      // Then get previous average perf
-      var previousAveragePerf = 0;
-      for (var i = 0; i < learningRoundScope; i++) {
-        var roundPerf = focusRounds[r - 1 - learningRoundScope - i].performance;
-        previousAveragePerf += parseFloat(roundPerf);
-      }
-      previousAveragePerf /= learningRoundScope;
-
-      // Round current learning: do the diff, and make sure it's not negative (0 at worse)
-      focus.learning.push({
-        'round': r,
-        'learning': Math.max(0, mostRecentAveragePerf - previousAveragePerf)
-      });
-
-      // Update overall learning: diff with basePerf (in the loop because more convenient)
-      focus.overallLearning = Math.max(0, mostRecentAveragePerf - focus.basePerf);
-
-    }
-
-
-  }
-  // Content 2-4 - Focus rounds number (for learning pace)
-  focus.roundsNumber = focusRounds.length;
-  focus.learningPace = focus.overallLearning / focus.roundsNumber;
-
-
-  // Content 3 - Players that reached level 4 (exclude cheaters)
-  var reachedLevel4players = [];
-  var reachedLevel4 = _.filter(firebaseRounds, function(value) {
-    if (value.roundLevel == 4) {
-      // Check if already in reachedLevel4players
-      var alreadyInPlayers = false;
-      for (var j = 0; j < reachedLevel4players.length; j++) {
-        if (value.username == reachedLevel4players[j]) {
-          alreadyInPlayers = true;
-        }
-      }
-      // If so, don't add player to list, otherwise do
-      if (!alreadyInPlayers) {
-        reachedLevel4players.push(value.username);
-      }
-    }
-    // Remove scores that are not for this level
-    return value.roundLevel == 4;
-  });
+  /** Initial focus data **/
+  interaction.updateFocusRounds(rounds);
+  interaction.updateFocusData();
 
 }
 function buildUI() {
   // Content 1-1 - Players
   jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
   // Content 1-2 - Rounds
-  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(Object.keys(firebaseRounds).length);
+  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(rounds.length);
 
   // Content 2-1 - Focus baseperf
   jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
@@ -361,8 +272,8 @@ function isPlayer(inputPlayerName, playerNameToMatch) {
     return true;
   } else return false;
 }
-function twoDecimalsOf(inputFloat) {
-  return Math.floor(parseInt(100 * inputFloat)) / 100;
+function twoDecimalsOf(value) {
+  return (typeof(value) == 'string' ? value : Math.floor(parseInt(100 * value)) / 100);
 }
 
 jQuery(document).ready(function() {
