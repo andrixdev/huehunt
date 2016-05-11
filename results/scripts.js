@@ -246,11 +246,7 @@ function buildUI() {
 
 }
 function showUI() {
-  // Undo loading icon
-  jQuery('.huehunt-results .loading-icon').css('display', 'none');
-  // Display UI
-  jQuery('.huehunt-results .side-menu').show();
-  jQuery('.huehunt-results .content').show();
+  jQuery('.huehunt-results').removeClass('loading');
   // Show first tab content
   jQuery('.huehunt-results .content .content-1').show();
   jQuery('.huehunt-results .side-menu p.tab:nth-of-type(1)').addClass('selected');
