@@ -198,7 +198,7 @@ interaction.updateFocusRounds = function(rounds) {
 /* Base rendering functions */
 function getData() {
   // Content 0 - Highscores
-  var thisLevelRounds = _.filter(rounds, function(value) {
+  var thisLevelRounds = _.filter(firebaseRounds, function(value) {
     // Remove scores that are not for this level
     return value.roundLevel == 1;
   });
@@ -212,9 +212,9 @@ function getData() {
   bestRounds = sortedRounds.splice(0, 10);
 
   // Content 1-1 - Players
-  for (var prop in rounds) {
+  for (var prop in firebaseRounds) {
     // Get username
-    var username = rounds[prop].username;
+    var username = firebaseRounds[prop].username;
     // Check if already in players
     var alreadyInPlayers = false;
     for (var j = 0; j < players.length; j++) {
@@ -233,10 +233,10 @@ function getData() {
   focus.basePerf = 0;
   var focusRounds = [];
   // Filter rounds by username
-  for (var prop in rounds) {
-    var round = rounds[prop];
+  for (var prop in firebaseRounds) {
+    var round = firebaseRounds[prop];
     if ((isPlayer(round.username, focus.player) || false) && (round.roundLevel == focus.level || true) && (isInHueRange(round.targetH, focus.minHue, focus.maxHue) || false)) {
-      focusRounds.push(rounds[prop]);
+      focusRounds.push(firebaseRounds[prop]);
     }
   }
   // Check if enough perf data
@@ -297,7 +297,7 @@ function getData() {
 
   // Content 3 - Players that reached level 4 (exclude cheaters)
   var reachedLevel4players = [];
-  var reachedLevel4 = _.filter(rounds, function(value) {
+  var reachedLevel4 = _.filter(firebaseRounds, function(value) {
     if (value.roundLevel == 4) {
       // Check if already in reachedLevel4players
       var alreadyInPlayers = false;
@@ -320,7 +320,7 @@ function buildUI() {
   // Content 1-1 - Players
   jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
   // Content 1-2 - Rounds
-  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(Object.keys(rounds).length);
+  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(Object.keys(firebaseRounds).length);
 
   // Content 2-1 - Focus baseperf
   jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
