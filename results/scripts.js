@@ -232,6 +232,8 @@ function buildUI() {
   jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
   // Content 1-2 - Rounds
   jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(rounds.length);
+  // Content 1-3 - Players who reached level 4
+  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p').html(reachedLevel4players.length);
 
   // Content 2-1 - Focus baseperf
   jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
