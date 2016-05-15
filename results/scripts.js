@@ -14,7 +14,8 @@ var firebaseRounds,
     focus = {},
     filters = {},
     analysis = {},
-    interaction = {};
+    interaction = {},
+    UI = {};
 
 /* Data specific to the current focus */
 focus.player = 'maelys';
@@ -210,6 +211,67 @@ interaction.updateFocusData = function() {
   focus.learningPace = focus.overallLearning / focus.rounds.length || '/';
 };
 
+UI.globalData = {};
+UI.globalData.build = function() {
+  // Players
+  jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
+  // Rounds
+  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(rounds.length);
+  // Players who reached level 4
+  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p').html(reachedLevel4players.length);
+};
+UI.focusData = {};
+UI.focusData.build = function() {
+  // Focus baseperf
+  jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
+  // Focus learning
+  jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(twoDecimalsOf(focus.learning));
+  // Focus overall learning
+  jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(twoDecimalsOf(focus.overallLearning));
+  // Focus learning pace
+  jQuery('.content-2 .tile-container:nth-of-type(4) .data-data p').html(twoDecimalsOf(focus.learningPace));
+};
+UI.steamgraph = {};
+UI.steamgraph.build = function() {
+
+};
+UI.steamgraph.selected = {
+  players: [],
+  hueRanges: [],
+  levels: [],
+  update: function(whichArrayKey, dataValue, isActive) {
+    var whichArray = this[whichArrayKey];
+    var isValueInArray = (_.indexOf(whichArray, dataValue) != -1);
+    if (isActive && !isValueInArray) {
+      whichArray.push(dataValue);
+    }
+    if (!isActive && isValueInArray) {
+      this[whichArrayKey] = _.without(whichArray, dataValue);
+    }
+    console.log(this.players, this.hueRanges, this.levels);
+  }
+};
+UI.steamgraph.listen = function() {
+  // Default behavior
+  jQuery('.huehunt-results .content-3').on('click', '.controls-area .tiles > div', function() {
+    // Get data value stored in DOM attribute
+    var dataValue = jQuery(this).attr('data-value') || 'error';
+    // Figure out which array it's about, i.e. which controls area
+    var whichControlsAreaKey = jQuery(this).parents('.controls-area').attr('data-area-type');
+    console.log(whichControlsAreaKey);
+    // Toggle .active class and update model
+    if (jQuery(this).hasClass('active')) {
+      jQuery(this).removeClass('active');
+      UI.steamgraph.selected.update(whichControlsAreaKey, dataValue, false);
+    } else {
+      jQuery(this).addClass('active');
+      UI.steamgraph.selected.update(whichControlsAreaKey, dataValue, true);
+    }
+  });
+  // Specific listeners
+
+};
+
 /* Base rendering functions */
 function processData() {
   /** Global data **/
@@ -228,22 +290,9 @@ function processData() {
 
 }
 function buildUI() {
-  // Content 1-1 - Players
-  jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
-  // Content 1-2 - Rounds
-  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(rounds.length);
-  // Content 1-3 - Players who reached level 4
-  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p').html(reachedLevel4players.length);
-
-  // Content 2-1 - Focus baseperf
-  jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
-  // Content 2-2 - Focus learning
-  jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(twoDecimalsOf(focus.learning));
-  // Content 2-3 - Focus overall learning
-  jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(twoDecimalsOf(focus.overallLearning));
-  // Content 2-4 - Focus learning pace
-  jQuery('.content-2 .tile-container:nth-of-type(4) .data-data p').html(twoDecimalsOf(focus.learningPace));
-
+  UI.globalData.build();
+  UI.focusData.build();
+  UI.steamgraph.build();
 }
 function showUI() {
   jQuery('.huehunt-results').removeClass('loading');
@@ -274,6 +323,7 @@ function twoDecimalsOf(value) {
   return (typeof(value) == 'string' ? value : Math.floor(parseInt(100 * value)) / 100);
 }
 
+// DOM listeners
 jQuery(document).ready(function() {
   // Menu tabs
   jQuery('.huehunt-results').on('click', '.side-menu p.tab', function() {
@@ -285,4 +335,7 @@ jQuery(document).ready(function() {
     jQuery('.huehunt-results .side-menu p.tab').removeClass('selected');
     jQuery(this).addClass('selected');
   });
+  
+  // Streamgraph selection tiles
+  UI.steamgraph.listen();
 });
