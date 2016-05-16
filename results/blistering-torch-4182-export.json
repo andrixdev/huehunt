@@ -396,60 +396,6 @@
       "targetS" : "100",
       "username" : "Daddy"
     },
-    "-KBMerMUpGJQNzDsrhQT" : {
-      "dataVersion" : "1",
-      "performance" : "189",
-      "roundLevel" : "1",
-      "targetH" : "246",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Ekoa"
-    },
-    "-KBO_tu3JkDQrhTetJxm" : {
-      "dataVersion" : "1",
-      "performance" : "132",
-      "roundLevel" : 1,
-      "targetH" : "298",
-      "targetL" : "50",
-      "targetS" : "46",
-      "username" : "Alloht"
-    },
-    "-KBOa3MmATJBd8ERO_jz" : {
-      "dataVersion" : "1",
-      "performance" : "153",
-      "roundLevel" : 2,
-      "targetH" : "254",
-      "targetL" : "50",
-      "targetS" : "44",
-      "username" : "Alloht"
-    },
-    "-KBOaMjyaIgFQX7wWW_" : {
-      "dataVersion" : "1",
-      "performance" : "150",
-      "roundLevel" : "2",
-      "targetH" : "114",
-      "targetL" : "50",
-      "targetS" : "22",
-      "username" : "Alloht"
-    },
-    "-KBOjQX88fAwn55N1td6" : {
-      "dataVersion" : "1",
-      "performance" : "75",
-      "roundLevel" : 1,
-      "targetH" : "237",
-      "targetL" : "50",
-      "targetS" : "44",
-      "username" : "Alloht"
-    },
-    "-KBRrav7pLZ_YDkmcEU5" : {
-      "dataVersion" : "1",
-      "performance" : "60",
-      "roundLevel" : 1,
-      "targetH" : "208",
-      "targetL" : "50",
-      "targetS" : "64",
-      "username" : "Alloht"
-    },
     "-KBU7Svq5aFNGMfACzve" : {
       "dataVersion" : "1",
       "performance" : "150",
@@ -494,15 +440,6 @@
       "targetL" : "50",
       "targetS" : "100",
       "username" : "Floriane"
-    },
-    "-KBU8CtulvJTU0Xnru_" : {
-      "dataVersion" : "1",
-      "performance" : "183",
-      "roundLevel" : "1",
-      "targetH" : "21",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Mmmeh"
     },
     "-KBU8VkzbUw4tHUllVd" : {
       "dataVersion" : "1",
@@ -801,33 +738,6 @@
       "targetS" : "90",
       "username" : "Floriane"
     },
-    "-KBmLb2qhmFUI39m4Zn" : {
-      "dataVersion" : "1",
-      "performance" : "177",
-      "roundLevel" : "1",
-      "targetH" : "20",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Ekoa"
-    },
-    "-KBmLiOAmlNJVIeEbdd" : {
-      "dataVersion" : "1",
-      "performance" : "174",
-      "roundLevel" : "1",
-      "targetH" : "295",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Ekoa"
-    },
-    "-KBmMDNBaId7UmCpbhzK" : {
-      "dataVersion" : "1",
-      "performance" : "186",
-      "roundLevel" : "1",
-      "targetH" : "50",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Hagrid"
-    },
     "-KBxE015HXj3bV0jEenb" : {
       "dataVersion" : "1",
       "performance" : "123",
@@ -845,241 +755,6 @@
       "targetL" : "50",
       "targetS" : "100",
       "username" : "Lindrox"
-    },
-    "-KCu4Ucc0bW5kjMf3mY1" : {
-      "dataVersion" : "1",
-      "performance" : "180",
-      "roundLevel" : "1",
-      "targetH" : "318",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Icosacid"
-    },
-    "-KF52ssgqc7t1AeE_qSe" : {
-      "dataVersion" : 1,
-      "performance" : "182",
-      "roundLevel" : "1",
-      "targetH" : "130",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Acid"
-    },
-    "-KF8PONX5-7GjK-2PqUN" : {
-      "dataVersion" : 1,
-      "performance" : "194",
-      "roundLevel" : "1",
-      "targetH" : "7",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Underwear"
-    },
-    "-KF8RLlc1312ZBRw7gjs" : {
-      "dataVersion" : 1,
-      "performance" : "171",
-      "roundLevel" : "1",
-      "targetH" : "0",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Underwear"
-    },
-    "-KF8RSJHrK5Q0IaMrPjH" : {
-      "dataVersion" : 1,
-      "performance" : "176",
-      "roundLevel" : "1",
-      "targetH" : "124",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Underwear"
-    },
-    "-KF8RiJnBMM6oiyI6eOK" : {
-      "dataVersion" : 1,
-      "performance" : "151",
-      "roundLevel" : "1",
-      "targetH" : "96",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Underwear"
-    },
-    "-KF8RvcqvGwN8-3Dks6X" : {
-      "dataVersion" : 1,
-      "performance" : "125",
-      "roundLevel" : "2",
-      "targetH" : "256",
-      "targetL" : "50",
-      "targetS" : "64",
-      "username" : "Underwear"
-    },
-    "-KF8S8CMgrZJrLdDN0nJ" : {
-      "dataVersion" : 1,
-      "performance" : "167",
-      "roundLevel" : 1,
-      "targetH" : "141",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Underwear"
-    },
-    "-KFE2jP5D9j96oDfpT8S" : {
-      "dataVersion" : 1,
-      "performance" : "159",
-      "roundLevel" : 2,
-      "targetH" : "183",
-      "targetL" : "50",
-      "targetS" : "98",
-      "username" : "Underwear"
-    },
-    "-KFE34cmpgZAaKgr85-s" : {
-      "dataVersion" : 1,
-      "performance" : "162",
-      "roundLevel" : "3",
-      "targetH" : "198",
-      "targetL" : "23",
-      "targetS" : "49",
-      "username" : "Underwear"
-    },
-    "-KFE4KvMIheATmPQfkQM" : {
-      "dataVersion" : 1,
-      "performance" : "157",
-      "roundLevel" : "3",
-      "targetH" : "198",
-      "targetL" : "73",
-      "targetS" : "47",
-      "username" : "Underwear"
-    },
-    "-KFE5rHdp77bFG3FHMA_" : {
-      "dataVersion" : 1,
-      "performance" : "164",
-      "roundLevel" : "3",
-      "targetH" : "321",
-      "targetL" : "42",
-      "targetS" : "54",
-      "username" : "Underwear"
-    },
-    "-KFE6ldNurRyveqQSTYg" : {
-      "dataVersion" : 1,
-      "performance" : "140",
-      "roundLevel" : "1",
-      "targetH" : "220",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Vivaldi"
-    },
-    "-KFE6sdUmoa7Mu3BNuQ5" : {
-      "dataVersion" : 1,
-      "performance" : "173",
-      "roundLevel" : "1",
-      "targetH" : "108",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Vivaldi"
-    },
-    "-KFE7--IkwT2ut1vkf-O" : {
-      "dataVersion" : 1,
-      "performance" : "86",
-      "roundLevel" : "1",
-      "targetH" : "22",
-      "targetL" : "50",
-      "targetS" : "100",
-      "username" : "Vivaldi"
-    },
-    "-KFE8PJAWJUBGwC0wXFA" : {
-      "dataVersion" : 1,
-      "performance" : "155",
-      "roundLevel" : "1",
-      "targetH" : "201",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460543005962,
-      "username" : "Trump"
-    },
-    "-KFEDVlVXeWNz64fF7b_" : {
-      "dataVersion" : 1,
-      "performance" : "107",
-      "roundLevel" : "1",
-      "targetH" : "219",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460544343136,
-      "username" : "Trump"
-    },
-    "-KFED__K2JGJYpJcfCa3" : {
-      "dataVersion" : 1,
-      "performance" : "129",
-      "roundLevel" : "1",
-      "targetH" : "332",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460544362909,
-      "username" : "Trump"
-    },
-    "-KFEDeuKYT7xMzFT7lJy" : {
-      "dataVersion" : 1,
-      "performance" : "163",
-      "roundLevel" : "1",
-      "targetH" : "359",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460544384734,
-      "username" : "Trump"
-    },
-    "-KFEDncMDulGNhDrdG45" : {
-      "dataVersion" : 1,
-      "performance" : "48",
-      "roundLevel" : "1",
-      "targetH" : "229",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460544420448,
-      "username" : "Trump"
-    },
-    "-KFEDvh02S_7vg5KkQZa" : {
-      "dataVersion" : 1,
-      "performance" : "56",
-      "roundLevel" : "1",
-      "targetH" : "185",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460544453514,
-      "username" : "Trump"
-    },
-    "-KFEN7OQtg6iNj0aWYb8" : {
-      "dataVersion" : 1,
-      "performance" : "120",
-      "roundLevel" : "1",
-      "targetH" : "14",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460546864730,
-      "username" : "Goose"
-    },
-    "-KFENDyuevsVzs88t82o" : {
-      "dataVersion" : 1,
-      "performance" : "121",
-      "roundLevel" : "1",
-      "targetH" : "299",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460546891769,
-      "username" : "Goose"
-    },
-    "-KFENJJbDCbNXLRKHjoy" : {
-      "dataVersion" : 1,
-      "performance" : "181",
-      "roundLevel" : "1",
-      "targetH" : "75",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460546913637,
-      "username" : "Goose"
-    },
-    "-KFENr3Y-EAxKT_VUMiZ" : {
-      "dataVersion" : 1,
-      "performance" : "171",
-      "roundLevel" : 1,
-      "targetH" : "144",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460547055989,
-      "username" : "Trump"
     },
     "-KFEP7_kA6Usa3Q7LlHW" : {
       "dataVersion" : 1,
@@ -1231,76 +906,6 @@
       "timestamp" : 1460549436380,
       "username" : "arnaud"
     },
-    "-KFZzTwt9d26dmEvYtag" : {
-      "dataVersion" : 1,
-      "performance" : "157",
-      "roundLevel" : "1",
-      "targetH" : "211",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460909502265,
-      "username" : "Oogie Woogie"
-    },
-    "-KF_AJbY_dobcraQ8Nc4" : {
-      "dataVersion" : 1,
-      "performance" : "126",
-      "roundLevel" : "1",
-      "targetH" : "82",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460912605667,
-      "username" : "Oogie Woogie"
-    },
-    "-KF_BIWgKFCfQlgkZ5qy" : {
-      "dataVersion" : 1,
-      "performance" : "137",
-      "roundLevel" : "1",
-      "targetH" : "282",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460912863339,
-      "username" : "Oogie Woogie"
-    },
-    "-KFd2azeB2g7E5PGf8yv" : {
-      "dataVersion" : 1,
-      "performance" : "141",
-      "roundLevel" : 1,
-      "targetH" : "58",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1460977692650,
-      "username" : "ertyhuj"
-    },
-    "-KFdCmnzAdTzMZRynz2f" : {
-      "dataVersion" : 1,
-      "performance" : "1",
-      "roundLevel" : 1,
-      "targetH" : "215",
-      "targetL" : "50",
-      "targetS" : "44",
-      "timestamp" : 1460980362495,
-      "username" : "Trump"
-    },
-    "-KFdDASAfwtExbio6Sp_" : {
-      "dataVersion" : 1,
-      "performance" : "110",
-      "roundLevel" : "2",
-      "targetH" : "189",
-      "targetL" : "50",
-      "targetS" : "79",
-      "timestamp" : 1460980463509,
-      "username" : "Trump"
-    },
-    "-KFdF1_uMOdatDJ8PRpX" : {
-      "dataVersion" : 1,
-      "performance" : "130",
-      "roundLevel" : "3",
-      "targetH" : "12",
-      "targetL" : "62",
-      "targetS" : "39",
-      "timestamp" : 1460980951483,
-      "username" : "Trump"
-    },
     "-KFdKb3ejWXBRqXsYXfl" : {
       "dataVersion" : 1,
       "performance" : "56",
@@ -1410,526 +1015,6 @@
       "targetS" : "26",
       "timestamp" : 1460984791709,
       "username" : "arnaud"
-    },
-    "-KFeh_7V_PhTnLX303NV" : {
-      "dataVersion" : 1,
-      "performance" : "38",
-      "roundLevel" : 3,
-      "targetH" : "213",
-      "targetL" : "69",
-      "targetS" : "98",
-      "timestamp" : 1461005472287,
-      "username" : "Trump"
-    },
-    "-KFehrkNgK-X_r5qXflE" : {
-      "dataVersion" : 1,
-      "performance" : "178",
-      "roundLevel" : 1,
-      "targetH" : "43",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461005548568,
-      "username" : "Trump"
-    },
-    "-KFejlkINg3KTNXeFoQo" : {
-      "dataVersion" : 1,
-      "performance" : "86",
-      "roundLevel" : "3",
-      "targetH" : "88",
-      "targetL" : "38",
-      "targetS" : "21",
-      "timestamp" : 1461006047846,
-      "username" : "Trump"
-    },
-    "-KFeqacuO4yNH3Mf9Zpw" : {
-      "dataVersion" : 1,
-      "performance" : "0",
-      "roundLevel" : "3",
-      "targetH" : "204",
-      "targetL" : "28",
-      "targetS" : "97",
-      "timestamp" : 1461007837862,
-      "username" : "Trump"
-    },
-    "-KFeuwkz3SjHVpPdYDFx" : {
-      "dataVersion" : 1,
-      "performance" : "128",
-      "roundLevel" : "3",
-      "targetH" : "310",
-      "targetL" : "48",
-      "targetS" : "83",
-      "timestamp" : 1461008977411,
-      "username" : "Trump"
-    },
-    "-KFeyOKPOXtBr16YrO2A" : {
-      "dataVersion" : 1,
-      "performance" : "35",
-      "roundLevel" : "3",
-      "targetH" : "0",
-      "targetL" : "47",
-      "targetS" : "48",
-      "timestamp" : 1461009880409,
-      "username" : "Trump"
-    },
-    "-KFezcRX9xHErrtvYwal" : {
-      "dataVersion" : 1,
-      "performance" : "187",
-      "roundLevel" : 1,
-      "targetH" : "334",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461010204449,
-      "username" : "Trump"
-    },
-    "-KFezlHu-KPQADdRoHf1" : {
-      "dataVersion" : 1,
-      "performance" : "1",
-      "roundLevel" : 1,
-      "targetH" : "22",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461010240837,
-      "username" : "Trump"
-    },
-    "-KFf-33T2txTnsYxAmpP" : {
-      "dataVersion" : 1,
-      "performance" : "3",
-      "roundLevel" : 1,
-      "targetH" : "255",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461010317737,
-      "username" : "Trump"
-    },
-    "-KFf-Va_lgQ6lj2n4CxS" : {
-      "dataVersion" : 1,
-      "performance" : "54",
-      "roundLevel" : 1,
-      "targetH" : "323",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461010434468,
-      "username" : "Trump"
-    },
-    "-KFf-wN8iJn_IwB0n-tG" : {
-      "dataVersion" : 1,
-      "performance" : "147",
-      "roundLevel" : 1,
-      "targetH" : "283",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461010548571,
-      "username" : "Trump"
-    },
-    "-KFf1LwCopc3kRPOZ1g8" : {
-      "dataVersion" : 1,
-      "performance" : "0",
-      "roundLevel" : "3",
-      "targetH" : "167",
-      "targetL" : "37",
-      "targetS" : "39",
-      "timestamp" : 1461010919518,
-      "username" : "Trump"
-    },
-    "-KFf1Wtmg0ItI0QajK2v" : {
-      "dataVersion" : 1,
-      "performance" : "61",
-      "roundLevel" : 1,
-      "targetH" : "186",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461010964082,
-      "username" : "Trump"
-    },
-    "-KFf1_66WgOl2r39IrmL" : {
-      "dataVersion" : 1,
-      "performance" : "141",
-      "roundLevel" : 1,
-      "targetH" : "300",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461010977519,
-      "username" : "Trump"
-    },
-    "-KFf43aDWGuZEQ5kcFqN" : {
-      "dataVersion" : 1,
-      "performance" : "115",
-      "roundLevel" : "1",
-      "targetH" : "184",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461011630477,
-      "username" : "Steiner"
-    },
-    "-KFfCjSRLKUzspDosuKr" : {
-      "dataVersion" : 1,
-      "performance" : "154",
-      "roundLevel" : 1,
-      "targetH" : "130",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461013903196,
-      "username" : "Trump"
-    },
-    "-KFfD5DrVC_xJ6y4ryr8" : {
-      "dataVersion" : 1,
-      "performance" : "88",
-      "roundLevel" : "3",
-      "targetH" : "231",
-      "targetL" : "27",
-      "targetS" : "31",
-      "timestamp" : 1461013996621,
-      "username" : "Trump"
-    },
-    "-KFfFL7zusIt0QET8Lpo" : {
-      "dataVersion" : 1,
-      "performance" : "116",
-      "roundLevel" : 1,
-      "targetH" : "76",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461014585918,
-      "username" : "Trump"
-    },
-    "-KFfFq00IESjXixChOag" : {
-      "dataVersion" : 1,
-      "performance" : "107",
-      "roundLevel" : 4,
-      "targetH" : "277",
-      "targetL" : "52",
-      "targetS" : "67",
-      "timestamp" : 1461014716820,
-      "username" : "Trump"
-    },
-    "-KFfGi3VSM3hw0XhWnLc" : {
-      "dataVersion" : 1,
-      "performance" : "140",
-      "roundLevel" : 1,
-      "targetH" : "23",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461014946418,
-      "username" : "Trump"
-    },
-    "-KFfH9NGc2NfLt7qUVlI" : {
-      "dataVersion" : 1,
-      "performance" : "175",
-      "roundLevel" : 1,
-      "targetH" : "310",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461015062371,
-      "username" : "Trump"
-    },
-    "-KFfHFSKUcS0PclF7Yog" : {
-      "dataVersion" : 1,
-      "performance" : "0",
-      "roundLevel" : 1,
-      "targetH" : "257",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461015087272,
-      "username" : "Trump"
-    },
-    "-KFnBRWkLfAGx_cVrLGe" : {
-      "dataVersion" : 1,
-      "performance" : "179",
-      "roundLevel" : "1",
-      "targetH" : "44",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461147781232,
-      "username" : "Tarzan"
-    },
-    "-KFnBad2XS5zjqoRiOsI" : {
-      "dataVersion" : 1,
-      "performance" : "4",
-      "roundLevel" : "1",
-      "targetH" : "338",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461147822730,
-      "username" : "Tarzan"
-    },
-    "-KFnCJtQU5sSsLbf7hbC" : {
-      "dataVersion" : 1,
-      "performance" : "25",
-      "roundLevel" : "1",
-      "targetH" : "298",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461148012123,
-      "username" : "Tarzan"
-    },
-    "-KFnCsyamTva8CBfAIBo" : {
-      "dataVersion" : 1,
-      "performance" : "80",
-      "roundLevel" : "1",
-      "targetH" : "275",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461148159985,
-      "username" : "Tarzan"
-    },
-    "-KFnCxp2m9BLZsFx6AUh" : {
-      "dataVersion" : 1,
-      "performance" : "166",
-      "roundLevel" : "1",
-      "targetH" : "89",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461148179853,
-      "username" : "Tarzan"
-    },
-    "-KFnFZUuumGyVIorDbV1" : {
-      "dataVersion" : 1,
-      "performance" : "152",
-      "roundLevel" : "1",
-      "targetH" : "319",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461148862629,
-      "username" : "Tarzan"
-    },
-    "-KFnFbX4ifBY0cBIqPDZ" : {
-      "dataVersion" : 1,
-      "performance" : "0",
-      "roundLevel" : "1",
-      "targetH" : "138",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461148875056,
-      "username" : "Tarzan"
-    },
-    "-KFnFeteiOd-uba06BYt" : {
-      "dataVersion" : 1,
-      "performance" : "182",
-      "roundLevel" : "1",
-      "targetH" : "187",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461148889352,
-      "username" : "Tarzan"
-    },
-    "-KFnG_EYTZSnHi59rbWg" : {
-      "dataVersion" : 1,
-      "performance" : "149",
-      "roundLevel" : "1",
-      "targetH" : "236",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461149128320,
-      "username" : "Tarzan"
-    },
-    "-KFnGjHYrT0VZwnyiap-" : {
-      "dataVersion" : 1,
-      "performance" : "171",
-      "roundLevel" : "2",
-      "targetH" : "108",
-      "targetL" : "50",
-      "targetS" : "77",
-      "timestamp" : 1461149169472,
-      "username" : "Tarzan"
-    },
-    "-KFnGzASFnZoqDwP5K3_" : {
-      "dataVersion" : 1,
-      "performance" : "54",
-      "roundLevel" : "2",
-      "targetH" : "218",
-      "targetL" : "50",
-      "targetS" : "22",
-      "timestamp" : 1461149234555,
-      "username" : "Tarzan"
-    },
-    "-KFnHNvioHgQ7fV9yjkA" : {
-      "dataVersion" : 1,
-      "performance" : "125",
-      "roundLevel" : "2",
-      "targetH" : "314",
-      "targetL" : "50",
-      "targetS" : "38",
-      "timestamp" : 1461149340044,
-      "username" : "Tarzan"
-    },
-    "-KFnI7ZsFkioebMVNVKX" : {
-      "dataVersion" : 1,
-      "performance" : "143",
-      "roundLevel" : "2",
-      "targetH" : "328",
-      "targetL" : "50",
-      "targetS" : "46",
-      "timestamp" : 1461149534520,
-      "username" : "Tarzan"
-    },
-    "-KFnITV3-aQremORbMkN" : {
-      "dataVersion" : 1,
-      "performance" : "126",
-      "roundLevel" : "2",
-      "targetH" : "333",
-      "targetL" : "50",
-      "targetS" : "72",
-      "timestamp" : 1461149624324,
-      "username" : "Tarzan"
-    },
-    "-KFnIfRui8gtfm5ll8c2" : {
-      "dataVersion" : 1,
-      "performance" : "139",
-      "roundLevel" : "2",
-      "targetH" : "128",
-      "targetL" : "50",
-      "targetS" : "65",
-      "timestamp" : 1461149677451,
-      "username" : "Tarzan"
-    },
-    "-KFnIt82q_miGwmgYFuU" : {
-      "dataVersion" : 1,
-      "performance" : "127",
-      "roundLevel" : "2",
-      "targetH" : "0",
-      "targetL" : "50",
-      "targetS" : "29",
-      "timestamp" : 1461149733524,
-      "username" : "Tarzan"
-    },
-    "-KFnJhbhLyxizhpZPpcm" : {
-      "dataVersion" : 1,
-      "performance" : "133",
-      "roundLevel" : "2",
-      "targetH" : "127",
-      "targetL" : "50",
-      "targetS" : "31",
-      "timestamp" : 1461149948397,
-      "username" : "Tarzan"
-    },
-    "-KFnK7thiMvLJhTfTu_G" : {
-      "dataVersion" : 1,
-      "performance" : "136",
-      "roundLevel" : "2",
-      "targetH" : "279",
-      "targetL" : "50",
-      "targetS" : "49",
-      "timestamp" : 1461150060214,
-      "username" : "Tarzan"
-    },
-    "-KFnKTCQb-vBgOVb1GLU" : {
-      "dataVersion" : 1,
-      "performance" : "109",
-      "roundLevel" : "2",
-      "targetH" : "56",
-      "targetL" : "50",
-      "targetS" : "67",
-      "timestamp" : 1461150147493,
-      "username" : "Tarzan"
-    },
-    "-KFnK_USJKUSxoRz_U3B" : {
-      "dataVersion" : 1,
-      "performance" : "114",
-      "roundLevel" : "2",
-      "targetH" : "334",
-      "targetL" : "50",
-      "targetS" : "34",
-      "timestamp" : 1461150177245,
-      "username" : "Tarzan"
-    },
-    "-KFnKjWLSaPk9EhJ8k4t" : {
-      "dataVersion" : 1,
-      "performance" : "139",
-      "roundLevel" : "2",
-      "targetH" : "303",
-      "targetL" : "50",
-      "targetS" : "59",
-      "timestamp" : 1461150218410,
-      "username" : "Tarzan"
-    },
-    "-KFnL3ZIWMXWiPVAauVH" : {
-      "dataVersion" : 1,
-      "performance" : "158",
-      "roundLevel" : "3",
-      "targetH" : "243",
-      "targetL" : "39",
-      "targetS" : "85",
-      "timestamp" : 1461150304615,
-      "username" : "Tarzan"
-    },
-    "-KFnLI5FlV8f_0ZwKMYD" : {
-      "dataVersion" : 1,
-      "performance" : "142",
-      "roundLevel" : "3",
-      "targetH" : "152",
-      "targetL" : "70",
-      "targetS" : "61",
-      "timestamp" : 1461150364132,
-      "username" : "Tarzan"
-    },
-    "-KFnM1_sIB1uSXe6WUMp" : {
-      "dataVersion" : 1,
-      "performance" : "106",
-      "roundLevel" : 2,
-      "targetH" : "254",
-      "targetL" : "50",
-      "targetS" : "99",
-      "timestamp" : 1461150558668,
-      "username" : "Tarzan"
-    },
-    "-KFnMY9JS9qYEMJuxu3A" : {
-      "dataVersion" : 1,
-      "performance" : "130",
-      "roundLevel" : "3",
-      "targetH" : "129",
-      "targetL" : "37",
-      "targetS" : "86",
-      "timestamp" : 1461150692071,
-      "username" : "Tarzan"
-    },
-    "-KFnPOqE3c7h_AvneMkc" : {
-      "dataVersion" : 2,
-      "performance" : "141",
-      "roundLevel" : "3",
-      "targetH" : "66",
-      "targetL" : "50",
-      "targetS" : "46",
-      "timestamp" : 1461151440353,
-      "username" : "Tarzan"
-    },
-    "-KFnQZLqrDQUq-ih9CXB" : {
-      "dataVersion" : 2,
-      "performance" : "81",
-      "roundLevel" : "3",
-      "targetH" : "207",
-      "targetL" : "25",
-      "targetS" : "82",
-      "timestamp" : 1461151745543,
-      "username" : "Tarzan"
-    },
-    "-KFnS8xalpH0YRfXygh-" : {
-      "dataVersion" : 2,
-      "performance" : "178",
-      "roundLevel" : 1,
-      "targetH" : "233",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461152161637,
-      "username" : "Tarzan"
-    },
-    "-KFnSNcAMRbXOHC9eY37" : {
-      "dataVersion" : 2,
-      "performance" : "52",
-      "roundLevel" : 2,
-      "targetH" : "198",
-      "targetL" : "50",
-      "targetS" : "93",
-      "timestamp" : 1461152221784,
-      "username" : "Tarzan"
-    },
-    "-KFoWt7idJOJ0acNonzj" : {
-      "dataVersion" : 2,
-      "performance" : "192",
-      "roundLevel" : 1,
-      "targetH" : "2",
-      "targetL" : "50",
-      "targetS" : "100",
-      "timestamp" : 1461170180653,
-      "username" : "Tarzan"
     },
     "-KFsBkthHr1w4Th8mDcs" : {
       "dataVersion" : 2,
@@ -8100,6 +7185,5006 @@
       "targetS" : "100",
       "timestamp" : 1461249214821,
       "username" : "Blind"
+    },
+    "-KFtJ7kZsEB2SNhli6hz" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "2",
+      "targetH" : "188",
+      "targetL" : "50",
+      "targetS" : "97",
+      "timestamp" : 1461250460708,
+      "username" : "Juluq"
+    },
+    "-KFwS0sJgT3IKQAfuBXx" : {
+      "dataVersion" : 2,
+      "performance" : "95",
+      "roundLevel" : "2",
+      "targetH" : "358",
+      "targetL" : "50",
+      "targetS" : "57",
+      "timestamp" : 1461303129227,
+      "username" : "FRBER"
+    },
+    "-KFwuqj78707cjyDkld4" : {
+      "dataVersion" : 2,
+      "performance" : "111",
+      "roundLevel" : 2,
+      "targetH" : "108",
+      "targetL" : "50",
+      "targetS" : "46",
+      "timestamp" : 1461310942150,
+      "username" : "benjamin"
+    },
+    "-KFwvamI_s_NmG9Udkfc" : {
+      "dataVersion" : 2,
+      "performance" : "56",
+      "roundLevel" : "2",
+      "targetH" : "335",
+      "targetL" : "50",
+      "targetS" : "87",
+      "timestamp" : 1461311138962,
+      "username" : "lubur"
+    },
+    "-KFwvn_-I4lKh5xxiOJr" : {
+      "dataVersion" : 2,
+      "performance" : "117",
+      "roundLevel" : "3",
+      "targetH" : "296",
+      "targetL" : "32",
+      "targetS" : "62",
+      "timestamp" : 1461311191360,
+      "username" : "Chloé"
+    },
+    "-KFww0l6Oik3-6GR6jWr" : {
+      "dataVersion" : 2,
+      "performance" : "44",
+      "roundLevel" : "3",
+      "targetH" : "42",
+      "targetL" : "20",
+      "targetS" : "71",
+      "timestamp" : 1461311249545,
+      "username" : "Chloé"
+    },
+    "-KFww2JcbEreqEUOMCXU" : {
+      "dataVersion" : 2,
+      "performance" : "170",
+      "roundLevel" : "1",
+      "targetH" : "68",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461311255848,
+      "username" : "Thib"
+    },
+    "-KFww6TgmmdPKBT8Llds" : {
+      "dataVersion" : 2,
+      "performance" : "168",
+      "roundLevel" : "3",
+      "targetH" : "126",
+      "targetL" : "53",
+      "targetS" : "52",
+      "timestamp" : 1461311272942,
+      "username" : "Chloé"
+    },
+    "-KFww8njRbYcPP8Ar-_-" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "359",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461311282459,
+      "username" : "Thib"
+    },
+    "-KFwwHuvLNrtx4U6kXXE" : {
+      "dataVersion" : 2,
+      "performance" : "156",
+      "roundLevel" : "1",
+      "targetH" : "46",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461311319783,
+      "username" : "Thib"
+    },
+    "-KFwwPzQQIZFVIbgdRXT" : {
+      "dataVersion" : 2,
+      "performance" : "186",
+      "roundLevel" : "1",
+      "targetH" : "3",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461311352839,
+      "username" : "Thib"
+    },
+    "-KFww_xAfzEniqeMxz8i" : {
+      "dataVersion" : 2,
+      "performance" : "25",
+      "roundLevel" : "3",
+      "targetH" : "179",
+      "targetL" : "69",
+      "targetS" : "21",
+      "timestamp" : 1461311397773,
+      "username" : "Chloé"
+    },
+    "-KFwwakKYGCnQ37pCetQ" : {
+      "dataVersion" : 2,
+      "performance" : "3",
+      "roundLevel" : "3",
+      "targetH" : "268",
+      "targetL" : "32",
+      "targetS" : "22",
+      "timestamp" : 1461311400981,
+      "username" : "thnon"
+    },
+    "-KFwwfUYb5XUWuSJXYmK" : {
+      "dataVersion" : 2,
+      "performance" : "167",
+      "roundLevel" : "1",
+      "targetH" : "272",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461311420430,
+      "username" : "Thib"
+    },
+    "-KFwxMMgfFJnAe2zCtwF" : {
+      "dataVersion" : 2,
+      "performance" : "50",
+      "roundLevel" : "3",
+      "targetH" : "209",
+      "targetL" : "57",
+      "targetS" : "92",
+      "timestamp" : 1461311600174,
+      "username" : "Chloé"
+    },
+    "-KFwxYJiJQa6_Md-aQ9r" : {
+      "dataVersion" : 2,
+      "performance" : "82",
+      "roundLevel" : "3",
+      "targetH" : "176",
+      "targetL" : "38",
+      "targetS" : "50",
+      "timestamp" : 1461311649137,
+      "username" : "Chloé"
+    },
+    "-KFwxhixrwkpacpJRAgN" : {
+      "dataVersion" : 2,
+      "performance" : "40",
+      "roundLevel" : 3,
+      "targetH" : "301",
+      "targetL" : "24",
+      "targetS" : "38",
+      "timestamp" : 1461311691708,
+      "username" : "Foo"
+    },
+    "-KFwxj2cJ-QFnAIDcm5i" : {
+      "dataVersion" : 2,
+      "performance" : "161",
+      "roundLevel" : "3",
+      "targetH" : "336",
+      "targetL" : "78",
+      "targetS" : "25",
+      "timestamp" : 1461311697195,
+      "username" : "Chloé"
+    },
+    "-KFwxzCB6NjFrNxI5iNC" : {
+      "dataVersion" : 2,
+      "performance" : "30",
+      "roundLevel" : "3",
+      "targetH" : "34",
+      "targetL" : "27",
+      "targetS" : "80",
+      "timestamp" : 1461311763343,
+      "username" : "Chloé"
+    },
+    "-KFwy6uijOfqgEnrz2T4" : {
+      "dataVersion" : 2,
+      "performance" : "100",
+      "roundLevel" : "3",
+      "targetH" : "123",
+      "targetL" : "34",
+      "targetS" : "89",
+      "timestamp" : 1461311799024,
+      "username" : "Chloé"
+    },
+    "-KFwyFViK9wP98HKhELW" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "3",
+      "targetH" : "38",
+      "targetL" : "65",
+      "targetS" : "56",
+      "timestamp" : 1461311834224,
+      "username" : "Chloé"
+    },
+    "-KFwyKkb0oTlLf9TE57b" : {
+      "dataVersion" : 2,
+      "performance" : "95",
+      "roundLevel" : "3",
+      "targetH" : "32",
+      "targetL" : "57",
+      "targetS" : "97",
+      "timestamp" : 1461311855721,
+      "username" : "Chloé"
+    },
+    "-KFwyOsjwjrRu1fL90Ez" : {
+      "dataVersion" : 2,
+      "performance" : "140",
+      "roundLevel" : "4",
+      "targetH" : "18",
+      "targetL" : "39",
+      "targetS" : "20",
+      "timestamp" : 1461311872625,
+      "username" : "Chloé"
+    },
+    "-KFwziKpeLJItLsiVvXZ" : {
+      "dataVersion" : 2,
+      "performance" : "115",
+      "roundLevel" : 1,
+      "targetH" : "138",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461312218485,
+      "username" : "maelys"
+    },
+    "-KFwzqPzXTjPLRO_5e6P" : {
+      "dataVersion" : 2,
+      "performance" : "126",
+      "roundLevel" : 1,
+      "targetH" : "173",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461312251661,
+      "username" : "maelys"
+    },
+    "-KFx--eOoom-S2-aKiDn" : {
+      "dataVersion" : 2,
+      "performance" : "57",
+      "roundLevel" : 1,
+      "targetH" : "210",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461312293607,
+      "username" : "maelys"
+    },
+    "-KFx-4932KFbcQ3Cy_Ar" : {
+      "dataVersion" : 2,
+      "performance" : "116",
+      "roundLevel" : 1,
+      "targetH" : "218",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461312312018,
+      "username" : "maelys"
+    },
+    "-KFx-C_ITG93ZRazdYis" : {
+      "dataVersion" : 2,
+      "performance" : "172",
+      "roundLevel" : 1,
+      "targetH" : "113",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461312346529,
+      "username" : "maelys"
+    },
+    "-KFx-SOpnbJs4rZTxkSX" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : 2,
+      "targetH" : "308",
+      "targetL" : "50",
+      "targetS" : "66",
+      "timestamp" : 1461312411253,
+      "username" : "moder"
+    },
+    "-KFx2PShk7j2a6uEEZNM" : {
+      "dataVersion" : 2,
+      "performance" : "53",
+      "roundLevel" : "3",
+      "targetH" : "112",
+      "targetL" : "71",
+      "targetS" : "56",
+      "timestamp" : 1461313185497,
+      "username" : "thnon"
+    },
+    "-KFx2bmMgZKDX6_Sw_ge" : {
+      "dataVersion" : 2,
+      "performance" : "77",
+      "roundLevel" : "3",
+      "targetH" : "102",
+      "targetL" : "29",
+      "targetS" : "37",
+      "timestamp" : 1461313240067,
+      "username" : "thnon"
+    },
+    "-KFx2rTik6nXVoco41M0" : {
+      "dataVersion" : 2,
+      "performance" : "54",
+      "roundLevel" : "3",
+      "targetH" : "173",
+      "targetL" : "64",
+      "targetS" : "95",
+      "timestamp" : 1461313304346,
+      "username" : "thnon"
+    },
+    "-KFx4Q4mj-hIHwS2a3k3" : {
+      "dataVersion" : 2,
+      "performance" : "183",
+      "roundLevel" : 1,
+      "targetH" : "64",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461313712498,
+      "username" : "maelys"
+    },
+    "-KFx4Ur5Dcjv87Qxx6g3" : {
+      "dataVersion" : 2,
+      "performance" : "167",
+      "roundLevel" : 1,
+      "targetH" : "92",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461313732152,
+      "username" : "maelys"
+    },
+    "-KFx4XWjFBhxO3uhsEpA" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : 1,
+      "targetH" : "89",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461313743073,
+      "username" : "maelys"
+    },
+    "-KGBGHucbSIIPgqfY5PM" : {
+      "dataVersion" : 2,
+      "performance" : "166",
+      "roundLevel" : "1",
+      "targetH" : "66",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461568498582,
+      "username" : "Anrey"
+    },
+    "-KGBGPD6gZzbYhcUbzbG" : {
+      "dataVersion" : 2,
+      "performance" : "189",
+      "roundLevel" : "1",
+      "targetH" : "69",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461568528501,
+      "username" : "Anrey"
+    },
+    "-KGBG_MYNyooaghMDkZS" : {
+      "dataVersion" : 2,
+      "performance" : "151",
+      "roundLevel" : "1",
+      "targetH" : "106",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461568574161,
+      "username" : "Anrey"
+    },
+    "-KGBGm4UDGXUMoFGL9DE" : {
+      "dataVersion" : 2,
+      "performance" : "152",
+      "roundLevel" : "1",
+      "targetH" : "224",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461568626253,
+      "username" : "Anrey"
+    },
+    "-KGBH11e3tfK7ntiobz2" : {
+      "dataVersion" : 2,
+      "performance" : "164",
+      "roundLevel" : "1",
+      "targetH" : "308",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461568691608,
+      "username" : "Anrey"
+    },
+    "-KGBNWUmHRoGJL491CC1" : {
+      "dataVersion" : 2,
+      "performance" : "138",
+      "roundLevel" : "1",
+      "targetH" : "84",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461570377713,
+      "username" : "Cakol"
+    },
+    "-KGBO7eyuIVFfjGyBChp" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "1",
+      "targetH" : "11",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461570537395,
+      "username" : "Cakol"
+    },
+    "-KGBOD1H0pKTgrF4Hrq7" : {
+      "dataVersion" : 2,
+      "performance" : "166",
+      "roundLevel" : "1",
+      "targetH" : "35",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461570559367,
+      "username" : "Cakol"
+    },
+    "-KGBOXni58xOlXvRfEKW" : {
+      "dataVersion" : 2,
+      "performance" : "26",
+      "roundLevel" : "1",
+      "targetH" : "189",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461570644452,
+      "username" : "Cakol"
+    },
+    "-KGBOeOIusalnnKuI5ol" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "316",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461570675529,
+      "username" : "Cakol"
+    },
+    "-KGBOjfKj9PrwWTy2Kdi" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "1",
+      "targetH" : "36",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461570697163,
+      "username" : "Cakol"
+    },
+    "-KGBdvOzCKsvt9RQ43vG" : {
+      "dataVersion" : 2,
+      "performance" : "20",
+      "roundLevel" : "3",
+      "targetH" : "65",
+      "targetL" : "33",
+      "targetS" : "97",
+      "timestamp" : 1461574940287,
+      "username" : "thnon"
+    },
+    "-KGBe1pzJkAJzyKpci0L" : {
+      "dataVersion" : 2,
+      "performance" : "170",
+      "roundLevel" : "3",
+      "targetH" : "329",
+      "targetL" : "52",
+      "targetS" : "54",
+      "timestamp" : 1461574970828,
+      "username" : "thnon"
+    },
+    "-KGBeGm7PlbXXOoMVqjf" : {
+      "dataVersion" : 2,
+      "performance" : "54",
+      "roundLevel" : "3",
+      "targetH" : "43",
+      "targetL" : "78",
+      "targetS" : "47",
+      "timestamp" : 1461575032021,
+      "username" : "thnon"
+    },
+    "-KGBePvqaWU_F3ZbdXNX" : {
+      "dataVersion" : 2,
+      "performance" : "61",
+      "roundLevel" : "3",
+      "targetH" : "332",
+      "targetL" : "65",
+      "targetS" : "31",
+      "timestamp" : 1461575069507,
+      "username" : "thnon"
+    },
+    "-KGBftv_-2F1etNEe3Op" : {
+      "dataVersion" : 2,
+      "performance" : "2",
+      "roundLevel" : "3",
+      "targetH" : "267",
+      "targetL" : "71",
+      "targetS" : "29",
+      "timestamp" : 1461575458610,
+      "username" : "thnon"
+    },
+    "-KGBg5Fd4RhttBFobaAO" : {
+      "dataVersion" : 2,
+      "performance" : "40",
+      "roundLevel" : "3",
+      "targetH" : "84",
+      "targetL" : "21",
+      "targetS" : "65",
+      "timestamp" : 1461575509110,
+      "username" : "thnon"
+    },
+    "-KGBgLDl9BdcOomjWIvB" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "3",
+      "targetH" : "170",
+      "targetL" : "31",
+      "targetS" : "27",
+      "timestamp" : 1461575574526,
+      "username" : "thnon"
+    },
+    "-KGBg_Nkb7azMVIORnuZ" : {
+      "dataVersion" : 2,
+      "performance" : "17",
+      "roundLevel" : "3",
+      "targetH" : "281",
+      "targetL" : "75",
+      "targetS" : "55",
+      "timestamp" : 1461575636605,
+      "username" : "thnon"
+    },
+    "-KGBgjL_kcErPUE65NxE" : {
+      "dataVersion" : 2,
+      "performance" : "69",
+      "roundLevel" : "3",
+      "targetH" : "352",
+      "targetL" : "58",
+      "targetS" : "92",
+      "timestamp" : 1461575677425,
+      "username" : "thnon"
+    },
+    "-KGBhyBLFtMDHregdfxK" : {
+      "dataVersion" : 2,
+      "performance" : "82",
+      "roundLevel" : "3",
+      "targetH" : "165",
+      "targetL" : "41",
+      "targetS" : "43",
+      "timestamp" : 1461576000355,
+      "username" : "thnon"
+    },
+    "-KGBivf3-hx5O2_ROBlm" : {
+      "dataVersion" : 2,
+      "performance" : "92",
+      "roundLevel" : "3",
+      "targetH" : "47",
+      "targetL" : "22",
+      "targetS" : "33",
+      "timestamp" : 1461576252177,
+      "username" : "thnon"
+    },
+    "-KGBuCGnGwOtRP64M8N9" : {
+      "dataVersion" : 2,
+      "performance" : "139",
+      "roundLevel" : "1",
+      "targetH" : "29",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461579207017,
+      "username" : "Cakol"
+    },
+    "-KGBuKSoKTW3cD9zpL-5" : {
+      "dataVersion" : 2,
+      "performance" : "183",
+      "roundLevel" : "1",
+      "targetH" : "24",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461579240553,
+      "username" : "Cakol"
+    },
+    "-KGBuVbmjY-Csc_QBi1j" : {
+      "dataVersion" : 2,
+      "performance" : "126",
+      "roundLevel" : "1",
+      "targetH" : "211",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461579286248,
+      "username" : "Cakol"
+    },
+    "-KGBumhto00U4_rbiKng" : {
+      "dataVersion" : 2,
+      "performance" : "89",
+      "roundLevel" : "2",
+      "targetH" : "107",
+      "targetL" : "50",
+      "targetS" : "82",
+      "timestamp" : 1461579360367,
+      "username" : "Cakol"
+    },
+    "-KGBuuVD2nMODesi1j7A" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "2",
+      "targetH" : "190",
+      "targetL" : "50",
+      "targetS" : "83",
+      "timestamp" : 1461579392260,
+      "username" : "Cakol"
+    },
+    "-KGBv9vYq8Y-g55s19IJ" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "2",
+      "targetH" : "89",
+      "targetL" : "50",
+      "targetS" : "50",
+      "timestamp" : 1461579459545,
+      "username" : "Cakol"
+    },
+    "-KGBvHgVD378mL2Gt3td" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "2",
+      "targetH" : "139",
+      "targetL" : "50",
+      "targetS" : "79",
+      "timestamp" : 1461579491350,
+      "username" : "Cakol"
+    },
+    "-KGBvPO6aePkvT8P8DE_" : {
+      "dataVersion" : 2,
+      "performance" : "180",
+      "roundLevel" : "2",
+      "targetH" : "160",
+      "targetL" : "50",
+      "targetS" : "46",
+      "timestamp" : 1461579522877,
+      "username" : "Cakol"
+    },
+    "-KGBva5QE4vjlVLXLsLW" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : "2",
+      "targetH" : "69",
+      "targetL" : "50",
+      "targetS" : "82",
+      "timestamp" : 1461579570833,
+      "username" : "Cakol"
+    },
+    "-KGBvpVYf-1B6j3uG4sT" : {
+      "dataVersion" : 2,
+      "performance" : "30",
+      "roundLevel" : "2",
+      "targetH" : "224",
+      "targetL" : "50",
+      "targetS" : "35",
+      "timestamp" : 1461579633945,
+      "username" : "Cakol"
+    },
+    "-KGCL7ZFCxR6ZK9t5ZVL" : {
+      "dataVersion" : 2,
+      "performance" : "117",
+      "roundLevel" : "2",
+      "targetH" : "242",
+      "targetL" : "50",
+      "targetS" : "54",
+      "timestamp" : 1461586528362,
+      "username" : "Cakol"
+    },
+    "-KGCLIc33ZLCXEnhfRCu" : {
+      "dataVersion" : 2,
+      "performance" : "80",
+      "roundLevel" : "2",
+      "targetH" : "340",
+      "targetL" : "50",
+      "targetS" : "21",
+      "timestamp" : 1461586573663,
+      "username" : "Cakol"
+    },
+    "-KGCLTsxtv1IonAetlDV" : {
+      "dataVersion" : 2,
+      "performance" : "74",
+      "roundLevel" : "2",
+      "targetH" : "99",
+      "targetL" : "50",
+      "targetS" : "71",
+      "timestamp" : 1461586619800,
+      "username" : "Cakol"
+    },
+    "-KGCLemU4A6a15m3Jc6X" : {
+      "dataVersion" : 2,
+      "performance" : "140",
+      "roundLevel" : "2",
+      "targetH" : "247",
+      "targetL" : "50",
+      "targetS" : "81",
+      "timestamp" : 1461586668538,
+      "username" : "Cakol"
+    },
+    "-KGD4cy5WMFbTFfHIwIZ" : {
+      "dataVersion" : 2,
+      "performance" : "87",
+      "roundLevel" : "3",
+      "targetH" : "45",
+      "targetL" : "77",
+      "targetS" : "27",
+      "timestamp" : 1461598982022,
+      "username" : "thnon"
+    },
+    "-KGD4oaP_KxfRIWpkZo7" : {
+      "dataVersion" : 2,
+      "performance" : "14",
+      "roundLevel" : "3",
+      "targetH" : "310",
+      "targetL" : "28",
+      "targetS" : "85",
+      "timestamp" : 1461599029730,
+      "username" : "thnon"
+    },
+    "-KGD5-94O5hN-mlxHz_k" : {
+      "dataVersion" : 2,
+      "performance" : "98",
+      "roundLevel" : "3",
+      "targetH" : "283",
+      "targetL" : "55",
+      "targetS" : "64",
+      "timestamp" : 1461599077069,
+      "username" : "thnon"
+    },
+    "-KGD5EEfUZsIAO6a3Xo2" : {
+      "dataVersion" : 2,
+      "performance" : "105",
+      "roundLevel" : "3",
+      "targetH" : "116",
+      "targetL" : "21",
+      "targetS" : "20",
+      "timestamp" : 1461599138867,
+      "username" : "thnon"
+    },
+    "-KGD5V1phNgpYXZ3me3h" : {
+      "dataVersion" : 2,
+      "performance" : "22",
+      "roundLevel" : "3",
+      "targetH" : "247",
+      "targetL" : "29",
+      "targetS" : "76",
+      "timestamp" : 1461599207676,
+      "username" : "thnon"
+    },
+    "-KGD5hVolG3glkhGYsNt" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "3",
+      "targetH" : "119",
+      "targetL" : "74",
+      "targetS" : "97",
+      "timestamp" : 1461599262844,
+      "username" : "thnon"
+    },
+    "-KGD5tXbEHzZB6fRpubv" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "3",
+      "targetH" : "317",
+      "targetL" : "37",
+      "targetS" : "79",
+      "timestamp" : 1461599312111,
+      "username" : "thnon"
+    },
+    "-KGD62wTlAFNHlQn6_ZT" : {
+      "dataVersion" : 2,
+      "performance" : "71",
+      "roundLevel" : "3",
+      "targetH" : "54",
+      "targetL" : "47",
+      "targetS" : "33",
+      "timestamp" : 1461599354725,
+      "username" : "thnon"
+    },
+    "-KGD6HsWrFbp5aLL6I2A" : {
+      "dataVersion" : 2,
+      "performance" : "43",
+      "roundLevel" : "3",
+      "targetH" : "201",
+      "targetL" : "30",
+      "targetS" : "51",
+      "timestamp" : 1461599415912,
+      "username" : "thnon"
+    },
+    "-KGD6XOgtphN1IWRGJp6" : {
+      "dataVersion" : 2,
+      "performance" : "42",
+      "roundLevel" : "3",
+      "targetH" : "276",
+      "targetL" : "39",
+      "targetS" : "75",
+      "timestamp" : 1461599479476,
+      "username" : "thnon"
+    },
+    "-KGD6qxgbJ2axYyL1vLl" : {
+      "dataVersion" : 2,
+      "performance" : "94",
+      "roundLevel" : "3",
+      "targetH" : "356",
+      "targetL" : "26",
+      "targetS" : "48",
+      "timestamp" : 1461599563700,
+      "username" : "thnon"
+    },
+    "-KGD6zUls7LjSebthwBM" : {
+      "dataVersion" : 2,
+      "performance" : "137",
+      "roundLevel" : "3",
+      "targetH" : "137",
+      "targetL" : "46",
+      "targetS" : "25",
+      "timestamp" : 1461599598649,
+      "username" : "thnon"
+    },
+    "-KGD_SEYPPP5l20BWGrm" : {
+      "dataVersion" : 2,
+      "performance" : "53",
+      "roundLevel" : "1",
+      "targetH" : "256",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607322595,
+      "username" : "meuc"
+    },
+    "-KGD_niovgzwkzWaOnH0" : {
+      "dataVersion" : 2,
+      "performance" : "152",
+      "roundLevel" : "1",
+      "targetH" : "49",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607414754,
+      "username" : "meuc"
+    },
+    "-KGD_xGoQLf_Dzzfazny" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "56",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607453857,
+      "username" : "meuc"
+    },
+    "-KGDa3SpCQD_mlsHPifX" : {
+      "dataVersion" : 2,
+      "performance" : "182",
+      "roundLevel" : "1",
+      "targetH" : "215",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607483299,
+      "username" : "meuc"
+    },
+    "-KGDa6kCqTJbqA8AfbuF" : {
+      "dataVersion" : 2,
+      "performance" : "192",
+      "roundLevel" : "1",
+      "targetH" : "359",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607496763,
+      "username" : "meuc"
+    },
+    "-KGDaFezqIj76saKxz9I" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : "1",
+      "targetH" : "158",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607533293,
+      "username" : "meuc"
+    },
+    "-KGDaMXCZmtIboGH5qx4" : {
+      "dataVersion" : 2,
+      "performance" : "178",
+      "roundLevel" : "1",
+      "targetH" : "342",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607561403,
+      "username" : "meuc"
+    },
+    "-KGDaQVzZe6B-GEI83Vw" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "11",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461607577709,
+      "username" : "meuc"
+    },
+    "-KGDad_VJyoQViumWHil" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : 2,
+      "targetH" : "254",
+      "targetL" : "50",
+      "targetS" : "84",
+      "timestamp" : 1461607635341,
+      "username" : "meuc"
+    },
+    "-KGDcWlurRzWAgqCTI3R" : {
+      "dataVersion" : 2,
+      "performance" : "139",
+      "roundLevel" : "2",
+      "targetH" : "23",
+      "targetL" : "50",
+      "targetS" : "74",
+      "timestamp" : 1461608127656,
+      "username" : "meuc"
+    },
+    "-KGDmN1RaI_YjsnxidOV" : {
+      "dataVersion" : 2,
+      "performance" : "5",
+      "roundLevel" : "1",
+      "targetH" : "327",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461610709148,
+      "username" : "Dust"
+    },
+    "-KGDmnjIfu-GJhIp-Cyv" : {
+      "dataVersion" : 2,
+      "performance" : "145",
+      "roundLevel" : "1",
+      "targetH" : "354",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461610817159,
+      "username" : "Dust"
+    },
+    "-KGDmxj7YvT8jnVm-aQo" : {
+      "dataVersion" : 2,
+      "performance" : "121",
+      "roundLevel" : "1",
+      "targetH" : "292",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461610858107,
+      "username" : "Dust"
+    },
+    "-KGDn5ygZCR0AJVWUBFs" : {
+      "dataVersion" : 2,
+      "performance" : "186",
+      "roundLevel" : "1",
+      "targetH" : "355",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461610895967,
+      "username" : "Dust"
+    },
+    "-KGDnJmHbP2FX7ceryzt" : {
+      "dataVersion" : 2,
+      "performance" : "156",
+      "roundLevel" : "1",
+      "targetH" : "307",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461610952518,
+      "username" : "Dust"
+    },
+    "-KGDnPhr1Pi6pc4_GouR" : {
+      "dataVersion" : 2,
+      "performance" : "192",
+      "roundLevel" : "1",
+      "targetH" : "238",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461610976811,
+      "username" : "Dust"
+    },
+    "-KGDnaB6zdJmGzRBmuEO" : {
+      "dataVersion" : 2,
+      "performance" : "129",
+      "roundLevel" : "1",
+      "targetH" : "323",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461611023803,
+      "username" : "Dust"
+    },
+    "-KGDnkIYBjDPNA03tmYY" : {
+      "dataVersion" : 2,
+      "performance" : "177",
+      "roundLevel" : "1",
+      "targetH" : "203",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461611065238,
+      "username" : "Dust"
+    },
+    "-KGDnvQ1dUpPxW0IMKOt" : {
+      "dataVersion" : 2,
+      "performance" : "172",
+      "roundLevel" : "1",
+      "targetH" : "125",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461611110774,
+      "username" : "Dust"
+    },
+    "-KGDoBNbtFq7VZ3vu9i-" : {
+      "dataVersion" : 2,
+      "performance" : "119",
+      "roundLevel" : "2",
+      "targetH" : "324",
+      "targetL" : "50",
+      "targetS" : "28",
+      "timestamp" : 1461611180251,
+      "username" : "Dust"
+    },
+    "-KGDoQ69BCkhZWEIYeWs" : {
+      "dataVersion" : 2,
+      "performance" : "168",
+      "roundLevel" : "2",
+      "targetH" : "0",
+      "targetL" : "50",
+      "targetS" : "42",
+      "timestamp" : 1461611240574,
+      "username" : "Dust"
+    },
+    "-KGDoWdx5IPpXCIp0ssH" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "2",
+      "targetH" : "1",
+      "targetL" : "50",
+      "targetS" : "38",
+      "timestamp" : 1461611267377,
+      "username" : "Dust"
+    },
+    "-KGDotHwM5leSdBAJHSY" : {
+      "dataVersion" : 2,
+      "performance" : "138",
+      "roundLevel" : "2",
+      "targetH" : "276",
+      "targetL" : "50",
+      "targetS" : "99",
+      "timestamp" : 1461611364208,
+      "username" : "Dust"
+    },
+    "-KGDp7V2GPiNIfBGd0OZ" : {
+      "dataVersion" : 2,
+      "performance" : "129",
+      "roundLevel" : "2",
+      "targetH" : "145",
+      "targetL" : "50",
+      "targetS" : "50",
+      "timestamp" : 1461611426487,
+      "username" : "Dust"
+    },
+    "-KGDpOM7jOikDh8tovoV" : {
+      "dataVersion" : 2,
+      "performance" : "139",
+      "roundLevel" : "2",
+      "targetH" : "110",
+      "targetL" : "50",
+      "targetS" : "38",
+      "timestamp" : 1461611495548,
+      "username" : "Dust"
+    },
+    "-KGDpgL3C-LBOd4lZnXA" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "2",
+      "targetH" : "238",
+      "targetL" : "50",
+      "targetS" : "34",
+      "timestamp" : 1461611573303,
+      "username" : "Dust"
+    },
+    "-KGDwEdeaZ5YA5hCSD6_" : {
+      "dataVersion" : 2,
+      "performance" : "166",
+      "roundLevel" : "2",
+      "targetH" : "350",
+      "targetL" : "50",
+      "targetS" : "39",
+      "timestamp" : 1461613290782,
+      "username" : "Dust"
+    },
+    "-KGDwP0bxMs74oF5dOum" : {
+      "dataVersion" : 2,
+      "performance" : "160",
+      "roundLevel" : "2",
+      "targetH" : "226",
+      "targetL" : "50",
+      "targetS" : "93",
+      "timestamp" : 1461613333274,
+      "username" : "Dust"
+    },
+    "-KGDwX1w_aiQzIhI_Mob" : {
+      "dataVersion" : 2,
+      "performance" : "126",
+      "roundLevel" : "2",
+      "targetH" : "11",
+      "targetL" : "50",
+      "targetS" : "87",
+      "timestamp" : 1461613366127,
+      "username" : "Dust"
+    },
+    "-KGDx2rWC5rimL9uH51g" : {
+      "dataVersion" : 2,
+      "performance" : "131",
+      "roundLevel" : "3",
+      "targetH" : "232",
+      "targetL" : "42",
+      "targetS" : "77",
+      "timestamp" : 1461613504661,
+      "username" : "Dust"
+    },
+    "-KGDxg93xHJ25kpuil0O" : {
+      "dataVersion" : 2,
+      "performance" : "86",
+      "roundLevel" : "3",
+      "targetH" : "186",
+      "targetL" : "58",
+      "targetS" : "45",
+      "timestamp" : 1461613669688,
+      "username" : "Dust"
+    },
+    "-KGE4WisQi8ZZYO5xWJt" : {
+      "dataVersion" : 2,
+      "performance" : "171",
+      "roundLevel" : "1",
+      "targetH" : "295",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461615729592,
+      "username" : "test"
+    },
+    "-KGE4oN5oc56rI4E87De" : {
+      "dataVersion" : 2,
+      "performance" : "25",
+      "roundLevel" : "1",
+      "targetH" : "99",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461615802015,
+      "username" : "test"
+    },
+    "-KGEOX52gebA7neBYdXf" : {
+      "dataVersion" : 2,
+      "performance" : "72",
+      "roundLevel" : 2,
+      "targetH" : "263",
+      "targetL" : "50",
+      "targetS" : "94",
+      "timestamp" : 1461620973954,
+      "username" : "meuc"
+    },
+    "-KGEOiLzzTmbxnKr_9Zu" : {
+      "dataVersion" : 2,
+      "performance" : "42",
+      "roundLevel" : "2",
+      "targetH" : "111",
+      "targetL" : "50",
+      "targetS" : "20",
+      "timestamp" : 1461621024260,
+      "username" : "meuc"
+    },
+    "-KGEPGftAQ12TukRSOoK" : {
+      "dataVersion" : 2,
+      "performance" : "128",
+      "roundLevel" : "2",
+      "targetH" : "83",
+      "targetL" : "50",
+      "targetS" : "55",
+      "timestamp" : 1461621168957,
+      "username" : "meuc"
+    },
+    "-KGEPU71yUm6QOl_zejn" : {
+      "dataVersion" : 2,
+      "performance" : "129",
+      "roundLevel" : "2",
+      "targetH" : "92",
+      "targetL" : "50",
+      "targetS" : "65",
+      "timestamp" : 1461621224007,
+      "username" : "meuc"
+    },
+    "-KGEPef6B6PyK742TEht" : {
+      "dataVersion" : 2,
+      "performance" : "136",
+      "roundLevel" : "2",
+      "targetH" : "336",
+      "targetL" : "50",
+      "targetS" : "92",
+      "timestamp" : 1461621271308,
+      "username" : "meuc"
+    },
+    "-KGEQ17W4eZDC_5FyJSi" : {
+      "dataVersion" : 2,
+      "performance" : "73",
+      "roundLevel" : "2",
+      "targetH" : "134",
+      "targetL" : "50",
+      "targetS" : "71",
+      "timestamp" : 1461621367329,
+      "username" : "meuc"
+    },
+    "-KGEQ9RV4BoS0eRsGQIH" : {
+      "dataVersion" : 2,
+      "performance" : "168",
+      "roundLevel" : "2",
+      "targetH" : "138",
+      "targetL" : "50",
+      "targetS" : "60",
+      "timestamp" : 1461621401439,
+      "username" : "meuc"
+    },
+    "-KGEQPghiDLbI_Ng0wi-" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : 2,
+      "targetH" : "326",
+      "targetL" : "50",
+      "targetS" : "33",
+      "timestamp" : 1461621468011,
+      "username" : "meuc"
+    },
+    "-KGEQfi_VBq6ivbJQX57" : {
+      "dataVersion" : 2,
+      "performance" : "112",
+      "roundLevel" : "2",
+      "targetH" : "281",
+      "targetL" : "50",
+      "targetS" : "22",
+      "timestamp" : 1461621537764,
+      "username" : "meuc"
+    },
+    "-KGEQjcYo84Wxzk7sBIj" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : 1,
+      "targetH" : "351",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461621553762,
+      "username" : "meuc"
+    },
+    "-KGFWE2FyAhUEqSJ7o6C" : {
+      "dataVersion" : 2,
+      "performance" : "47",
+      "roundLevel" : "1",
+      "targetH" : "109",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461639770320,
+      "username" : "crush"
+    },
+    "-KGFWXx8RiT3rPtoBwiv" : {
+      "dataVersion" : 2,
+      "performance" : "167",
+      "roundLevel" : "1",
+      "targetH" : "47",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461639848541,
+      "username" : "crush"
+    },
+    "-KGFWex9Jtk6Aj2J9Bc5" : {
+      "dataVersion" : 2,
+      "performance" : "175",
+      "roundLevel" : "1",
+      "targetH" : "263",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461639881310,
+      "username" : "crush"
+    },
+    "-KGFWl5-xp-eMd19Cb99" : {
+      "dataVersion" : 2,
+      "performance" : "133",
+      "roundLevel" : "1",
+      "targetH" : "162",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461639906452,
+      "username" : "crush"
+    },
+    "-KGFWuWwNC67FwuJ46Jy" : {
+      "dataVersion" : 2,
+      "performance" : "92",
+      "roundLevel" : "1",
+      "targetH" : "339",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461639945104,
+      "username" : "crush"
+    },
+    "-KGFX1jQTqgCkptThOEI" : {
+      "dataVersion" : 2,
+      "performance" : "59",
+      "roundLevel" : "1",
+      "targetH" : "79",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461639978735,
+      "username" : "crush"
+    },
+    "-KGFX6Czz7HezGpgBfua" : {
+      "dataVersion" : 2,
+      "performance" : "185",
+      "roundLevel" : "1",
+      "targetH" : "44",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461639997075,
+      "username" : "crush"
+    },
+    "-KGFXA6aLXg4w61fSN6D" : {
+      "dataVersion" : 2,
+      "performance" : "172",
+      "roundLevel" : "1",
+      "targetH" : "337",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461640013050,
+      "username" : "crush"
+    },
+    "-KGFXWaijGwYDJg_8aPg" : {
+      "dataVersion" : 2,
+      "performance" : "128",
+      "roundLevel" : "1",
+      "targetH" : "253",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461640105154,
+      "username" : "crush"
+    },
+    "-KGFXkKmQNY8KjFpALAH" : {
+      "dataVersion" : 2,
+      "performance" : "92",
+      "roundLevel" : "1",
+      "targetH" : "132",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461640165509,
+      "username" : "crush"
+    },
+    "-KGFY4gH2Br6qIyCn33R" : {
+      "dataVersion" : 2,
+      "performance" : "64",
+      "roundLevel" : "2",
+      "targetH" : "205",
+      "targetL" : "50",
+      "targetS" : "75",
+      "timestamp" : 1461640252966,
+      "username" : "crush"
+    },
+    "-KGFYGV2Dz-qU7GR5sjs" : {
+      "dataVersion" : 2,
+      "performance" : "130",
+      "roundLevel" : "2",
+      "targetH" : "198",
+      "targetL" : "50",
+      "targetS" : "50",
+      "timestamp" : 1461640301334,
+      "username" : "crush"
+    },
+    "-KGFYTX-ObDTCKNiU_DC" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "2",
+      "targetH" : "286",
+      "targetL" : "50",
+      "targetS" : "70",
+      "timestamp" : 1461640354708,
+      "username" : "crush"
+    },
+    "-KGFYf5c8GP63PlC27of" : {
+      "dataVersion" : 2,
+      "performance" : "121",
+      "roundLevel" : "2",
+      "targetH" : "286",
+      "targetL" : "50",
+      "targetS" : "47",
+      "timestamp" : 1461640406204,
+      "username" : "crush"
+    },
+    "-KGFYsTp2tMWCOf5jLRU" : {
+      "dataVersion" : 2,
+      "performance" : "161",
+      "roundLevel" : "2",
+      "targetH" : "264",
+      "targetL" : "50",
+      "targetS" : "63",
+      "timestamp" : 1461640461001,
+      "username" : "crush"
+    },
+    "-KGFYxLGoy3ASVpabDlP" : {
+      "dataVersion" : 2,
+      "performance" : "177",
+      "roundLevel" : "2",
+      "targetH" : "242",
+      "targetL" : "50",
+      "targetS" : "87",
+      "timestamp" : 1461640480933,
+      "username" : "crush"
+    },
+    "-KGFZB5k8mAwv_lWV_Y1" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "2",
+      "targetH" : "100",
+      "targetL" : "50",
+      "targetS" : "22",
+      "timestamp" : 1461640541380,
+      "username" : "crush"
+    },
+    "-KGFZN_gfGF7lnVYlvUH" : {
+      "dataVersion" : 2,
+      "performance" : "124",
+      "roundLevel" : "2",
+      "targetH" : "42",
+      "targetL" : "50",
+      "targetS" : "28",
+      "timestamp" : 1461640592512,
+      "username" : "crush"
+    },
+    "-KGFZ_RqpPvTc6vrU8GN" : {
+      "dataVersion" : 2,
+      "performance" : "61",
+      "roundLevel" : "2",
+      "targetH" : "162",
+      "targetL" : "50",
+      "targetS" : "82",
+      "timestamp" : 1461640645194,
+      "username" : "crush"
+    },
+    "-KGFZluBt8tzWw0UCxpT" : {
+      "dataVersion" : 2,
+      "performance" : "120",
+      "roundLevel" : "2",
+      "targetH" : "239",
+      "targetL" : "50",
+      "targetS" : "72",
+      "timestamp" : 1461640696224,
+      "username" : "crush"
+    },
+    "-KGFZtTjHGjzwoz9r3kk" : {
+      "dataVersion" : 2,
+      "performance" : "148",
+      "roundLevel" : "2",
+      "targetH" : "264",
+      "targetL" : "50",
+      "targetS" : "79",
+      "timestamp" : 1461640727235,
+      "username" : "crush"
+    },
+    "-KGF_-MfKnO661ZX_v_d" : {
+      "dataVersion" : 2,
+      "performance" : "162",
+      "roundLevel" : "2",
+      "targetH" : "75",
+      "targetL" : "50",
+      "targetS" : "63",
+      "timestamp" : 1461640755455,
+      "username" : "crush"
+    },
+    "-KGF_CjHZjLLYInCuF9J" : {
+      "dataVersion" : 2,
+      "performance" : "112",
+      "roundLevel" : "2",
+      "targetH" : "212",
+      "targetL" : "50",
+      "targetS" : "59",
+      "timestamp" : 1461640810214,
+      "username" : "crush"
+    },
+    "-KGF_hkSS3lzKiRlwm5p" : {
+      "dataVersion" : 2,
+      "performance" : "73",
+      "roundLevel" : "3",
+      "targetH" : "32",
+      "targetL" : "78",
+      "targetS" : "65",
+      "timestamp" : 1461640941361,
+      "username" : "crush"
+    },
+    "-KGFa2Xr-xYAjPrJp0S2" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "3",
+      "targetH" : "158",
+      "targetL" : "52",
+      "targetS" : "37",
+      "timestamp" : 1461641030603,
+      "username" : "crush"
+    },
+    "-KGFplh7_YDyGV7ulzuW" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : "1",
+      "targetH" : "169",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645155144,
+      "username" : "184"
+    },
+    "-KGFpu_QapPinYBaPDWZ" : {
+      "dataVersion" : 2,
+      "performance" : "171",
+      "roundLevel" : "1",
+      "targetH" : "156",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645190448,
+      "username" : "184"
+    },
+    "-KGFqA9NZZrVozlmEiN4" : {
+      "dataVersion" : 2,
+      "performance" : "75",
+      "roundLevel" : "1",
+      "targetH" : "333",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645258349,
+      "username" : "184"
+    },
+    "-KGFqEIDnOftC7friqTv" : {
+      "dataVersion" : 2,
+      "performance" : "173",
+      "roundLevel" : "1",
+      "targetH" : "14",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645275298,
+      "username" : "184"
+    },
+    "-KGFqIxW9i0Bv9Gri8LM" : {
+      "dataVersion" : 2,
+      "performance" : "94",
+      "roundLevel" : "1",
+      "targetH" : "212",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645294389,
+      "username" : "184"
+    },
+    "-KGFqWP7VNCvLO4tNUBJ" : {
+      "dataVersion" : 2,
+      "performance" : "105",
+      "roundLevel" : "1",
+      "targetH" : "94",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645349469,
+      "username" : "184"
+    },
+    "-KGFqbiDapC3eol2YBZ3" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "44",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645375330,
+      "username" : "184"
+    },
+    "-KGFqgcfEO4oGbkc-cW8" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "314",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645395456,
+      "username" : "184"
+    },
+    "-KGFr-GZ9fVlzpHIzqk8" : {
+      "dataVersion" : 2,
+      "performance" : "161",
+      "roundLevel" : "1",
+      "targetH" : "61",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461645475896,
+      "username" : "184"
+    },
+    "-KGFrHhM7KJAOMp4WIo4" : {
+      "dataVersion" : 2,
+      "performance" : "61",
+      "roundLevel" : 2,
+      "targetH" : "212",
+      "targetL" : "50",
+      "targetS" : "67",
+      "timestamp" : 1461645551403,
+      "username" : "184"
+    },
+    "-KGFtrKsOLG_InH46usp" : {
+      "dataVersion" : 2,
+      "performance" : "167",
+      "roundLevel" : "2",
+      "targetH" : "272",
+      "targetL" : "50",
+      "targetS" : "50",
+      "timestamp" : 1461646225740,
+      "username" : "184"
+    },
+    "-KGFu7__makee-NcZWQf" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : "2",
+      "targetH" : "239",
+      "targetL" : "50",
+      "targetS" : "86",
+      "timestamp" : 1461646296378,
+      "username" : "184"
+    },
+    "-KGFuOreeKnu7UdUPfvP" : {
+      "dataVersion" : 2,
+      "performance" : "103",
+      "roundLevel" : "2",
+      "targetH" : "0",
+      "targetL" : "50",
+      "targetS" : "27",
+      "timestamp" : 1461646367167,
+      "username" : "184"
+    },
+    "-KGFuk5HU3Eushj2nXnY" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "2",
+      "targetH" : "138",
+      "targetL" : "50",
+      "targetS" : "74",
+      "timestamp" : 1461646458215,
+      "username" : "184"
+    },
+    "-KGFv1HUMdOBW8E0Q4qF" : {
+      "dataVersion" : 2,
+      "performance" : "68",
+      "roundLevel" : "2",
+      "targetH" : "275",
+      "targetL" : "50",
+      "targetS" : "63",
+      "timestamp" : 1461646532724,
+      "username" : "184"
+    },
+    "-KGFvxCDDad0F3P60aWx" : {
+      "dataVersion" : 2,
+      "performance" : "44",
+      "roundLevel" : "2",
+      "targetH" : "110",
+      "targetL" : "50",
+      "targetS" : "40",
+      "timestamp" : 1461646774050,
+      "username" : "184"
+    },
+    "-KGFwBvntemYVzLo0Il1" : {
+      "dataVersion" : 2,
+      "performance" : "123",
+      "roundLevel" : "2",
+      "targetH" : "110",
+      "targetL" : "50",
+      "targetS" : "62",
+      "timestamp" : 1461646838471,
+      "username" : "184"
+    },
+    "-KGFwq8aCJYUQWUlHBew" : {
+      "dataVersion" : 2,
+      "performance" : "100",
+      "roundLevel" : "2",
+      "targetH" : "49",
+      "targetL" : "50",
+      "targetS" : "60",
+      "timestamp" : 1461647007290,
+      "username" : "184"
+    },
+    "-KGFx26PDrtjzU01bDAB" : {
+      "dataVersion" : 2,
+      "performance" : "129",
+      "roundLevel" : 1,
+      "targetH" : "170",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461647060398,
+      "username" : "184"
+    },
+    "-KGFzhR1G9Ca2lmxyZIc" : {
+      "dataVersion" : 2,
+      "performance" : "91",
+      "roundLevel" : "2",
+      "targetH" : "115",
+      "targetL" : "50",
+      "targetS" : "20",
+      "timestamp" : 1461647758039,
+      "username" : "184"
+    },
+    "-KGFzrIRoDjd7J7zIBTk" : {
+      "dataVersion" : 2,
+      "performance" : "130",
+      "roundLevel" : "2",
+      "targetH" : "139",
+      "targetL" : "50",
+      "targetS" : "84",
+      "timestamp" : 1461647798449,
+      "username" : "184"
+    },
+    "-KGG-3ncEByCWcphQq2N" : {
+      "dataVersion" : 2,
+      "performance" : "114",
+      "roundLevel" : "2",
+      "targetH" : "189",
+      "targetL" : "50",
+      "targetS" : "99",
+      "timestamp" : 1461647853756,
+      "username" : "184"
+    },
+    "-KGG-TxXjrQMt2UjJLy4" : {
+      "dataVersion" : 2,
+      "performance" : "27",
+      "roundLevel" : "2",
+      "targetH" : "232",
+      "targetL" : "50",
+      "targetS" : "37",
+      "timestamp" : 1461647960886,
+      "username" : "184"
+    },
+    "-KGG-YVxTTE06hSA7Gp8" : {
+      "dataVersion" : 2,
+      "performance" : "191",
+      "roundLevel" : "2",
+      "targetH" : "61",
+      "targetL" : "50",
+      "targetS" : "62",
+      "timestamp" : 1461647979538,
+      "username" : "184"
+    },
+    "-KGG0VNUPFQbs9jS0VAX" : {
+      "dataVersion" : 2,
+      "performance" : "91",
+      "roundLevel" : "3",
+      "targetH" : "81",
+      "targetL" : "48",
+      "targetS" : "60",
+      "timestamp" : 1461648228852,
+      "username" : "184"
+    },
+    "-KGG0kGTNwTKtmkdBSwC" : {
+      "dataVersion" : 2,
+      "performance" : "86",
+      "roundLevel" : "3",
+      "targetH" : "266",
+      "targetL" : "61",
+      "targetS" : "98",
+      "timestamp" : 1461648293939,
+      "username" : "184"
+    },
+    "-KGG1eLx9Py6NnKzT0Hn" : {
+      "dataVersion" : 2,
+      "performance" : "165",
+      "roundLevel" : "3",
+      "targetH" : "203",
+      "targetL" : "36",
+      "targetS" : "64",
+      "timestamp" : 1461648531858,
+      "username" : "184"
+    },
+    "-KGG1oENwUVs6xSsyQQb" : {
+      "dataVersion" : 2,
+      "performance" : "157",
+      "roundLevel" : "3",
+      "targetH" : "43",
+      "targetL" : "78",
+      "targetS" : "96",
+      "timestamp" : 1461648572333,
+      "username" : "184"
+    },
+    "-KGG23HiGPkoJwTFmJpW" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "3",
+      "targetH" : "262",
+      "targetL" : "32",
+      "targetS" : "33",
+      "timestamp" : 1461648638083,
+      "username" : "184"
+    },
+    "-KGG29Ezitl8ZW2TCBnh" : {
+      "dataVersion" : 2,
+      "performance" : "179",
+      "roundLevel" : "3",
+      "targetH" : "256",
+      "targetL" : "78",
+      "targetS" : "65",
+      "timestamp" : 1461648662484,
+      "username" : "184"
+    },
+    "-KGG2PAGAxuNHa0Hb9B9" : {
+      "dataVersion" : 2,
+      "performance" : "95",
+      "roundLevel" : "3",
+      "targetH" : "331",
+      "targetL" : "21",
+      "targetS" : "77",
+      "timestamp" : 1461648727717,
+      "username" : "184"
+    },
+    "-KGG2u8jD5xrvftQefnq" : {
+      "dataVersion" : 2,
+      "performance" : "116",
+      "roundLevel" : "3",
+      "targetH" : "132",
+      "targetL" : "37",
+      "targetS" : "54",
+      "timestamp" : 1461648858692,
+      "username" : "184"
+    },
+    "-KGG35yujdYN8s2hre0p" : {
+      "dataVersion" : 2,
+      "performance" : "123",
+      "roundLevel" : "3",
+      "targetH" : "270",
+      "targetL" : "69",
+      "targetS" : "93",
+      "timestamp" : 1461648911247,
+      "username" : "184"
+    },
+    "-KGG3IwLAajjIlH97XTO" : {
+      "dataVersion" : 2,
+      "performance" : "116",
+      "roundLevel" : "3",
+      "targetH" : "324",
+      "targetL" : "53",
+      "targetS" : "75",
+      "timestamp" : 1461648964330,
+      "username" : "184"
+    },
+    "-KGG3Sst1xMYLn4ZWtjo" : {
+      "dataVersion" : 2,
+      "performance" : "143",
+      "roundLevel" : "3",
+      "targetH" : "151",
+      "targetL" : "55",
+      "targetS" : "56",
+      "timestamp" : 1461649005069,
+      "username" : "184"
+    },
+    "-KGG3emTpQPc6NKaYAr6" : {
+      "dataVersion" : 2,
+      "performance" : "117",
+      "roundLevel" : "3",
+      "targetH" : "28",
+      "targetL" : "49",
+      "targetS" : "40",
+      "timestamp" : 1461649057906,
+      "username" : "184"
+    },
+    "-KGG3xfW0_cbSikk-Eba" : {
+      "dataVersion" : 2,
+      "performance" : "49",
+      "roundLevel" : "3",
+      "targetH" : "229",
+      "targetL" : "73",
+      "targetS" : "70",
+      "timestamp" : 1461649135286,
+      "username" : "184"
+    },
+    "-KGG47pgrFYpTeZZ2JUl" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "3",
+      "targetH" : "305",
+      "targetL" : "23",
+      "targetS" : "24",
+      "timestamp" : 1461649180993,
+      "username" : "184"
+    },
+    "-KGG4OVtHJz62VRa4qmG" : {
+      "dataVersion" : 2,
+      "performance" : "74",
+      "roundLevel" : "3",
+      "targetH" : "197",
+      "targetL" : "21",
+      "targetS" : "81",
+      "timestamp" : 1461649249294,
+      "username" : "184"
+    },
+    "-KGG4pS6v1OJ_Quep302" : {
+      "dataVersion" : 2,
+      "performance" : "134",
+      "roundLevel" : "4",
+      "targetH" : "351",
+      "targetL" : "39",
+      "targetS" : "58",
+      "timestamp" : 1461649363740,
+      "username" : "184"
+    },
+    "-KGG5z7gvjAsOtemZn9W" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "4",
+      "targetH" : "47",
+      "targetL" : "65",
+      "targetS" : "86",
+      "timestamp" : 1461649665536,
+      "username" : "184"
+    },
+    "-KGG697c0dnIdGep37e4" : {
+      "dataVersion" : 2,
+      "performance" : "137",
+      "roundLevel" : "4",
+      "targetH" : "222",
+      "targetL" : "45",
+      "targetS" : "21",
+      "timestamp" : 1461649710588,
+      "username" : "184"
+    },
+    "-KGG7ZW7f6d-3NAtvUKr" : {
+      "dataVersion" : 2,
+      "performance" : "97",
+      "roundLevel" : "4",
+      "targetH" : "131",
+      "targetL" : "79",
+      "targetS" : "77",
+      "timestamp" : 1461650080796,
+      "username" : "184"
+    },
+    "-KGGu89nRgzB3_SoiL8b" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : 1,
+      "targetH" : "143",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461663077043,
+      "username" : "maelys"
+    },
+    "-KGHI9YlQjSGeAkeBouQ" : {
+      "dataVersion" : 2,
+      "performance" : "51",
+      "roundLevel" : "1",
+      "targetH" : "45",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461669636336,
+      "username" : "Noor"
+    },
+    "-KGHIM6qAeCACLvMlhP6" : {
+      "dataVersion" : 2,
+      "performance" : "136",
+      "roundLevel" : "1",
+      "targetH" : "156",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461669688122,
+      "username" : "Noor"
+    },
+    "-KGHIVa-_YQx9H7LHCpP" : {
+      "dataVersion" : 2,
+      "performance" : "177",
+      "roundLevel" : "1",
+      "targetH" : "21",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461669726916,
+      "username" : "Noor"
+    },
+    "-KGHIeLiTRzQm03OnAKz" : {
+      "dataVersion" : 2,
+      "performance" : "157",
+      "roundLevel" : "1",
+      "targetH" : "224",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461669766801,
+      "username" : "Noor"
+    },
+    "-KGHs65dpYwzb9nNMIfX" : {
+      "dataVersion" : 2,
+      "performance" : "118",
+      "roundLevel" : 1,
+      "targetH" : "265",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679321512,
+      "username" : "maelys"
+    },
+    "-KGHs8UgFpgJo7Ug1b4k" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : 1,
+      "targetH" : "59",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679331405,
+      "username" : "maelys"
+    },
+    "-KGHsFKYsdyfcukLUzSq" : {
+      "dataVersion" : 2,
+      "performance" : "178",
+      "roundLevel" : 1,
+      "targetH" : "262",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679359428,
+      "username" : "maelys"
+    },
+    "-KGHsLii1EKCYuNaodQy" : {
+      "dataVersion" : 2,
+      "performance" : "90",
+      "roundLevel" : 1,
+      "targetH" : "273",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679385615,
+      "username" : "maelys"
+    },
+    "-KGHsPTjL3a2N-UlewzF" : {
+      "dataVersion" : 2,
+      "performance" : "164",
+      "roundLevel" : 1,
+      "targetH" : "82",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679400976,
+      "username" : "maelys"
+    },
+    "-KGHsUH2u47DLtNaYD0O" : {
+      "dataVersion" : 2,
+      "performance" : "180",
+      "roundLevel" : 1,
+      "targetH" : "8",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679420644,
+      "username" : "maelys"
+    },
+    "-KGHsYTJkKcc4aRT6fyV" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : 1,
+      "targetH" : "215",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679437812,
+      "username" : "maelys"
+    },
+    "-KGHsdPtCZOmgF0n6MAm" : {
+      "dataVersion" : 2,
+      "performance" : "154",
+      "roundLevel" : 1,
+      "targetH" : "92",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679462170,
+      "username" : "maelys"
+    },
+    "-KGHsg8qS3A1haUrDWSg" : {
+      "dataVersion" : 2,
+      "performance" : "170",
+      "roundLevel" : 1,
+      "targetH" : "27",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679473367,
+      "username" : "maelys"
+    },
+    "-KGHsjdAFTNB_1AuN-1I" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : 1,
+      "targetH" : "69",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679487660,
+      "username" : "maelys"
+    },
+    "-KGHsohZ_D7r0Yz8E50Y" : {
+      "dataVersion" : 2,
+      "performance" : "120",
+      "roundLevel" : 1,
+      "targetH" : "224",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679508421,
+      "username" : "maelys"
+    },
+    "-KGHswgzA6KK36JIrGzY" : {
+      "dataVersion" : 2,
+      "performance" : "75",
+      "roundLevel" : "4",
+      "targetH" : "250",
+      "targetL" : "58",
+      "targetS" : "44",
+      "timestamp" : 1461679541152,
+      "username" : "maelys"
+    },
+    "-KGHt1Sg2lVM_0w1LiTJ" : {
+      "dataVersion" : 2,
+      "performance" : "186",
+      "roundLevel" : 1,
+      "targetH" : "20",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679564749,
+      "username" : "maelys"
+    },
+    "-KGHt7TjMX5CD1KokNYr" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : 1,
+      "targetH" : "102",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461679589392,
+      "username" : "maelys"
+    },
+    "-KGI23183gotitY-NqKO" : {
+      "dataVersion" : 2,
+      "performance" : "42",
+      "roundLevel" : "1",
+      "targetH" : "119",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461682192521,
+      "username" : "Noor"
+    },
+    "-KGI3BoOTyYL_JPEfuGJ" : {
+      "dataVersion" : 2,
+      "performance" : "47",
+      "roundLevel" : "1",
+      "targetH" : "260",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461682490718,
+      "username" : "Noor"
+    },
+    "-KGI3JPxmNuUJeKrsBE0" : {
+      "dataVersion" : 2,
+      "performance" : "121",
+      "roundLevel" : "1",
+      "targetH" : "170",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461682521858,
+      "username" : "Noor"
+    },
+    "-KGI3PuwJDGYkZ_4kQiX" : {
+      "dataVersion" : 2,
+      "performance" : "138",
+      "roundLevel" : "1",
+      "targetH" : "215",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461682548476,
+      "username" : "Noor"
+    },
+    "-KGIqoSE5YxBRo4ScqP4" : {
+      "dataVersion" : 2,
+      "performance" : "46",
+      "roundLevel" : "3",
+      "targetH" : "281",
+      "targetL" : "43",
+      "targetS" : "72",
+      "timestamp" : 1461695760207,
+      "username" : "Dust"
+    },
+    "-KGIrBKfXIBwv3wKVqow" : {
+      "dataVersion" : 2,
+      "performance" : "60",
+      "roundLevel" : "3",
+      "targetH" : "95",
+      "targetL" : "69",
+      "targetS" : "92",
+      "timestamp" : 1461695852598,
+      "username" : "Dust"
+    },
+    "-KGKo0LkGFyfszgr0n03" : {
+      "dataVersion" : 2,
+      "performance" : "97",
+      "roundLevel" : "4",
+      "targetH" : "110",
+      "targetL" : "68",
+      "targetS" : "26",
+      "timestamp" : 1461728579850,
+      "username" : "184"
+    },
+    "-KGKoFBH1DdRf7DNq9Ek" : {
+      "dataVersion" : 2,
+      "performance" : "64",
+      "roundLevel" : "4",
+      "targetH" : "229",
+      "targetL" : "71",
+      "targetS" : "97",
+      "timestamp" : 1461728640620,
+      "username" : "184"
+    },
+    "-KGKoRAUE3UX-GVMPIU-" : {
+      "dataVersion" : 2,
+      "performance" : "90",
+      "roundLevel" : "4",
+      "targetH" : "324",
+      "targetL" : "26",
+      "targetS" : "73",
+      "timestamp" : 1461728689722,
+      "username" : "184"
+    },
+    "-KGKoeYqGPkHGPqphoye" : {
+      "dataVersion" : 2,
+      "performance" : "99",
+      "roundLevel" : "4",
+      "targetH" : "225",
+      "targetL" : "40",
+      "targetS" : "82",
+      "timestamp" : 1461728748624,
+      "username" : "184"
+    },
+    "-KGL1io_woAXlJ7MzGlz" : {
+      "dataVersion" : 2,
+      "performance" : "90",
+      "roundLevel" : "4",
+      "targetH" : "2",
+      "targetL" : "44",
+      "targetS" : "20",
+      "timestamp" : 1461732435568,
+      "username" : "184"
+    },
+    "-KGL1tvDb_FN9hBT2zRQ" : {
+      "dataVersion" : 2,
+      "performance" : "54",
+      "roundLevel" : "4",
+      "targetH" : "210",
+      "targetL" : "57",
+      "targetS" : "25",
+      "timestamp" : 1461732481050,
+      "username" : "184"
+    },
+    "-KGL2IfxM6P9nQ7u9uDZ" : {
+      "dataVersion" : 2,
+      "performance" : "103",
+      "roundLevel" : "4",
+      "targetH" : "128",
+      "targetL" : "57",
+      "targetS" : "78",
+      "timestamp" : 1461732586568,
+      "username" : "184"
+    },
+    "-KGL2btNd2CtGdN7NQzg" : {
+      "dataVersion" : 2,
+      "performance" : "131",
+      "roundLevel" : "4",
+      "targetH" : "251",
+      "targetL" : "73",
+      "targetS" : "57",
+      "timestamp" : 1461732669348,
+      "username" : "184"
+    },
+    "-KGL3CYU_m3sPnuX65iR" : {
+      "dataVersion" : 2,
+      "performance" : "79",
+      "roundLevel" : "4",
+      "targetH" : "310",
+      "targetL" : "36",
+      "targetS" : "88",
+      "timestamp" : 1461732823594,
+      "username" : "184"
+    },
+    "-KGL3MO5FI357y_UFniD" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "4",
+      "targetH" : "355",
+      "targetL" : "45",
+      "targetS" : "42",
+      "timestamp" : 1461732863890,
+      "username" : "184"
+    },
+    "-KGL3VEIERW2KIUbTw32" : {
+      "dataVersion" : 2,
+      "performance" : "93",
+      "roundLevel" : "4",
+      "targetH" : "357",
+      "targetL" : "75",
+      "targetS" : "72",
+      "timestamp" : 1461732900127,
+      "username" : "184"
+    },
+    "-KGL4KE19GWyPNbMkcwH" : {
+      "dataVersion" : 2,
+      "performance" : "134",
+      "roundLevel" : "4",
+      "targetH" : "68",
+      "targetL" : "54",
+      "targetS" : "30",
+      "timestamp" : 1461733117198,
+      "username" : "184"
+    },
+    "-KGL4qiKUpDIevAwHWX7" : {
+      "dataVersion" : 2,
+      "performance" : "57",
+      "roundLevel" : "4",
+      "targetH" : "313",
+      "targetL" : "27",
+      "targetS" : "49",
+      "timestamp" : 1461733254369,
+      "username" : "184"
+    },
+    "-KGL55T_-L5FkA7_IkAc" : {
+      "dataVersion" : 2,
+      "performance" : "71",
+      "roundLevel" : "4",
+      "targetH" : "23",
+      "targetL" : "73",
+      "targetS" : "81",
+      "timestamp" : 1461733318896,
+      "username" : "184"
+    },
+    "-KGL6etpk1XHPiFj5waH" : {
+      "dataVersion" : 2,
+      "performance" : "132",
+      "roundLevel" : "4",
+      "targetH" : "324",
+      "targetL" : "46",
+      "targetS" : "61",
+      "timestamp" : 1461733730240,
+      "username" : "184"
+    },
+    "-KGL6umJ3_eVHiKmbbW0" : {
+      "dataVersion" : 2,
+      "performance" : "142",
+      "roundLevel" : "4",
+      "targetH" : "19",
+      "targetL" : "43",
+      "targetS" : "61",
+      "timestamp" : 1461733795296,
+      "username" : "184"
+    },
+    "-KGL75DMPOXcBNbv_3HY" : {
+      "dataVersion" : 2,
+      "performance" : "58",
+      "roundLevel" : "4",
+      "targetH" : "305",
+      "targetL" : "78",
+      "targetS" : "21",
+      "timestamp" : 1461733842147,
+      "username" : "184"
+    },
+    "-KGL9W-nn4lZfF9Hk5uR" : {
+      "dataVersion" : 2,
+      "performance" : "56",
+      "roundLevel" : "4",
+      "targetH" : "274",
+      "targetL" : "44",
+      "targetS" : "68",
+      "timestamp" : 1461734476158,
+      "username" : "184"
+    },
+    "-KGLA4e6d6UkdhO2-36e" : {
+      "dataVersion" : 2,
+      "performance" : "29",
+      "roundLevel" : "4",
+      "targetH" : "79",
+      "targetL" : "22",
+      "targetS" : "92",
+      "timestamp" : 1461734626259,
+      "username" : "184"
+    },
+    "-KGLAFReLKo1uNNqbTEs" : {
+      "dataVersion" : 2,
+      "performance" : "131",
+      "roundLevel" : "4",
+      "targetH" : "47",
+      "targetL" : "49",
+      "targetS" : "56",
+      "timestamp" : 1461734670453,
+      "username" : "184"
+    },
+    "-KGLAXkpNruCUP9lOcz3" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : 4,
+      "targetH" : "294",
+      "targetL" : "50",
+      "targetS" : "49",
+      "timestamp" : 1461734745473,
+      "username" : "184"
+    },
+    "-KGLBtDPUMKGgI5_OUEa" : {
+      "dataVersion" : 2,
+      "performance" : "143",
+      "roundLevel" : "4",
+      "targetH" : "261",
+      "targetL" : "65",
+      "targetS" : "51",
+      "timestamp" : 1461735099621,
+      "username" : "184"
+    },
+    "-KGLDqwgSZYAFbywUa-D" : {
+      "dataVersion" : 2,
+      "performance" : "99",
+      "roundLevel" : "4",
+      "targetH" : "104",
+      "targetL" : "33",
+      "targetS" : "43",
+      "timestamp" : 1461735614584,
+      "username" : "184"
+    },
+    "-KGLFUT2ScCV1Npo8tel" : {
+      "dataVersion" : 2,
+      "performance" : "107",
+      "roundLevel" : "4",
+      "targetH" : "186",
+      "targetL" : "75",
+      "targetS" : "69",
+      "timestamp" : 1461736042702,
+      "username" : "184"
+    },
+    "-KGLGHOxX3F5NGZnxS8k" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "4",
+      "targetH" : "222",
+      "targetL" : "51",
+      "targetS" : "64",
+      "timestamp" : 1461736251337,
+      "username" : "184"
+    },
+    "-KGLGMnzJulAAPrvp0hd" : {
+      "dataVersion" : 2,
+      "performance" : "155",
+      "roundLevel" : "4",
+      "targetH" : "237",
+      "targetL" : "44",
+      "targetS" : "83",
+      "timestamp" : 1461736273483,
+      "username" : "184"
+    },
+    "-KGLH91Kaz0igWhA28_Q" : {
+      "dataVersion" : 2,
+      "performance" : "178",
+      "roundLevel" : 1,
+      "targetH" : "223",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461736479200,
+      "username" : "184"
+    },
+    "-KGLHFOFCaFOG1IIj7uK" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : 1,
+      "targetH" : "305",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461736505243,
+      "username" : "184"
+    },
+    "-KGLOKWNSHMFoydY0y8g" : {
+      "dataVersion" : 2,
+      "performance" : "128",
+      "roundLevel" : "4",
+      "targetH" : "286",
+      "targetL" : "59",
+      "targetS" : "77",
+      "timestamp" : 1461738361252,
+      "username" : "184"
+    },
+    "-KGLOWWlVfqS800oU3gW" : {
+      "dataVersion" : 2,
+      "performance" : "37",
+      "roundLevel" : "4",
+      "targetH" : "262",
+      "targetL" : "46",
+      "targetS" : "83",
+      "timestamp" : 1461738410429,
+      "username" : "184"
+    },
+    "-KGMtLcLKrYKkUvjCe3T" : {
+      "dataVersion" : 2,
+      "performance" : "69",
+      "roundLevel" : "1",
+      "targetH" : "64",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461763533387,
+      "username" : "Arno"
+    },
+    "-KGMtbtvPpD72eb1RQrG" : {
+      "dataVersion" : 2,
+      "performance" : "167",
+      "roundLevel" : "1",
+      "targetH" : "194",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461763604143,
+      "username" : "Arno"
+    },
+    "-KGMtq4bYE01TWIaP6hY" : {
+      "dataVersion" : 2,
+      "performance" : "132",
+      "roundLevel" : "1",
+      "targetH" : "269",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461763662236,
+      "username" : "Arno"
+    },
+    "-KGMu-5wu8HzpuBDVjuV" : {
+      "dataVersion" : 2,
+      "performance" : "130",
+      "roundLevel" : "1",
+      "targetH" : "76",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461763703281,
+      "username" : "Arno"
+    },
+    "-KGMum0gbh534WZMyMGA" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "167",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461763907744,
+      "username" : "Arno"
+    },
+    "-KGMuxsXndT-Gja8Jxd6" : {
+      "dataVersion" : 2,
+      "performance" : "60",
+      "roundLevel" : "1",
+      "targetH" : "283",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461763956311,
+      "username" : "Arno"
+    },
+    "-KGMv3hz1JJ8jsnCSUBR" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "1",
+      "targetH" : "302",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461763984308,
+      "username" : "Arno"
+    },
+    "-KGMvCiBXSXMGf8ZTHgt" : {
+      "dataVersion" : 2,
+      "performance" : "161",
+      "roundLevel" : "1",
+      "targetH" : "334",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1461764021185,
+      "username" : "Arno"
+    },
+    "-KGMvUo7EYYHH8d1iUOO" : {
+      "dataVersion" : 2,
+      "performance" : "2",
+      "roundLevel" : "2",
+      "targetH" : "253",
+      "targetL" : "50",
+      "targetS" : "38",
+      "timestamp" : 1461764095293,
+      "username" : "Arno"
+    },
+    "-KGMvf5mgJjvhVARNcy_" : {
+      "dataVersion" : 2,
+      "performance" : "48",
+      "roundLevel" : "2",
+      "targetH" : "4",
+      "targetL" : "50",
+      "targetS" : "81",
+      "timestamp" : 1461764141543,
+      "username" : "Arno"
+    },
+    "-KGMvidzGNgfZ0xexHky" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "2",
+      "targetH" : "56",
+      "targetL" : "50",
+      "targetS" : "92",
+      "timestamp" : 1461764156083,
+      "username" : "Arno"
+    },
+    "-KGjN8CJffABYa1RhDnW" : {
+      "dataVersion" : 2,
+      "performance" : "95",
+      "roundLevel" : 4,
+      "targetH" : "349",
+      "targetL" : "45",
+      "targetS" : "44",
+      "timestamp" : 1462157479316,
+      "username" : "184"
+    },
+    "-KGjNJ9lkmG4Z10kLKDu" : {
+      "dataVersion" : 2,
+      "performance" : "104",
+      "roundLevel" : "4",
+      "targetH" : "353",
+      "targetL" : "70",
+      "targetS" : "67",
+      "timestamp" : 1462157524141,
+      "username" : "184"
+    },
+    "-KGjNc6gh2E6IkOKDDAN" : {
+      "dataVersion" : 2,
+      "performance" : "36",
+      "roundLevel" : "4",
+      "targetH" : "79",
+      "targetL" : "26",
+      "targetS" : "88",
+      "timestamp" : 1462157605876,
+      "username" : "184"
+    },
+    "-KGjRW0OxXDqmpr7o-OZ" : {
+      "dataVersion" : 2,
+      "performance" : "106",
+      "roundLevel" : "4",
+      "targetH" : "117",
+      "targetL" : "54",
+      "targetS" : "56",
+      "timestamp" : 1462158625365,
+      "username" : "184"
+    },
+    "-KGjV5_OF5kmQ-0hoF9J" : {
+      "dataVersion" : 2,
+      "performance" : "75",
+      "roundLevel" : "4",
+      "targetH" : "279",
+      "targetL" : "65",
+      "targetS" : "20",
+      "timestamp" : 1462159565633,
+      "username" : "184"
+    },
+    "-KGjVEXGtcQWOooitBKT" : {
+      "dataVersion" : 2,
+      "performance" : "77",
+      "roundLevel" : "4",
+      "targetH" : "23",
+      "targetL" : "22",
+      "targetS" : "61",
+      "timestamp" : 1462159602297,
+      "username" : "184"
+    },
+    "-KGjVN7n3tJGXcJD2EcN" : {
+      "dataVersion" : 2,
+      "performance" : "108",
+      "roundLevel" : "4",
+      "targetH" : "227",
+      "targetL" : "28",
+      "targetS" : "93",
+      "timestamp" : 1462159637531,
+      "username" : "184"
+    },
+    "-KGjVWHXhikZ6M2yEyY2" : {
+      "dataVersion" : 2,
+      "performance" : "66",
+      "roundLevel" : "4",
+      "targetH" : "170",
+      "targetL" : "55",
+      "targetS" : "32",
+      "timestamp" : 1462159675018,
+      "username" : "184"
+    },
+    "-KGjVfTZ2_0oMwBVk5nP" : {
+      "dataVersion" : 2,
+      "performance" : "138",
+      "roundLevel" : "4",
+      "targetH" : "161",
+      "targetL" : "43",
+      "targetS" : "51",
+      "timestamp" : 1462159716748,
+      "username" : "184"
+    },
+    "-KGjVq1KDUBVkfhELPAN" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "4",
+      "targetH" : "12",
+      "targetL" : "76",
+      "targetS" : "76",
+      "timestamp" : 1462159759992,
+      "username" : "184"
+    },
+    "-KGjW3XbvhbpaRPWB-3I" : {
+      "dataVersion" : 2,
+      "performance" : "121",
+      "roundLevel" : "4",
+      "targetH" : "170",
+      "targetL" : "33",
+      "targetS" : "91",
+      "timestamp" : 1462159819401,
+      "username" : "184"
+    },
+    "-KGm7owDLoNsUjGIokca" : {
+      "dataVersion" : 2,
+      "performance" : "78",
+      "roundLevel" : "1",
+      "targetH" : "342",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462203797361,
+      "username" : "Chloé"
+    },
+    "-KGm7x1ZzfYKLP0tDqJd" : {
+      "dataVersion" : 2,
+      "performance" : "64",
+      "roundLevel" : "1",
+      "targetH" : "191",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462203830535,
+      "username" : "Chloé"
+    },
+    "-KGm83kb1Y-cGT_C8D24" : {
+      "dataVersion" : 2,
+      "performance" : "129",
+      "roundLevel" : "1",
+      "targetH" : "173",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462203862154,
+      "username" : "Chloé"
+    },
+    "-KGm89Eyrg15plNitvNR" : {
+      "dataVersion" : 2,
+      "performance" : "93",
+      "roundLevel" : "1",
+      "targetH" : "299",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462203884641,
+      "username" : "Chloé"
+    },
+    "-KGm8EFd64BaeRQTyU3k" : {
+      "dataVersion" : 2,
+      "performance" : "131",
+      "roundLevel" : "1",
+      "targetH" : "150",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462203905164,
+      "username" : "Chloé"
+    },
+    "-KGm8GDbOMXy-T4tLVlZ" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "1",
+      "targetH" : "144",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462203913226,
+      "username" : "Chloé"
+    },
+    "-KGm8St7wcxdF_dva9Kq" : {
+      "dataVersion" : 2,
+      "performance" : "98",
+      "roundLevel" : "2",
+      "targetH" : "269",
+      "targetL" : "50",
+      "targetS" : "74",
+      "timestamp" : 1462203965098,
+      "username" : "Chloé"
+    },
+    "-KGm8WhVomUm_Z3x1ydE" : {
+      "dataVersion" : 2,
+      "performance" : "131",
+      "roundLevel" : "2",
+      "targetH" : "302",
+      "targetL" : "50",
+      "targetS" : "58",
+      "timestamp" : 1462203980739,
+      "username" : "Chloé"
+    },
+    "-KGm8e41PhoQGRzVze5n" : {
+      "dataVersion" : 2,
+      "performance" : "149",
+      "roundLevel" : "2",
+      "targetH" : "309",
+      "targetL" : "50",
+      "targetS" : "51",
+      "timestamp" : 1462204015013,
+      "username" : "Chloé"
+    },
+    "-KGm8lP5OXqK5ab9Kqp3" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : "2",
+      "targetH" : "228",
+      "targetL" : "50",
+      "targetS" : "20",
+      "timestamp" : 1462204045033,
+      "username" : "Chloé"
+    },
+    "-KGm8oNVfxdET-Ig1ZN6" : {
+      "dataVersion" : 2,
+      "performance" : "153",
+      "roundLevel" : "2",
+      "targetH" : "243",
+      "targetL" : "50",
+      "targetS" : "79",
+      "timestamp" : 1462204057219,
+      "username" : "Chloé"
+    },
+    "-KGm8tvAJww9-enpr3j2" : {
+      "dataVersion" : 2,
+      "performance" : "126",
+      "roundLevel" : "2",
+      "targetH" : "225",
+      "targetL" : "50",
+      "targetS" : "31",
+      "timestamp" : 1462204079918,
+      "username" : "Chloé"
+    },
+    "-KGm94wBmYcoRLopWaVY" : {
+      "dataVersion" : 2,
+      "performance" : "92",
+      "roundLevel" : "3",
+      "targetH" : "223",
+      "targetL" : "30",
+      "targetS" : "60",
+      "timestamp" : 1462204129135,
+      "username" : "Chloé"
+    },
+    "-KGm9C2joVC1eq4nBUho" : {
+      "dataVersion" : 2,
+      "performance" : "48",
+      "roundLevel" : "3",
+      "targetH" : "13",
+      "targetL" : "67",
+      "targetS" : "96",
+      "timestamp" : 1462204158290,
+      "username" : "Chloé"
+    },
+    "-KGm9LqE98-yi-21u7I_" : {
+      "dataVersion" : 2,
+      "performance" : "10",
+      "roundLevel" : "3",
+      "targetH" : "304",
+      "targetL" : "55",
+      "targetS" : "52",
+      "timestamp" : 1462204198386,
+      "username" : "Chloé"
+    },
+    "-KGm9Vho-tIE4nC3yzkX" : {
+      "dataVersion" : 2,
+      "performance" : "176",
+      "roundLevel" : "3",
+      "targetH" : "35",
+      "targetL" : "47",
+      "targetS" : "68",
+      "timestamp" : 1462204238807,
+      "username" : "Chloé"
+    },
+    "-KGm9d5_IWZhTaY5DvOr" : {
+      "dataVersion" : 2,
+      "performance" : "10",
+      "roundLevel" : "3",
+      "targetH" : "197",
+      "targetL" : "52",
+      "targetS" : "55",
+      "timestamp" : 1462204273159,
+      "username" : "Chloé"
+    },
+    "-KGmBezxPW2s6FEAMoMl" : {
+      "dataVersion" : 2,
+      "performance" : "14",
+      "roundLevel" : "3",
+      "targetH" : "202",
+      "targetL" : "31",
+      "targetS" : "90",
+      "timestamp" : 1462204805215,
+      "username" : "Chloé"
+    },
+    "-KGmBqx09g9EbDwMCPmJ" : {
+      "dataVersion" : 2,
+      "performance" : "113",
+      "roundLevel" : "3",
+      "targetH" : "215",
+      "targetL" : "65",
+      "targetS" : "66",
+      "timestamp" : 1462204854180,
+      "username" : "Chloé"
+    },
+    "-KGmCOddp2iDwB7BakYi" : {
+      "dataVersion" : 2,
+      "performance" : "74",
+      "roundLevel" : "3",
+      "targetH" : "85",
+      "targetL" : "33",
+      "targetS" : "73",
+      "timestamp" : 1462204996299,
+      "username" : "Chloé"
+    },
+    "-KGmCWm4c92AT5mgImFB" : {
+      "dataVersion" : 2,
+      "performance" : "39",
+      "roundLevel" : "3",
+      "targetH" : "134",
+      "targetL" : "34",
+      "targetS" : "99",
+      "timestamp" : 1462205029607,
+      "username" : "Chloé"
+    },
+    "-KGqUCTU3ZlfwKaPyLh3" : {
+      "dataVersion" : 2,
+      "performance" : "51",
+      "roundLevel" : "3",
+      "targetH" : "311",
+      "targetL" : "37",
+      "targetS" : "22",
+      "timestamp" : 1462276773790,
+      "username" : "Chloé"
+    },
+    "-KGqYmxZbwT45bSKo6lj" : {
+      "dataVersion" : 2,
+      "performance" : "120",
+      "roundLevel" : "3",
+      "targetH" : "228",
+      "targetL" : "20",
+      "targetS" : "81",
+      "timestamp" : 1462277976094,
+      "username" : "Chloé"
+    },
+    "-KGrC7NGgoEgH9e_m79u" : {
+      "dataVersion" : 2,
+      "performance" : "136",
+      "roundLevel" : "3",
+      "targetH" : "311",
+      "targetL" : "22",
+      "targetS" : "22",
+      "timestamp" : 1462288811476,
+      "username" : "Chloé"
+    },
+    "-KGrCHUtlZXYr8H7U1ai" : {
+      "dataVersion" : 2,
+      "performance" : "34",
+      "roundLevel" : "3",
+      "targetH" : "204",
+      "targetL" : "54",
+      "targetS" : "61",
+      "timestamp" : 1462288852924,
+      "username" : "Chloé"
+    },
+    "-KGrCNyfsovg981O-4Km" : {
+      "dataVersion" : 2,
+      "performance" : "40",
+      "roundLevel" : "3",
+      "targetH" : "175",
+      "targetL" : "45",
+      "targetS" : "24",
+      "timestamp" : 1462288879469,
+      "username" : "Chloé"
+    },
+    "-KGrCURbYH7Et5-xMEGa" : {
+      "dataVersion" : 2,
+      "performance" : "21",
+      "roundLevel" : "3",
+      "targetH" : "155",
+      "targetL" : "31",
+      "targetS" : "85",
+      "timestamp" : 1462288905962,
+      "username" : "Chloé"
+    },
+    "-KGrCaCosIaxPsqHs-R6" : {
+      "dataVersion" : 2,
+      "performance" : "37",
+      "roundLevel" : "3",
+      "targetH" : "189",
+      "targetL" : "58",
+      "targetS" : "66",
+      "timestamp" : 1462288933686,
+      "username" : "Chloé"
+    },
+    "-KGrCiQyDDtppVRmn5jV" : {
+      "dataVersion" : 2,
+      "performance" : "24",
+      "roundLevel" : "3",
+      "targetH" : "309",
+      "targetL" : "73",
+      "targetS" : "53",
+      "timestamp" : 1462288967361,
+      "username" : "Chloé"
+    },
+    "-KGrCvSg1DgD-YXsZqqa" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "3",
+      "targetH" : "176",
+      "targetL" : "36",
+      "targetS" : "72",
+      "timestamp" : 1462289020718,
+      "username" : "Chloé"
+    },
+    "-KGrD1F_6AsGIM6o37x8" : {
+      "dataVersion" : 2,
+      "performance" : "97",
+      "roundLevel" : "3",
+      "targetH" : "30",
+      "targetL" : "36",
+      "targetS" : "59",
+      "timestamp" : 1462289048552,
+      "username" : "Chloé"
+    },
+    "-KGrDA05VHx3ood6zHZn" : {
+      "dataVersion" : 2,
+      "performance" : "106",
+      "roundLevel" : "3",
+      "targetH" : "108",
+      "targetL" : "20",
+      "targetS" : "40",
+      "timestamp" : 1462289084425,
+      "username" : "Chloé"
+    },
+    "-KGrDDmMVsbT3l1T-DU1" : {
+      "dataVersion" : 2,
+      "performance" : "62",
+      "roundLevel" : "3",
+      "targetH" : "111",
+      "targetL" : "49",
+      "targetS" : "78",
+      "timestamp" : 1462289099866,
+      "username" : "Chloé"
+    },
+    "-KGrDMLfwM77wVdIsrlg" : {
+      "dataVersion" : 2,
+      "performance" : "88",
+      "roundLevel" : "3",
+      "targetH" : "353",
+      "targetL" : "26",
+      "targetS" : "77",
+      "timestamp" : 1462289134957,
+      "username" : "Chloé"
+    },
+    "-KGrDhvKwXvZ8FhtNIuI" : {
+      "dataVersion" : 2,
+      "performance" : "92",
+      "roundLevel" : "3",
+      "targetH" : "170",
+      "targetL" : "60",
+      "targetS" : "47",
+      "timestamp" : 1462289227416,
+      "username" : "Chloé"
+    },
+    "-KGrDpf0A_5IOKmhu1iZ" : {
+      "dataVersion" : 2,
+      "performance" : "72",
+      "roundLevel" : "3",
+      "targetH" : "170",
+      "targetL" : "65",
+      "targetS" : "91",
+      "timestamp" : 1462289259140,
+      "username" : "Chloé"
+    },
+    "-KGrDzY95aKtgVB0rAEM" : {
+      "dataVersion" : 2,
+      "performance" : "129",
+      "roundLevel" : "3",
+      "targetH" : "114",
+      "targetL" : "70",
+      "targetS" : "74",
+      "timestamp" : 1462289299597,
+      "username" : "Chloé"
+    },
+    "-KGrJ965ZhGJiqMgK11r" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "4",
+      "targetH" : "227",
+      "targetL" : "58",
+      "targetS" : "59",
+      "timestamp" : 1462290653576,
+      "username" : "Chloé"
+    },
+    "-KGrJF222RKFwE2SpyLF" : {
+      "dataVersion" : 2,
+      "performance" : "123",
+      "roundLevel" : "4",
+      "targetH" : "35",
+      "targetL" : "23",
+      "targetS" : "49",
+      "timestamp" : 1462290677894,
+      "username" : "Chloé"
+    },
+    "-KGrJrIvIisTvf32JQG7" : {
+      "dataVersion" : 2,
+      "performance" : "65",
+      "roundLevel" : "4",
+      "targetH" : "71",
+      "targetL" : "53",
+      "targetS" : "29",
+      "timestamp" : 1462290838718,
+      "username" : "Chloé"
+    },
+    "-KGrJywUBrY2IMrNZmZJ" : {
+      "dataVersion" : 2,
+      "performance" : "71",
+      "roundLevel" : "4",
+      "targetH" : "188",
+      "targetL" : "42",
+      "targetS" : "34",
+      "timestamp" : 1462290869985,
+      "username" : "Chloé"
+    },
+    "-KGrK8ucGpY-NAymlIIj" : {
+      "dataVersion" : 2,
+      "performance" : "62",
+      "roundLevel" : "4",
+      "targetH" : "339",
+      "targetL" : "25",
+      "targetS" : "90",
+      "timestamp" : 1462290914923,
+      "username" : "Chloé"
+    },
+    "-KGrKGcuNIvw1bcUNhUu" : {
+      "dataVersion" : 2,
+      "performance" : "81",
+      "roundLevel" : "4",
+      "targetH" : "16",
+      "targetL" : "70",
+      "targetS" : "87",
+      "timestamp" : 1462290946557,
+      "username" : "Chloé"
+    },
+    "-KGrKN51qSt7lOYZ9uSu" : {
+      "dataVersion" : 2,
+      "performance" : "111",
+      "roundLevel" : "4",
+      "targetH" : "110",
+      "targetL" : "52",
+      "targetS" : "70",
+      "timestamp" : 1462290972997,
+      "username" : "Chloé"
+    },
+    "-KGrLYB8qgtqcecMoEh2" : {
+      "dataVersion" : 2,
+      "performance" : "107",
+      "roundLevel" : "4",
+      "targetH" : "13",
+      "targetL" : "42",
+      "targetS" : "47",
+      "timestamp" : 1462291280587,
+      "username" : "Chloé"
+    },
+    "-KGrLcEi0dVtjSJw06qr" : {
+      "dataVersion" : 2,
+      "performance" : "50",
+      "roundLevel" : "4",
+      "targetH" : "231",
+      "targetL" : "78",
+      "targetS" : "31",
+      "timestamp" : 1462291301297,
+      "username" : "Chloé"
+    },
+    "-KGrLkdp4falSDvPpOcU" : {
+      "dataVersion" : 2,
+      "performance" : "28",
+      "roundLevel" : "4",
+      "targetH" : "151",
+      "targetL" : "24",
+      "targetS" : "48",
+      "timestamp" : 1462291335735,
+      "username" : "Chloé"
+    },
+    "-KGucPL5QIWGB3z4GiBy" : {
+      "dataVersion" : 2,
+      "performance" : "19",
+      "roundLevel" : "1",
+      "targetH" : "248",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462346294662,
+      "username" : "gui"
+    },
+    "-KGwRXEwzq5ztVh7iM9v" : {
+      "dataVersion" : 2,
+      "performance" : "19",
+      "roundLevel" : "4",
+      "targetH" : "294",
+      "targetL" : "79",
+      "targetS" : "49",
+      "timestamp" : 1462376735740,
+      "username" : "Chloé"
+    },
+    "-KGwRe4Gz-jkBPcD9ieB" : {
+      "dataVersion" : 2,
+      "performance" : "42",
+      "roundLevel" : "4",
+      "targetH" : "104",
+      "targetL" : "23",
+      "targetS" : "76",
+      "timestamp" : 1462376767872,
+      "username" : "Chloé"
+    },
+    "-KGwRnHuK5n-rNLc9K9K" : {
+      "dataVersion" : 2,
+      "performance" : "50",
+      "roundLevel" : "4",
+      "targetH" : "301",
+      "targetL" : "40",
+      "targetS" : "40",
+      "timestamp" : 1462376805609,
+      "username" : "Chloé"
+    },
+    "-KGwRxd1NaFe4yYT51rD" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "4",
+      "targetH" : "282",
+      "targetL" : "61",
+      "targetS" : "54",
+      "timestamp" : 1462376847985,
+      "username" : "Chloé"
+    },
+    "-KGwS473dZTJih5Emp6l" : {
+      "dataVersion" : 2,
+      "performance" : "82",
+      "roundLevel" : "4",
+      "targetH" : "254",
+      "targetL" : "61",
+      "targetS" : "99",
+      "timestamp" : 1462376878642,
+      "username" : "Chloé"
+    },
+    "-KGwSBgdCxxluFjBipkf" : {
+      "dataVersion" : 2,
+      "performance" : "40",
+      "roundLevel" : "4",
+      "targetH" : "72",
+      "targetL" : "49",
+      "targetS" : "78",
+      "timestamp" : 1462376909655,
+      "username" : "Chloé"
+    },
+    "-KGwSKnLrfAYPRgCWjha" : {
+      "dataVersion" : 2,
+      "performance" : "28",
+      "roundLevel" : "4",
+      "targetH" : "70",
+      "targetL" : "34",
+      "targetS" : "98",
+      "timestamp" : 1462376946949,
+      "username" : "Chloé"
+    },
+    "-KGwSTONVvlSsS28rT-f" : {
+      "dataVersion" : 2,
+      "performance" : "39",
+      "roundLevel" : "4",
+      "targetH" : "160",
+      "targetL" : "43",
+      "targetS" : "38",
+      "timestamp" : 1462376982151,
+      "username" : "Chloé"
+    },
+    "-KGwSw_fd9Tz9LPyhNMY" : {
+      "dataVersion" : 2,
+      "performance" : "81",
+      "roundLevel" : "4",
+      "targetH" : "221",
+      "targetL" : "70",
+      "targetS" : "89",
+      "timestamp" : 1462377105818,
+      "username" : "Chloé"
+    },
+    "-KGwT8jFSRLi--EYNcj4" : {
+      "dataVersion" : 2,
+      "performance" : "100",
+      "roundLevel" : "4",
+      "targetH" : "174",
+      "targetL" : "43",
+      "targetS" : "85",
+      "timestamp" : 1462377159678,
+      "username" : "Chloé"
+    },
+    "-KGwTHBNQiCOgBR2c_sX" : {
+      "dataVersion" : 2,
+      "performance" : "78",
+      "roundLevel" : "4",
+      "targetH" : "162",
+      "targetL" : "49",
+      "targetS" : "23",
+      "timestamp" : 1462377194310,
+      "username" : "Chloé"
+    },
+    "-KGwTTl_-FNKtWoDhAvI" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "4",
+      "targetH" : "126",
+      "targetL" : "33",
+      "targetS" : "70",
+      "timestamp" : 1462377245843,
+      "username" : "Chloé"
+    },
+    "-KH3tDAsAT2cHOddaDAw" : {
+      "dataVersion" : 2,
+      "performance" : "124",
+      "roundLevel" : 1,
+      "targetH" : "196",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462518473463,
+      "username" : "maelys"
+    },
+    "-KH480pdD_v6pajzI5NZ" : {
+      "dataVersion" : 2,
+      "performance" : "2",
+      "roundLevel" : 1,
+      "targetH" : "329",
+      "targetL" : "52",
+      "targetS" : "27",
+      "timestamp" : 1462522617192,
+      "username" : "184"
+    },
+    "-KH48VXbUVGUA48mpnCC" : {
+      "dataVersion" : 2,
+      "performance" : "85",
+      "roundLevel" : "4",
+      "targetH" : "293",
+      "targetL" : "55",
+      "targetS" : "95",
+      "timestamp" : 1462522742652,
+      "username" : "184"
+    },
+    "-KH4A6t5aCFGq1X2P6YU" : {
+      "dataVersion" : 2,
+      "performance" : "71",
+      "roundLevel" : "4",
+      "targetH" : "287",
+      "targetL" : "32",
+      "targetS" : "58",
+      "timestamp" : 1462523165991,
+      "username" : "184"
+    },
+    "-KH4AiP8lbn6a7avqqq7" : {
+      "dataVersion" : 2,
+      "performance" : "72",
+      "roundLevel" : "4",
+      "targetH" : "330",
+      "targetL" : "30",
+      "targetS" : "26",
+      "timestamp" : 1462523323756,
+      "username" : "184"
+    },
+    "-KH4B9_UbIxEIMkSkC_C" : {
+      "dataVersion" : 2,
+      "performance" : "83",
+      "roundLevel" : "4",
+      "targetH" : "193",
+      "targetL" : "61",
+      "targetS" : "65",
+      "timestamp" : 1462523439170,
+      "username" : "184"
+    },
+    "-KH4C9Iomv5vAKbpi_9d" : {
+      "dataVersion" : 2,
+      "performance" : "31",
+      "roundLevel" : "4",
+      "targetH" : "68",
+      "targetL" : "21",
+      "targetS" : "83",
+      "timestamp" : 1462523700154,
+      "username" : "184"
+    },
+    "-KH4G4YurgQQsamtXgwR" : {
+      "dataVersion" : 2,
+      "performance" : "127",
+      "roundLevel" : "4",
+      "targetH" : "158",
+      "targetL" : "72",
+      "targetS" : "70",
+      "timestamp" : 1462524729292,
+      "username" : "184"
+    },
+    "-KH4GIn7K4JaMz91iwxz" : {
+      "dataVersion" : 2,
+      "performance" : "116",
+      "roundLevel" : "4",
+      "targetH" : "282",
+      "targetL" : "46",
+      "targetS" : "81",
+      "timestamp" : 1462524787618,
+      "username" : "184"
+    },
+    "-KH4H5IM8ikD2CnaTID4" : {
+      "dataVersion" : 2,
+      "performance" : "136",
+      "roundLevel" : "4",
+      "targetH" : "235",
+      "targetL" : "35",
+      "targetS" : "62",
+      "timestamp" : 1462524994509,
+      "username" : "184"
+    },
+    "-KH4HMg4ludhK4-OHQ3Y" : {
+      "dataVersion" : 2,
+      "performance" : "39",
+      "roundLevel" : "4",
+      "targetH" : "290",
+      "targetL" : "66",
+      "targetS" : "98",
+      "timestamp" : 1462525065721,
+      "username" : "184"
+    },
+    "-KH4HkNhk8KqM21Z28YQ" : {
+      "dataVersion" : 2,
+      "performance" : "92",
+      "roundLevel" : "4",
+      "targetH" : "353",
+      "targetL" : "71",
+      "targetS" : "87",
+      "timestamp" : 1462525166883,
+      "username" : "184"
+    },
+    "-KH4HqyduYfKfrmV64G9" : {
+      "dataVersion" : 2,
+      "performance" : "155",
+      "roundLevel" : "4",
+      "targetH" : "357",
+      "targetL" : "64",
+      "targetS" : "73",
+      "timestamp" : 1462525193887,
+      "username" : "184"
+    },
+    "-KH4I3HSf0JPA9Ep7kZ2" : {
+      "dataVersion" : 2,
+      "performance" : "148",
+      "roundLevel" : "4",
+      "targetH" : "40",
+      "targetL" : "66",
+      "targetS" : "63",
+      "timestamp" : 1462525248382,
+      "username" : "184"
+    },
+    "-KH4IPwR0eoV1bMJopic" : {
+      "dataVersion" : 2,
+      "performance" : "167",
+      "roundLevel" : "4",
+      "targetH" : "260",
+      "targetL" : "47",
+      "targetS" : "72",
+      "timestamp" : 1462525341222,
+      "username" : "184"
+    },
+    "-KH4J1e4tvA1sAOc2X3q" : {
+      "dataVersion" : 2,
+      "performance" : "83",
+      "roundLevel" : "4",
+      "targetH" : "171",
+      "targetL" : "73",
+      "targetS" : "35",
+      "timestamp" : 1462525503815,
+      "username" : "184"
+    },
+    "-KH4J_5DIX5UzmAcs4jW" : {
+      "dataVersion" : 2,
+      "performance" : "123",
+      "roundLevel" : "4",
+      "targetH" : "133",
+      "targetL" : "33",
+      "targetS" : "38",
+      "timestamp" : 1462525644900,
+      "username" : "184"
+    },
+    "-KH4JmcACV80_Ly8D4FR" : {
+      "dataVersion" : 2,
+      "performance" : "91",
+      "roundLevel" : "4",
+      "targetH" : "114",
+      "targetL" : "42",
+      "targetS" : "53",
+      "timestamp" : 1462525700320,
+      "username" : "184"
+    },
+    "-KH4KBPzJ5sCQZrq_K53" : {
+      "dataVersion" : 2,
+      "performance" : "82",
+      "roundLevel" : "4",
+      "targetH" : "140",
+      "targetL" : "79",
+      "targetS" : "95",
+      "timestamp" : 1462525805944,
+      "username" : "184"
+    },
+    "-KH4KjU_BcGlTyVDt3hB" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "4",
+      "targetH" : "158",
+      "targetL" : "52",
+      "targetS" : "55",
+      "timestamp" : 1462525949629,
+      "username" : "184"
+    },
+    "-KH4Kt-ismonUE8531b6" : {
+      "dataVersion" : 2,
+      "performance" : "26",
+      "roundLevel" : "4",
+      "targetH" : "155",
+      "targetL" : "75",
+      "targetS" : "44",
+      "timestamp" : 1462525988614,
+      "username" : "184"
+    },
+    "-KH4L8xdh23H33XyhvOM" : {
+      "dataVersion" : 2,
+      "performance" : "47",
+      "roundLevel" : "4",
+      "targetH" : "89",
+      "targetL" : "74",
+      "targetS" : "23",
+      "timestamp" : 1462526058032,
+      "username" : "184"
+    },
+    "-KH4LSmR-Eim9xfrwlHO" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "4",
+      "targetH" : "125",
+      "targetL" : "38",
+      "targetS" : "31",
+      "timestamp" : 1462526139286,
+      "username" : "184"
+    },
+    "-KH4L_wob9PHYbaE-64W" : {
+      "dataVersion" : 2,
+      "performance" : "74",
+      "roundLevel" : "4",
+      "targetH" : "21",
+      "targetL" : "47",
+      "targetS" : "87",
+      "timestamp" : 1462526172718,
+      "username" : "184"
+    },
+    "-KHEH5evva6eT5UjfkRg" : {
+      "dataVersion" : 2,
+      "performance" : "76",
+      "roundLevel" : "1",
+      "targetH" : "269",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462692768443,
+      "username" : "Noor"
+    },
+    "-KHEHfvstTsG2ffFp9HH" : {
+      "dataVersion" : 2,
+      "performance" : "186",
+      "roundLevel" : "1",
+      "targetH" : "356",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462692921076,
+      "username" : "Noor"
+    },
+    "-KHEHu3G4q536i_L7gPm" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "1",
+      "targetH" : "48",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462692979460,
+      "username" : "Noor"
+    },
+    "-KHEI-Dc7mPOFpKrzmjh" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "1",
+      "targetH" : "120",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462693004699,
+      "username" : "Noor"
+    },
+    "-KHEI3xPJb_KKMUv0GM4" : {
+      "dataVersion" : 2,
+      "performance" : "178",
+      "roundLevel" : "1",
+      "targetH" : "353",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462693024077,
+      "username" : "Noor"
+    },
+    "-KHEI9RBTeKqAQ2QiUr3" : {
+      "dataVersion" : 2,
+      "performance" : "178",
+      "roundLevel" : "1",
+      "targetH" : "223",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462693046527,
+      "username" : "Noor"
+    },
+    "-KHEIF2hsoy2w8Erzw_a" : {
+      "dataVersion" : 2,
+      "performance" : "161",
+      "roundLevel" : "1",
+      "targetH" : "186",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462693069536,
+      "username" : "Noor"
+    },
+    "-KHEIPNI7cXfttV3HXRE" : {
+      "dataVersion" : 2,
+      "performance" : "145",
+      "roundLevel" : "1",
+      "targetH" : "184",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462693111814,
+      "username" : "Noor"
+    },
+    "-KHEITq4LXck1M0oNs0o" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "225",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462693130104,
+      "username" : "Noor"
+    },
+    "-KHEIi99N0bQL3R2gG7e" : {
+      "dataVersion" : 2,
+      "performance" : "82",
+      "roundLevel" : "2",
+      "targetH" : "305",
+      "targetL" : "50",
+      "targetS" : "73",
+      "timestamp" : 1462693192829,
+      "username" : "Noor"
+    },
+    "-KHEIqhLS2t0xL7OI7Eq" : {
+      "dataVersion" : 2,
+      "performance" : "49",
+      "roundLevel" : "2",
+      "targetH" : "206",
+      "targetL" : "50",
+      "targetS" : "94",
+      "timestamp" : 1462693227849,
+      "username" : "Noor"
+    },
+    "-KHEIwk9lPoGyII2DjbD" : {
+      "dataVersion" : 2,
+      "performance" : "87",
+      "roundLevel" : "2",
+      "targetH" : "279",
+      "targetL" : "50",
+      "targetS" : "76",
+      "timestamp" : 1462693252605,
+      "username" : "Noor"
+    },
+    "-KHEJmBA-8gJcAq09zNi" : {
+      "dataVersion" : 2,
+      "performance" : "47",
+      "roundLevel" : "2",
+      "targetH" : "27",
+      "targetL" : "50",
+      "targetS" : "50",
+      "timestamp" : 1462693471486,
+      "username" : "Noor"
+    },
+    "-KHEJvs6FODeYqW4l_Te" : {
+      "dataVersion" : 2,
+      "performance" : "13",
+      "roundLevel" : "2",
+      "targetH" : "76",
+      "targetL" : "50",
+      "targetS" : "89",
+      "timestamp" : 1462693511162,
+      "username" : "Noor"
+    },
+    "-KHEK3vcJu87HtQZgBNb" : {
+      "dataVersion" : 2,
+      "performance" : "100",
+      "roundLevel" : "2",
+      "targetH" : "331",
+      "targetL" : "50",
+      "targetS" : "53",
+      "timestamp" : 1462693548251,
+      "username" : "Noor"
+    },
+    "-KHEKguzNbIeSCmNnyNt" : {
+      "dataVersion" : 2,
+      "performance" : "50",
+      "roundLevel" : "2",
+      "targetH" : "297",
+      "targetL" : "50",
+      "targetS" : "59",
+      "timestamp" : 1462693712050,
+      "username" : "Noor"
+    },
+    "-KHEKrqdKLkhfavZPmL7" : {
+      "dataVersion" : 2,
+      "performance" : "143",
+      "roundLevel" : "2",
+      "targetH" : "355",
+      "targetL" : "50",
+      "targetS" : "74",
+      "timestamp" : 1462693756828,
+      "username" : "Noor"
+    },
+    "-KHEKw9ZxGgK8qF-jYQX" : {
+      "dataVersion" : 2,
+      "performance" : "175",
+      "roundLevel" : "2",
+      "targetH" : "242",
+      "targetL" : "50",
+      "targetS" : "67",
+      "timestamp" : 1462693774487,
+      "username" : "Noor"
+    },
+    "-KHFUGoaNt2XW6v6vYSv" : {
+      "dataVersion" : 2,
+      "performance" : "76",
+      "roundLevel" : "2",
+      "targetH" : "72",
+      "targetL" : "50",
+      "targetS" : "35",
+      "timestamp" : 1462712999336,
+      "username" : "Noor"
+    },
+    "-KHIV3AF7N7O7En987t7" : {
+      "dataVersion" : 2,
+      "performance" : "72",
+      "roundLevel" : "4",
+      "targetH" : "114",
+      "targetL" : "50",
+      "targetS" : "20",
+      "timestamp" : 1462763536632,
+      "username" : "184"
+    },
+    "-KHIkROdT4uOOg0G8d_6" : {
+      "dataVersion" : 2,
+      "performance" : "79",
+      "roundLevel" : "4",
+      "targetH" : "315",
+      "targetL" : "54",
+      "targetS" : "47",
+      "timestamp" : 1462767830042,
+      "username" : "184"
+    },
+    "-KHIkXChs9UhtUOiow96" : {
+      "dataVersion" : 2,
+      "performance" : "162",
+      "roundLevel" : "4",
+      "targetH" : "2",
+      "targetL" : "35",
+      "targetS" : "72",
+      "timestamp" : 1462767853854,
+      "username" : "184"
+    },
+    "-KHIki02OkEPx-igQq29" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "4",
+      "targetH" : "282",
+      "targetL" : "71",
+      "targetS" : "89",
+      "timestamp" : 1462767902197,
+      "username" : "184"
+    },
+    "-KHIldZ3KMRj5DSPN2JB" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "4",
+      "targetH" : "42",
+      "targetL" : "21",
+      "targetS" : "22",
+      "timestamp" : 1462768146113,
+      "username" : "184"
+    },
+    "-KHInVo_Hr3bFChY0Fde" : {
+      "dataVersion" : 2,
+      "performance" : "77",
+      "roundLevel" : "4",
+      "targetH" : "50",
+      "targetL" : "59",
+      "targetS" : "37",
+      "timestamp" : 1462768634623,
+      "username" : "184"
+    },
+    "-KHIo7_XS5QS-5duaR6g" : {
+      "dataVersion" : 2,
+      "performance" : "94",
+      "roundLevel" : "4",
+      "targetH" : "207",
+      "targetL" : "65",
+      "targetS" : "59",
+      "timestamp" : 1462768797493,
+      "username" : "184"
+    },
+    "-KHNf2vODS9t0FXfAesb" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "4",
+      "targetH" : "217",
+      "targetL" : "39",
+      "targetS" : "83",
+      "timestamp" : 1462850306713,
+      "username" : "184"
+    },
+    "-KHNq2VRKbkmmly74I0T" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : "4",
+      "targetH" : "32",
+      "targetL" : "46",
+      "targetS" : "60",
+      "timestamp" : 1462853187889,
+      "username" : "184"
+    },
+    "-KHNrUqfMAdftYy2bUkl" : {
+      "dataVersion" : 2,
+      "performance" : "88",
+      "roundLevel" : "4",
+      "targetH" : "0",
+      "targetL" : "61",
+      "targetS" : "98",
+      "timestamp" : 1462853566144,
+      "username" : "184"
+    },
+    "-KHRV_FbS5a2OiVdcz1s" : {
+      "dataVersion" : 2,
+      "performance" : "0",
+      "roundLevel" : "1",
+      "targetH" : "276",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462914667558,
+      "username" : "indoa"
+    },
+    "-KHRivpZc4Nv8qEuT7YA" : {
+      "dataVersion" : 2,
+      "performance" : "34",
+      "roundLevel" : "1",
+      "targetH" : "171",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462918430052,
+      "username" : "XXX"
+    },
+    "-KHRjBETnNe53Ne90iCC" : {
+      "dataVersion" : 2,
+      "performance" : "124",
+      "roundLevel" : "1",
+      "targetH" : "106",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462918492974,
+      "username" : "XXX"
+    },
+    "-KHRjN3V-SnXF9hQtl-y" : {
+      "dataVersion" : 2,
+      "performance" : "118",
+      "roundLevel" : "1",
+      "targetH" : "296",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462918541424,
+      "username" : "XXX"
+    },
+    "-KHRjYSyNrXbBEs4HIbg" : {
+      "dataVersion" : 2,
+      "performance" : "34",
+      "roundLevel" : "1",
+      "targetH" : "192",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462918588110,
+      "username" : "XXX"
+    },
+    "-KHSSyyZLEb6-cEukFNS" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "36",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462930763680,
+      "username" : "Shartaj"
+    },
+    "-KHSTvhirtYJU2cQzTAd" : {
+      "dataVersion" : 2,
+      "performance" : "45",
+      "roundLevel" : "1",
+      "targetH" : "184",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462930865566,
+      "username" : "Shartaj"
+    },
+    "-KHUx3pXCXD2MnjjuHkR" : {
+      "dataVersion" : 2,
+      "performance" : "91",
+      "roundLevel" : "1",
+      "targetH" : "315",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462972468578,
+      "username" : "johnny"
+    },
+    "-KHUxLZq64R7DVlpQjF2" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "312",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462972535500,
+      "username" : "johnny"
+    },
+    "-KHUx_jMDxOQq6Cu9JaK" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : "1",
+      "targetH" : "151",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462972597617,
+      "username" : "johnny"
+    },
+    "-KHUxgfX9Rm8qXz8cZxY" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "1",
+      "targetH" : "244",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1462972626044,
+      "username" : "johnny"
+    },
+    "-KHYP_UhaRiwKJxc4OYN" : {
+      "dataVersion" : 2,
+      "performance" : "107",
+      "roundLevel" : 4,
+      "targetH" : "271",
+      "targetL" : "51",
+      "targetS" : "79",
+      "timestamp" : 1463030535912,
+      "username" : "184"
+    },
+    "-KHYdhsoXfdfTPQOFR-v" : {
+      "dataVersion" : 2,
+      "performance" : "116",
+      "roundLevel" : 4,
+      "targetH" : "61",
+      "targetL" : "77",
+      "targetS" : "29",
+      "timestamp" : 1463034502412,
+      "username" : "184"
+    },
+    "-KHYeuQ8AxO1fBJbevC_" : {
+      "dataVersion" : 2,
+      "performance" : "156",
+      "roundLevel" : "4",
+      "targetH" : "235",
+      "targetL" : "33",
+      "targetS" : "67",
+      "timestamp" : 1463034815904,
+      "username" : "184"
+    },
+    "-KHYgOiIoCjZS2tEBGPs" : {
+      "dataVersion" : 2,
+      "performance" : "99",
+      "roundLevel" : "4",
+      "targetH" : "24",
+      "targetL" : "35",
+      "targetS" : "90",
+      "timestamp" : 1463035206251,
+      "username" : "184"
+    },
+    "-KHYgXoHfWBgdj0sG_CT" : {
+      "dataVersion" : 2,
+      "performance" : "122",
+      "roundLevel" : "4",
+      "targetH" : "120",
+      "targetL" : "79",
+      "targetS" : "65",
+      "timestamp" : 1463035243498,
+      "username" : "184"
+    },
+    "-KHYhXr3zp9SNNxXp4E-" : {
+      "dataVersion" : 2,
+      "performance" : "104",
+      "roundLevel" : "4",
+      "targetH" : "229",
+      "targetL" : "79",
+      "targetS" : "38",
+      "timestamp" : 1463035505819,
+      "username" : "184"
+    },
+    "-KHYi1g14NyAQOORx-Lg" : {
+      "dataVersion" : 2,
+      "performance" : "71",
+      "roundLevel" : "4",
+      "targetH" : "82",
+      "targetL" : "71",
+      "targetS" : "79",
+      "timestamp" : 1463035636186,
+      "username" : "184"
+    },
+    "-KHYiTAZ8C8n1UBaV2KI" : {
+      "dataVersion" : 2,
+      "performance" : "68",
+      "roundLevel" : "4",
+      "targetH" : "254",
+      "targetL" : "60",
+      "targetS" : "90",
+      "timestamp" : 1463035748795,
+      "username" : "184"
+    },
+    "-KHYkXLsszt3S0fg0Za5" : {
+      "dataVersion" : 2,
+      "performance" : "105",
+      "roundLevel" : "4",
+      "targetH" : "286",
+      "targetL" : "35",
+      "targetS" : "72",
+      "timestamp" : 1463036290191,
+      "username" : "184"
+    },
+    "-KHZUKWRoElFkrj_PSVP" : {
+      "dataVersion" : 2,
+      "performance" : "154",
+      "roundLevel" : "1",
+      "targetH" : "180",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048558683,
+      "username" : "Vera"
+    },
+    "-KHZUe525edoij4oqXx4" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : "1",
+      "targetH" : "241",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048643052,
+      "username" : "Vera"
+    },
+    "-KHZUr7aIR-yh8HjPkh-" : {
+      "dataVersion" : 2,
+      "performance" : "159",
+      "roundLevel" : "1",
+      "targetH" : "85",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048696463,
+      "username" : "Vera"
+    },
+    "-KHZV11Lze04WZswLrtH" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : "1",
+      "targetH" : "298",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048741119,
+      "username" : "Vera"
+    },
+    "-KHZV8U9R3l9Xwa1podi" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "1",
+      "targetH" : "346",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048771635,
+      "username" : "Vera"
+    },
+    "-KHZVGWqGAOPW11b5doN" : {
+      "dataVersion" : 2,
+      "performance" : "157",
+      "roundLevel" : "1",
+      "targetH" : "156",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048804575,
+      "username" : "Vera"
+    },
+    "-KHZVP7txtVSIpbZnZP-" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "113",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048839842,
+      "username" : "Vera"
+    },
+    "-KHZVVO6wXcoUCbkEZga" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "226",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463048865456,
+      "username" : "Vera"
+    },
+    "-KHZZ-Vu5i4YixrNaJqd" : {
+      "dataVersion" : 2,
+      "performance" : "111",
+      "roundLevel" : "2",
+      "targetH" : "186",
+      "targetL" : "50",
+      "targetS" : "97",
+      "timestamp" : 1463049783458,
+      "username" : "Vera"
+    },
+    "-KHZZBMKGaKy3HMgKrdp" : {
+      "dataVersion" : 2,
+      "performance" : "101",
+      "roundLevel" : "2",
+      "targetH" : "176",
+      "targetL" : "50",
+      "targetS" : "44",
+      "timestamp" : 1463049831997,
+      "username" : "Vera"
+    },
+    "-KHZZQfAKPZWbDEOYlyJ" : {
+      "dataVersion" : 2,
+      "performance" : "124",
+      "roundLevel" : "2",
+      "targetH" : "141",
+      "targetL" : "50",
+      "targetS" : "35",
+      "timestamp" : 1463049894708,
+      "username" : "Vera"
+    },
+    "-KHZZZr4PwjNIoEuN8L_" : {
+      "dataVersion" : 2,
+      "performance" : "109",
+      "roundLevel" : "2",
+      "targetH" : "169",
+      "targetL" : "50",
+      "targetS" : "87",
+      "timestamp" : 1463049932334,
+      "username" : "Vera"
+    },
+    "-KHZZnhJbncZ_NJDtWDQ" : {
+      "dataVersion" : 2,
+      "performance" : "90",
+      "roundLevel" : "2",
+      "targetH" : "8",
+      "targetL" : "50",
+      "targetS" : "35",
+      "timestamp" : 1463049993149,
+      "username" : "Vera"
+    },
+    "-KHZ_7-HvCHsnreTX7u8" : {
+      "dataVersion" : 2,
+      "performance" : "58",
+      "roundLevel" : "2",
+      "targetH" : "258",
+      "targetL" : "50",
+      "targetS" : "29",
+      "timestamp" : 1463050076283,
+      "username" : "Vera"
+    },
+    "-KHZlX_e462XSwuMq1Ge" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "2",
+      "targetH" : "150",
+      "targetL" : "50",
+      "targetS" : "97",
+      "timestamp" : 1463053330793,
+      "username" : "meuc"
+    },
+    "-KHZljpQznjrrjq5HPLl" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : 3,
+      "targetH" : "170",
+      "targetL" : "41",
+      "targetS" : "75",
+      "timestamp" : 1463053385119,
+      "username" : "meuc"
+    },
+    "-KHZlzJIKu2ak9juIjqL" : {
+      "dataVersion" : 2,
+      "performance" : "45",
+      "roundLevel" : "3",
+      "targetH" : "353",
+      "targetL" : "65",
+      "targetS" : "43",
+      "timestamp" : 1463053448533,
+      "username" : "meuc"
+    },
+    "-KH_Gq49UZtjISeAC8lH" : {
+      "dataVersion" : 2,
+      "performance" : "73",
+      "roundLevel" : "1",
+      "targetH" : "220",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463061799242,
+      "username" : "Frost"
+    },
+    "-KH_H4Y-HO8nGaFJ831G" : {
+      "dataVersion" : 2,
+      "performance" : "176",
+      "roundLevel" : "1",
+      "targetH" : "170",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463061854533,
+      "username" : "Frost"
+    },
+    "-KH_HDGcI_bu1pj9ghYx" : {
+      "dataVersion" : 2,
+      "performance" : "178",
+      "roundLevel" : "1",
+      "targetH" : "23",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463061890285,
+      "username" : "Frost"
+    },
+    "-KH_HIexQFvuQrjXs9zu" : {
+      "dataVersion" : 2,
+      "performance" : "46",
+      "roundLevel" : "1",
+      "targetH" : "208",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463061912386,
+      "username" : "Frost"
+    },
+    "-KH_HQgWV1VRqluwzDps" : {
+      "dataVersion" : 2,
+      "performance" : "188",
+      "roundLevel" : "1",
+      "targetH" : "167",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463061945254,
+      "username" : "Frost"
+    },
+    "-KH_gQfbOmDD82xIhGej" : {
+      "dataVersion" : 2,
+      "performance" : "88",
+      "roundLevel" : "3",
+      "targetH" : "279",
+      "targetL" : "76",
+      "targetS" : "53",
+      "timestamp" : 1463068768999,
+      "username" : "meuc"
+    },
+    "-KH_ge0M0jih63u3sZ4n" : {
+      "dataVersion" : 2,
+      "performance" : "137",
+      "roundLevel" : "3",
+      "targetH" : "8",
+      "targetL" : "65",
+      "targetS" : "43",
+      "timestamp" : 1463068827790,
+      "username" : "meuc"
+    },
+    "-KH_glxmFq_5HlMumuec" : {
+      "dataVersion" : 2,
+      "performance" : "186",
+      "roundLevel" : "3",
+      "targetH" : "129",
+      "targetL" : "60",
+      "targetS" : "49",
+      "timestamp" : 1463068860328,
+      "username" : "meuc"
+    },
+    "-KH_hMaZYbGzorj7DUpQ" : {
+      "dataVersion" : 2,
+      "performance" : "109",
+      "roundLevel" : "3",
+      "targetH" : "316",
+      "targetL" : "57",
+      "targetS" : "88",
+      "timestamp" : 1463069014490,
+      "username" : "meuc"
+    },
+    "-KH_hZad_772uPYqLY4s" : {
+      "dataVersion" : 2,
+      "performance" : "53",
+      "roundLevel" : "3",
+      "targetH" : "269",
+      "targetL" : "54",
+      "targetS" : "25",
+      "timestamp" : 1463069067744,
+      "username" : "meuc"
+    },
+    "-KH_hokFPLeWPUtCMp9V" : {
+      "dataVersion" : 2,
+      "performance" : "18",
+      "roundLevel" : "3",
+      "targetH" : "259",
+      "targetL" : "79",
+      "targetS" : "84",
+      "timestamp" : 1463069133895,
+      "username" : "meuc"
+    },
+    "-KHa70PzJoCqHSnu5OwQ" : {
+      "dataVersion" : 2,
+      "performance" : "154",
+      "roundLevel" : "1",
+      "targetH" : "117",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463076001470,
+      "username" : "Frost"
+    },
+    "-KHa7MQr01dTdue6s817" : {
+      "dataVersion" : 2,
+      "performance" : "151",
+      "roundLevel" : "1",
+      "targetH" : "118",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463076083397,
+      "username" : "Frost"
+    },
+    "-KHa7RICvfC-H4VCajJX" : {
+      "dataVersion" : 2,
+      "performance" : "155",
+      "roundLevel" : "1",
+      "targetH" : "132",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463076103323,
+      "username" : "Frost"
+    },
+    "-KHaArOK-5j9h4k07t6R" : {
+      "dataVersion" : 2,
+      "performance" : "133",
+      "roundLevel" : 3,
+      "targetH" : "33",
+      "targetL" : "71",
+      "targetS" : "41",
+      "timestamp" : 1463077008980,
+      "username" : "meuc"
+    },
+    "-KHaBBIOp7-D_Z55UdSN" : {
+      "dataVersion" : 2,
+      "performance" : "69",
+      "roundLevel" : "3",
+      "targetH" : "233",
+      "targetL" : "32",
+      "targetS" : "96",
+      "timestamp" : 1463077094678,
+      "username" : "meuc"
+    },
+    "-KHaBOFTxF-2bvsh6gtK" : {
+      "dataVersion" : 2,
+      "performance" : "185",
+      "roundLevel" : "3",
+      "targetH" : "11",
+      "targetL" : "65",
+      "targetS" : "85",
+      "timestamp" : 1463077147740,
+      "username" : "meuc"
+    },
+    "-KHaBlPtxXunpV9P2DrW" : {
+      "dataVersion" : 2,
+      "performance" : "124",
+      "roundLevel" : "3",
+      "targetH" : "73",
+      "targetL" : "66",
+      "targetS" : "59",
+      "timestamp" : 1463077246711,
+      "username" : "meuc"
+    },
+    "-KHaCDtmty3dGA91GVYK" : {
+      "dataVersion" : 2,
+      "performance" : "157",
+      "roundLevel" : "3",
+      "targetH" : "19",
+      "targetL" : "60",
+      "targetS" : "59",
+      "timestamp" : 1463077367471,
+      "username" : "meuc"
+    },
+    "-KHaCj5-se2DWNnwu9eq" : {
+      "dataVersion" : 2,
+      "performance" : "65",
+      "roundLevel" : "3",
+      "targetH" : "346",
+      "targetL" : "78",
+      "targetS" : "56",
+      "timestamp" : 1463077499326,
+      "username" : "meuc"
+    },
+    "-KHaCyyuAxVQ33EpxCis" : {
+      "dataVersion" : 2,
+      "performance" : "149",
+      "roundLevel" : "3",
+      "targetH" : "6",
+      "targetL" : "27",
+      "targetS" : "36",
+      "timestamp" : 1463077564407,
+      "username" : "meuc"
+    },
+    "-KHaDEpp8or6aIAtmcCT" : {
+      "dataVersion" : 2,
+      "performance" : "86",
+      "roundLevel" : "3",
+      "targetH" : "187",
+      "targetL" : "56",
+      "targetS" : "49",
+      "timestamp" : 1463077633459,
+      "username" : "meuc"
+    },
+    "-KHaDRn-7dJrwXSH7nBc" : {
+      "dataVersion" : 2,
+      "performance" : "52",
+      "roundLevel" : "4",
+      "targetH" : "230",
+      "targetL" : "74",
+      "targetS" : "61",
+      "timestamp" : 1463077686526,
+      "username" : "meuc"
+    },
+    "-KHk3E0f5QRJIQJLLELD" : {
+      "dataVersion" : 2,
+      "performance" : "144",
+      "roundLevel" : "1",
+      "targetH" : "282",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463242780779,
+      "username" : "Konstantina"
+    },
+    "-KHk3OlvcVlHx3mpUv53" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : "1",
+      "targetH" : "205",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463242834843,
+      "username" : "Konstantina"
+    },
+    "-KHk3WJABTSXV-2lDzNB" : {
+      "dataVersion" : 2,
+      "performance" : "159",
+      "roundLevel" : "1",
+      "targetH" : "206",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463242865708,
+      "username" : "Konstantina"
+    },
+    "-KHk3i1hC24zy1EolN7c" : {
+      "dataVersion" : 2,
+      "performance" : "126",
+      "roundLevel" : "1",
+      "targetH" : "70",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463242917838,
+      "username" : "Konstantina"
+    },
+    "-KHk3lgUadewp97jcIC5" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : "1",
+      "targetH" : "278",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463242932800,
+      "username" : "Konstantina"
+    },
+    "-KHk3qRYAFLGBSggAd3d" : {
+      "dataVersion" : 2,
+      "performance" : "101",
+      "roundLevel" : "1",
+      "targetH" : "40",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463242952260,
+      "username" : "Konstantina"
+    },
+    "-KHk3wA3VaZo80XmuoZ4" : {
+      "dataVersion" : 2,
+      "performance" : "173",
+      "roundLevel" : "1",
+      "targetH" : "201",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463242975717,
+      "username" : "Konstantina"
+    },
+    "-KHk47BiLEo-cznegULU" : {
+      "dataVersion" : 2,
+      "performance" : "63",
+      "roundLevel" : "1",
+      "targetH" : "122",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463243024975,
+      "username" : "Konstantina"
+    },
+    "-KHk4DgnfBeVk49xmLke" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "1",
+      "targetH" : "129",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463243051604,
+      "username" : "Konstantina"
+    },
+    "-KHk4k2NBIA9sS8dW2O6" : {
+      "dataVersion" : 2,
+      "performance" : "17",
+      "roundLevel" : "2",
+      "targetH" : "155",
+      "targetL" : "50",
+      "targetS" : "39",
+      "timestamp" : 1463243188216,
+      "username" : "Konstantina"
+    },
+    "-KHk4w-SJdr4r6WNb8Of" : {
+      "dataVersion" : 2,
+      "performance" : "117",
+      "roundLevel" : "2",
+      "targetH" : "208",
+      "targetL" : "50",
+      "targetS" : "50",
+      "timestamp" : 1463243237181,
+      "username" : "Konstantina"
+    },
+    "-KHk5EZ8kIv4Skuol27U" : {
+      "dataVersion" : 2,
+      "performance" : "51",
+      "roundLevel" : "2",
+      "targetH" : "42",
+      "targetL" : "50",
+      "targetS" : "25",
+      "timestamp" : 1463243317290,
+      "username" : "Konstantina"
+    },
+    "-KHk5R_H09jgQNc9dpYh" : {
+      "dataVersion" : 2,
+      "performance" : "52",
+      "roundLevel" : "2",
+      "targetH" : "255",
+      "targetL" : "50",
+      "targetS" : "42",
+      "timestamp" : 1463243370611,
+      "username" : "Konstantina"
+    },
+    "-KHk5ggVTHSr1AjDJNI5" : {
+      "dataVersion" : 2,
+      "performance" : "81",
+      "roundLevel" : "2",
+      "targetH" : "214",
+      "targetL" : "50",
+      "targetS" : "81",
+      "timestamp" : 1463243436609,
+      "username" : "Konstantina"
+    },
+    "-KHk5ufb-I3qHuTX0Qyc" : {
+      "dataVersion" : 2,
+      "performance" : "94",
+      "roundLevel" : "2",
+      "targetH" : "241",
+      "targetL" : "50",
+      "targetS" : "56",
+      "timestamp" : 1463243493895,
+      "username" : "Konstantina"
+    },
+    "-KHk66J2L0y8BzCD2mVk" : {
+      "dataVersion" : 2,
+      "performance" : "171",
+      "roundLevel" : "2",
+      "targetH" : "11",
+      "targetL" : "50",
+      "targetS" : "95",
+      "timestamp" : 1463243545636,
+      "username" : "Konstantina"
+    },
+    "-KHk6HsXED7KtLwYVcDv" : {
+      "dataVersion" : 2,
+      "performance" : "131",
+      "roundLevel" : "2",
+      "targetH" : "37",
+      "targetL" : "50",
+      "targetS" : "65",
+      "timestamp" : 1463243593026,
+      "username" : "Konstantina"
+    },
+    "-KHk6PzoPLT0Rqe6uZTc" : {
+      "dataVersion" : 2,
+      "performance" : "162",
+      "roundLevel" : "2",
+      "targetH" : "187",
+      "targetL" : "50",
+      "targetS" : "90",
+      "timestamp" : 1463243626261,
+      "username" : "Konstantina"
+    },
+    "-KHk6cSytZ1QVztIps76" : {
+      "dataVersion" : 2,
+      "performance" : "103",
+      "roundLevel" : "2",
+      "targetH" : "175",
+      "targetL" : "50",
+      "targetS" : "44",
+      "timestamp" : 1463243681439,
+      "username" : "Konstantina"
+    },
+    "-KHk6ndViUIwR22BZBu_" : {
+      "dataVersion" : 2,
+      "performance" : "156",
+      "roundLevel" : "2",
+      "targetH" : "345",
+      "targetL" : "50",
+      "targetS" : "91",
+      "timestamp" : 1463243727233,
+      "username" : "Konstantina"
+    },
+    "-KHk6sgvT4GpHfIykVYW" : {
+      "dataVersion" : 2,
+      "performance" : "173",
+      "roundLevel" : "2",
+      "targetH" : "42",
+      "targetL" : "50",
+      "targetS" : "74",
+      "timestamp" : 1463243747932,
+      "username" : "Konstantina"
+    },
+    "-KHk73J0cALe2H7MWbSK" : {
+      "dataVersion" : 2,
+      "performance" : "110",
+      "roundLevel" : "2",
+      "targetH" : "138",
+      "targetL" : "50",
+      "targetS" : "52",
+      "timestamp" : 1463243795490,
+      "username" : "Konstantina"
+    },
+    "-KHk7LIKPz3HqjWmG11j" : {
+      "dataVersion" : 2,
+      "performance" : "39",
+      "roundLevel" : "2",
+      "targetH" : "278",
+      "targetL" : "50",
+      "targetS" : "91",
+      "timestamp" : 1463243869174,
+      "username" : "Konstantina"
+    },
+    "-KHk7gU6AIVzAC7pWTwI" : {
+      "dataVersion" : 2,
+      "performance" : "36",
+      "roundLevel" : "3",
+      "targetH" : "134",
+      "targetL" : "35",
+      "targetS" : "63",
+      "timestamp" : 1463243960040,
+      "username" : "Konstantina"
+    },
+    "-KHk7t58vtHk3qjJH9TC" : {
+      "dataVersion" : 2,
+      "performance" : "70",
+      "roundLevel" : "3",
+      "targetH" : "266",
+      "targetL" : "59",
+      "targetS" : "74",
+      "timestamp" : 1463244011689,
+      "username" : "Konstantina"
+    },
+    "-KHk89Isd6J9-T5P8Erw" : {
+      "dataVersion" : 2,
+      "performance" : "23",
+      "roundLevel" : "3",
+      "targetH" : "96",
+      "targetL" : "65",
+      "targetS" : "83",
+      "timestamp" : 1463244082200,
+      "username" : "Konstantina"
+    },
+    "-KHk8Q6bl6OKexKxFWIZ" : {
+      "dataVersion" : 2,
+      "performance" : "88",
+      "roundLevel" : "3",
+      "targetH" : "14",
+      "targetL" : "32",
+      "targetS" : "24",
+      "timestamp" : 1463244151048,
+      "username" : "Konstantina"
+    },
+    "-KHk8ee25GYK_BqELdSm" : {
+      "dataVersion" : 2,
+      "performance" : "38",
+      "roundLevel" : "3",
+      "targetH" : "318",
+      "targetL" : "62",
+      "targetS" : "47",
+      "timestamp" : 1463244214692,
+      "username" : "Konstantina"
+    },
+    "-KHk8sctqkb78FCY3-PI" : {
+      "dataVersion" : 2,
+      "performance" : "32",
+      "roundLevel" : "3",
+      "targetH" : "122",
+      "targetL" : "79",
+      "targetS" : "44",
+      "timestamp" : 1463244271962,
+      "username" : "Konstantina"
+    },
+    "-KHk93CuSKTHBrIpYF6_" : {
+      "dataVersion" : 2,
+      "performance" : "138",
+      "roundLevel" : "3",
+      "targetH" : "35",
+      "targetL" : "56",
+      "targetS" : "63",
+      "timestamp" : 1463244319387,
+      "username" : "Konstantina"
+    },
+    "-KHk9IkiYHOsMkC1npuz" : {
+      "dataVersion" : 2,
+      "performance" : "1",
+      "roundLevel" : "3",
+      "targetH" : "87",
+      "targetL" : "20",
+      "targetS" : "38",
+      "timestamp" : 1463244383055,
+      "username" : "Konstantina"
+    },
+    "-KHk9cjSuPzbXY1yycKV" : {
+      "dataVersion" : 2,
+      "performance" : "47",
+      "roundLevel" : "3",
+      "targetH" : "337",
+      "targetL" : "58",
+      "targetS" : "32",
+      "timestamp" : 1463244468990,
+      "username" : "Konstantina"
+    },
+    "-KHk9wLPBVjiFt-78KPz" : {
+      "dataVersion" : 2,
+      "performance" : "50",
+      "roundLevel" : "3",
+      "targetH" : "281",
+      "targetL" : "76",
+      "targetS" : "27",
+      "timestamp" : 1463244549307,
+      "username" : "Konstantina"
+    },
+    "-KHkA7ta1kRV_XQVIiac" : {
+      "dataVersion" : 2,
+      "performance" : "12",
+      "roundLevel" : "3",
+      "targetH" : "80",
+      "targetL" : "70",
+      "targetS" : "76",
+      "timestamp" : 1463244600711,
+      "username" : "Konstantina"
+    },
+    "-KHkBakcFa3SJJB71M6o" : {
+      "dataVersion" : 2,
+      "performance" : "77",
+      "roundLevel" : "3",
+      "targetH" : "320",
+      "targetL" : "50",
+      "targetS" : "51",
+      "timestamp" : 1463244985160,
+      "username" : "Konstantina"
+    },
+    "-KHkDPuC_IsbajNkPStp" : {
+      "dataVersion" : 2,
+      "performance" : "79",
+      "roundLevel" : "3",
+      "targetH" : "68",
+      "targetL" : "53",
+      "targetS" : "73",
+      "timestamp" : 1463245460909,
+      "username" : "Konstantina"
+    },
+    "-KHkDfvFXmO54ivpctov" : {
+      "dataVersion" : 2,
+      "performance" : "77",
+      "roundLevel" : "3",
+      "targetH" : "349",
+      "targetL" : "20",
+      "targetS" : "84",
+      "timestamp" : 1463245530608,
+      "username" : "Konstantina"
+    },
+    "-KHkDrF1bozICbvuKt3K" : {
+      "dataVersion" : 2,
+      "performance" : "59",
+      "roundLevel" : "3",
+      "targetH" : "214",
+      "targetL" : "51",
+      "targetS" : "53",
+      "timestamp" : 1463245576995,
+      "username" : "Konstantina"
+    },
+    "-KHkE97Pt_Xl8eSZ7N7K" : {
+      "dataVersion" : 2,
+      "performance" : "122",
+      "roundLevel" : "3",
+      "targetH" : "189",
+      "targetL" : "42",
+      "targetS" : "96",
+      "timestamp" : 1463245654331,
+      "username" : "Konstantina"
+    },
+    "-KHkENGp40eUzPR0F1Wv" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "3",
+      "targetH" : "357",
+      "targetL" : "69",
+      "targetS" : "70",
+      "timestamp" : 1463245712278,
+      "username" : "Konstantina"
+    },
+    "-KHkEZroBoHFid0cKjs_" : {
+      "dataVersion" : 2,
+      "performance" : "47",
+      "roundLevel" : "3",
+      "targetH" : "101",
+      "targetL" : "60",
+      "targetS" : "33",
+      "timestamp" : 1463245763861,
+      "username" : "Konstantina"
+    },
+    "-KHkEjViNPVDT-8b5mMr" : {
+      "dataVersion" : 2,
+      "performance" : "31",
+      "roundLevel" : "3",
+      "targetH" : "81",
+      "targetL" : "66",
+      "targetS" : "31",
+      "timestamp" : 1463245807438,
+      "username" : "Konstantina"
+    },
+    "-KHkEzPQ-9Gf9bPTXjCM" : {
+      "dataVersion" : 2,
+      "performance" : "48",
+      "roundLevel" : "3",
+      "targetH" : "124",
+      "targetL" : "47",
+      "targetS" : "82",
+      "timestamp" : 1463245872571,
+      "username" : "Konstantina"
+    },
+    "-KHkFEvwvwECNVixi5uJ" : {
+      "dataVersion" : 2,
+      "performance" : "6",
+      "roundLevel" : "3",
+      "targetH" : "20",
+      "targetL" : "78",
+      "targetS" : "99",
+      "timestamp" : 1463245940253,
+      "username" : "Konstantina"
+    },
+    "-KHkFRu6VdMr6O1zW8PM" : {
+      "dataVersion" : 2,
+      "performance" : "61",
+      "roundLevel" : "3",
+      "targetH" : "114",
+      "targetL" : "32",
+      "targetS" : "39",
+      "timestamp" : 1463245993384,
+      "username" : "Konstantina"
+    },
+    "-KHkFmcp3fIzf_QJVA-u" : {
+      "dataVersion" : 2,
+      "performance" : "62",
+      "roundLevel" : "3",
+      "targetH" : "324",
+      "targetL" : "58",
+      "targetS" : "20",
+      "timestamp" : 1463246082390,
+      "username" : "Konstantina"
+    },
+    "-KHkFyq9Qtl1kUEEnmzV" : {
+      "dataVersion" : 2,
+      "performance" : "83",
+      "roundLevel" : "3",
+      "targetH" : "11",
+      "targetL" : "74",
+      "targetS" : "80",
+      "timestamp" : 1463246132394,
+      "username" : "Konstantina"
+    },
+    "-KHkGBZyx2UZKbjer_hS" : {
+      "dataVersion" : 2,
+      "performance" : "114",
+      "roundLevel" : "3",
+      "targetH" : "282",
+      "targetL" : "62",
+      "targetS" : "70",
+      "timestamp" : 1463246188639,
+      "username" : "Konstantina"
+    },
+    "-KHkGRXt_6_KGtmIa81z" : {
+      "dataVersion" : 2,
+      "performance" : "77",
+      "roundLevel" : "3",
+      "targetH" : "309",
+      "targetL" : "47",
+      "targetS" : "84",
+      "timestamp" : 1463246254042,
+      "username" : "Konstantina"
+    },
+    "-KHkGeR6_mu2ya44qhFk" : {
+      "dataVersion" : 2,
+      "performance" : "129",
+      "roundLevel" : "3",
+      "targetH" : "255",
+      "targetL" : "43",
+      "targetS" : "41",
+      "timestamp" : 1463246310952,
+      "username" : "Konstantina"
+    },
+    "-KHkGqPbzMJM3ox5CMpt" : {
+      "dataVersion" : 2,
+      "performance" : "152",
+      "roundLevel" : "3",
+      "targetH" : "311",
+      "targetL" : "42",
+      "targetS" : "96",
+      "timestamp" : 1463246360008,
+      "username" : "Konstantina"
+    },
+    "-KHkH1ZU903h9yFGt_U7" : {
+      "dataVersion" : 2,
+      "performance" : "39",
+      "roundLevel" : "4",
+      "targetH" : "50",
+      "targetL" : "42",
+      "targetS" : "69",
+      "timestamp" : 1463246409792,
+      "username" : "Konstantina"
+    },
+    "-KHobMOWVaP_t1cbK6hU" : {
+      "dataVersion" : 2,
+      "performance" : "9",
+      "roundLevel" : "1",
+      "targetH" : "341",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463319098977,
+      "username" : "Maki"
+    },
+    "-KHoblxvsF1g3FIw3Ukj" : {
+      "dataVersion" : 2,
+      "performance" : "109",
+      "roundLevel" : "1",
+      "targetH" : "118",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463319207681,
+      "username" : "Maki"
+    },
+    "-KHs_ehGT1QWWoeW5Fwh" : {
+      "dataVersion" : 2,
+      "performance" : "1",
+      "roundLevel" : "1",
+      "targetH" : "333",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463385762640,
+      "username" : "Midas"
+    },
+    "-KHsa0XTQqOvpuOQgOGN" : {
+      "dataVersion" : 2,
+      "performance" : "80",
+      "roundLevel" : "1",
+      "targetH" : "291",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463385856704,
+      "username" : "Midas"
     }
   }
 }

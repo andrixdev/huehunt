@@ -10,6 +10,7 @@ var firebaseRounds,
     rounds,
     players = [],
     bestRounds,
+    reachedLevel2players = [],
     reachedLevel4players = [],
     focus = {},
     filters = {},
@@ -18,10 +19,10 @@ var firebaseRounds,
     UI = {};
 
 /* Data specific to the current focus */
-focus.player = 'maelys';
-focus.level = 2;
-focus.minHue = 0;
-focus.maxHue = 60;
+focus.player = '184';
+focus.level = 4;
+focus.minHue = 200;
+focus.maxHue = 250;
 focus.rounds = [];
 focus.basePerf = '';
 focus.learning = [];
@@ -140,7 +141,7 @@ filters.sortByDate = function(rounds) {
 analysis.getBasePerf = function(rounds) {
   var basePerf = 0;
   var significantPerfCount = Math.floor(1 + (focus.maxHue - focus.minHue) / 30);
-  console.log(significantPerfCount);
+  console.log('significantPerfCount: ' + significantPerfCount);
   // Check if enough perf data
   if (rounds.length < significantPerfCount) {
     basePerf = '/';
@@ -158,8 +159,9 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
       overallLearning = 0;
   var learningRoundScope = 3; // the last 3 rounds and the 3 before
   var roundsNumber = rounds.length;
+  console.log('roundsNumber: ' + roundsNumber);
 
-  if (rounds.length < 2 * learningRoundScope || typeof(basePerf) == 'string') {
+  if (roundsNumber < 2 * learningRoundScope || typeof(basePerf) == 'string') {
     learning = '/';
     overallLearning = '/';
   } else {
@@ -187,9 +189,11 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
         'round': r,
         'learning': Math.max(0, mostRecentAveragePerf - previousAveragePerf)
       });
+      console.log('Round ' + r, ', learning: ' + Math.max(0, mostRecentAveragePerf - previousAveragePerf));
 
       // Update overall learning: diff with basePerf (in the loop because more convenient)
       overallLearning = Math.max(0, mostRecentAveragePerf - basePerf);
+      console.log('Overall learning updated to ' + overallLearning);
     }
   }
   return [learning, overallLearning];
@@ -203,7 +207,7 @@ interaction.updateFocusData = function() {
   focus.basePerf = analysis.getBasePerf(focus.rounds);
 
   // Focus current learning and overall learning
-  var learnings = analysis.getCurrentLearningAndOverallLearning(rounds, focus.basePerf);
+  var learnings = analysis.getCurrentLearningAndOverallLearning(focus.rounds, focus.basePerf);
   focus.learning = learnings[0];
   focus.overallLearning = learnings[1];
 
@@ -217,15 +221,17 @@ UI.globalData.build = function() {
   jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
   // Rounds
   jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(rounds.length);
+  // Players who reached level 2
+  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p').html(reachedLevel2players.length);
   // Players who reached level 4
-  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p').html(reachedLevel4players.length);
+  jQuery('.content-1 .tile-container:nth-of-type(4) .data-data p').html(reachedLevel4players.length);
 };
 UI.focusData = {};
 UI.focusData.build = function() {
   // Focus baseperf
   jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
   // Focus learning
-  jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(twoDecimalsOf(focus.learning));
+  jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(twoDecimalsOf(focus.learning[focus.learning.length - 1].learning));
   // Focus overall learning
   jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(twoDecimalsOf(focus.overallLearning));
   // Focus learning pace
@@ -233,7 +239,11 @@ UI.focusData.build = function() {
 };
 UI.steamgraph = {};
 UI.steamgraph.build = function() {
-
+  // Select tags' names
+  _.each(reachedLevel2players, function(element) {
+    var playerSelect = "<div data-value='" + element + "'>" + element + "</div>";
+    jQuery('.content-3 .controls-area[data-area-type=players] .tiles').append(playerSelect);
+  });
 };
 UI.steamgraph.selected = {
   players: [],
@@ -280,6 +290,9 @@ function processData() {
 
   // Players
   players = filters.getUniqueUsernames(rounds);
+
+  // Players that reached level 2
+  reachedLevel2players = filters.getUniqueUsernames(filters.matchLevel(rounds, 2));
 
   // Players that reached level 4
   reachedLevel4players = filters.getUniqueUsernames(filters.matchLevel(rounds, 4));
