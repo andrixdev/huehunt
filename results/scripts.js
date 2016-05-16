@@ -258,7 +258,6 @@ UI.steamgraph.selected = {
     if (!isActive && isValueInArray) {
       this[whichArrayKey] = _.without(whichArray, dataValue);
     }
-    console.log(this.players, this.hueRanges, this.levels);
   }
 };
 UI.steamgraph.listen = function() {
@@ -268,7 +267,6 @@ UI.steamgraph.listen = function() {
     var dataValue = jQuery(this).attr('data-value') || 'error';
     // Figure out which array it's about, i.e. which controls area
     var whichControlsAreaKey = jQuery(this).parents('.controls-area').attr('data-area-type');
-    console.log(whichControlsAreaKey);
     // Toggle .active class and update model
     if (jQuery(this).hasClass('active')) {
       jQuery(this).removeClass('active');
@@ -278,8 +276,38 @@ UI.steamgraph.listen = function() {
       UI.steamgraph.selected.update(whichControlsAreaKey, dataValue, true);
     }
   });
-  // Specific listeners
 
+  // Specific select for all players
+  var playersTilesSel = '.controls-area[data-area-type=players] .tiles > div';
+  jQuery('.huehunt-results .content-3').on('click', playersTilesSel + '[data-value=players-all]', function() {
+    // Warning!!! .Active class has already been toggled in first listener
+    if (jQuery(this).hasClass('active')) {
+      jQuery(this).html('Deselect all');
+      // Activate all other elements
+      jQuery(playersTilesSel).each(function() {
+        var tileDataValue = jQuery(this).attr('data-value');
+        if (tileDataValue != 'players-all') {
+          // View
+          jQuery(this).addClass('active');
+          // Models
+          UI.steamgraph.selected.update('players', tileDataValue, true);
+        }
+      });
+    } else {
+      jQuery(this).html('All players');
+      // Deactivate all other elements
+      jQuery(playersTilesSel).each(function() {
+        var tileDataValue = jQuery(this).attr('data-value');
+        if (tileDataValue != 'players-all') {
+          // View
+          jQuery(this).removeClass('active');
+          // Model
+          UI.steamgraph.selected.update('players', tileDataValue, false);
+        }
+      });
+    }
+
+  });
 };
 
 /* Base rendering functions */
