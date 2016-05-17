@@ -179,6 +179,8 @@ p {
         }
         .tiles {
           justify-content: center;
+          max-height: 200px;
+          overflow-y: auto;
           & > div {
             margin: 3px;
             padding: 5px 10px;
@@ -191,6 +193,12 @@ p {
             }
           }
         }
+      }
+      .steam-content {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
+        width: 100%;
+        min-height: 50%;
       }
     }
   }
