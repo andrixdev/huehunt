@@ -29,37 +29,6 @@ focus.learning = [];
 focus.overallLearning = '';
 focus.learningPace = '';
 
-/* Input dataset model */
-firebaseRounds = {
-  "KBxE015HXj3bV0jEenb" : {
-    "performance" : "41",
-    "roundLevel" : "1",
-    "targetH" : "268",
-    "targetL" : "50",
-    "targetS" : "100",
-    "username" : "Lindrox"
-  },
-  "KCu4Ucc0bW5kjMf3mY1" : {
-    "performance" : "59",
-    "roundLevel" : "1",
-    "targetH" : "318",
-    "targetL" : "50",
-    "targetS" : "100",
-    "username" : "Icosacid"
-  }
-};
-
-/* Get the data! */
-var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
-myFirebaseRef.on("value", function(data) {
-  firebaseRounds = data.val();
-  // Cleanup data format (from dirty JSON to array of objects)
-  rounds = filters.formatFirebaseDataset(firebaseRounds);
-  processData();
-  buildUI();
-  showUI();
-});
-
 filters.formatFirebaseDataset = function(firebaseRounds) {
   // Remove the unnecessary random object names and make an array of objects
   var rounds = [];
@@ -256,7 +225,7 @@ UI.steamgraph.build = function() {
   });
 
   // Draw steam graph
-  this.graph();
+  UI.steamgraph.graph();
 };
 UI.steamgraph.selected = {
   players: [],
@@ -357,11 +326,11 @@ UI.steamgraph.graph = function() {
   var m = 100; // number of samples per layer
   var stack = d3.layout.stack().offset("wiggle");
   var layers0 = stack(['184', 'maelys'].map(function(playerName, index) { return playerLearning(playerName); }));
-  console.log('range', d3.range(n));
-  console.log('layers0', layers0);
 
-  var width = jQuery('.huehunt-results .content-3 .steam-content').width(),
-      height = 500;
+  // The graph container (.container-3 is hidden at first so there's no way to get its width)
+  // We have to use what's already plotted
+  var width = jQuery('.huehunt-results .content-1').width(),
+      height = jQuery('.huehunt-results .content-1').height() * 0.75;
 
   var x = d3.scale.linear()
       .domain([0, m - 1])
@@ -512,11 +481,6 @@ function processData() {
   interaction.updateFocusData();
 
 }
-function buildUI() {
-  UI.globalData.build();
-  UI.focusData.build();
-  UI.steamgraph.build();
-}
 function showUI() {
   jQuery('.huehunt-results').removeClass('loading');
   // Show first tab content
@@ -558,7 +522,40 @@ jQuery(document).ready(function() {
     jQuery('.huehunt-results .side-menu p.tab').removeClass('selected');
     jQuery(this).addClass('selected');
   });
-  
+
+  // Dummy input dataset model
+  firebaseRounds = {
+    "KBxE015HXj3bV0jEenb" : {
+      "performance" : "41",
+      "roundLevel" : "1",
+      "targetH" : "268",
+      "targetL" : "50",
+      "targetS" : "100",
+      "username" : "Lindrox"
+    },
+    "KCu4Ucc0bW5kjMf3mY1" : {
+      "performance" : "59",
+      "roundLevel" : "1",
+      "targetH" : "318",
+      "targetL" : "50",
+      "targetS" : "100",
+      "username" : "Icosacid"
+    }
+  };
+
+  // Get the data!
+  var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
+  myFirebaseRef.on("value", function(data) {
+    firebaseRounds = data.val();
+    // Cleanup data format (from dirty JSON to array of objects)
+    rounds = filters.formatFirebaseDataset(firebaseRounds);
+    processData();
+    showUI();
+    UI.globalData.build();
+    UI.focusData.build();
+    UI.steamgraph.build();
+  });
+
   // Streamgraph selection tiles
   UI.steamgraph.listen();
 });
