@@ -196,6 +196,23 @@ interaction.updateFocusData = function() {
 
 UI.globalData = {};
 UI.globalData.build = function() {
+  this.processData();
+  this.updateView();
+};
+UI.globalData.processData = function() {
+  // Highscores
+  bestRounds = filters.sortByPerformance(rounds).splice(0, 10);
+
+  // Players
+  players = filters.getUniqueUsernames(rounds);
+
+  // Players that reached level 2
+  reachedLevel2players = filters.getUniqueUsernames(filters.matchLevel(rounds, 2));
+
+  // Players that reached level 4
+  reachedLevel4players = filters.getUniqueUsernames(filters.matchLevel(rounds, 4));
+};
+UI.globalData.updateView = function() {
   // Players
   jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
   // Rounds
@@ -205,8 +222,17 @@ UI.globalData.build = function() {
   // Players who reached level 4
   jQuery('.content-1 .tile-container:nth-of-type(4) .data-data p').html(reachedLevel4players.length);
 };
+
 UI.focusData = {};
 UI.focusData.build = function() {
+  this.processData();
+  this.updateView();
+};
+UI.focusData.processData = function() {
+  interaction.updateFocusRounds(rounds);
+  interaction.updateFocusData();
+};
+UI.focusData.updateView = function() {
   // Focus baseperf
   jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
   // Focus learning
@@ -216,17 +242,8 @@ UI.focusData.build = function() {
   // Focus learning pace
   jQuery('.content-2 .tile-container:nth-of-type(4) .data-data p').html(twoDecimalsOf(focus.learningPace));
 };
-UI.steamgraph = {};
-UI.steamgraph.build = function() {
-  // Generate select tags' names
-  _.each(reachedLevel2players, function(element) {
-    var playerSelect = "<div data-value='" + element + "'>" + element + "</div>";
-    jQuery('.content-3 .controls-area[data-area-type=players] .tiles').append(playerSelect);
-  });
 
-  // Draw steam graph
-  UI.steamgraph.graph();
-};
+UI.steamgraph = {};
 UI.steamgraph.selected = {
   players: [],
   hueRanges: [],
@@ -242,7 +259,21 @@ UI.steamgraph.selected = {
     }
   }
 };
+UI.steamgraph.build = function() {
+  // Generate select tags' names
+  _.each(reachedLevel2players, function(element) {
+    var playerSelect = "<div data-value='" + element + "'>" + element + "</div>";
+    jQuery('.content-3 .controls-area[data-area-type=players] .tiles').append(playerSelect);
+  });
+
+  // Draw steam graph
+  UI.steamgraph.update();
+
+  UI.steamgraph.listen();
+};
 UI.steamgraph.listen = function() {
+  // Controller for Streamgraph selection tiles
+
   // Default behavior
   jQuery('.huehunt-results .content-3').on('click', '.controls-area .tiles > div', function() {
     // Get data value stored in DOM attribute
@@ -321,16 +352,18 @@ UI.steamgraph.listen = function() {
     }
   });
 };
-UI.steamgraph.graph = function() {
+UI.steamgraph.update = function(players, hueRanges, levels) {
+  // Arguments directly come from UI.steamgraph.selected
+
   var n = 1; // number of layers / PLAYERS
   var m = 100; // number of samples per layer
   var stack = d3.layout.stack().offset("wiggle");
-  var layers0 = stack(['184', 'maelys'].map(function(playerName, index) { return playerLearning(playerName); }));
+  var layers0 = stack(['Arno', 'maelys', 'jouj', 'Father'].map(function(playerName, i) { return playerLearning(playerName); }));
 
   // The graph container (.container-3 is hidden at first so there's no way to get its width)
   // We have to use what's already plotted
-  var width = jQuery('.huehunt-results .content-1').width(),
-      height = jQuery('.huehunt-results .content-1').height() * 0.75;
+  var width = jQuery('.huehunt-results').width() * 0.8,
+      height = jQuery('.huehunt-results').height() * 0.75;
 
   var x = d3.scale.linear()
       .domain([0, m - 1])
@@ -339,9 +372,6 @@ UI.steamgraph.graph = function() {
   var y = d3.scale.linear()
       .domain([0, d3.max(layers0.concat(layers0), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
       .range([height, 0]);
-
-  var color = d3.scale.linear()
-      .range(["#aad", "#556"]);
 
   var area = d3.svg.area()
       .x(function(d) { return x(d.x); })
@@ -356,7 +386,7 @@ UI.steamgraph.graph = function() {
       .data(layers0)
       .enter().append("path")
       .attr("d", area)
-      .style("fill", function() { return color(Math.random()); });
+      .style("fill", function() { return 'hsl(' + 360 * Math.random() + ', 70%, 50%)'; });
 
   function transition() {
     d3.selectAll("path")
@@ -392,101 +422,13 @@ UI.steamgraph.graph = function() {
   }
 
 };
-UI.steamgraph.graph2 = function() {
-  var n = 20, // number of layers
-      m = 200, // number of samples per layer
-      stack = d3.layout.stack().offset("wiggle"),
-      layers0 = stack(d3.range(n).map(function() { return bumpLayer(m); })),
-      layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
 
-  var width = 960,
-      height = 500;
-
-  var x = d3.scale.linear()
-      .domain([0, m - 1])
-      .range([0, width]);
-
-  var y = d3.scale.linear()
-      .domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
-      .range([height, 0]);
-
-  var color = d3.scale.linear()
-      .range(["#aad", "#556"]);
-
-  var area = d3.svg.area()
-      .x(function(d) { return x(d.x); })
-      .y0(function(d) { return y(d.y0); })
-      .y1(function(d) { return y(d.y0 + d.y); });
-
-  var svg = d3.select(".huehunt-results .content-3 .steam-content").append("svg")
-      .attr("width", width)
-      .attr("height", height);
-
-  svg.selectAll("path")
-      .data(layers0)
-      .enter().append("path")
-      .attr("d", area)
-      .style("fill", function() { return color(Math.random()); });
-
-  function transition() {
-    d3.selectAll("path")
-        .data(function() {
-          var d = layers1;
-          layers1 = layers0;
-          return layers0 = d;
-        })
-        .transition()
-        .duration(2500)
-        .attr("d", area);
-  }
-
-  // Inspired by Lee Byron's test data generator.
-  function bumpLayer(n) {
-
-    function bump(a) {
-      var x = 1 / (.1 + Math.random()),
-          y = 2 * Math.random() - .5,
-          z = 10 / (.1 + Math.random());
-      for (var i = 0; i < n; i++) {
-        var w = (i / n - y) * z;
-        a[i] += x * Math.exp(-w * w);
-      }
-    }
-
-    var a = [], i;
-    for (i = 0; i < n; ++i) a[i] = 0;
-    for (i = 0; i < 5; ++i) bump(a);
-    return a.map(function(d, i) { return {x: i, y: Math.max(0, d)}; });
-  }
-
-};
-
-/* Base rendering functions */
-function processData() {
-  /** Global data **/
-  // Highscores
-  bestRounds = filters.sortByPerformance(rounds).splice(0, 10);
-
-  // Players
-  players = filters.getUniqueUsernames(rounds);
-
-  // Players that reached level 2
-  reachedLevel2players = filters.getUniqueUsernames(filters.matchLevel(rounds, 2));
-
-  // Players that reached level 4
-  reachedLevel4players = filters.getUniqueUsernames(filters.matchLevel(rounds, 4));
-
-  /** Initial focus data **/
-  interaction.updateFocusRounds(rounds);
-  interaction.updateFocusData();
-
-}
-function showUI() {
+UI.showYourself = function() {
   jQuery('.huehunt-results').removeClass('loading');
   // Show first tab content
   jQuery('.huehunt-results .content .content-1').show();
   jQuery('.huehunt-results .side-menu p.tab:nth-of-type(1)').addClass('selected');
-}
+};
 
 /* Data processing functions */
 function isInHueRange(inputHue, minHue, maxHue) {
@@ -549,13 +491,12 @@ jQuery(document).ready(function() {
     firebaseRounds = data.val();
     // Cleanup data format (from dirty JSON to array of objects)
     rounds = filters.formatFirebaseDataset(firebaseRounds);
-    processData();
-    showUI();
+
     UI.globalData.build();
     UI.focusData.build();
     UI.steamgraph.build();
+
+    UI.showYourself();
   });
 
-  // Streamgraph selection tiles
-  UI.steamgraph.listen();
 });
