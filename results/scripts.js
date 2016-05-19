@@ -267,8 +267,8 @@ UI.steamgraph.build = function() {
   });
 
   // Draw steam graph
+  UI.steamgraph.shape();
   UI.steamgraph.update();
-
   UI.steamgraph.listen();
 };
 UI.steamgraph.listen = function() {
@@ -288,6 +288,9 @@ UI.steamgraph.listen = function() {
       jQuery(this).addClass('active');
       UI.steamgraph.selected.update(whichControlsAreaKey, dataValue, true);
     }
+
+    console.log(UI.steamgraph.selected);
+    UI.steamgraph.update();
   });
 
   // Specific select for all players
@@ -340,7 +343,7 @@ UI.steamgraph.listen = function() {
     } else {
       jQuery(this).html('All players');
       // Deactivate all other elements
-      jQuery(playersTilesSel).each(function() {
+      jQuery(hueTilesSel).each(function() {
         var tileDataValue = jQuery(this).attr('data-value');
         if (tileDataValue != 'hue-all' && tileDataValue != 'hue-20-layers') {
           // View
@@ -352,13 +355,20 @@ UI.steamgraph.listen = function() {
     }
   });
 };
-UI.steamgraph.update = function(players, hueRanges, levels) {
-  // Arguments directly come from UI.steamgraph.selected
+UI.steamgraph.shape = function() {
+  // Initial call to build permanent elements
 
-  var n = 1; // number of layers / PLAYERS
-  var m = 100; // number of samples per layer
+
+};
+UI.steamgraph.update = function() {
+  // Arguments directly come from UI.steamgraph.selected
+  var players = this.selected.players;
+  var hueRanges = this.selected.hueRanges;
+  var levels = this.selected.levels;
+
+  var layersParams = this.formatLayersParams(players, hueRanges, levels);
   var stack = d3.layout.stack().offset("wiggle");
-  var layers0 = stack(['Arno', 'maelys', 'jouj', 'Father'].map(function(playerName, i) { return playerLearning(playerName); }));
+  var layers0 = stack(layersParams.map(function(d, i) { return UI.steamgraph.getSteamgraphLayers(d); }));
 
   // The graph container (.container-3 is hidden at first so there's no way to get its width)
   // We have to use what's already plotted
@@ -366,7 +376,7 @@ UI.steamgraph.update = function(players, hueRanges, levels) {
       height = jQuery('.huehunt-results').height() * 0.75;
 
   var x = d3.scale.linear()
-      .domain([0, m - 1])
+      .domain([0, 100])
       .range([0, width]);
 
   var y = d3.scale.linear()
@@ -378,15 +388,15 @@ UI.steamgraph.update = function(players, hueRanges, levels) {
       .y0(function(d) { return y(d.y0); })
       .y1(function(d) { return y(d.y0 + d.y); });
 
-  var svg = d3.select(".huehunt-results .content-3 .steam-content").append("svg")
+  var svg = d3.select(".huehunt-results .content-3 .steam-content svg")
       .attr("width", width)
       .attr("height", height);
 
-  svg.selectAll("path")
-      .data(layers0)
-      .enter().append("path")
+  var paths = svg.selectAll("path").data(layers0);
+  paths.enter().append("path")
       .attr("d", area)
       .style("fill", function() { return 'hsl(' + 360 * Math.random() + ', 70%, 50%)'; });
+  paths.exit().remove();
 
   function transition() {
     d3.selectAll("path")
@@ -400,27 +410,65 @@ UI.steamgraph.update = function(players, hueRanges, levels) {
         .attr("d", area);
   }
 
-  function playerLearning(playerName) {
+};
+UI.steamgraph.formatLayersParams = function(players, hueRanges, levels) {
 
-    console.log(playerName);
-    var playerRounds = filters.matchUsername(rounds, playerName);
+  // No use of levels atm
+  var layersParams = [];
+  var self = this;
+  _.each(players, function(player) {
+    _.each(hueRanges, function(hueDOMkey) {
 
-    var basePerf = analysis.getBasePerf(playerRounds);
-    var learnings = analysis.getCurrentLearningAndOverallLearning(playerRounds, basePerf);
-    var learning = learnings[0];
+      var hueLimits = self.parseDOMkey('hue', hueDOMkey);
+      layersParams.push({
+        'player': player,
+        'minHue': hueLimits[0],
+        'maxHue': hueLimits[1]
+      });
 
-    // Players have different numbers of rounds played, we must fill the data gap
-    // The learning.round attribute turns out to be neglected :o
-    var steamGraphCoordinates = d3.range(100).map(function(d, i) {
-      return {
-        x: i,
-        y: (function() {return (learning[i] ? learning[i].learning : 0);})()
-      };
     });
+  });
 
-    return steamGraphCoordinates;
+  // return pure layer objects, format:
+  // {'player': 'lorem', 'minHue': 0, 'maxHue': 60}
+  return layersParams;
+};
+UI.steamgraph.parseDOMkey = function(keyType, DOMkey) {
+  // keyType is either 'player', 'hue' or 'level'
+  // DOMkey is like: 'El Loco', 'hue-0-30', 'level-1'...
+  if (keyType == 'hue') {
+    // split based on '-' separator
+    var split = DOMkey.split('-');
+    var minHue = split[1],
+        maxHue = split[2];
+    return [minHue, maxHue];
+  } else if (keyType == 'player') {
+
+  } else if (keyType == 'level') {
+    // split based on '-' separator
+    var split = DOMkey.split('-');
+    var lvl = split[1];
+    return lvl;
   }
+};
+UI.steamgraph.getSteamgraphLayers = function(d) {
 
+  var focusRounds = filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue);
+
+  var basePerf = analysis.getBasePerf(focusRounds);
+  var learnings = analysis.getCurrentLearningAndOverallLearning(focusRounds, basePerf);
+  var learning = learnings[0];
+
+  // Players have different numbers of rounds played, we must fill the data gap
+  // The learning.round attribute turns out to be neglected :o
+  var steamGraphCoordinates = d3.range(100).map(function(d, i) {
+    return {
+      x: i,
+      y: (function() {return (learning[i] ? learning[i].learning : 0);})()
+    };
+  });
+
+  return steamGraphCoordinates;
 };
 
 UI.showYourself = function() {
