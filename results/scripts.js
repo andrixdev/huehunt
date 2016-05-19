@@ -48,6 +48,9 @@ filters.matchUsername = function(rounds, username) {
   return outputRounds;
 };
 filters.matchLevel = function(rounds, level) {
+  // Do nothing if we want all
+  if (level == 'all') return rounds;
+
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
     if (rounds[i].roundLevel == level) {
@@ -258,6 +261,7 @@ UI.steamgraph.selected = {
     if (!isActive && isValueInArray) {
       this[whichArrayKey] = _.without(whichArray, dataValue);
     }
+    //console.log(this.players, this.hueRanges, this.levels);
   }
 };
 UI.steamgraph.build = function() {
@@ -279,6 +283,7 @@ UI.steamgraph.listen = function() {
   jQuery('.huehunt-results .content-3').on('click', '.controls-area .tiles > div', function() {
     // Get data value stored in DOM attribute
     var dataValue = jQuery(this).attr('data-value') || 'error';
+    if (dataValue == 'players-all' || dataValue == 'hue-layers-10' || dataValue.indexOf('level') != '-1') return;// Specific handlers
     // Figure out which array it's about, i.e. which controls area
     var whichControlsAreaKey = jQuery(this).parents('.controls-area').attr('data-area-type');
     // Toggle .active class and update model
@@ -296,9 +301,10 @@ UI.steamgraph.listen = function() {
   // Specific select for all players
   var playersTilesSel = '.controls-area[data-area-type=players] .tiles > div';
   jQuery('.huehunt-results .content-3').on('click', playersTilesSel + '[data-value=players-all]', function() {
-    // Warning!!! .Active class has already been toggled in first listener
-    if (jQuery(this).hasClass('active')) {
+
+    if (!jQuery(this).hasClass('active')) {
       jQuery(this).html('Deselect all');
+      jQuery(this).addClass('active');
       // Activate all other elements
       jQuery(playersTilesSel).each(function() {
         var tileDataValue = jQuery(this).attr('data-value');
@@ -311,6 +317,7 @@ UI.steamgraph.listen = function() {
       });
     } else {
       jQuery(this).html('All players');
+      jQuery(this).removeClass('active');
       // Deactivate all other elements
       jQuery(playersTilesSel).each(function() {
         var tileDataValue = jQuery(this).attr('data-value');
@@ -322,38 +329,67 @@ UI.steamgraph.listen = function() {
         }
       });
     }
+
+    UI.steamgraph.update(false);
   });
 
-  // Specific select for all hues
+  // Specific select for all hues by layers
   var hueTilesSel = '.controls-area[data-area-type=hueRanges] .tiles > div';
-  jQuery('.huehunt-results .content-3').on('click', hueTilesSel + '[data-value=hue-all]', function() {
-    // Warning!!! .Active class has already been toggled in first listener
-    if (jQuery(this).hasClass('active')) {
-      jQuery(this).html('Deselect all');
-      // Activate all other elements
+  jQuery('.huehunt-results .content-3').on('click', hueTilesSel + '[data-value=hue-layers-10]', function() {
+
+    if (!jQuery(this).hasClass('active')) {
+      jQuery(this).addClass('active');
+      // Dectivate all other elements
       jQuery(hueTilesSel).each(function() {
         var tileDataValue = jQuery(this).attr('data-value');
-        if (tileDataValue != 'hue-all' && tileDataValue != 'hue-20-layers') {
-          // View
-          jQuery(this).addClass('active');
-          // Models
-          UI.steamgraph.selected.update('hueRanges', tileDataValue, true);
-        }
-      });
-    } else {
-      jQuery(this).html('All players');
-      // Deactivate all other elements
-      jQuery(hueTilesSel).each(function() {
-        var tileDataValue = jQuery(this).attr('data-value');
-        if (tileDataValue != 'hue-all' && tileDataValue != 'hue-20-layers') {
+        if (tileDataValue != 'hue-layers-10') {
           // View
           jQuery(this).removeClass('active');
-          // Model
+          // Models
           UI.steamgraph.selected.update('hueRanges', tileDataValue, false);
         }
       });
+      // Create and activate layer elements
+      for (var hue = 0; hue <= 350; hue -= (-10)) {
+        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-10)), true);
+      }
+    } else {
+      jQuery(this).removeClass('active');
+      // Deactivate created layer elements
+      for (var hue = 0; hue <= 350; hue -= (-10)) {
+        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-10)), false);
+      }
     }
+
+    UI.steamgraph.update(false);
   });
+
+  // Specific selects for levels
+  var levelsTilesSel = '.controls-area[data-area-type=levels] .tiles > div';
+  jQuery('.huehunt-results .content-3').on('click', levelsTilesSel, function() {
+
+    var myDataValue = jQuery(this).attr('data-value');
+    if (!jQuery(this).hasClass('active')) {
+      // Dectivate all elements
+      jQuery(levelsTilesSel).each(function() {
+        var tileDataValue = jQuery(this).attr('data-value');
+        // View
+        jQuery(this).removeClass('active');
+        // Models
+        UI.steamgraph.selected.update('levels', tileDataValue, false);
+      });
+      // Activate just me
+      jQuery(this).addClass('active');
+      UI.steamgraph.selected.update('levels', myDataValue, true);
+    } else {
+      // Just deactivate me
+      jQuery(this).removeClass('active');
+      UI.steamgraph.selected.update('levels', myDataValue, false);
+    }
+
+    UI.steamgraph.update(false);
+  });
+
 };
 UI.steamgraph.shape = function() {
   // Initial call to build permanent elements
@@ -369,7 +405,6 @@ UI.steamgraph.update = function(isFirstTime) {
   var layersParams = this.formatLayersParams(players, hueRanges, levels);
   var stack = d3.layout.stack().offset("wiggle");// Adds the y0 coordinate to objects
   var layers0 = stack(layersParams.map(function(d, i) { return UI.steamgraph.getSteamgraphLayers(d); }));
-
 
   // The graph container (.container-3 is hidden at first so there's no way to get its width)
   // We have to use what's already plotted
@@ -401,7 +436,10 @@ UI.steamgraph.update = function(isFirstTime) {
 
   // Transition
   var paths = svg.selectAll("path")
-  .data(layers0, function(d) { console.log(d[0].player + '_' + d[0].color); return d[0].player + '_' + d[0].color; });
+    // layers is bound to a playername, otherwise exit() just removes the last added path rather than the
+  // one corresponding to the deselected player. Same for color, and level so we concatenate into a unique ID
+    .data(layers0, function(d) { return d[0].player + '_' + d[0].color + '_' + d[0].level; });
+
   paths.transition()
       .duration(2000)
       .attr("d", area);
@@ -409,8 +447,6 @@ UI.steamgraph.update = function(isFirstTime) {
   paths.exit().style("fill", function(d) { return 'hsl(' + d[0].color + ', 60%, 50%)'; }).remove();
 
   setTimeout(function() {
-    // layers is bound to a playername, otherwise exit() just removes the last added path rather than the
-    // one corresponding to the deselected player
     paths.enter().append("path")
       .attr("d", area)
       .style("fill", function(d) { return 'hsl(' + d[0].color + ', 60%, 50%)'; });
@@ -419,24 +455,25 @@ UI.steamgraph.update = function(isFirstTime) {
 };
 UI.steamgraph.formatLayersParams = function(players, hueRanges, levels) {
 
-  // No use of levels atm
   var layersParams = [];
   var self = this;
   _.each(players, function(player) {
     _.each(hueRanges, function(hueDOMkey) {
-
-      var hueLimits = self.parseDOMkey('hue', hueDOMkey);
-      layersParams.push({
-        'player': player,
-        'minHue': hueLimits[0],
-        'maxHue': hueLimits[1]
+      _.each(levels, function(levelDOMkey) {
+        var hueLimits = self.parseDOMkey('hue', hueDOMkey);
+        var level = self.parseDOMkey('level', levelDOMkey);
+        layersParams.push({
+          'player': player,
+          'minHue': hueLimits[0],
+          'maxHue': hueLimits[1],
+          'level': level
+        });
       });
-
     });
   });
 
   // return pure layer objects, format:
-  // {'player': 'lorem', 'minHue': 0, 'maxHue': 60}
+  // {'player': 'lorem', 'minHue': 0, 'maxHue': 60, 'level': 1}
   return layersParams;
 };
 UI.steamgraph.parseDOMkey = function(keyType, DOMkey) {
@@ -459,7 +496,7 @@ UI.steamgraph.parseDOMkey = function(keyType, DOMkey) {
 };
 UI.steamgraph.getSteamgraphLayers = function(d) {
 
-  var focusRounds = filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue);
+  var focusRounds = filters.inHueRange(filters.matchLevel(filters.matchUsername(rounds, d.player), d.level), d.minHue, d.maxHue);
 
   var basePerf = analysis.getBasePerf(focusRounds);
   var learnings = analysis.getCurrentLearningAndOverallLearning(focusRounds, basePerf);
@@ -472,7 +509,8 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
       x: i,
       y: (function() {return (learning[i] ? learning[i].learning : 0);})(),
       color: (parseInt(d.maxHue) + parseInt(d.minHue)) / 2,
-      player: d.player
+      player: d.player,
+      level: d.level
     };
   });
 
