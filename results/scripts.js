@@ -269,7 +269,7 @@ UI.steamgraph.build = function() {
 
   // Draw steam graph
   UI.steamgraph.shape();
-  UI.steamgraph.update();
+  UI.steamgraph.update(true);
   UI.steamgraph.listen();
 };
 UI.steamgraph.listen = function() {
@@ -290,7 +290,7 @@ UI.steamgraph.listen = function() {
       UI.steamgraph.selected.update(whichControlsAreaKey, dataValue, true);
     }
 
-    UI.steamgraph.update();
+    UI.steamgraph.update(false);
   });
 
   // Specific select for all players
@@ -360,7 +360,7 @@ UI.steamgraph.shape = function() {
 
 
 };
-UI.steamgraph.update = function() {
+UI.steamgraph.update = function(isFirstTime) {
   // Arguments directly come from UI.steamgraph.selected
   var players = this.selected.players;
   var hueRanges = this.selected.hueRanges;
@@ -370,13 +370,17 @@ UI.steamgraph.update = function() {
   var stack = d3.layout.stack().offset("wiggle");// Adds the y0 coordinate to objects
   var layers0 = stack(layersParams.map(function(d, i) { return UI.steamgraph.getSteamgraphLayers(d); }));
 
+
   // The graph container (.container-3 is hidden at first so there's no way to get its width)
   // We have to use what's already plotted
   var width = jQuery('.huehunt-results').width() * 0.8,
       height = jQuery('.huehunt-results').height() * 0.75;
 
   var x = d3.scale.linear()
-      .domain([0, 100])
+      .domain([0, d3.max(layers0.concat(layers0), function(layer) { return d3.max(layer, function(d) {
+        // Detects maximal x with non-null learning and adjusts domain max width
+        return (d.y == 0 ? 0 : d.x);
+      }); })])
       .range([0, width]);
 
   var y = d3.scale.linear()
@@ -388,26 +392,29 @@ UI.steamgraph.update = function() {
       .y0(function(d) { return y(d.y0); })
       .y1(function(d) { return y(d.y0 + d.y); });
 
-  var svg = d3.select(".huehunt-results .content-3 .steam-content svg")
-      .attr("width", width)
-      .attr("height", height);
 
-  var paths = svg.selectAll("path").data(layers0);
-  paths.enter().append("path")
+  var svg = d3.select(".huehunt-results .content-3 .steam-content svg");
+
+  if (isFirstTime) {
+    svg.attr("width", width).attr("height", height);
+  }
+
+  // Transition
+  var paths = svg.selectAll("path")
+  .data(layers0, function(d) { console.log(d[0].player + '_' + d[0].color); return d[0].player + '_' + d[0].color; });
+  paths.transition()
+      .duration(2000)
+      .attr("d", area);
+
+  paths.exit().style("fill", function(d) { return 'hsl(' + d[0].color + ', 60%, 50%)'; }).remove();
+
+  setTimeout(function() {
+    // layers is bound to a playername, otherwise exit() just removes the last added path rather than the
+    // one corresponding to the deselected player
+    paths.enter().append("path")
       .attr("d", area)
       .style("fill", function(d) { return 'hsl(' + d[0].color + ', 60%, 50%)'; });
-
-  function transition() {
-    d3.selectAll("path")
-        .data(function() {
-          var d = layers1;
-          layers1 = layers0;
-          return layers0 = d;
-        })
-        .transition()
-        .duration(2500)
-        .attr("d", area);
-  }
+  }, 2000);
 
 };
 UI.steamgraph.formatLayersParams = function(players, hueRanges, levels) {
@@ -464,7 +471,8 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
     return {
       x: i,
       y: (function() {return (learning[i] ? learning[i].learning : 0);})(),
-      color: (parseInt(d.maxHue) + parseInt(d.minHue)) / 2
+      color: (parseInt(d.maxHue) + parseInt(d.minHue)) / 2,
+      player: d.player
     };
   });
 
