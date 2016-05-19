@@ -129,8 +129,9 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
   var roundsNumber = rounds.length;
 
   if (roundsNumber < 2 * learningRoundScope || typeof(basePerf) == 'string') {
-    learning = '/';
-    overallLearning = '/';
+    // Not enough data. We choose to render it as it zero.
+    learning = 0;
+    overallLearning = 0;
   } else {
     // For each round on the way (starting from 6th round, when enough data)
     for (var r = 2 * learningRoundScope; r <= roundsNumber; r++) {
@@ -289,7 +290,6 @@ UI.steamgraph.listen = function() {
       UI.steamgraph.selected.update(whichControlsAreaKey, dataValue, true);
     }
 
-    console.log(UI.steamgraph.selected);
     UI.steamgraph.update();
   });
 
@@ -367,7 +367,7 @@ UI.steamgraph.update = function() {
   var levels = this.selected.levels;
 
   var layersParams = this.formatLayersParams(players, hueRanges, levels);
-  var stack = d3.layout.stack().offset("wiggle");
+  var stack = d3.layout.stack().offset("wiggle");// Adds the y0 coordinate to objects
   var layers0 = stack(layersParams.map(function(d, i) { return UI.steamgraph.getSteamgraphLayers(d); }));
 
   // The graph container (.container-3 is hidden at first so there's no way to get its width)
@@ -395,8 +395,7 @@ UI.steamgraph.update = function() {
   var paths = svg.selectAll("path").data(layers0);
   paths.enter().append("path")
       .attr("d", area)
-      .style("fill", function() { return 'hsl(' + 360 * Math.random() + ', 70%, 50%)'; });
-  paths.exit().remove();
+      .style("fill", function(d) { return 'hsl(' + d[0].color + ', 60%, 50%)'; });
 
   function transition() {
     d3.selectAll("path")
@@ -461,10 +460,11 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
 
   // Players have different numbers of rounds played, we must fill the data gap
   // The learning.round attribute turns out to be neglected :o
-  var steamGraphCoordinates = d3.range(100).map(function(d, i) {
+  var steamGraphCoordinates = d3.range(100).map(function(datah, i) {
     return {
       x: i,
-      y: (function() {return (learning[i] ? learning[i].learning : 0);})()
+      y: (function() {return (learning[i] ? learning[i].learning : 0);})(),
+      color: (parseInt(d.maxHue) + parseInt(d.minHue)) / 2
     };
   });
 
