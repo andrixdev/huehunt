@@ -188,20 +188,24 @@ p {
             background: rgba(255, 255, 255, 0.1);
             cursor: pointer;
             justify-content: center;
+            border-radius: 1.5px;
             &:hover,
             &.active {
               background: rgba(255, 255, 255, 0.25);
             }
             //// All players
             &.players-all {
-              background: hsla(100, 60%, 40%, 0.4);
+              background: hsla(100, 60%, 60%, 0.2);
+              &:hover {
+                background: hsla(100, 60%, 40%, 0.5);
+              }
               &.active {
                 background: hsla(0, 60%, 55%, 0.5);
               }
             }
             //// Hue ranges
             .hue-gradient(@minHue, @maxHue, @sat, @lig) {
-              background: linear-gradient(to top right, hsla(@maxHue, @sat, @lig, 0.4), hsla(@minHue, @sat, @lig, 0.4));
+              background: linear-gradient(to top right, hsla(@maxHue, @sat, @lig, 0.3), hsla(@minHue, @sat, @lig, 0.3));
               &.active {
                 background: linear-gradient(to top right, hsla(@maxHue, @sat, @lig, 0.9), hsla(@minHue, @sat, @lig, 0.9));
               }

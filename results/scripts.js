@@ -12,6 +12,7 @@ var firebaseRounds,
     bestRounds,
     reachedLevel2players = [],
     reachedLevel4players = [],
+    usernamesSortedByRoundsPlayed = [],
     focus = {},
     filters = {},
     analysis = {},
@@ -47,13 +48,17 @@ filters.matchUsername = function(rounds, username) {
   }
   return outputRounds;
 };
-filters.matchLevel = function(rounds, level) {
+filters.matchLevel = function(rounds, level, excludeThisLevel) {
+  // excludeThisLevel is true if we want to reject rounds of this level
+  excludeThisLevel = excludeThisLevel || false;
   // Do nothing if we want all
   if (level == 'all') return rounds;
 
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
-    if (rounds[i].roundLevel == level) {
+    var condition = (rounds[i].roundLevel == level);
+    condition = (excludeThisLevel ? !condition : condition);
+    if (condition) {
       outputRounds.push(rounds[i]);
     }
   }
@@ -63,7 +68,8 @@ filters.inHueRange = function(rounds, minHue, maxHue) {
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
     // Get username
-    if (isInHueRange(rounds[i].targetH, minHue, maxHue)) {
+    console.log(rounds[i].targetH, minHue, maxHue, isInHueRange(rounds[i].targetH, minHue, maxHue));
+    if (isInHueRange(parseInt(rounds[i].targetH), parseInt(minHue), parseInt(maxHue))) {
       outputRounds.push(rounds[i]);
     }
   }
@@ -109,6 +115,27 @@ filters.sortByDate = function(rounds) {
     });
     return sortedRounds;
 };
+filters.getUniqueUsernamesSortedByRoundsPlayed = function(rounds) {
+  var outputUsernamesWithRoundsPlayed = [];
+  for (var i = 0; i < rounds.length; i++) {
+    var username = rounds[i].username;
+    // If already in outputUsernames... increase counter
+    var alreadyInResult = false;
+    for (var j = 0; j < outputUsernamesWithRoundsPlayed.length; j++) {
+      if (username == outputUsernamesWithRoundsPlayed[j].username) {
+        alreadyInResult = true;
+        outputUsernamesWithRoundsPlayed[j].rounds++;
+      }
+    }
+    // If so, don't add player to list, otherwise do
+    if (!alreadyInResult) {
+      outputUsernamesWithRoundsPlayed.push({'username': username, 'rounds': 1});
+    }
+  }
+  return _.sortBy(outputUsernamesWithRoundsPlayed, function(value) {
+    return -value.rounds;
+  });
+};
 
 analysis.getBasePerf = function(rounds) {
   var basePerf = 0;
@@ -130,6 +157,7 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
       overallLearning = 0;
   var learningRoundScope = 3; // the last 3 rounds and the 3 before
   var roundsNumber = rounds.length;
+  console.log('roundsNumber', roundsNumber);
 
   if (roundsNumber < 2 * learningRoundScope || typeof(basePerf) == 'string') {
     // Not enough data. We choose to render it as it zero.
@@ -215,6 +243,9 @@ UI.globalData.processData = function() {
 
   // Players that reached level 4
   reachedLevel4players = filters.getUniqueUsernames(filters.matchLevel(rounds, 4));
+
+  // Players sorted by number oo rounds played, without level 1
+  usernamesSortedByRoundsPlayed = filters.getUniqueUsernamesSortedByRoundsPlayed(filters.matchLevel(rounds, 1, true));
 };
 UI.globalData.updateView = function() {
   // Players
@@ -249,9 +280,10 @@ UI.focusData.updateView = function() {
 
 UI.steamgraph = {};
 UI.steamgraph.selected = {
-  players: [],
-  hueRanges: [],
-  levels: [],
+  // Has initial state for first load
+  players: ['Chloé', 'jouj', 'thnon', 'Konstantina'],
+  hueRanges: ['hue-0-30', 'hue-30-70', 'hue-70-130', 'hue-130-190', 'hue-190-260', 'hue-260-310', 'hue-310-360'],
+  levels: ['level-all'],
   update: function(whichArrayKey, dataValue, isActive) {
     var whichArray = this[whichArrayKey];
     var isValueInArray = (_.indexOf(whichArray, dataValue) != -1);
@@ -265,16 +297,26 @@ UI.steamgraph.selected = {
   }
 };
 UI.steamgraph.build = function() {
-  // Generate select tags' names
-  _.each(reachedLevel2players, function(element) {
-    var playerSelect = "<div data-value='" + element + "'>" + element + "</div>";
-    jQuery('.content-3 .controls-area[data-area-type=players] .tiles').append(playerSelect);
-  });
-
   // Draw steam graph
   UI.steamgraph.shape();
   UI.steamgraph.update(true);
   UI.steamgraph.listen();
+};
+UI.steamgraph.shape = function() {
+  // Initial call to build permanent elements
+
+  // Generate select tags' names
+  _.each(usernamesSortedByRoundsPlayed, function(element) {
+    var playerSelect = "<div data-value='" + element.username + "'>" + element.username + "</div>";
+    jQuery('.content-3 .controls-area[data-area-type=players] .tiles').append(playerSelect);
+  });
+  // Add .active classes to preselected players
+  var jPlayers = jQuery('.content-3 .controls-area[data-area-type=players] .tiles');
+  jPlayers.find('div[data-value=Chloé]').addClass('active');
+  jPlayers.find('div[data-value=thnon]').addClass('active');
+  jPlayers.find('div[data-value=Konstantina]').addClass('active');
+  jPlayers.find('div[data-value=jouj]').addClass('active');
+
 };
 UI.steamgraph.listen = function() {
   // Controller for Streamgraph selection tiles
@@ -391,11 +433,6 @@ UI.steamgraph.listen = function() {
   });
 
 };
-UI.steamgraph.shape = function() {
-  // Initial call to build permanent elements
-
-
-};
 UI.steamgraph.update = function(isFirstTime) {
   // Arguments directly come from UI.steamgraph.selected
   var players = this.selected.players;
@@ -496,12 +533,15 @@ UI.steamgraph.parseDOMkey = function(keyType, DOMkey) {
 };
 UI.steamgraph.getSteamgraphLayers = function(d) {
 
-  var focusRounds = filters.inHueRange(filters.matchLevel(filters.matchUsername(rounds, d.player), d.level), d.minHue, d.maxHue);
+  var focusRounds = filters.matchLevel(filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue), d.level);
 
   var basePerf = analysis.getBasePerf(focusRounds);
+  console.log('focusRounds length for '+d.minHue+ d.maxHue+ d.level+ d.player, focusRounds.length);
+  console.log(focusRounds);
   var learnings = analysis.getCurrentLearningAndOverallLearning(focusRounds, basePerf);
   var learning = learnings[0];
 
+  console.log(basePerf, learning);
   // Players have different numbers of rounds played, we must fill the data gap
   // The learning.round attribute turns out to be neglected :o
   var steamGraphCoordinates = d3.range(100).map(function(datah, i) {
@@ -526,7 +566,7 @@ UI.showYourself = function() {
 
 /* Data processing functions */
 function isInHueRange(inputHue, minHue, maxHue) {
-  // Only accept positive velues between 0 and 360
+  // Only accept positive values between 0 and 360
   if (minHue < maxHue) {
     if (inputHue >= minHue && inputHue <= maxHue) {
       return true;
@@ -588,9 +628,9 @@ jQuery(document).ready(function() {
 
     UI.globalData.build();
     UI.focusData.build();
+    UI.showYourself();
     UI.steamgraph.build();
 
-    UI.showYourself();
   });
 
 });
