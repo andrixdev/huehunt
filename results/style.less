@@ -192,6 +192,53 @@ p {
             &.active {
               background: rgba(255, 255, 255, 0.25);
             }
+            //// All players
+            &.players-all {
+              background: hsla(100, 60%, 40%, 0.4);
+              &.active {
+                background: hsla(0, 60%, 55%, 0.5);
+              }
+            }
+            //// Hue ranges
+            .hue-gradient(@minHue, @maxHue, @sat, @lig) {
+              background: linear-gradient(to top right, hsla(@maxHue, @sat, @lig, 0.4), hsla(@minHue, @sat, @lig, 0.4));
+              &.active {
+                background: linear-gradient(to top right, hsla(@maxHue, @sat, @lig, 0.9), hsla(@minHue, @sat, @lig, 0.9));
+              }
+            }
+            &.hue-0-30 {
+              .hue-gradient(0, 30, 55%, 55%);
+            }
+            &.hue-30-70 {
+              .hue-gradient(30, 70, 55%, 55%);
+            }
+            &.hue-70-130 {
+              .hue-gradient(70, 130, 55%, 55%);
+            }
+            &.hue-130-190 {
+              .hue-gradient(190, 130, 55%, 55%);
+            }
+            &.hue-190-260 {
+              .hue-gradient(190, 260, 55%, 55%);
+            }
+            &.hue-260-310 {
+              .hue-gradient(260, 310, 55%, 55%);
+            }
+            &.hue-310-360 {
+              .hue-gradient(310, 360, 55%, 55%);
+            }
+            &.hue-0-360 {
+              background: linear-gradient(to top right, hsla(0, 0%, 20%, 0.4), hsla(0, 0%, 80%, 0.4));
+              &.active {
+                background: linear-gradient(to top right, hsla(0, 0%, 20%, 0.9), hsla(0, 0%, 80%, 0.9));
+              }
+            }
+            &.hue-layers-10 {
+              background: linear-gradient(to top right, hsla(0, 50%, 50%, 0.4), hsla(50, 50%, 50%, 0.4), hsla(200, 50%, 50%, 0.4), hsla(260, 50%, 50%, 0.4), hsla(360, 50%, 50%, 0.4));
+              &.active {
+                background: linear-gradient(to top right, hsla(0, 50%, 50%, 0.9), hsla(50, 50%, 50%, 0.9), hsla(200, 50%, 50%, 0.9), hsla(260, 50%, 50%, 0.9), hsla(360, 50%, 50%, 0.9));
+              }
+            }
           }
         }
       }

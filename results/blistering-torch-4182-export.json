@@ -12185,6 +12185,1886 @@
       "targetS" : "100",
       "timestamp" : 1463385856704,
       "username" : "Midas"
+    },
+    "-KHu4hFkXOctciIJRT8L" : {
+      "dataVersion" : 2,
+      "performance" : "16",
+      "roundLevel" : "1",
+      "targetH" : "233",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463410938928,
+      "username" : "Midas"
+    },
+    "-KHvrAjIyDP-6yP3CKnr" : {
+      "dataVersion" : 2,
+      "performance" : "68",
+      "roundLevel" : "1",
+      "targetH" : "159",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463440686035,
+      "username" : "M"
+    },
+    "-KHvrZ5bcZkFeakgJQiN" : {
+      "dataVersion" : 2,
+      "performance" : "35",
+      "roundLevel" : "1",
+      "targetH" : "38",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463440786006,
+      "username" : "M"
+    },
+    "-KHvriH4VOpnMuDdZj_y" : {
+      "dataVersion" : 2,
+      "performance" : "165",
+      "roundLevel" : "1",
+      "targetH" : "27",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463440827700,
+      "username" : "M"
+    },
+    "-KHxlGQGuBdvDGw1YK9P" : {
+      "dataVersion" : 2,
+      "performance" : "55",
+      "roundLevel" : "1",
+      "targetH" : "267",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463472690896,
+      "username" : "Rickard"
+    },
+    "-KHxlSpEh8yublTn7cSn" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "246",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463472739883,
+      "username" : "Rickard"
+    },
+    "-KHxlhRkbkFtUjd1SPzp" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : "1",
+      "targetH" : "258",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463472803853,
+      "username" : "Rickard"
+    },
+    "-KHxmyfA5E-xR5BXnIvj" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "19",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473138378,
+      "username" : "Lennart"
+    },
+    "-KHxnEj5LhbgqoyPvKjV" : {
+      "dataVersion" : 2,
+      "performance" : "121",
+      "roundLevel" : "1",
+      "targetH" : "133",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473208327,
+      "username" : "Lennart"
+    },
+    "-KHxnKkNmyUJcZEHusQZ" : {
+      "dataVersion" : 2,
+      "performance" : "65",
+      "roundLevel" : "1",
+      "targetH" : "292",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473232919,
+      "username" : "Ring"
+    },
+    "-KHxnPSGfHluUxGAUndP" : {
+      "dataVersion" : 2,
+      "performance" : "164",
+      "roundLevel" : "1",
+      "targetH" : "23",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473252242,
+      "username" : "Lennart"
+    },
+    "-KHxnSMVpeVzvQR_6FxO" : {
+      "dataVersion" : 2,
+      "performance" : "192",
+      "roundLevel" : "1",
+      "targetH" : "218",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473264161,
+      "username" : "Lennart"
+    },
+    "-KHxn_sZmgZ4Y-CpvWfE" : {
+      "dataVersion" : 2,
+      "performance" : "1",
+      "roundLevel" : "1",
+      "targetH" : "290",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473298979,
+      "username" : "Bea"
+    },
+    "-KHxneLvFRBgbRguIVyh" : {
+      "dataVersion" : 2,
+      "performance" : "139",
+      "roundLevel" : "1",
+      "targetH" : "115",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473317371,
+      "username" : "Lennart"
+    },
+    "-KHxniz7cit1UbHlJ35v" : {
+      "dataVersion" : 2,
+      "performance" : "95",
+      "roundLevel" : "1",
+      "targetH" : "104",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473341073,
+      "username" : "Bea"
+    },
+    "-KHxnkzFpnM9lfPE7eCo" : {
+      "dataVersion" : 2,
+      "performance" : "164",
+      "roundLevel" : "1",
+      "targetH" : "69",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473344528,
+      "username" : "Lennart"
+    },
+    "-KHxnmSXt6lA19xTlr7t" : {
+      "dataVersion" : 2,
+      "performance" : "65",
+      "roundLevel" : "1",
+      "targetH" : "323",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473350565,
+      "username" : "Ring"
+    },
+    "-KHxny1Yx9u5w4ucIzKV" : {
+      "dataVersion" : 2,
+      "performance" : "133",
+      "roundLevel" : "1",
+      "targetH" : "198",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473402732,
+      "username" : "Bea"
+    },
+    "-KHxnzerSPf655WiDjOd" : {
+      "dataVersion" : 2,
+      "performance" : "42",
+      "roundLevel" : "1",
+      "targetH" : "161",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473404664,
+      "username" : "Lennart"
+    },
+    "-KHxo39HHnfGiY9nOMqK" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "36",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473423059,
+      "username" : "Lennart"
+    },
+    "-KHxo9JOc3rVAkfo2k4-" : {
+      "dataVersion" : 2,
+      "performance" : "137",
+      "roundLevel" : "1",
+      "targetH" : "272",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473453026,
+      "username" : "Bea"
+    },
+    "-KHxoBOpEIC-23HoMW_q" : {
+      "dataVersion" : 2,
+      "performance" : "172",
+      "roundLevel" : "1",
+      "targetH" : "290",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473456823,
+      "username" : "Ring"
+    },
+    "-KHxoFkvHMQZC8B--AQN" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : "1",
+      "targetH" : "255",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473479428,
+      "username" : "Bea"
+    },
+    "-KHxoIyHtX-kqdWAi-xY" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "4",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473487829,
+      "username" : "Ring"
+    },
+    "-KHxoQ6J29Bc9qxPPgRJ" : {
+      "dataVersion" : 2,
+      "performance" : "115",
+      "roundLevel" : "1",
+      "targetH" : "186",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473521821,
+      "username" : "Bea"
+    },
+    "-KHxoSAXzoQgiWvkjHx9" : {
+      "dataVersion" : 2,
+      "performance" : "192",
+      "roundLevel" : "1",
+      "targetH" : "2",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473530283,
+      "username" : "Bea"
+    },
+    "-KHxoXI1HPIyRfk1xvWN" : {
+      "dataVersion" : 2,
+      "performance" : "192",
+      "roundLevel" : "1",
+      "targetH" : "234",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473546500,
+      "username" : "Ring"
+    },
+    "-KHxou8h14PiV6ss8IuJ" : {
+      "dataVersion" : 2,
+      "performance" : "154",
+      "roundLevel" : "1",
+      "targetH" : "18",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473644208,
+      "username" : "Ring"
+    },
+    "-KHxpAn32ZDT8Foi4k6l" : {
+      "dataVersion" : 2,
+      "performance" : "172",
+      "roundLevel" : "1",
+      "targetH" : "31",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473716487,
+      "username" : "Ring"
+    },
+    "-KHxpXeKVAn44ctaYEzh" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : "1",
+      "targetH" : "111",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473810136,
+      "username" : "Ring"
+    },
+    "-KHxpk0EvksuNoBT05_S" : {
+      "dataVersion" : 2,
+      "performance" : "148",
+      "roundLevel" : "1",
+      "targetH" : "351",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463473864850,
+      "username" : "Ring"
+    },
+    "-KHxqd25Vsg9YKidNFsz" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "1",
+      "targetH" : "139",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474098374,
+      "username" : "Father"
+    },
+    "-KHxqegdY2WPWpVsq_XZ" : {
+      "dataVersion" : 2,
+      "performance" : "0",
+      "roundLevel" : "2",
+      "targetH" : "323",
+      "targetL" : "50",
+      "targetS" : "32",
+      "timestamp" : 1463474105196,
+      "username" : "Ring"
+    },
+    "-KHxqrm1Z0vTUZW-6_-e" : {
+      "dataVersion" : 2,
+      "performance" : "170",
+      "roundLevel" : "1",
+      "targetH" : "332",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474155373,
+      "username" : "Father"
+    },
+    "-KHxr2u1oiWf8DxokA8m" : {
+      "dataVersion" : 2,
+      "performance" : "132",
+      "roundLevel" : "1",
+      "targetH" : "201",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474205037,
+      "username" : "Father"
+    },
+    "-KHxrHKWVEZGxP8nfaC7" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : "1",
+      "targetH" : "243",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474264140,
+      "username" : "Father"
+    },
+    "-KHxrb6Pj68uvIrxOZou" : {
+      "dataVersion" : 2,
+      "performance" : "115",
+      "roundLevel" : "1",
+      "targetH" : "346",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474349253,
+      "username" : "Father"
+    },
+    "-KHxrfhY0LfyAjBAo4i9" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : "2",
+      "targetH" : "131",
+      "targetL" : "50",
+      "targetS" : "38",
+      "timestamp" : 1463474371494,
+      "username" : "Ring"
+    },
+    "-KHxs6uvK4quEbnmj_Lw" : {
+      "dataVersion" : 2,
+      "performance" : "62",
+      "roundLevel" : "2",
+      "targetH" : "276",
+      "targetL" : "50",
+      "targetS" : "97",
+      "timestamp" : 1463474487038,
+      "username" : "Ring"
+    },
+    "-KHxsCszqxFynDr3Nq_1" : {
+      "dataVersion" : 2,
+      "performance" : "136",
+      "roundLevel" : "1",
+      "targetH" : "313",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474508074,
+      "username" : "Father"
+    },
+    "-KHxsaZlWlEBBARlO1im" : {
+      "dataVersion" : 2,
+      "performance" : "3",
+      "roundLevel" : "1",
+      "targetH" : "75",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474609180,
+      "username" : "Father"
+    },
+    "-KHxspH08d_jwkdV6mSK" : {
+      "dataVersion" : 2,
+      "performance" : "117",
+      "roundLevel" : "1",
+      "targetH" : "56",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474669420,
+      "username" : "Father"
+    },
+    "-KHxsyFPpb4fxYOMazwo" : {
+      "dataVersion" : 2,
+      "performance" : "99",
+      "roundLevel" : "1",
+      "targetH" : "226",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474706181,
+      "username" : "Father"
+    },
+    "-KHxt7cMHt2e9gUgwXHS" : {
+      "dataVersion" : 2,
+      "performance" : "75",
+      "roundLevel" : "1",
+      "targetH" : "164",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474748674,
+      "username" : "Father"
+    },
+    "-KHxtKTsunXIgOIknEtm" : {
+      "dataVersion" : 2,
+      "performance" : "30",
+      "roundLevel" : "1",
+      "targetH" : "234",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474801315,
+      "username" : "Father"
+    },
+    "-KHxtSfPIRA_KyYvnrcf" : {
+      "dataVersion" : 2,
+      "performance" : "97",
+      "roundLevel" : "1",
+      "targetH" : "293",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463474834885,
+      "username" : "Father"
+    },
+    "-KHxtqpAUBmxIxSdr2sQ" : {
+      "dataVersion" : 2,
+      "performance" : "30",
+      "roundLevel" : "2",
+      "targetH" : "217",
+      "targetL" : "50",
+      "targetS" : "60",
+      "timestamp" : 1463474937910,
+      "username" : "Father"
+    },
+    "-KHxvc6jVfGyB0njgzDG" : {
+      "dataVersion" : 2,
+      "performance" : "76",
+      "roundLevel" : "2",
+      "targetH" : "120",
+      "targetL" : "50",
+      "targetS" : "50",
+      "timestamp" : 1463475405362,
+      "username" : "Ring"
+    },
+    "-KHxvoc7lriVsOgID0Sc" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "2",
+      "targetH" : "32",
+      "targetL" : "50",
+      "targetS" : "26",
+      "timestamp" : 1463475456588,
+      "username" : "Ring"
+    },
+    "-KHxw3z5R4hYNUP-BNLr" : {
+      "dataVersion" : 2,
+      "performance" : "89",
+      "roundLevel" : "2",
+      "targetH" : "119",
+      "targetL" : "50",
+      "targetS" : "63",
+      "timestamp" : 1463475523594,
+      "username" : "Ring"
+    },
+    "-KHxwLFFA2sBAQgJW96E" : {
+      "dataVersion" : 2,
+      "performance" : "114",
+      "roundLevel" : "2",
+      "targetH" : "309",
+      "targetL" : "50",
+      "targetS" : "62",
+      "timestamp" : 1463475594324,
+      "username" : "Ring"
+    },
+    "-KHxw_vyiKL4Lj5auPpp" : {
+      "dataVersion" : 2,
+      "performance" : "126",
+      "roundLevel" : "2",
+      "targetH" : "292",
+      "targetL" : "50",
+      "targetS" : "58",
+      "timestamp" : 1463475658562,
+      "username" : "Ring"
+    },
+    "-KHxwuES7cYMf6DZ28X9" : {
+      "dataVersion" : 2,
+      "performance" : "59",
+      "roundLevel" : "2",
+      "targetH" : "338",
+      "targetL" : "50",
+      "targetS" : "99",
+      "timestamp" : 1463475741729,
+      "username" : "Ring"
+    },
+    "-KHxx7HHNTPWHFV9xZZp" : {
+      "dataVersion" : 2,
+      "performance" : "137",
+      "roundLevel" : "2",
+      "targetH" : "290",
+      "targetL" : "50",
+      "targetS" : "85",
+      "timestamp" : 1463475799253,
+      "username" : "Ring"
+    },
+    "-KHxxQUNMJ6A2nlmFt1j" : {
+      "dataVersion" : 2,
+      "performance" : "66",
+      "roundLevel" : "2",
+      "targetH" : "161",
+      "targetL" : "50",
+      "targetS" : "76",
+      "timestamp" : 1463475877916,
+      "username" : "Ring"
+    },
+    "-KHxxWu0K-QID8kOEQwO" : {
+      "dataVersion" : 2,
+      "performance" : "178",
+      "roundLevel" : "2",
+      "targetH" : "121",
+      "targetL" : "50",
+      "targetS" : "94",
+      "timestamp" : 1463475904197,
+      "username" : "Ring"
+    },
+    "-KHxxjNAkMOH0mtRYro1" : {
+      "dataVersion" : 2,
+      "performance" : "133",
+      "roundLevel" : "2",
+      "targetH" : "51",
+      "targetL" : "50",
+      "targetS" : "92",
+      "timestamp" : 1463475959375,
+      "username" : "Ring"
+    },
+    "-KHyKVJs6K1waMfLu6Vo" : {
+      "dataVersion" : 2,
+      "performance" : "188",
+      "roundLevel" : "1",
+      "targetH" : "318",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463482189111,
+      "username" : "Andres"
+    },
+    "-KHyKm6KdtbSOdzo3UL6" : {
+      "dataVersion" : 2,
+      "performance" : "119",
+      "roundLevel" : "1",
+      "targetH" : "179",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463482269479,
+      "username" : "Andres"
+    },
+    "-KHyKvkr7LS2qACHfTP1" : {
+      "dataVersion" : 2,
+      "performance" : "152",
+      "roundLevel" : "1",
+      "targetH" : "139",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463482309002,
+      "username" : "Andres"
+    },
+    "-KHySumLZ3fea4n3i4Iw" : {
+      "dataVersion" : 2,
+      "performance" : "170",
+      "roundLevel" : "1",
+      "targetH" : "200",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463484402152,
+      "username" : "Andres"
+    },
+    "-KHyT10p7Ngb_7G5zAob" : {
+      "dataVersion" : 2,
+      "performance" : "160",
+      "roundLevel" : "1",
+      "targetH" : "21",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463484431816,
+      "username" : "Andres"
+    },
+    "-KHyTD3d7l2a5_Grxxpc" : {
+      "dataVersion" : 2,
+      "performance" : "75",
+      "roundLevel" : "1",
+      "targetH" : "47",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463484481148,
+      "username" : "Andres"
+    },
+    "-KHyXXX6MD54MNYYmNI-" : {
+      "dataVersion" : 2,
+      "performance" : "117",
+      "roundLevel" : "1",
+      "targetH" : "173",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463485613530,
+      "username" : "Andres"
+    },
+    "-KHyYGipe32On2MWDQj6" : {
+      "dataVersion" : 2,
+      "performance" : "153",
+      "roundLevel" : "1",
+      "targetH" : "315",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463485806856,
+      "username" : "Andres"
+    },
+    "-KHylRRAkYoxrj0jbQpl" : {
+      "dataVersion" : 2,
+      "performance" : "39",
+      "roundLevel" : 2,
+      "targetH" : "59",
+      "targetL" : "50",
+      "targetS" : "46",
+      "timestamp" : 1463489513227,
+      "username" : "Father"
+    },
+    "-KHylr-VWyYiQAwvwDGr" : {
+      "dataVersion" : 2,
+      "performance" : "81",
+      "roundLevel" : 2,
+      "targetH" : "256",
+      "targetL" : "50",
+      "targetS" : "74",
+      "timestamp" : 1463489618877,
+      "username" : "Father"
+    },
+    "-KHym1qeoORRkQVmwcB-" : {
+      "dataVersion" : 2,
+      "performance" : "175",
+      "roundLevel" : 2,
+      "targetH" : "154",
+      "targetL" : "50",
+      "targetS" : "42",
+      "timestamp" : 1463489667399,
+      "username" : "Father"
+    },
+    "-KHz4ocWydG5EAL1oRWB" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "1",
+      "targetH" : "102",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463494862706,
+      "username" : "Andres"
+    },
+    "-KHzGarSNWKbCQwDUfCc" : {
+      "dataVersion" : 2,
+      "performance" : "84",
+      "roundLevel" : "1",
+      "targetH" : "301",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463497944540,
+      "username" : "Unic0arn"
+    },
+    "-KHzGigpOcIbjiNNkY5E" : {
+      "dataVersion" : 2,
+      "performance" : "176",
+      "roundLevel" : "1",
+      "targetH" : "37",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463497978047,
+      "username" : "Unic0arn"
+    },
+    "-KHzH-grIqbgM8BXKXxy" : {
+      "dataVersion" : 2,
+      "performance" : "173",
+      "roundLevel" : "1",
+      "targetH" : "81",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463498051777,
+      "username" : "Unic0arn"
+    },
+    "-KHzH7JBLM1BuqosydWu" : {
+      "dataVersion" : 2,
+      "performance" : "51",
+      "roundLevel" : "1",
+      "targetH" : "172",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463498082966,
+      "username" : "Unic0arn"
+    },
+    "-KHzIMEaqvnb0Yiq6-gO" : {
+      "dataVersion" : 2,
+      "performance" : "158",
+      "roundLevel" : "1",
+      "targetH" : "151",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463498404837,
+      "username" : "Test"
+    },
+    "-KHzMLRyJ1SrKnwaHEpe" : {
+      "dataVersion" : 2,
+      "performance" : "52",
+      "roundLevel" : "1",
+      "targetH" : "72",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499450174,
+      "username" : "Stefan"
+    },
+    "-KHzMXgY8Gsisn0ep6cA" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "331",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499500422,
+      "username" : "Stefan"
+    },
+    "-KHzMkI9FXNOb425hVlF" : {
+      "dataVersion" : 2,
+      "performance" : "110",
+      "roundLevel" : "1",
+      "targetH" : "153",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499556141,
+      "username" : "Stefan"
+    },
+    "-KHzMtsYRZczJdHXIewk" : {
+      "dataVersion" : 2,
+      "performance" : "88",
+      "roundLevel" : "1",
+      "targetH" : "137",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499595398,
+      "username" : "Stefan"
+    },
+    "-KHzN-O5sm9LA8TREsLi" : {
+      "dataVersion" : 2,
+      "performance" : "166",
+      "roundLevel" : "1",
+      "targetH" : "70",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499622057,
+      "username" : "Stefan"
+    },
+    "-KHzN27B-znUY6ef0qdd" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "119",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499633262,
+      "username" : "Stefan"
+    },
+    "-KHzN8gPP8G8siBylVwh" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "356",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499660157,
+      "username" : "Stefan"
+    },
+    "-KHzNFPMP-yENsrHB0n2" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : "1",
+      "targetH" : "269",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499687674,
+      "username" : "Stefan"
+    },
+    "-KHzNJdfm6f3nj5gkSJ2" : {
+      "dataVersion" : 2,
+      "performance" : "152",
+      "roundLevel" : "1",
+      "targetH" : "349",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463499705038,
+      "username" : "Stefan"
+    },
+    "-KHzNYt9gXza30f7WLCs" : {
+      "dataVersion" : 2,
+      "performance" : "48",
+      "roundLevel" : "2",
+      "targetH" : "51",
+      "targetL" : "50",
+      "targetS" : "37",
+      "timestamp" : 1463499767469,
+      "username" : "Stefan"
+    },
+    "-KHzV68yodfgxoIb65gK" : {
+      "dataVersion" : 2,
+      "performance" : "0",
+      "roundLevel" : 2,
+      "targetH" : "301",
+      "targetL" : "50",
+      "targetS" : "96",
+      "timestamp" : 1463501743433,
+      "username" : "Father"
+    },
+    "-KHzVQlwFZR-ZCycmk9q" : {
+      "dataVersion" : 2,
+      "performance" : "148",
+      "roundLevel" : "2",
+      "targetH" : "326",
+      "targetL" : "50",
+      "targetS" : "75",
+      "timestamp" : 1463501827911,
+      "username" : "Father"
+    },
+    "-KHzVdJXTfro9L_mF2TF" : {
+      "dataVersion" : 2,
+      "performance" : "146",
+      "roundLevel" : "2",
+      "targetH" : "194",
+      "targetL" : "50",
+      "targetS" : "87",
+      "timestamp" : 1463501883373,
+      "username" : "Father"
+    },
+    "-KHzVqExU5aVxhVHQwLk" : {
+      "dataVersion" : 2,
+      "performance" : "65",
+      "roundLevel" : "2",
+      "targetH" : "331",
+      "targetL" : "50",
+      "targetS" : "68",
+      "timestamp" : 1463501936328,
+      "username" : "Father"
+    },
+    "-KHzW7b3e_168wpBbm60" : {
+      "dataVersion" : 2,
+      "performance" : "105",
+      "roundLevel" : "2",
+      "targetH" : "333",
+      "targetL" : "50",
+      "targetS" : "61",
+      "timestamp" : 1463502011535,
+      "username" : "Father"
+    },
+    "-KHzWO6HZ-9oVZkRFyGu" : {
+      "dataVersion" : 2,
+      "performance" : "156",
+      "roundLevel" : "2",
+      "targetH" : "346",
+      "targetL" : "50",
+      "targetS" : "83",
+      "timestamp" : 1463502079133,
+      "username" : "Father"
+    },
+    "-KHzXwmg8fSjDwfSjCgY" : {
+      "dataVersion" : 2,
+      "performance" : "137",
+      "roundLevel" : "1",
+      "targetH" : "332",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502490796,
+      "username" : "www"
+    },
+    "-KHzYDd5DXKVUiFB8la8" : {
+      "dataVersion" : 2,
+      "performance" : "180",
+      "roundLevel" : "1",
+      "targetH" : "351",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502563420,
+      "username" : "www"
+    },
+    "-KHzYOAgMNxQTa8Kl4ni" : {
+      "dataVersion" : 2,
+      "performance" : "101",
+      "roundLevel" : "1",
+      "targetH" : "68",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502606594,
+      "username" : "www"
+    },
+    "-KHzYSqoNU8bvWHCwOpP" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "151",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502625738,
+      "username" : "www"
+    },
+    "-KHzYVd4mG9l_6FYA63S" : {
+      "dataVersion" : 2,
+      "performance" : "192",
+      "roundLevel" : "1",
+      "targetH" : "238",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502637147,
+      "username" : "www"
+    },
+    "-KHzYZelTaDXYcML1NxD" : {
+      "dataVersion" : 2,
+      "performance" : "157",
+      "roundLevel" : "1",
+      "targetH" : "31",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502653639,
+      "username" : "www"
+    },
+    "-KHzYdA_TnN83_JQ8pDQ" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "1",
+      "targetH" : "64",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502672123,
+      "username" : "www"
+    },
+    "-KHzYmPnJVAnYocKK-qd" : {
+      "dataVersion" : 2,
+      "performance" : "168",
+      "roundLevel" : "1",
+      "targetH" : "5",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463502709961,
+      "username" : "www"
+    },
+    "-KHzYxOAhgPYCRRajR7D" : {
+      "dataVersion" : 2,
+      "performance" : "162",
+      "roundLevel" : "2",
+      "targetH" : "288",
+      "targetL" : "50",
+      "targetS" : "84",
+      "timestamp" : 1463502754913,
+      "username" : "www"
+    },
+    "-KHzZ8oFBwW3l7KvPSsD" : {
+      "dataVersion" : 2,
+      "performance" : "126",
+      "roundLevel" : "2",
+      "targetH" : "238",
+      "targetL" : "50",
+      "targetS" : "71",
+      "timestamp" : 1463502805798,
+      "username" : "www"
+    },
+    "-KHzZGw69KKLu6aEH0tI" : {
+      "dataVersion" : 2,
+      "performance" : "167",
+      "roundLevel" : "2",
+      "targetH" : "59",
+      "targetL" : "50",
+      "targetS" : "88",
+      "timestamp" : 1463502839069,
+      "username" : "www"
+    },
+    "-KHzZQlT0PPS2U_IiB6N" : {
+      "dataVersion" : 2,
+      "performance" : "125",
+      "roundLevel" : "2",
+      "targetH" : "200",
+      "targetL" : "50",
+      "targetS" : "48",
+      "timestamp" : 1463502879348,
+      "username" : "www"
+    },
+    "-KHzZ_KMsfKCSpFHfKbj" : {
+      "dataVersion" : 2,
+      "performance" : "102",
+      "roundLevel" : "2",
+      "targetH" : "125",
+      "targetL" : "50",
+      "targetS" : "25",
+      "timestamp" : 1463502918509,
+      "username" : "www"
+    },
+    "-KHzZfQlobE5YwKpKbt0" : {
+      "dataVersion" : 2,
+      "performance" : "175",
+      "roundLevel" : "2",
+      "targetH" : "246",
+      "targetL" : "50",
+      "targetS" : "95",
+      "timestamp" : 1463502943495,
+      "username" : "www"
+    },
+    "-KI-2Rzf3sX1XgVwydzs" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : "1",
+      "targetH" : "175",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511011306,
+      "username" : "maria"
+    },
+    "-KI-2mNsSNuPvV5NULD1" : {
+      "dataVersion" : 2,
+      "performance" : "192",
+      "roundLevel" : "1",
+      "targetH" : "98",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511097347,
+      "username" : "maria"
+    },
+    "-KI-3OkGfO6eq8g1tdZV" : {
+      "dataVersion" : 2,
+      "performance" : "148",
+      "roundLevel" : "1",
+      "targetH" : "287",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511258589,
+      "username" : "maria"
+    },
+    "-KI-3eJ_EaylG2I-9xC5" : {
+      "dataVersion" : 2,
+      "performance" : "180",
+      "roundLevel" : "1",
+      "targetH" : "298",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511326449,
+      "username" : "maria"
+    },
+    "-KI-3u-883UjDQ4iQuoB" : {
+      "dataVersion" : 2,
+      "performance" : "82",
+      "roundLevel" : "1",
+      "targetH" : "298",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511390677,
+      "username" : "maria"
+    },
+    "-KI-42Mj-WS5I9QIUYYS" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "1",
+      "targetH" : "58",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511429051,
+      "username" : "maria"
+    },
+    "-KI-47bcstb0wO3RTUac" : {
+      "dataVersion" : 2,
+      "performance" : "196",
+      "roundLevel" : "1",
+      "targetH" : "100",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511450548,
+      "username" : "maria"
+    },
+    "-KI-4JmaXtAz5JUTZ5Tx" : {
+      "dataVersion" : 2,
+      "performance" : "175",
+      "roundLevel" : "1",
+      "targetH" : "66",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463511500402,
+      "username" : "maria"
+    },
+    "-KI-4dAzwv-sWAFTimpc" : {
+      "dataVersion" : 2,
+      "performance" : "103",
+      "roundLevel" : "2",
+      "targetH" : "169",
+      "targetL" : "50",
+      "targetS" : "72",
+      "timestamp" : 1463511583946,
+      "username" : "maria"
+    },
+    "-KI-52CCg9nc--O-X161" : {
+      "dataVersion" : 2,
+      "performance" : "111",
+      "roundLevel" : "2",
+      "targetH" : "150",
+      "targetL" : "50",
+      "targetS" : "66",
+      "timestamp" : 1463511690520,
+      "username" : "maria"
+    },
+    "-KI1FtZ7eQ6N1wQQMNjd" : {
+      "dataVersion" : 2,
+      "performance" : "81",
+      "roundLevel" : 4,
+      "targetH" : "83",
+      "targetL" : "23",
+      "targetS" : "82",
+      "timestamp" : 1463548089579,
+      "username" : "184"
+    },
+    "-KI1GJ_OUJtZFoCUzers" : {
+      "dataVersion" : 2,
+      "performance" : "106",
+      "roundLevel" : "4",
+      "targetH" : "44",
+      "targetL" : "67",
+      "targetS" : "47",
+      "timestamp" : 1463548200252,
+      "username" : "184"
+    },
+    "-KI1GjB9IwJ9mwDFwn_g" : {
+      "dataVersion" : 2,
+      "performance" : "75",
+      "roundLevel" : "4",
+      "targetH" : "38",
+      "targetL" : "78",
+      "targetS" : "85",
+      "timestamp" : 1463548309228,
+      "username" : "184"
+    },
+    "-KI1HOSVOAj3iDlLSfzW" : {
+      "dataVersion" : 2,
+      "performance" : "89",
+      "roundLevel" : "4",
+      "targetH" : "191",
+      "targetL" : "42",
+      "targetS" : "27",
+      "timestamp" : 1463548482370,
+      "username" : "184"
+    },
+    "-KI1H_dl320Znc2gxWHz" : {
+      "dataVersion" : 2,
+      "performance" : "55",
+      "roundLevel" : "4",
+      "targetH" : "254",
+      "targetL" : "45",
+      "targetS" : "80",
+      "timestamp" : 1463548532307,
+      "username" : "184"
+    },
+    "-KI1IcvchKX12MGJhOXh" : {
+      "dataVersion" : 2,
+      "performance" : "77",
+      "roundLevel" : "4",
+      "targetH" : "283",
+      "targetL" : "35",
+      "targetS" : "60",
+      "timestamp" : 1463548807882,
+      "username" : "184"
+    },
+    "-KI1IzRJ25RkwPSDfQj2" : {
+      "dataVersion" : 2,
+      "performance" : "111",
+      "roundLevel" : "4",
+      "targetH" : "156",
+      "targetL" : "49",
+      "targetS" : "22",
+      "timestamp" : 1463548900086,
+      "username" : "184"
+    },
+    "-KI1LKARkYHeLqQDQgA-" : {
+      "dataVersion" : 2,
+      "performance" : "94",
+      "roundLevel" : "4",
+      "targetH" : "97",
+      "targetL" : "75",
+      "targetS" : "84",
+      "timestamp" : 1463549513406,
+      "username" : "184"
+    },
+    "-KI1MoValhS69rNcDMxy" : {
+      "dataVersion" : 2,
+      "performance" : "33",
+      "roundLevel" : "4",
+      "targetH" : "356",
+      "targetL" : "77",
+      "targetS" : "21",
+      "timestamp" : 1463549903880,
+      "username" : "184"
+    },
+    "-KI1N9gGc4Av02_sbFz1" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "1",
+      "targetH" : "69",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463549995793,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1NNHr9NwKVGMAz7jS" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "241",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463550051571,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1NdB0puXrCpndmRN0" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "211",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463550120766,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1NsPIStZefpWFWfKE" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "1",
+      "targetH" : "86",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463550183120,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1O6yVBtc7IrRRgwWm" : {
+      "dataVersion" : 2,
+      "performance" : "156",
+      "roundLevel" : "1",
+      "targetH" : "344",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463550246877,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1OSs4iE6bEKVTutyL" : {
+      "dataVersion" : 2,
+      "performance" : "131",
+      "roundLevel" : "1",
+      "targetH" : "286",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463550336578,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1OZ3Eg2rZGCqXk0bD" : {
+      "dataVersion" : 2,
+      "performance" : "194",
+      "roundLevel" : "1",
+      "targetH" : "271",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463550361932,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1Oi3jZ9lVV0ZbPPXe" : {
+      "dataVersion" : 2,
+      "performance" : "186",
+      "roundLevel" : "2",
+      "targetH" : "4",
+      "targetL" : "50",
+      "targetS" : "97",
+      "timestamp" : 1463550402924,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1OsPToAMf5mwUB51U" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : "2",
+      "targetH" : "182",
+      "targetL" : "50",
+      "targetS" : "96",
+      "timestamp" : 1463550445275,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1P6GVrylej_y1FX2K" : {
+      "dataVersion" : 2,
+      "performance" : "148",
+      "roundLevel" : "2",
+      "targetH" : "233",
+      "targetL" : "50",
+      "targetS" : "86",
+      "timestamp" : 1463550506141,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1PLn065bdgTlZK0PE" : {
+      "dataVersion" : 2,
+      "performance" : "170",
+      "roundLevel" : "2",
+      "targetH" : "45",
+      "targetL" : "50",
+      "targetS" : "95",
+      "timestamp" : 1463550569726,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1Q7DVpMK-aebdF-yf" : {
+      "dataVersion" : 2,
+      "performance" : "122",
+      "roundLevel" : "2",
+      "targetH" : "111",
+      "targetL" : "50",
+      "targetS" : "79",
+      "timestamp" : 1463550772189,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1QQry45fwr5Cq4PSJ" : {
+      "dataVersion" : 2,
+      "performance" : "169",
+      "roundLevel" : "2",
+      "targetH" : "329",
+      "targetL" : "50",
+      "targetS" : "76",
+      "timestamp" : 1463550852667,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1Q_iEb4Eg1t-Jkn9_" : {
+      "dataVersion" : 2,
+      "performance" : "152",
+      "roundLevel" : "2",
+      "targetH" : "176",
+      "targetL" : "50",
+      "targetS" : "75",
+      "timestamp" : 1463550893004,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1Quwu_axVaW4wzy3y" : {
+      "dataVersion" : 2,
+      "performance" : "65",
+      "roundLevel" : "2",
+      "targetH" : "277",
+      "targetL" : "50",
+      "targetS" : "55",
+      "timestamp" : 1463550979959,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1R8zTL08LTzE5s5RP" : {
+      "dataVersion" : 2,
+      "performance" : "168",
+      "roundLevel" : "2",
+      "targetH" : "268",
+      "targetL" : "50",
+      "targetS" : "23",
+      "timestamp" : 1463551041562,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1RO7Yi31QcAEiE9zV" : {
+      "dataVersion" : 2,
+      "performance" : "96",
+      "roundLevel" : "2",
+      "targetH" : "111",
+      "targetL" : "50",
+      "targetS" : "23",
+      "timestamp" : 1463551103584,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1RgSsmY99oVNCIJ8B" : {
+      "dataVersion" : 2,
+      "performance" : "67",
+      "roundLevel" : "2",
+      "targetH" : "337",
+      "targetL" : "50",
+      "targetS" : "33",
+      "timestamp" : 1463551182773,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1RwW-4RaJaYEU51k0" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "3",
+      "targetH" : "95",
+      "targetL" : "21",
+      "targetS" : "99",
+      "timestamp" : 1463551248509,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1SIUq1XR2CQFf1ST5" : {
+      "dataVersion" : 2,
+      "performance" : "138",
+      "roundLevel" : "3",
+      "targetH" : "194",
+      "targetL" : "20",
+      "targetS" : "83",
+      "timestamp" : 1463551342643,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1SeEVysv5rm6zgWip" : {
+      "dataVersion" : 2,
+      "performance" : "97",
+      "roundLevel" : "3",
+      "targetH" : "44",
+      "targetL" : "72",
+      "targetS" : "67",
+      "timestamp" : 1463551435805,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1SzVO14u0PTOoiUzd" : {
+      "dataVersion" : 2,
+      "performance" : "57",
+      "roundLevel" : "3",
+      "targetH" : "46",
+      "targetL" : "20",
+      "targetS" : "50",
+      "timestamp" : 1463551522901,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1TLFFSn2RGQVqaPuu" : {
+      "dataVersion" : 2,
+      "performance" : "57",
+      "roundLevel" : "3",
+      "targetH" : "253",
+      "targetL" : "72",
+      "targetS" : "91",
+      "timestamp" : 1463551616077,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1TcCdSuz-e1q1eE7X" : {
+      "dataVersion" : 2,
+      "performance" : "90",
+      "roundLevel" : "3",
+      "targetH" : "337",
+      "targetL" : "27",
+      "targetS" : "75",
+      "timestamp" : 1463551689638,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1TuJolqJf8J89zSxU" : {
+      "dataVersion" : 2,
+      "performance" : "122",
+      "roundLevel" : "3",
+      "targetH" : "234",
+      "targetL" : "32",
+      "targetS" : "54",
+      "timestamp" : 1463551763825,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1U3ZK2AEw3nHsJsVP" : {
+      "dataVersion" : 2,
+      "performance" : "168",
+      "roundLevel" : "3",
+      "targetH" : "311",
+      "targetL" : "43",
+      "targetS" : "94",
+      "timestamp" : 1463551805778,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1UORpflel6xdulrFq" : {
+      "dataVersion" : 2,
+      "performance" : "32",
+      "roundLevel" : "3",
+      "targetH" : "244",
+      "targetL" : "54",
+      "targetS" : "43",
+      "timestamp" : 1463551891314,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1UWgcfCkUGeCed2Fn" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : "3",
+      "targetH" : "75",
+      "targetL" : "35",
+      "targetS" : "91",
+      "timestamp" : 1463551925093,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI1VWtMyoEOiwLx03sO" : {
+      "dataVersion" : 2,
+      "performance" : "101",
+      "roundLevel" : "3",
+      "targetH" : "347",
+      "targetL" : "56",
+      "targetS" : "61",
+      "timestamp" : 1463552188052,
+      "username" : "Rodrigo Roa Rodríguez"
+    },
+    "-KI2KUVPBJ5cI65HwFbU" : {
+      "dataVersion" : 2,
+      "performance" : "49",
+      "roundLevel" : 1,
+      "targetH" : "341",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566071834,
+      "username" : "maelys"
+    },
+    "-KI2Kacd3pJARO0kI2xx" : {
+      "dataVersion" : 2,
+      "performance" : "161",
+      "roundLevel" : 1,
+      "targetH" : "45",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566101108,
+      "username" : "maelys"
+    },
+    "-KI2Kfe33lu-sxe-c8gK" : {
+      "dataVersion" : 2,
+      "performance" : "98",
+      "roundLevel" : 1,
+      "targetH" : "179",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566121604,
+      "username" : "maelys"
+    },
+    "-KI2Kpl7XAVg5dOA9QG5" : {
+      "dataVersion" : 2,
+      "performance" : "41",
+      "roundLevel" : 1,
+      "targetH" : "145",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566163088,
+      "username" : "maelys"
+    },
+    "-KI2LLgk9vUqw5VTP1z6" : {
+      "dataVersion" : 2,
+      "performance" : "104",
+      "roundLevel" : 1,
+      "targetH" : "134",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566297979,
+      "username" : "maelys"
+    },
+    "-KI2LPlWdpM32shJTBsu" : {
+      "dataVersion" : 2,
+      "performance" : "181",
+      "roundLevel" : 1,
+      "targetH" : "336",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566314668,
+      "username" : "maelys"
+    },
+    "-KI2LTR8MTbNFjeem2UP" : {
+      "dataVersion" : 2,
+      "performance" : "179",
+      "roundLevel" : 1,
+      "targetH" : "344",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566329684,
+      "username" : "maelys"
+    },
+    "-KI2LYm__8d6eEWgNXyY" : {
+      "dataVersion" : 2,
+      "performance" : "151",
+      "roundLevel" : 1,
+      "targetH" : "104",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566351600,
+      "username" : "maelys"
+    },
+    "-KI2Lb2nsE4EGm68XKgT" : {
+      "dataVersion" : 2,
+      "performance" : "187",
+      "roundLevel" : 1,
+      "targetH" : "11",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566364990,
+      "username" : "maelys"
+    },
+    "-KI2Lg0jk3Nicj5ByML4" : {
+      "dataVersion" : 2,
+      "performance" : "170",
+      "roundLevel" : 1,
+      "targetH" : "39",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566385339,
+      "username" : "maelys"
+    },
+    "-KI2LkG4_RROdzaDIJVI" : {
+      "dataVersion" : 2,
+      "performance" : "160",
+      "roundLevel" : 1,
+      "targetH" : "107",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566402705,
+      "username" : "maelys"
+    },
+    "-KI2LoPvOD9ShDHrRebr" : {
+      "dataVersion" : 2,
+      "performance" : "174",
+      "roundLevel" : 1,
+      "targetH" : "73",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463566419719,
+      "username" : "maelys"
+    },
+    "-KI3qPCNnGksquoMT67l" : {
+      "dataVersion" : 2,
+      "performance" : "104",
+      "roundLevel" : "1",
+      "targetH" : "306",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591478104,
+      "username" : "Jef"
+    },
+    "-KI3qYtCdiI-ybL9FigR" : {
+      "dataVersion" : 2,
+      "performance" : "142",
+      "roundLevel" : "1",
+      "targetH" : "37",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591517837,
+      "username" : "Jef"
+    },
+    "-KI3qfY9YFlfx9SHs_1F" : {
+      "dataVersion" : 2,
+      "performance" : "189",
+      "roundLevel" : "1",
+      "targetH" : "303",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591549194,
+      "username" : "Jef"
+    },
+    "-KI3qsyUvQj84Z1RNP44" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "1",
+      "targetH" : "109",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591604191,
+      "username" : "Jef"
+    },
+    "-KI3qzBNIGETa9FemjRc" : {
+      "dataVersion" : 2,
+      "performance" : "150",
+      "roundLevel" : "1",
+      "targetH" : "168",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591629656,
+      "username" : "Jef"
+    },
+    "-KI3r6BvksqgDGo53eWy" : {
+      "dataVersion" : 2,
+      "performance" : "188",
+      "roundLevel" : "1",
+      "targetH" : "32",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591662459,
+      "username" : "Jef"
+    },
+    "-KI3r8O2cJBb8fLhiZLJ" : {
+      "dataVersion" : 2,
+      "performance" : "196",
+      "roundLevel" : "1",
+      "targetH" : "0",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591671427,
+      "username" : "Jef"
+    },
+    "-KI3rEHp56PGbygHaBr_" : {
+      "dataVersion" : 2,
+      "performance" : "156",
+      "roundLevel" : "1",
+      "targetH" : "160",
+      "targetL" : "50",
+      "targetS" : "100",
+      "timestamp" : 1463591695605,
+      "username" : "Jef"
+    },
+    "-KI3rWZkSM6rmHK2OyOQ" : {
+      "dataVersion" : 2,
+      "performance" : "15",
+      "roundLevel" : "2",
+      "targetH" : "180",
+      "targetL" : "50",
+      "targetS" : "29",
+      "timestamp" : 1463591770480,
+      "username" : "Jef"
+    },
+    "-KI6dZO1trOZT-QOprdO" : {
+      "dataVersion" : 2,
+      "performance" : "143",
+      "roundLevel" : 4,
+      "targetH" : "189",
+      "targetL" : "43",
+      "targetS" : "26",
+      "timestamp" : 1463638441271,
+      "username" : "184"
+    },
+    "-KI6fGPkKr8HY32DvLcX" : {
+      "dataVersion" : 2,
+      "performance" : "97",
+      "roundLevel" : "4",
+      "targetH" : "346",
+      "targetL" : "67",
+      "targetS" : "81",
+      "timestamp" : 1463638887858,
+      "username" : "184"
+    },
+    "-KI74yMxnW1DihUCPTVA" : {
+      "dataVersion" : 2,
+      "performance" : "153",
+      "roundLevel" : 2,
+      "targetH" : "1",
+      "targetL" : "50",
+      "targetS" : "82",
+      "timestamp" : 1463645890045,
+      "username" : "Father"
+    },
+    "-KI75Fg-U9ymWQ97Shn6" : {
+      "dataVersion" : 2,
+      "performance" : "80",
+      "roundLevel" : "2",
+      "targetH" : "324",
+      "targetL" : "50",
+      "targetS" : "60",
+      "timestamp" : 1463645958576,
+      "username" : "Father"
+    },
+    "-KI75VgWvGjQKOtWqdyK" : {
+      "dataVersion" : 2,
+      "performance" : "5",
+      "roundLevel" : "2",
+      "targetH" : "22",
+      "targetL" : "50",
+      "targetS" : "67",
+      "timestamp" : 1463646024146,
+      "username" : "Father"
+    },
+    "-KI75gB7-SvMd919Y3FM" : {
+      "dataVersion" : 2,
+      "performance" : "141",
+      "roundLevel" : "2",
+      "targetH" : "348",
+      "targetL" : "50",
+      "targetS" : "72",
+      "timestamp" : 1463646071225,
+      "username" : "Father"
+    },
+    "-KI75wA6SAI95LoFDdJK" : {
+      "dataVersion" : 2,
+      "performance" : "1",
+      "roundLevel" : "2",
+      "targetH" : "51",
+      "targetL" : "50",
+      "targetS" : "27",
+      "timestamp" : 1463646136696,
+      "username" : "Father"
+    },
+    "-KI769_6yTBDxtzzNgnt" : {
+      "dataVersion" : 2,
+      "performance" : "111",
+      "roundLevel" : "2",
+      "targetH" : "251",
+      "targetL" : "50",
+      "targetS" : "49",
+      "timestamp" : 1463646195704,
+      "username" : "Father"
+    },
+    "-KI76Ob80zYuC4LvRWII" : {
+      "dataVersion" : 2,
+      "performance" : "55",
+      "roundLevel" : "2",
+      "targetH" : "180",
+      "targetL" : "50",
+      "targetS" : "90",
+      "timestamp" : 1463646257274,
+      "username" : "Father"
+    },
+    "-KI76gbH3PaoPMHEdBoC" : {
+      "dataVersion" : 2,
+      "performance" : "32",
+      "roundLevel" : "3",
+      "targetH" : "203",
+      "targetL" : "48",
+      "targetS" : "31",
+      "timestamp" : 1463646335107,
+      "username" : "Father"
+    },
+    "-KI76x-OuFSEn98ahmTR" : {
+      "dataVersion" : 2,
+      "performance" : "0",
+      "roundLevel" : "3",
+      "targetH" : "82",
+      "targetL" : "53",
+      "targetS" : "78",
+      "timestamp" : 1463646402250,
+      "username" : "Father"
+    },
+    "-KI8GoP-0dwNnKFqb2-l" : {
+      "dataVersion" : 2,
+      "performance" : "136",
+      "roundLevel" : "2",
+      "targetH" : "332",
+      "targetL" : "50",
+      "targetS" : "75",
+      "timestamp" : 1463665772237,
+      "username" : "Jef"
+    },
+    "-KI8Gx4gvjnUQXFJO-W-" : {
+      "dataVersion" : 2,
+      "performance" : "134",
+      "roundLevel" : "2",
+      "targetH" : "350",
+      "targetL" : "50",
+      "targetS" : "93",
+      "timestamp" : 1463665807800,
+      "username" : "Jef"
+    },
+    "-KI8H8xNpdKgYI1XxO9L" : {
+      "dataVersion" : 2,
+      "performance" : "140",
+      "roundLevel" : 2,
+      "targetH" : "131",
+      "targetL" : "50",
+      "targetS" : "70",
+      "timestamp" : 1463665860517,
+      "username" : "Jef"
+    },
+    "-KI8HKfqRGsuJrCFEFGW" : {
+      "dataVersion" : 2,
+      "performance" : "55",
+      "roundLevel" : "2",
+      "targetH" : "181",
+      "targetL" : "50",
+      "targetS" : "53",
+      "timestamp" : 1463665908547,
+      "username" : "Jef"
     }
   }
 }
