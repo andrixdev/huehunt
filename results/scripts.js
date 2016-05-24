@@ -325,7 +325,7 @@ UI.steamgraph.listen = function() {
   jQuery('.huehunt-results .content-3').on('click', '.controls-area .tiles > div', function() {
     // Get data value stored in DOM attribute
     var dataValue = jQuery(this).attr('data-value') || 'error';
-    if (dataValue == 'players-all' || dataValue == 'hue-layers-10' || dataValue.indexOf('level') != '-1') return;// Specific handlers
+    if (dataValue == 'players-all' || dataValue == 'hue-layers-20' || dataValue.indexOf('level') != '-1') return;// Specific handlers
     // Figure out which array it's about, i.e. which controls area
     var whichControlsAreaKey = jQuery(this).parents('.controls-area').attr('data-area-type');
     // Toggle .active class and update model
@@ -377,14 +377,14 @@ UI.steamgraph.listen = function() {
 
   // Specific select for all hues by layers
   var hueTilesSel = '.controls-area[data-area-type=hueRanges] .tiles > div';
-  jQuery('.huehunt-results .content-3').on('click', hueTilesSel + '[data-value=hue-layers-10]', function() {
+  jQuery('.huehunt-results .content-3').on('click', hueTilesSel + '[data-value=hue-layers-20]', function() {
 
     if (!jQuery(this).hasClass('active')) {
       jQuery(this).addClass('active');
       // Dectivate all other elements
       jQuery(hueTilesSel).each(function() {
         var tileDataValue = jQuery(this).attr('data-value');
-        if (tileDataValue != 'hue-layers-10') {
+        if (tileDataValue != 'hue-layers-20') {
           // View
           jQuery(this).removeClass('active');
           // Models
@@ -392,14 +392,14 @@ UI.steamgraph.listen = function() {
         }
       });
       // Create and activate layer elements
-      for (var hue = 0; hue <= 350; hue -= (-10)) {
-        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-10)), true);
+      for (var hue = 0; hue <= 340; hue -= (-20)) {
+        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-20)), true);
       }
     } else {
       jQuery(this).removeClass('active');
       // Deactivate created layer elements
-      for (var hue = 0; hue <= 350; hue -= (-10)) {
-        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-10)), false);
+      for (var hue = 0; hue <= 340; hue -= (-20)) {
+        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-20)), false);
       }
     }
 
@@ -451,7 +451,8 @@ UI.steamgraph.update = function(isFirstTime) {
   var x = d3.scale.linear()
       .domain([0, d3.max(layers0.concat(layers0), function(layer) { return d3.max(layer, function(d) {
         // Detects maximal x with non-null learning and adjusts domain max width
-        return (d.y == 0 ? 0 : d.x);
+        // Add 1 to offset 0-based count and another 1 for some space
+        return (d.y == 0 ? 0 : d.x + 2);
       }); })])
       .range([0, width]);
 
