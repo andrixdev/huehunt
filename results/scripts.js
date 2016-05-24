@@ -249,13 +249,13 @@ UI.globalData.processData = function() {
 };
 UI.globalData.updateView = function() {
   // Players
-  jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p').html(players.length);
+  jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p span.inner').html(players.length);
   // Rounds
-  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p').html(rounds.length);
+  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p span.inner').html(rounds.length);
   // Players who reached level 2
-  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p').html(reachedLevel2players.length);
+  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p span.inner').html(reachedLevel2players.length);
   // Players who reached level 4
-  jQuery('.content-1 .tile-container:nth-of-type(4) .data-data p').html(reachedLevel4players.length);
+  jQuery('.content-1 .tile-container:nth-of-type(4) .data-data p span.inner').html(reachedLevel4players.length);
 };
 
 UI.focusData = {};
