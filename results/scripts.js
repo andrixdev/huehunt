@@ -55,7 +55,6 @@ filters.inHueRange = function(rounds, minHue, maxHue) {
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
     // Get username
-    console.log(rounds[i].targetH, minHue, maxHue, isInHueRange(rounds[i].targetH, minHue, maxHue));
     if (isInHueRange(parseInt(rounds[i].targetH), parseInt(minHue), parseInt(maxHue))) {
       outputRounds.push(rounds[i]);
     }
@@ -231,14 +230,31 @@ UI.globalData.updateView = function() {
 
 UI.rankings = {};
 UI.rankings.build = function() {
-  this.processData();
-  this.updateView();
-};
-UI.rankings.processData = function() {
 
-};
-UI.rankings.updateView = function() {
+  // Template for a score div
+  var scoreView = _.template("" +
+      "<div class='score flexrow'>" +
+      "<p class='username'><%= username %></p>" +
+      "<div class='shotcolor' style='background: hsl(<%= targetH %>, <%= targetS %>%, <%= targetL %>%)'></div>" +
+      "<p class='performance'><%= performance %> <span class='points'>points</span></p>");
 
+  // Fill all 4 levels' rankings
+  for (var level = 1; level <= 4; level++) {
+    // Get 10 best scores
+    var bestScores = filters.sortByPerformance(filters.matchLevel(rounds, level)).slice(0, 10);
+    // Create view and append
+    for (var i = 0; i < 10; i++) {
+      var score = bestScores[i];
+      var scoreHTML = scoreView({
+        username: score.username,
+        targetH: score.targetH,
+        targetS: score.targetS,
+        targetL: score.targetL,
+        performance: score.performance
+      });
+      jQuery('.content-2 .tile-container:nth-of-type(' + level + ') .hall-of-fame .scores').append(scoreHTML);
+    }
+  }
 };
 
 UI.steamgraph = {};
