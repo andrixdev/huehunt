@@ -13,22 +13,9 @@ var firebaseRounds,
     reachedLevel2players = [],
     reachedLevel4players = [],
     usernamesSortedByRoundsPlayed = [],
-    focus = {},
     filters = {},
     analysis = {},
-    interaction = {},
     UI = {};
-
-/* Data specific to the current focus */
-focus.player = '184';
-focus.level = 4;
-focus.minHue = 200;
-focus.maxHue = 250;
-focus.rounds = [];
-focus.basePerf = '';
-focus.learning = [];
-focus.overallLearning = '';
-focus.learningPace = '';
 
 filters.formatFirebaseDataset = function(firebaseRounds) {
   // Remove the unnecessary random object names and make an array of objects
@@ -137,9 +124,9 @@ filters.getUniqueUsernamesSortedByRoundsPlayed = function(rounds) {
   });
 };
 
-analysis.getBasePerf = function(rounds) {
+analysis.getBasePerf = function(rounds, minHue, maxHue) {
   var basePerf = 0;
-  var significantPerfCount = Math.floor(1 + (focus.maxHue - focus.minHue) / 30);
+  var significantPerfCount = Math.floor(1 + (maxHue - minHue) / 30);
   // Check if enough perf data
   if (rounds.length < significantPerfCount) {
     basePerf = '/';
@@ -210,22 +197,6 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
   return [learning, overallLearning];
 };
 
-interaction.updateFocusRounds = function(rounds) {
-  focus.rounds = filters.sortByDate(filters.inHueRange(filters.matchLevel(filters.matchUsername(rounds, focus.player), focus.level), focus.minHue, focus.maxHue));
-};
-interaction.updateFocusData = function() {
-  // Focus baseperf
-  focus.basePerf = analysis.getBasePerf(focus.rounds);
-
-  // Focus current learning and overall learning
-  var learnings = analysis.getCurrentLearningAndOverallLearning(focus.rounds, focus.basePerf);
-  focus.learning = learnings[0];
-  focus.overallLearning = learnings[1];
-
-  // Focus learning pace
-  focus.learningPace = focus.overallLearning / focus.rounds.length || '/';
-};
-
 UI.globalData = {};
 UI.globalData.build = function() {
   this.processData();
@@ -258,24 +229,16 @@ UI.globalData.updateView = function() {
   jQuery('.content-1 .tile-container:nth-of-type(4) .data-data p span.inner').html(reachedLevel4players.length);
 };
 
-UI.focusData = {};
-UI.focusData.build = function() {
+UI.rankings = {};
+UI.rankings.build = function() {
   this.processData();
   this.updateView();
 };
-UI.focusData.processData = function() {
-  interaction.updateFocusRounds(rounds);
-  interaction.updateFocusData();
+UI.rankings.processData = function() {
+
 };
-UI.focusData.updateView = function() {
-  // Focus baseperf
-  jQuery('.content-2 .tile-container:nth-of-type(1) .data-data p').html(twoDecimalsOf(focus.basePerf));
-  // Focus learning
-  jQuery('.content-2 .tile-container:nth-of-type(2) .data-data p').html(twoDecimalsOf(focus.learning[focus.learning.length - 1].learning));
-  // Focus overall learning
-  jQuery('.content-2 .tile-container:nth-of-type(3) .data-data p').html(twoDecimalsOf(focus.overallLearning));
-  // Focus learning pace
-  jQuery('.content-2 .tile-container:nth-of-type(4) .data-data p').html(twoDecimalsOf(focus.learningPace));
+UI.rankings.updateView = function() {
+
 };
 
 UI.steamgraph = {};
@@ -536,7 +499,7 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
 
   var focusRounds = filters.matchLevel(filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue), d.level);
 
-  var basePerf = analysis.getBasePerf(focusRounds);
+  var basePerf = analysis.getBasePerf(focusRounds, d.minHue, d.maxHue);
   console.log('focusRounds length for '+d.minHue+ d.maxHue+ d.level+ d.player, focusRounds.length);
   console.log(focusRounds);
   var learnings = analysis.getCurrentLearningAndOverallLearning(focusRounds, basePerf);
@@ -577,11 +540,6 @@ function isInHueRange(inputHue, minHue, maxHue) {
       return true;
     } else return false;
   }
-}
-function isPlayer(inputPlayerName, playerNameToMatch) {
-  if (inputPlayerName == playerNameToMatch) {
-    return true;
-  } else return false;
 }
 function twoDecimalsOf(value) {
   return (typeof(value) == 'string' ? value : Math.floor(parseInt(100 * value)) / 100);
@@ -628,10 +586,9 @@ jQuery(document).ready(function() {
     rounds = filters.formatFirebaseDataset(firebaseRounds);
 
     UI.globalData.build();
-    UI.focusData.build();
+    UI.rankings.build();
     UI.showYourself();
     UI.steamgraph.build();
-
   });
 
 });
