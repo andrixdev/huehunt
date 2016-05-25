@@ -596,7 +596,7 @@ jQuery(document).ready(function() {
 
   // Get the data!
   var myFirebaseRef = new Firebase("https://blistering-torch-4182.firebaseio.com/rounds");
-  myFirebaseRef.on("value", function(data) {
+  myFirebaseRef.once("value", function(data) {
     firebaseRounds = data.val();
     // Cleanup data format (from dirty JSON to array of objects)
     rounds = filters.formatFirebaseDataset(firebaseRounds);

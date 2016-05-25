@@ -167,9 +167,6 @@ span.fa {
           color: #181818;
           font-weight: bold;
           text-shadow: rgba(255, 255, 255, 0.5) 0 0.5px 0;
-          span.fa {
-            color: #2A2A2A;
-          }
         }
       }
     }
@@ -264,7 +261,7 @@ span.fa {
         }
         .tiles {
           justify-content: center;
-          max-height: 200px;
+          max-height: 150px;
           overflow-y: auto;
           & > div {
             margin: 3px;
@@ -354,6 +351,19 @@ span.fa {
         border-radius: 2px;
         width: 100%;
         min-height: 50%;
+        position: relative;
+        .axis {
+          position: absolute;
+          font-size: 30px;
+          font-weight: bold;
+          bottom: 3%;
+          &:nth-of-type(1) {
+            left: 35%;
+          }
+          &:nth-of-type(2) {
+            left: 48%;
+          }
+        }
       }
     }
   }
