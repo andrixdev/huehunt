@@ -125,7 +125,8 @@ filters.getUniqueUsernamesSortedByRoundsPlayed = function(rounds) {
 
 analysis.getBasePerf = function(rounds, minHue, maxHue) {
   var basePerf = 0;
-  var significantPerfCount = Math.floor(1 + (maxHue - minHue) / 30);
+  // Make sure minHue is always smaller than maxHue, to be sure. Put negative values in minHue if needed.
+  var significantPerfCount = Math.floor(1 + absoluteHueDistanceBetween(minHue, maxHue) / 30);
   // Check if enough perf data
   if (rounds.length < significantPerfCount) {
     basePerf = '/';
@@ -143,7 +144,6 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
       overallLearning = 0;
   var learningRoundScope = 3; // the last 3 rounds and the 3 before
   var roundsNumber = rounds.length;
-  console.log('roundsNumber', roundsNumber);
 
   if (roundsNumber < 2 * learningRoundScope || typeof(basePerf) == 'string') {
     // Not enough data. We choose to render it as it zero.
@@ -194,6 +194,52 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
   }*/
 
   return [learning, overallLearning];
+};
+analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
+  // HLC (Hue Learning Curve) is an array of objects containing a hue, a learning value, and the number of contributions to the average learning
+  // The learning corresponds to the average learning for all players, within a hue subset centered in 'centralHue' and of a 'subsetHueRange' range
+  // The HLC array has 360 elements, and index is equal to hue
+
+  var HLC = [];
+
+  // Initialize HLC
+  _(_.range(360)).each(function(centralHue, i) {
+    HLC.push({h: i, l: 0, contributors: 0});
+  });
+
+  // Loop on all hues
+  _(_.range(360)).each(function(centralHue, i) {
+    var minHue = centralHue - subsetHueRange / 2;
+    var maxHue = centralHue + subsetHueRange / 2;
+    console.log('Hue subset ', minHue, centralHue, maxHue);
+    var hueSubset = filters.inHueRange(rounds, minHue, maxHue);
+    
+    // Loop on (nearly) all players
+    _(reachedLevel2players).each(function(p) {
+      // Get the overall learning for the given hue range by summing up all learnings
+      var focus = filters.matchUsername(hueSubset, p);
+      var basePerf = analysis.getBasePerf(rounds, minHue, maxHue);
+      var learning = analysis.getCurrentLearningAndOverallLearning(focus, basePerf)[0];
+      var totalSubsetLearning = 0;
+      _(learning).each(function(d) {
+        totalSubsetLearning += parseFloat(d.learning);
+      });
+      // If there's something, add it!
+      if (totalSubsetLearning > 0) {
+        var currentHueObject = HLC[i];
+        currentHueObject.contributors++;
+        currentHueObject.l += totalSubsetLearning;
+      }
+    });
+
+  });
+
+  // Now average all learnings with their contributors count, 'cause so far it's just a sum
+  _(HLC).each(function(d) {
+    d.l /= (d.contributors > 0 ? d.contributors : 1);
+  });
+
+  return HLC;
 };
 
 UI.globalData = {};
@@ -454,7 +500,7 @@ UI.steamgraph.update = function(isFirstTime) {
   // Transition
   var paths = svg.selectAll("path")
     // layers is bound to a playername, otherwise exit() just removes the last added path rather than the
-  // one corresponding to the deselected player. Same for color, and level so we concatenate into a unique ID
+    // one corresponding to the deselected player. Same for color, and level so we concatenate into a unique ID
     .data(layers0, function(d) { return d[0].player + '_' + d[0].color + '_' + d[0].level; });
 
   paths.transition()
@@ -537,6 +583,31 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
   return steamGraphCoordinates;
 };
 
+UI.hueLearningCurve = {};
+UI.hueLearningCurve.HLC = [];
+UI.hueLearningCurve.processData = function() {
+  this.HLC = analysis.getHueLearningCurve(rounds, 60);
+};
+UI.hueLearningCurve.build = function() {
+  var width = jQuery('.huehunt-results').width() * 0.8,
+      height = jQuery('.huehunt-results').height() * 0.75;
+
+  d3.select('.HLC').append('svg').attr("width", width).attr("height", height);
+
+  var x = d3.scale.ordinal()
+      .domain(d3.range(0, 360))
+      .rangeBands([0, width], 0.2, 0);
+
+  var yS = d3.scale.linear()
+      .domain([0, d3.max(bars)])
+      .range([0, height]);
+
+  var colorScale = d3.scale.linear()
+      .domain([0, d3.max(bars) / 3, d3.max(bars) / 2, d3.max(bars)])
+      .range(['green', 'yellow', 'orange', 'red']);
+
+  // http://codepen.io/darrengriffith/pen/RPwrxp
+};
 UI.showYourself = function() {
   jQuery('.huehunt-results').removeClass('loading');
   // Show first tab content
@@ -559,6 +630,10 @@ function isInHueRange(inputHue, minHue, maxHue) {
 }
 function twoDecimalsOf(value) {
   return (typeof(value) == 'string' ? value : Math.floor(parseInt(100 * value)) / 100);
+}
+function absoluteHueDistanceBetween(minHue, maxHue) {
+  // Note: doesn't work if the difference is too big
+  return Math.min(Math.abs(maxHue - minHue), Math.abs(minHue - maxHue), Math.abs(maxHue - minHue - 360));
 }
 
 // DOM listeners
@@ -605,6 +680,7 @@ jQuery(document).ready(function() {
     UI.rankings.build();
     UI.showYourself();
     UI.steamgraph.build();
+    UI.hueLearningCurve.processData();
   });
 
 });
