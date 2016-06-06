@@ -199,19 +199,17 @@ analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
   // HLC (Hue Learning Curve) is an array of objects containing a hue, a learning value, and the number of contributions to the average learning
   // The learning corresponds to the average learning for all players, within a hue subset centered in 'centralHue' and of a 'subsetHueRange' range
   // The HLC array has 360 elements, and index is equal to hue
-
   var HLC = [];
 
   // Initialize HLC
-  _(_.range(360)).each(function(centralHue, i) {
+  _(_.range(361)).each(function(d, i) {
     HLC.push({h: i, l: 0, contributors: 0});
   });
 
   // Loop on all hues
-  _(_.range(360)).each(function(centralHue, i) {
+  _(_.range(361)).each(function(centralHue, i) {
     var minHue = centralHue - subsetHueRange / 2;
     var maxHue = centralHue + subsetHueRange / 2;
-    console.log('Hue subset ', minHue, centralHue, maxHue);
     var hueSubset = filters.inHueRange(rounds, minHue, maxHue);
     
     // Loop on (nearly) all players
@@ -240,6 +238,23 @@ analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
   });
 
   return HLC;
+};
+analysis.smoothHueLearningCurve = function(HLC) {
+  var newHLC = [];
+
+  _(_.range(361)).each(function(d, i) {
+    var smoothLearning = 0;
+    var indexes = [(360 + i - 2) % 360, (360 + i - 1) % 360, ((360 + i) % 360) , (360 + i + 1) % 360, (360 + i + 2) % 360];
+
+    _(indexes).each(function(d) {
+      smoothLearning -= -HLC[d].l;
+    });
+    smoothLearning /= indexes.length;
+
+    newHLC.push({h: i, l: smoothLearning, contributors: HLC[i].contributors});
+  });
+
+  return newHLC;
 };
 
 UI.globalData = {};
@@ -588,26 +603,89 @@ UI.hueLearningCurve.HLC = [];
 UI.hueLearningCurve.processData = function() {
   this.HLC = analysis.getHueLearningCurve(rounds, 60);
 };
-UI.hueLearningCurve.build = function() {
+UI.hueLearningCurve.update = function() {
   var width = jQuery('.huehunt-results').width() * 0.8,
-      height = jQuery('.huehunt-results').height() * 0.75;
+      height = jQuery('.huehunt-results').height();
 
-  d3.select('.HLC').append('svg').attr("width", width).attr("height", height);
+  d3.select('.hlc svg').attr("width", width).attr("height", height);
 
   var x = d3.scale.ordinal()
-      .domain(d3.range(0, 360))
-      .rangeBands([0, width], 0.2, 0);
+      .domain(d3.range(0, 361))
+      .rangeBands([0.05 * width, 0.95 * width], 0.15, 0);
 
-  var yS = d3.scale.linear()
-      .domain([0, d3.max(bars)])
-      .range([0, height]);
+  var y = d3.scale.linear()
+      .domain([0, d3.max(this.HLC, function(d, i) {
+        return d.l;
+      })])
+      .range([0.05 * height, 0.95 * height]);
 
-  var colorScale = d3.scale.linear()
-      .domain([0, d3.max(bars) / 3, d3.max(bars) / 2, d3.max(bars)])
-      .range(['green', 'yellow', 'orange', 'red']);
+  // Draw the bar chart
+  var bars = d3.select('.hlc svg g.graph')
+      .selectAll('rect').data(analysis.smoothHueLearningCurve(this.HLC));
 
-  // http://codepen.io/darrengriffith/pen/RPwrxp
+  bars.enter()
+      .append('rect')
+      .style('fill', function(d, i) {
+        return 'hsl(' + i + ', 60%, 50%)';
+      })
+      .attr('width', x.rangeBand())
+      .attr('x', function(d, i) {
+        return x(i);
+      });
+
+  bars.transition().duration(500)
+      .attr('height', function(d, i) {
+        return y(d.l);
+      })
+      .attr('y', function(d, i) {
+        return 0.95 * height - y(d.l);
+      });
+
+  // And the horizontal axis
+  var hAxis = d3.svg.axis()
+      .scale(x)
+      .orient('bottom')
+      .tickValues(x.domain().filter(function(d, i) {
+        return !(i % 30);
+      }))
+      .tickFormat(function(d) {
+        return d + '°';
+      });
+
+  var hGuide = d3.select('.hlc svg g.axis');
+
+  hAxis(hGuide);
+
+  hGuide.attr('transform', 'translate(' + 0 + ', ' + (0.95 * height + 0) + ')')
+      .attr('font-family','Lucida Console')
+      .attr('font-size', '20');
+
+  hGuide.selectAll('path')
+      .style('fill', 'none')
+      .style('stroke', '#FFF');
+  hGuide.selectAll('line')
+      .style('stroke', '#FFF');
+  hGuide.selectAll('text')
+      .style('stroke', '#FFF');
+
+  // Inspired of http://codepen.io/darrengriffith/pen/RPwrxp
 };
+UI.hueLearningCurve.build = function() {
+  UI.hueLearningCurve.processData();
+  UI.hueLearningCurve.update();
+  UI.hueLearningCurve.listen();
+};
+UI.hueLearningCurve.listen = function() {
+  /*
+  var i = 10;
+  setInterval(function() {
+    UI.hueLearningCurve.HLC = analysis.getHueLearningCurve(rounds, i);
+    UI.hueLearningCurve.update();
+    i++;
+  }, 1000);
+  */
+};
+
 UI.showYourself = function() {
   jQuery('.huehunt-results').removeClass('loading');
   // Show first tab content
@@ -617,16 +695,23 @@ UI.showYourself = function() {
 
 /* Data processing functions */
 function isInHueRange(inputHue, minHue, maxHue) {
-  // Only accept positive values between 0 and 360
-  if (minHue < maxHue) {
-    if (inputHue >= minHue && inputHue <= maxHue) {
-      return true;
-    } else return false;
-  } else {
-    if (inputHue >= minHue || inputHue <= maxHue) {
-      return true;
-    } else return false;
+  var result = false;
+  // Try several values
+  for (var hueMod = -720; hueMod <= 720; hueMod += 360) {
+    var h = inputHue + parseInt(hueMod);
+
+    if (minHue < maxHue) {
+      if (h >= minHue && h <= maxHue) {
+        result = true;
+      }
+    } else {
+      if (h >= minHue || h <= maxHue) {
+        result = true;
+      }
+    }
   }
+
+  return result;
 }
 function twoDecimalsOf(value) {
   return (typeof(value) == 'string' ? value : Math.floor(parseInt(100 * value)) / 100);
@@ -680,7 +765,8 @@ jQuery(document).ready(function() {
     UI.rankings.build();
     UI.showYourself();
     UI.steamgraph.build();
-    UI.hueLearningCurve.processData();
+    UI.hueLearningCurve.build();
+
   });
 
 });
