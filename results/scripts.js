@@ -588,12 +588,9 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
   var focusRounds = filters.matchLevel(filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue), d.level);
 
   var basePerf = analysis.getBasePerf(focusRounds, d.minHue, d.maxHue);
-  console.log('focusRounds length for '+d.minHue+ d.maxHue+ d.level+ d.player, focusRounds.length);
-  console.log(focusRounds);
   var learnings = analysis.getCurrentLearningAndOverallLearning(focusRounds, basePerf);
   var learning = learnings[0];
 
-  console.log(basePerf, learning);
   // Players have different numbers of rounds played, we must fill the data gap
   // The learning.round attribute turns out to be neglected :o
   var steamGraphCoordinates = d3.range(100).map(function(datah, i) {
@@ -631,6 +628,11 @@ UI.steamgraph.fakenames = [
 
 UI.hueLearningCurve = {};
 UI.hueLearningCurve.HLC = [];
+UI.hueLearningCurve.build = function() {
+  UI.hueLearningCurve.processData();
+  UI.hueLearningCurve.update(UI.hueLearningCurve.rangeValue);
+  UI.hueLearningCurve.listen();
+};
 UI.hueLearningCurve.processData = function() {
   this.HLC = analysis.getHueLearningCurve(rounds, UI.hueLearningCurve.rangeValue);
 };
@@ -642,25 +644,30 @@ UI.hueLearningCurve.update = function(subsetHueRange) {
   jQuery('.content-4 .hlc .controls .range input').val(subsetHueRange);
   jQuery('.content-4 .hlc .controls .range p.value-insight').html(subsetHueRange + '°');
 
-  // Generate graph
+  // Draw HLC
+  UI.hueLearningCurve.drawHLC(UI.hueLearningCurve.HLC);
+};
+UI.hueLearningCurve.drawHLC = function(HLC) {
+  // Graph dimensions
   var width = jQuery('.huehunt-results').width() * 0.8,
       height = jQuery('.huehunt-results').height() - 180;
 
   d3.select('.hlc svg').attr("width", width).attr("height", height);
 
+  // Scales
   var x = d3.scale.ordinal()
       .domain(d3.range(0, 361))
       .rangeBands([0.05 * width, 0.95 * width], 0.15, 0);
 
   var y = d3.scale.linear()
-      .domain([0, d3.max(this.HLC, function(d, i) {
+      .domain([0, d3.max(HLC, function(d, i) {
         return d.l;
       })])
       .range([0.05 * height, 0.95 * height]);
 
   // Draw the bar chart
   var bars = d3.select('.hlc svg g.graph')
-      .selectAll('rect').data(analysis.smoothHueLearningCurve(this.HLC));
+      .selectAll('rect').data(HLC);
 
   bars.enter()
       .append('rect')
@@ -709,11 +716,6 @@ UI.hueLearningCurve.update = function(subsetHueRange) {
 
   // Inspired of http://codepen.io/darrengriffith/pen/RPwrxp
 };
-UI.hueLearningCurve.build = function() {
-  UI.hueLearningCurve.processData();
-  UI.hueLearningCurve.update(UI.hueLearningCurve.rangeValue);
-  UI.hueLearningCurve.listen();
-};
 UI.hueLearningCurve.listen = function() {
   // Range input listener
   jQuery('.content-4 .hlc .controls .range input').on('change', function() {
@@ -759,6 +761,43 @@ UI.hueLearningCurve.animationOff = function() {
   UI.hueLearningCurve.update(UI.hueLearningCurve.rangeValue);
 };
 UI.hueLearningCurve.rangeValue = 60;
+UI.hueLearningCurve.megaHLC = [];
+UI.hueLearningCurve.generateMegaHLC = function(smoothingDegree) {
+  // This calculation averages ALL the HLC with Subset Hue Ranges from 10° to 80°
+  // OMG it takes so much time we have to space out all calculation steps
+  var megaHLC = [];
+  for (var i = 0; i < 361; i++) {
+    megaHLC.push({h: i, l: 0, contributors: 0});
+  }
+
+  // Global loading
+  jQuery('.huehunt-results').addClass('loading');
+
+  // This will last 90 seconds
+  for (var SHR = 10; SHR < 80; SHR++) {
+    (function(j) {
+      setTimeout(function() {
+        var HLC = analysis.getHueLearningCurve(rounds, j);
+        for (var i = 0; i < 361; i++) {
+          megaHLC[i].l += HLC[i].l;
+        }
+      }, 1000 * (SHR - 10));
+    })(SHR);
+  }
+  // This has to be launched after 80 seconds + extra lag
+  setTimeout(function() {
+    // Several smoothing moments maybe?
+    for (var i = 0; i < smoothingDegree; i++) {
+      megaHLC = analysis.smoothHueLearningCurve(megaHLC);
+    }
+    UI.hueLearningCurve.megaHLC = megaHLC;// For future use
+    UI.hueLearningCurve.drawHLC(megaHLC);
+
+    // Undo global loading
+    jQuery('.huehunt-results').removeClass('loading');
+  }, 1000 * 100);
+
+};
 
 UI.showYourself = function() {
   jQuery('.huehunt-results').removeClass('loading');
