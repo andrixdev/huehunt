@@ -346,8 +346,9 @@ UI.steamgraph.shape = function() {
   // Initial call to build permanent elements
 
   // Generate select tags' names
-  _.each(usernamesSortedByRoundsPlayed, function(element) {
-    var playerSelect = "<div data-value='" + element.username + "'>" + element.username + "</div>";
+  _.each(usernamesSortedByRoundsPlayed, function(d, i) {
+    var fakeName = UI.steamgraph.fakenames[i];
+    var playerSelect = "<div data-value='" + d.username + "' data-fakename='" + fakeName + "'>" + fakeName + "</div>";
     jQuery('.content-3 .controls-area[data-area-type=players] .tiles').append(playerSelect);
   });
   // Add .active classes to preselected players
@@ -359,9 +360,7 @@ UI.steamgraph.shape = function() {
 
 };
 UI.steamgraph.listen = function() {
-  // Controller for Streamgraph selection tiles
-
-  // Default behavior
+  // Streamgraph selection tiles default behavior
   jQuery('.huehunt-results .content-3').on('click', '.controls-area .tiles > div', function() {
     // Get data value stored in DOM attribute
     var dataValue = jQuery(this).attr('data-value') || 'error';
@@ -470,6 +469,18 @@ UI.steamgraph.listen = function() {
     }
 
     UI.steamgraph.update(false);
+  });
+
+  // Onkeyup deanonymization (S key)
+  jQuery(window).on('keyup', function(event) {
+    if (event.which == 83) {
+      jQuery('.huehunt-results .content-3 .controls-area[data-area-type=players] .tiles > div').each(function() {
+        var dataValue = jQuery(this).attr('data-value') || 'error';
+        if (dataValue != 'players-all') {
+          jQuery(this).html(jQuery(this).attr('data-value'));
+        }
+      });
+    }
   });
 
 };
@@ -597,6 +608,26 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
 
   return steamGraphCoordinates;
 };
+UI.steamgraph.fakenames = [
+  'Abbott', 'Abergavenny', 'Abhorson', 'Achilles', 'Aediles', 'Aegeon',
+  'Aeneas', 'Agamemnon', 'Ajax', 'Alarbus', 'Alcibiades', 'Alexas', 'Amiens',
+  'Aguecheek', 'Andromache', 'Andronicus', 'Angelica', 'Angus', 'Antenor',
+  'Antigonus', 'Antiochus', 'Antipholus', 'Apemantus', 'Archidamus', 'Arcite',
+  'Arragon', 'Artemidorus', 'Arviragus', 'Aumerle', 'Autolycus',
+  'Balthasar', 'Banquo', 'Bardolph', 'Bassanio', 'Belarius', 'Berowne',
+  'Bertram', 'Biondello', 'Bolingbroke', 'Boult', 'Boyet', 'Brackenbury',
+  'Bromodideuterio', 'Bullcalf', 'Burgundy', 'Bushy',
+  'Cawdal', 'Caius', 'Calchas', 'Caliban', 'Calphurnia', 'Camillo', 'Canidius',
+  'Caphis', 'Capulet', 'Catesby', 'Caithness', 'Cinna', 'Clarence', 'Claudio',
+  'Cleomines', 'Cleon', 'Cleopatra', 'Clifford', 'Cloten', 'Cobweb',
+  'Cominius', 'Conrade', 'Constance', 'Corambis', 'Cordelia', 'Corin', 'Cornelius',
+  'Costard', 'Crab', 'Cressida', 'Cromwell', 'Curan', 'Curio', 'Curtis', 'Cymbeline',
+  'Dardanius', 'Davy', 'Deiphobus', 'Demetrius', 'Dennis', 'Dercetus', 'Desdemona',
+  'Diana', 'Diomedes', 'Dion', 'Dionyza', 'Dogberry', 'Dolabella', 'Dorcas',
+
+  'Lennox', 'Macduff', 'Macbeth',
+  'Ross', 'Duncan', 'Malcolm', 'Donalbain', 'Fleance', 'Siward', 'Seyton', 'Menteith'
+];
 
 UI.hueLearningCurve = {};
 UI.hueLearningCurve.HLC = [];
