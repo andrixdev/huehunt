@@ -635,13 +635,13 @@ UI.hueLearningCurve.update = function(subsetHueRange) {
       .append('rect')
       .style('fill', function(d, i) {
         return 'hsl(' + i + ', 60%, 50%)';
-      })
-      .attr('width', x.rangeBand())
-      .attr('x', function(d, i) {
-        return x(i);
       });
 
   bars.transition().duration(500)
+      .attr('width', x.rangeBand())
+      .attr('x', function(d, i) {
+        return x(i);
+      })
       .attr('height', function(d, i) {
         return y(d.l);
       })
