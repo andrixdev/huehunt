@@ -601,11 +601,11 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
 UI.hueLearningCurve = {};
 UI.hueLearningCurve.HLC = [];
 UI.hueLearningCurve.processData = function() {
-  this.HLC = analysis.getHueLearningCurve(rounds, 60);
+  this.HLC = analysis.getHueLearningCurve(rounds, UI.hueLearningCurve.rangeValue);
 };
 UI.hueLearningCurve.update = function() {
   var width = jQuery('.huehunt-results').width() * 0.8,
-      height = jQuery('.huehunt-results').height();
+      height = jQuery('.huehunt-results').height() * 0.8;
 
   d3.select('.hlc svg').attr("width", width).attr("height", height);
 
@@ -671,20 +671,65 @@ UI.hueLearningCurve.update = function() {
   // Inspired of http://codepen.io/darrengriffith/pen/RPwrxp
 };
 UI.hueLearningCurve.build = function() {
+  // Force initial range input value
+  jQuery('.content-4 .hlc .controls .range input').val(UI.hueLearningCurve.rangeValue);
+
   UI.hueLearningCurve.processData();
   UI.hueLearningCurve.update();
   UI.hueLearningCurve.listen();
 };
 UI.hueLearningCurve.listen = function() {
-  /*
-  var i = 10;
-  setInterval(function() {
-    UI.hueLearningCurve.HLC = analysis.getHueLearningCurve(rounds, i);
+  // Range input listener
+  jQuery('.content-4 .hlc .controls .range input').on('change', function() {
+    var subsetHueRange = jQuery(this).val();
+    // Update indicator
+    jQuery('.content-4 .hlc .controls .range p.value-insight').html(subsetHueRange + '°');
+    // Update graph
+    UI.hueLearningCurve.HLC = analysis.getHueLearningCurve(rounds, subsetHueRange);
     UI.hueLearningCurve.update();
-    i++;
-  }, 1000);
-  */
+    // Save current selection (in case of animation)
+    UI.hueLearningCurve.rangeValue = subsetHueRange;
+  });
+
+  // Animation button listener
+  jQuery('.content-4 .hlc .controls .animate').on('click', function() {
+    if (!jQuery(this).hasClass('active')) {
+      jQuery(this).addClass('active').find('p').html('Stop');
+      jQuery(this).find('span.fa').removeClass('fa-play-circle').addClass('fa-stop-circle');
+      // Start animation
+      var i = 10;
+      UI.hueLearningCurve.animation = setInterval(function() {
+        UI.hueLearningCurve.HLC = analysis.getHueLearningCurve(rounds, i);
+        UI.hueLearningCurve.update();
+        // Force range input value, and indicator
+        jQuery('.content-4 .hlc .controls .range input').val(i);
+        jQuery('.content-4 .hlc .controls .range p.value-insight').html(i + '°');
+
+        i++;
+        if (i > 130) {
+          clearInterval(UI.hueLearningCurve.animation);
+        }
+      }, 1000);
+    } else {
+      jQuery(this).removeClass('active').find('p').html('Animate');
+      jQuery(this).find('span.fa').removeClass('fa-stop-circle').addClass('fa-play-circle');
+      // Stop animation
+      clearInterval(UI.hueLearningCurve.animation);
+
+      // Restore initial graph state
+      var subsetHueRange = UI.hueLearningCurve.rangeValue;
+      // 1 - Update indicator
+      jQuery('.content-4 .hlc .controls .range p.value-insight').html(subsetHueRange + '°');
+      // 2 - Force range input value
+      jQuery('.content-4 .hlc .controls .range input').val(subsetHueRange);
+      // 3 - Update graph
+      UI.hueLearningCurve.HLC = analysis.getHueLearningCurve(rounds, subsetHueRange);
+      UI.hueLearningCurve.update();
+    }
+
+  });
 };
+UI.hueLearningCurve.rangeValue = 60;
 
 UI.showYourself = function() {
   jQuery('.huehunt-results').removeClass('loading');
