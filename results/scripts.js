@@ -26,10 +26,14 @@ filters.formatFirebaseDataset = function(firebaseRounds) {
   }
   return rounds;
 };
-filters.matchUsername = function(rounds, username) {
+filters.matchUsername = function(rounds, username, excludeThisPlayer) {
+  // excludeThisPlayer is true if we want to reject rounds of this player
+  excludeThisPlayer = excludeThisPlayer || false;
   var outputRounds = [];
   for (var i = 0; i < rounds.length; i++) {
-    if (rounds[i].username == username) {
+    var condition = (rounds[i].username == username);
+    condition = (excludeThisPlayer ? !condition : condition);
+    if (condition) {
       outputRounds.push(rounds[i]);
     }
   }
@@ -210,8 +214,9 @@ analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
   _(_.range(361)).each(function(centralHue, i) {
     var minHue = centralHue - subsetHueRange / 2;
     var maxHue = centralHue + subsetHueRange / 2;
+    //var hueSubset = filters.matchUsername(filters.matchUsername(filters.inHueRange(rounds, minHue, maxHue), '184', true), 'Rodrigo Roa Rodríguez', true);
     var hueSubset = filters.inHueRange(rounds, minHue, maxHue);
-    
+
     // Loop on (nearly) all players
     _(reachedLevel2players).each(function(p) {
       // Get the overall learning for the given hue range by summing up all learnings
@@ -318,6 +323,18 @@ UI.rankings.build = function() {
   }
 };
 
+UI.huePerformanceCurve = {};
+UI.huePerformanceCurve.build = function() {
+  UI.huePerformanceCurve.processData();
+  UI.huePerformanceCurve.update();
+};
+UI.huePerformanceCurve.processData = function() {
+
+};
+UI.huePerformanceCurve.update = function() {
+
+};
+
 UI.steamgraph = {};
 UI.steamgraph.selected = {
   // Has initial state for first load
@@ -337,7 +354,6 @@ UI.steamgraph.selected = {
   }
 };
 UI.steamgraph.build = function() {
-  // Draw steam graph
   UI.steamgraph.shape();
   UI.steamgraph.update(true);
   UI.steamgraph.listen();
@@ -637,8 +653,9 @@ UI.hueLearningCurve.processData = function() {
   this.HLC = analysis.getHueLearningCurve(rounds, UI.hueLearningCurve.rangeValue);
 };
 UI.hueLearningCurve.update = function(subsetHueRange) {
-  // Get new HLC
-  UI.hueLearningCurve.HLC = analysis.getHueLearningCurve(rounds, subsetHueRange);
+  // Get new HLC and smooth it a bit
+  var HLC = analysis.getHueLearningCurve(rounds, subsetHueRange);
+  UI.hueLearningCurve.HLC = analysis.smoothHueLearningCurve(HLC);
 
   // Force range input value, and indicator
   jQuery('.content-4 .hlc .controls .range input').val(subsetHueRange);
