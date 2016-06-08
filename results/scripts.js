@@ -91,16 +91,14 @@ filters.getUniqueUsernames = function(rounds) {
   return outputUsernames;
 };
 filters.sortByPerformance = function(rounds) {
-  var sortedRounds = _.sortBy(rounds, function(value) {
+  return _.sortBy(rounds, function(value) {
     // Sort them by ascending performance
-    return parseInt(value.performance);
+    return -parseInt(value.performance);
   });
-  // Put the best performances first
-  return sortedRounds.reverse();
 };
 filters.sortByDate = function(rounds) {
     var sortedRounds = _.sortBy(rounds, function(value) {
-        // Sort them by ascending performance
+        // Sort them by ascending timestamp
         return (value.timestamp ? parseInt(value.timestamp) : false);
     });
     return sortedRounds;
@@ -124,6 +122,12 @@ filters.getUniqueUsernamesSortedByRoundsPlayed = function(rounds) {
   }
   return _.sortBy(outputUsernamesWithRoundsPlayed, function(value) {
     return -value.rounds;
+  });
+};
+filters.sortByLevel = function(rounds) {
+  return _.sortBy(rounds, function(value) {
+    // Sort them by ascending level
+    return parseInt(value.roundLevel);
   });
 };
 
@@ -472,7 +476,6 @@ UI.steamgraph.listen = function() {
         UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-layerHueWidth)), true);
       }
     } else {
-      console.log(UI.steamgraph.selected.hueRanges);
       jQuery(this).removeClass('active');
       removeLayers();
     }
@@ -620,7 +623,7 @@ UI.steamgraph.parseDOMkey = function(keyType, DOMkey) {
 };
 UI.steamgraph.getSteamgraphLayers = function(d) {
 
-  var focusRounds = filters.matchLevel(filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue), d.level);
+  var focusRounds = filters.sortByLevel(filters.matchLevel(filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue), d.level));
 
   var basePerf = analysis.getBasePerf(focusRounds, d.minHue, d.maxHue);
   var learnings = analysis.getCurrentLearningAndOverallLearning(focusRounds, basePerf);
