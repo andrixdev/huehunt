@@ -181,7 +181,7 @@ analysis.getRoundsLearning = function(rounds) {
 
       // Round current learning: do the diff, and make sure it's not negative (0 at worse)
       learning.push({
-        'round': r,
+        'nthRoundPlayed': rounds[r-1].nthRoundPlayed,
         'learning': Math.max(0, mostRecentAveragePerf - previousAveragePerf)
       });
     }
@@ -558,7 +558,7 @@ UI.steamgraph.update = function(isFirstTime) {
 
   var layersParams = this.formatLayersParams(players, hueRanges, levels);
   var stack = d3.layout.stack().offset("wiggle");// Adds the y0 coordinate to objects
-  var layers0 = stack(layersParams.map(function(d, i) { return UI.steamgraph.getSteamgraphLayers(d); }));
+  var layers0 = stack(layersParams.map(function(d) { return UI.steamgraph.getSteamgraphLayers(d); }));
 
   // The graph container (.container-3 is hidden at first so there's no way to get its width)
   // We have to use what's already plotted
@@ -566,16 +566,16 @@ UI.steamgraph.update = function(isFirstTime) {
       height = jQuery('.huehunt-results').height() - 250;
 
   var x = d3.scale.linear()
-      .domain([0, d3.max(layers0.concat(layers0), function(layer) { return d3.max(layer, function(d) {
+      .domain([0, d3.max(layers0, function(layer) { return d3.max(layer, function(d) {
         // Detects maximal x with non-null learning and adjusts domain max width
         // Add 1 to offset 0-based count and another 1 for some space
         return (d.y == 0 ? 0 : d.x + 2);
       }); })])
-      .range([0, width]);
+      .range([40, width - 40]);
 
   var y = d3.scale.linear()
-      .domain([0, d3.max(layers0.concat(layers0), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
-      .range([height, 0]);
+      .domain([0, d3.max(layers0, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
+      .range([height - 100, 10]);
 
   var area = d3.svg.area()
       .x(function(d) { return x(d.x); })
@@ -583,14 +583,14 @@ UI.steamgraph.update = function(isFirstTime) {
       .y1(function(d) { return y(d.y0 + d.y); });
 
 
-  var svg = d3.select(".content-steamgraph .steam-content svg");
+  var graph = d3.select(".content-steamgraph .steam-content svg g.graph");
 
   if (isFirstTime) {
-    svg.attr("width", width).attr("height", height);
+    d3.select(".content-steamgraph .steam-content svg").attr("width", width).attr("height", height);
   }
 
   // Transition
-  var paths = svg.selectAll("path")
+  var paths = graph.selectAll("path")
     // layers is bound to a playername, otherwise exit() just removes the last added path rather than the
     // one corresponding to the deselected player. Same for color, and level so we concatenate into a unique ID
     .data(layers0, function(d) { return d[0].player + '_' + d[0].color + '_' + d[0].level; });
@@ -606,6 +606,34 @@ UI.steamgraph.update = function(isFirstTime) {
       .attr("d", area)
       .style("fill", function(d) { return d[0].color; });
   }, 2000);
+
+  // Add some horizontal axis
+  var hAxis = d3.svg.axis()
+      .scale(x)
+      .orient('bottom')
+      .tickValues(_.range(x.domain()[1] + 1).filter(function(d, i) {
+        return !(i % 10);
+      }))
+      .tickFormat(function(d) {
+        return d;
+      });
+
+  var hGuide = d3.select('.content-steamgraph .steam svg g.axis');
+
+  hAxis(hGuide);
+
+  hGuide.attr('transform', 'translate(' + 0 + ', ' + 0.9 * height + ')')
+      .attr('font-family','Lucida Console')
+      .attr('font-size', '16');
+
+  hGuide.selectAll('path')
+      .style('fill', 'none')
+      .style('stroke', '#FFF');
+  hGuide.selectAll('line')
+      .style('stroke', '#FFF');
+  hGuide.selectAll('text')
+      .style('stroke', '#FFF')
+      .style('fill', '#FFF');
 
 };
 UI.steamgraph.formatLayersParams = function(players, hueRanges, levels) {
@@ -653,20 +681,57 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
   var focusRounds = filters.sortByLevel(filters.matchLevel(filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue), d.level));
   var learning = analysis.getRoundsLearning(focusRounds);
 
-  // Players have different numbers of rounds played, we must fill the data gap
-  var steamGraphCoordinates = d3.range(100).map(function(datah, i) {
-    var color = (d.maxHue - d.minHue <= 180 ? 'hsl(' + (parseInt(d.maxHue) + parseInt(d.minHue)) / 2 + ', 60%, 50%)' : 'hsl(200, 10%, 70%)');
-    return {
+  var color = (d.maxHue - d.minHue <= 180 ? 'hsl(' + (parseInt(d.maxHue) + parseInt(d.minHue)) / 2 + ', 60%, 50%)' : 'hsl(200, 10%, 70%)');
+
+  var layer = [];
+  for (var i = 0; i < UI.steamgraph.maxX; i++) {
+    layer.push({
       x: i,
-      y: (function() {return (learning[i] ? learning[i].learning : 0);})(),
+      y: 0,
       color: color,
       player: d.player,
       level: d.level
-    };
+    });
+  }
+
+  // Players have different numbers of rounds played, we must fill the data gap
+  // Also, the learning array provides very few data, few x values
+  // And only some of them have a positive learning
+  _(learning).each(function(dd) {
+    layer[dd.nthRoundPlayed].y = dd.learning;
   });
 
-  return steamGraphCoordinates;
+  return UI.steamgraph.smoothSteamgraphLayer(UI.steamgraph.smoothSteamgraphLayer(UI.steamgraph.smoothSteamgraphLayer(layer)));
 };
+UI.steamgraph.smoothSteamgraphLayer = function(layer) {
+  var newLayer = [];
+  
+  // Build new layer with smoothed y data
+  for (var i = 0; i < UI.steamgraph.maxX; i++) {
+    var smoothY = 0;
+    var indexes = [i - 2, i - 1, i, i + 1, i + 2];
+
+    var smoothers = 0;
+    _(indexes).each(function(ii) {
+      if (layer[ii]) {
+        smoothY -= -layer[ii].y;
+        smoothers++;
+      }
+    });
+    smoothY /= smoothers;
+
+    newLayer.push({
+      x: i,
+      y: smoothY,
+      color: layer[i].color,
+      player: layer[i].player,
+      level: layer[i].level
+    });
+  }
+
+  return newLayer;
+};
+UI.steamgraph.maxX = 180;
 UI.steamgraph.fakenames = [
   'Abbott', 'Abergavenny', 'Abhorson', 'Achilles', 'Aediles', 'Aegeon',
   'Aeneas', 'Agamemnon', 'Ajax', 'Alarbus', 'Alcibiades', 'Alexas', 'Amiens',
@@ -705,7 +770,7 @@ UI.huePerformanceCurve.drawHPC = function(HPC) {
   var width = jQuery('.huehunt-results').width() * 0.8,
       height = jQuery('.huehunt-results').height();
 
-  d3.select('.hpc svg').attr("width", width).attr("height", height);
+  d3.select('.content-hpc .hpc svg').attr("width", width).attr("height", height);
 
   // Scales
   var x = d3.scale.ordinal()
@@ -719,7 +784,7 @@ UI.huePerformanceCurve.drawHPC = function(HPC) {
       .range([0.05 * height, 0.9 * height]);
 
   // Draw the bar chart
-  var bars = d3.select('.hpc svg g.graph')
+  var bars = d3.select('.content-hpc .hpc svg g.graph')
       .selectAll('rect').data(HPC);
 
   bars.enter()
@@ -751,7 +816,7 @@ UI.huePerformanceCurve.drawHPC = function(HPC) {
         return d + '°';
       });
 
-  var hGuide = d3.select('.hpc svg g.axis');
+  var hGuide = d3.select('.content-hpc .hpc svg g.axis');
 
   hAxis(hGuide);
 
@@ -797,7 +862,7 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
   var width = jQuery('.huehunt-results').width() * 0.8,
       height = jQuery('.huehunt-results').height() - 180;
 
-  d3.select('.hlc svg').attr("width", width).attr("height", height);
+  d3.select('.content-hlc .hlc svg').attr("width", width).attr("height", height);
 
   // Scales
   var x = d3.scale.ordinal()
@@ -811,7 +876,7 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
       .range([0.05 * height, 0.9 * height]);
 
   // Draw the bar chart
-  var bars = d3.select('.hlc svg g.graph')
+  var bars = d3.select('.content-hlc .hlc svg g.graph')
       .selectAll('rect').data(HLC);
 
   bars.enter()
@@ -843,7 +908,7 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
         return d + '°';
       });
 
-  var hGuide = d3.select('.hlc svg g.axis');
+  var hGuide = d3.select('.content-hlc .hlc svg g.axis');
 
   hAxis(hGuide);
 
