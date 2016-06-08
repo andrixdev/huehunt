@@ -627,8 +627,8 @@ UI.steamgraph.formatLayersParams = function(players, hueRanges, levels) {
 
   var layersParams = [];
   var self = this;
-  _.each(players, function(player) {
-    _.each(hueRanges, function(hueDOMkey) {
+  _.each(hueRanges, function(hueDOMkey) {
+    _.each(players, function(player) {
       _.each(levels, function(levelDOMkey) {
         var hueLimits = self.parseDOMkey('hue', hueDOMkey);
         var level = self.parseDOMkey('level', levelDOMkey);
