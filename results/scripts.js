@@ -91,10 +91,10 @@ filters.getUniqueUsernames = function(rounds) {
   return outputUsernames;
 };
 filters.sortByPerformance = function(rounds) {
-  return _.sortBy(rounds, function(value) {
+  return (_.sortBy(rounds, function(value) {
     // Sort them by ascending performance
-    return -parseInt(value.performance);
-  });
+    return parseInt(value.performance);
+  })).reverse();
 };
 filters.sortByDate = function(rounds) {
     var sortedRounds = _.sortBy(rounds, function(value) {
