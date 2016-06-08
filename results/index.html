@@ -17,6 +17,7 @@
         <div class='side-menu'>
 			<p class='tab'><span class="fa fa-tachometer"></span>Global data</p>
 		    <p class='tab'><span class="fa fa-trophy"></span>Rankings</p>
+		    <p class='tab'><span class="fa fa-bar-chart"></span>Hue Performance Curve</p>
 			<p class='tab'><span class="fa fa-area-chart"></span>Steamgraph</p>
 			<p class='tab'><span class="fa fa-bar-chart"></span>Hue Learning Curve</p>
 		</div>
@@ -102,7 +103,16 @@
 				</div>
 			</div>
 
-			<div class='content-3 content-steamgraph'>
+			<div class='content-3 content-hpc'>
+				<div class="hpc">
+					<svg>
+						<g class="graph"></g>
+						<g class="axis"></g>
+					</svg>
+				</div>
+			</div>
+
+			<div class='content-4 content-steamgraph'>
 				<div class="steam">
 					<div class='steam-controls flexrow'>
 						<div class="controls-area" data-area-type="players">
@@ -153,7 +163,7 @@
 				</div>
 			</div>
 
-			<div class='content-4 content-hlc'>
+			<div class='content-5 content-hlc'>
 				<div class="hlc">
 					<div class="controls">
 						<div class="range">

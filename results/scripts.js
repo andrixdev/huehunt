@@ -265,6 +265,61 @@ analysis.smoothHueLearningCurve = function(HLC) {
 
   return newHLC;
 };
+analysis.getHuePerformanceCurve = function(rounds, subsetHueRange) {
+  // HPC (Hue Performance Curve) is an array of objects containing a hue, a performance value, and the number of contributions to the average learning
+  // The performance corresponds to the average performance for all players, within a hue subset centered in 'centralHue' and of a 'subsetHueRange' range
+  // The HPC array has 360 elements, and index is equal to hue
+  var HPC = [];
+
+  // Initialize HPC
+  _(_.range(361)).each(function(d, i) {
+    HPC.push({h: i, p: 0, contributors: 0});
+  });
+
+  // Loop on all hues
+  _(_.range(361)).each(function(centralHue) {
+    var minHue = centralHue - subsetHueRange / 2;
+    var maxHue = centralHue + subsetHueRange / 2;
+    var hueSubset = filters.inHueRange(rounds, minHue, maxHue);
+
+    // Loop on all subset rounds
+    var totalSubsetPerformance = 0;
+    var totalSubsetContributors = 0;
+    _(hueSubset).each(function(r) {
+      // Get the overall performance for the given hue range by summing up all performance
+      totalSubsetContributors++;
+      totalSubsetPerformance -= -r.performance;
+    });
+
+    HPC[centralHue].p -= -totalSubsetPerformance;
+    HPC[centralHue].contributors -= -totalSubsetContributors;
+  });
+
+
+  // Now average all performance with their contributors count, 'cause so far it's just a sum
+  _(HPC).each(function(d) {
+    d.p /= (d.contributors > 0 ? d.contributors : 1);
+  });
+
+  return HPC;
+};
+analysis.smoothHuePerformanceCurve = function(HPC) {
+  var newHPC = [];
+
+  _(_.range(361)).each(function(d, i) {
+    var smoothPerformance = 0;
+    var indexes = [(360 + i - 2) % 360, (360 + i - 1) % 360, ((360 + i) % 360) , (360 + i + 1) % 360, (360 + i + 2) % 360];
+
+    _(indexes).each(function(d) {
+      smoothPerformance -= -HPC[d].p;
+    });
+    smoothPerformance /= indexes.length;
+
+    newHPC.push({h: i, p: smoothPerformance, contributors: HPC[i].contributors});
+  });
+
+  return newHPC;
+};
 
 UI.globalData = {};
 UI.globalData.build = function() {
@@ -325,18 +380,6 @@ UI.rankings.build = function() {
       jQuery('.content-rankings .tile-container:nth-of-type(' + level + ') .hall-of-fame .scores').append(scoreHTML);
     }
   }
-};
-
-UI.huePerformanceCurve = {};
-UI.huePerformanceCurve.build = function() {
-  UI.huePerformanceCurve.processData();
-  UI.huePerformanceCurve.update();
-};
-UI.huePerformanceCurve.processData = function() {
-
-};
-UI.huePerformanceCurve.update = function() {
-
 };
 
 UI.steamgraph = {};
@@ -665,6 +708,88 @@ UI.steamgraph.fakenames = [
   'Ross', 'Duncan', 'Malcolm', 'Donalbain', 'Fleance', 'Siward', 'Seyton', 'Menteith'
 ];
 
+UI.huePerformanceCurve = {};
+UI.huePerformanceCurve.build = function() {
+  UI.huePerformanceCurve.processData();
+  UI.huePerformanceCurve.update();
+};
+UI.huePerformanceCurve.processData = function() {
+  this.HPC = analysis.getHuePerformanceCurve(rounds, 2);
+};
+UI.huePerformanceCurve.update = function() {
+  // Draw HPC
+  UI.huePerformanceCurve.drawHPC(analysis.smoothHuePerformanceCurve(UI.huePerformanceCurve.HPC));
+};
+UI.huePerformanceCurve.drawHPC = function(HPC) {
+  // Graph dimensions
+  var width = jQuery('.huehunt-results').width() * 0.8,
+      height = jQuery('.huehunt-results').height();
+
+  d3.select('.hpc svg').attr("width", width).attr("height", height);
+
+  // Scales
+  var x = d3.scale.ordinal()
+      .domain(d3.range(0, 361))
+      .rangeBands([0.05 * width, 0.95 * width], 0.15, 0);
+
+  var y = d3.scale.linear()
+      .domain([0, d3.max(HPC, function(d, i) {
+        return d.p;
+      })])
+      .range([0.05 * height, 0.9 * height]);
+
+  // Draw the bar chart
+  var bars = d3.select('.hpc svg g.graph')
+      .selectAll('rect').data(HPC);
+
+  bars.enter()
+      .append('rect')
+      .style('fill', function(d, i) {
+        return 'hsl(' + i + ', 60%, 50%)';
+      });
+
+  bars.transition().duration(500)
+      .attr('width', x.rangeBand())
+      .attr('x', function(d, i) {
+        return x(i);
+      })
+      .attr('height', function(d, i) {
+        return y(d.p);
+      })
+      .attr('y', function(d, i) {
+        return 0.95 * height - y(d.p);
+      });
+
+  // And the horizontal axis
+  var hAxis = d3.svg.axis()
+      .scale(x)
+      .orient('bottom')
+      .tickValues(x.domain().filter(function(d, i) {
+        return !(i % 30);
+      }))
+      .tickFormat(function(d) {
+        return d + '°';
+      });
+
+  var hGuide = d3.select('.hpc svg g.axis');
+
+  hAxis(hGuide);
+
+  hGuide.attr('transform', 'translate(' + 0 + ', ' + 0.95 * height + ')')
+      .attr('font-family','Lucida Console')
+      .attr('font-size', '20');
+
+  hGuide.selectAll('path')
+      .style('fill', 'none')
+      .style('stroke', '#FFF');
+  hGuide.selectAll('line')
+      .style('stroke', '#FFF');
+  hGuide.selectAll('text')
+      .style('stroke', '#FFF');
+
+  // Inspired of http://codepen.io/darrengriffith/pen/RPwrxp
+};
+
 UI.hueLearningCurve = {};
 UI.hueLearningCurve.HLC = [];
 UI.hueLearningCurve.build = function() {
@@ -703,7 +828,7 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
       .domain([0, d3.max(HLC, function(d, i) {
         return d.l;
       })])
-      .range([0.05 * height, 0.95 * height]);
+      .range([0.05 * height, 0.9 * height]);
 
   // Draw the bar chart
   var bars = d3.select('.hlc svg g.graph')
@@ -918,6 +1043,7 @@ jQuery(document).ready(function() {
     UI.rankings.build();
     UI.showYourself();
     UI.steamgraph.build();
+    UI.huePerformanceCurve.build();
     UI.hueLearningCurve.build();
 
   });
