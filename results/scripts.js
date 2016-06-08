@@ -131,32 +131,14 @@ filters.sortByLevel = function(rounds) {
   });
 };
 
-analysis.getBasePerf = function(rounds, minHue, maxHue) {
-  var basePerf = 0;
-  // Make sure minHue is always smaller than maxHue, to be sure. Put negative values in minHue if needed.
-  var significantPerfCount = Math.floor(1 + absoluteHueDistanceBetween(minHue, maxHue) / 30);
-  // Check if enough perf data
-  if (rounds.length < significantPerfCount) {
-    basePerf = '/';
-  } else {
-    // OK, let's get the first perfs and average them
-    for (var i = 0; i < significantPerfCount; i++) {
-      basePerf += parseFloat(rounds[i].performance);
-    }
-    basePerf /= significantPerfCount;
-  }
-  return basePerf;
-};
-analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
-  var learning = [],
-      overallLearning = 0;
+analysis.getRoundsLearning = function(rounds) {
+  var learning = [];
   var learningRoundScope = 3; // the last 3 rounds and the 3 before
   var roundsNumber = rounds.length;
 
-  if (roundsNumber < 2 * learningRoundScope || typeof(basePerf) == 'string') {
+  if (roundsNumber < 2 * learningRoundScope) {
     // Not enough data. We choose to render it as it zero.
     learning = 0;
-    overallLearning = 0;
   } else {
     // For each round on the way (starting from 6th round, when enough data)
     for (var r = 2 * learningRoundScope; r <= roundsNumber; r++) {
@@ -171,8 +153,8 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
 
       // Then get previous average perf
       var previousAveragePerf = 0;
-      for (var i = 0; i < learningRoundScope; i++) {
-        var roundPerf = rounds[r - 1 - learningRoundScope - i].performance;
+      for (var j = 0; j < learningRoundScope; j++) {
+        var roundPerf = rounds[r - 1 - learningRoundScope - j].performance;
         previousAveragePerf += parseFloat(roundPerf);
       }
       previousAveragePerf /= learningRoundScope;
@@ -182,26 +164,10 @@ analysis.getCurrentLearningAndOverallLearning = function(rounds, basePerf) {
         'round': r,
         'learning': Math.max(0, mostRecentAveragePerf - previousAveragePerf)
       });
-
-      // Update overall learning: diff with basePerf (in the loop because more convenient)
-      overallLearning = Math.max(0, mostRecentAveragePerf - basePerf);
     }
   }
 
-  // Some data formatting on learning:
-  // chop down to 100 elements if bigger, fill my dummy data if smaller
-/*
-  var learningLength = learning.length;
-  if (learningLength >= 100) {
-    learning = learning.slice(0, 100);
-  } else {
-    var howManyToAdd = 100 - learningLength;
-    for (var i = 0; i < howManyToAdd; i++) {
-      learning.push('/zfzefzefzef');
-    }
-  }*/
-
-  return [learning, overallLearning];
+  return learning;
 };
 analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
   // HLC (Hue Learning Curve) is an array of objects containing a hue, a learning value, and the number of contributions to the average learning
@@ -225,8 +191,7 @@ analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
     _(reachedLevel2players).each(function(p) {
       // Get the overall learning for the given hue range by summing up all learnings
       var focus = filters.matchUsername(hueSubset, p);
-      var basePerf = analysis.getBasePerf(rounds, minHue, maxHue);
-      var learning = analysis.getCurrentLearningAndOverallLearning(focus, basePerf)[0];
+      var learning = analysis.getRoundsLearning(focus);
       var totalSubsetLearning = 0;
       _(learning).each(function(d) {
         totalSubsetLearning += parseFloat(d.learning);
@@ -665,15 +630,10 @@ UI.steamgraph.parseDOMkey = function(keyType, DOMkey) {
   }
 };
 UI.steamgraph.getSteamgraphLayers = function(d) {
-
   var focusRounds = filters.sortByLevel(filters.matchLevel(filters.inHueRange(filters.matchUsername(rounds, d.player), d.minHue, d.maxHue), d.level));
-
-  var basePerf = analysis.getBasePerf(focusRounds, d.minHue, d.maxHue);
-  var learnings = analysis.getCurrentLearningAndOverallLearning(focusRounds, basePerf);
-  var learning = learnings[0];
+  var learning = analysis.getRoundsLearning(focusRounds);
 
   // Players have different numbers of rounds played, we must fill the data gap
-  // The learning.round attribute turns out to be neglected :o
   var steamGraphCoordinates = d3.range(100).map(function(datah, i) {
     var color = (d.maxHue - d.minHue <= 180 ? 'hsl(' + (parseInt(d.maxHue) + parseInt(d.minHue)) / 2 + ', 60%, 50%)' : 'hsl(200, 10%, 70%)');
     return {
