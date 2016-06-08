@@ -19,11 +19,31 @@ var firebaseRounds,
 
 filters.formatFirebaseDataset = function(firebaseRounds) {
   // Remove the unnecessary random object names and make an array of objects
-  var rounds = [];
+  var rawRounds = [];
   for (var prop in firebaseRounds) {
     // Add round to array
-    rounds.push(firebaseRounds[prop]);
+    rawRounds.push(firebaseRounds[prop]);
   }
+  return rawRounds;
+};
+filters.enrichRoundsDataset = function(rawRounds) {
+  // How many rounds has the user already played when playing this round?
+  var rounds = [];
+  var players = filters.getUniqueUsernames(rawRounds);
+  _(players).each(function(p) {
+    // Sort by date (just in case but useless atm) and THEN sort by level for a clean stacking up
+    var focusRounds = filters.sortByLevel(filters.sortByDate(filters.matchUsername(rawRounds, p)));
+    // Add some more information about round position
+    var enrichedRounds = _(focusRounds).map(function(d, i) {
+      d.nthRoundPlayed = i + 1;
+      return d;
+    });
+    // Add them to the lot
+    _(enrichedRounds).each(function(d) {
+      rounds.push(d);
+    });
+  });
+
   return rounds;
 };
 filters.matchUsername = function(rounds, username, excludeThisPlayer) {
@@ -997,7 +1017,7 @@ jQuery(document).ready(function() {
   myFirebaseRef.once("value", function(data) {
     firebaseRounds = data.val();
     // Cleanup data format (from dirty JSON to array of objects)
-    rounds = filters.formatFirebaseDataset(firebaseRounds);
+    rounds = filters.enrichRoundsDataset(filters.formatFirebaseDataset(firebaseRounds));
 
     UI.globalData.build();
     UI.rankings.build();
