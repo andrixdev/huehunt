@@ -549,12 +549,12 @@ UI.steamgraph.update = function(isFirstTime) {
       .duration(2000)
       .attr("d", area);
 
-  paths.exit().style("fill", function(d) { return 'hsl(' + d[0].color + ', 60%, 50%)'; }).remove();
+  paths.exit().style("fill", function(d) { return d[0].color; }).remove();
 
   setTimeout(function() {
     paths.enter().append("path")
       .attr("d", area)
-      .style("fill", function(d) { return 'hsl(' + d[0].color + ', 60%, 50%)'; });
+      .style("fill", function(d) { return d[0].color; });
   }, 2000);
 
 };
@@ -610,10 +610,11 @@ UI.steamgraph.getSteamgraphLayers = function(d) {
   // Players have different numbers of rounds played, we must fill the data gap
   // The learning.round attribute turns out to be neglected :o
   var steamGraphCoordinates = d3.range(100).map(function(datah, i) {
+    var color = (d.maxHue - d.minHue <= 180 ? 'hsl(' + (parseInt(d.maxHue) + parseInt(d.minHue)) / 2 + ', 60%, 50%)' : 'hsl(200, 10%, 70%)');
     return {
       x: i,
       y: (function() {return (learning[i] ? learning[i].learning : 0);})(),
-      color: (parseInt(d.maxHue) + parseInt(d.minHue)) / 2,
+      color: color,
       player: d.player,
       level: d.level
     };
