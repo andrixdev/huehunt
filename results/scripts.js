@@ -380,7 +380,7 @@ UI.steamgraph.listen = function() {
   jQuery('.huehunt-results .content-3').on('click', '.controls-area .tiles > div', function() {
     // Get data value stored in DOM attribute
     var dataValue = jQuery(this).attr('data-value') || 'error';
-    if (dataValue == 'players-all' || dataValue == 'hue-layers-20' || dataValue.indexOf('level') != '-1') return;// Specific handlers
+    if (dataValue == 'players-all' || dataValue.indexOf('hue-layers-') != -1 || dataValue.indexOf('level') != '-1') return;// Specific handlers
     // Figure out which array it's about, i.e. which controls area
     var whichControlsAreaKey = jQuery(this).parents('.controls-area').attr('data-area-type');
     // Toggle .active class and update model
@@ -397,7 +397,7 @@ UI.steamgraph.listen = function() {
 
   // Specific select for all players
   var playersTilesSel = '.controls-area[data-area-type=players] .tiles > div';
-  jQuery('.huehunt-results .content-3').on('click', playersTilesSel + '[data-value=players-all]', function() {
+  jQuery('.huehunt-results .content-3').on('click', playersTilesSel + '[data-value="players-all"]', function() {
 
     if (!jQuery(this).hasClass('active')) {
       jQuery(this).html('Deselect all');
@@ -432,37 +432,56 @@ UI.steamgraph.listen = function() {
 
   // Specific select for all hues by layers
   var hueTilesSel = '.controls-area[data-area-type=hueRanges] .tiles > div';
-  jQuery('.huehunt-results .content-3').on('click', hueTilesSel + '[data-value=hue-layers-20]', function() {
+  jQuery('.huehunt-results .content-3').on('click', hueTilesSel + '.hue-layer', function() {
+    var layerDataValue = jQuery(this).attr('data-value');
+    // Get just the number (btw, make sure it's a divisor of 360)
+    var layerHueWidth = layerDataValue.slice(11, layerDataValue.length);
+    // I add a small hue offset to hue layers just to avoid conflicts with other ranges without impacting the data too much
+    var offset = Math.floor(layerHueWidth / 20);
+
+    function removeLayers() {
+      // Deactivate created layer elements
+      // Unless the layer is 100° large, the offsets will likely be lower than 10°...
+      // Unselect all hueRanges that are not multiples of 10°! (sooo ugly)
+      _(UI.steamgraph.selected.hueRanges).each(function(d) {
+        var startHue = d.split('-')[1];
+        if (startHue % 10 != 0) {
+          UI.steamgraph.selected.update('hueRanges', d, false);
+        }
+      });
+    }
 
     if (!jQuery(this).hasClass('active')) {
       jQuery(this).addClass('active');
+
       // Dectivate all other elements
       jQuery(hueTilesSel).each(function() {
         var tileDataValue = jQuery(this).attr('data-value');
-        if (tileDataValue != 'hue-layers-20') {
+        if (tileDataValue != layerDataValue) {
           // View
           jQuery(this).removeClass('active');
           // Models
           UI.steamgraph.selected.update('hueRanges', tileDataValue, false);
+          // Special treat for layers (need to remove all their damn ranges)
+          removeLayers();
         }
       });
+
       // Create and activate layer elements
-      for (var hue = 0; hue <= 340; hue -= (-20)) {
-        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-20)), true);
+      for (var hue = offset; hue < 360; hue -= (-layerHueWidth)) {
+        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-layerHueWidth)), true);
       }
     } else {
+      console.log(UI.steamgraph.selected.hueRanges);
       jQuery(this).removeClass('active');
-      // Deactivate created layer elements
-      for (var hue = 0; hue <= 340; hue -= (-20)) {
-        UI.steamgraph.selected.update('hueRanges', 'hue-' + hue + '-' + (hue - (-20)), false);
-      }
+      removeLayers();
     }
 
     UI.steamgraph.update(false);
   });
 
   // Specific selects for levels
-  var levelsTilesSel = '.controls-area[data-area-type=levels] .tiles > div';
+  var levelsTilesSel = '.controls-area[data-area-type="levels"] .tiles > div';
   jQuery('.huehunt-results .content-3').on('click', levelsTilesSel, function() {
 
     var myDataValue = jQuery(this).attr('data-value');
