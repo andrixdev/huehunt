@@ -289,13 +289,13 @@ UI.globalData.processData = function() {
 };
 UI.globalData.updateView = function() {
   // Players
-  jQuery('.content-1 .tile-container:nth-of-type(1) .data-data p span.inner').html(players.length);
+  jQuery('.content-global .tile-container:nth-of-type(1) .data-data p span.inner').html(players.length);
   // Rounds
-  jQuery('.content-1 .tile-container:nth-of-type(2) .data-data p span.inner').html(rounds.length);
+  jQuery('.content-global .tile-container:nth-of-type(2) .data-data p span.inner').html(rounds.length);
   // Players who reached level 2
-  jQuery('.content-1 .tile-container:nth-of-type(3) .data-data p span.inner').html(reachedLevel2players.length);
+  jQuery('.content-global .tile-container:nth-of-type(3) .data-data p span.inner').html(reachedLevel2players.length);
   // Players who reached level 4
-  jQuery('.content-1 .tile-container:nth-of-type(4) .data-data p span.inner').html(reachedLevel4players.length);
+  jQuery('.content-global .tile-container:nth-of-type(4) .data-data p span.inner').html(reachedLevel4players.length);
 };
 
 UI.rankings = {};
@@ -322,7 +322,7 @@ UI.rankings.build = function() {
         targetL: score.targetL,
         performance: score.performance
       });
-      jQuery('.content-2 .tile-container:nth-of-type(' + level + ') .hall-of-fame .scores').append(scoreHTML);
+      jQuery('.content-rankings .tile-container:nth-of-type(' + level + ') .hall-of-fame .scores').append(scoreHTML);
     }
   }
 };
@@ -369,10 +369,10 @@ UI.steamgraph.shape = function() {
   _.each(usernamesSortedByRoundsPlayed, function(d, i) {
     var fakeName = UI.steamgraph.fakenames[i];
     var playerSelect = "<div data-value='" + d.username + "' data-fakename='" + fakeName + "'>" + fakeName + "</div>";
-    jQuery('.content-3 .controls-area[data-area-type=players] .tiles').append(playerSelect);
+    jQuery('.content-steamgraph .controls-area[data-area-type=players] .tiles').append(playerSelect);
   });
   // Add .active classes to preselected players
-  var jPlayers = jQuery('.content-3 .controls-area[data-area-type=players] .tiles');
+  var jPlayers = jQuery('.content-steamgraph .controls-area[data-area-type=players] .tiles');
   jPlayers.find('div[data-value=Chloé]').addClass('active');
   jPlayers.find('div[data-value=thnon]').addClass('active');
   jPlayers.find('div[data-value=Konstantina]').addClass('active');
@@ -381,7 +381,7 @@ UI.steamgraph.shape = function() {
 };
 UI.steamgraph.listen = function() {
   // Streamgraph selection tiles default behavior
-  jQuery('.huehunt-results .content-3').on('click', '.controls-area .tiles > div', function() {
+  jQuery('.content-steamgraph').on('click', '.controls-area .tiles > div', function() {
     // Get data value stored in DOM attribute
     var dataValue = jQuery(this).attr('data-value') || 'error';
     if (dataValue == 'players-all' || dataValue.indexOf('hue-layers-') != -1 || dataValue.indexOf('level') != '-1') return;// Specific handlers
@@ -401,7 +401,7 @@ UI.steamgraph.listen = function() {
 
   // Specific select for all players
   var playersTilesSel = '.controls-area[data-area-type=players] .tiles > div';
-  jQuery('.huehunt-results .content-3').on('click', playersTilesSel + '[data-value="players-all"]', function() {
+  jQuery('.content-steamgraph').on('click', playersTilesSel + '[data-value="players-all"]', function() {
 
     if (!jQuery(this).hasClass('active')) {
       jQuery(this).html('Deselect all');
@@ -436,7 +436,7 @@ UI.steamgraph.listen = function() {
 
   // Specific select for all hues by layers
   var hueTilesSel = '.controls-area[data-area-type=hueRanges] .tiles > div';
-  jQuery('.huehunt-results .content-3').on('click', hueTilesSel + '.hue-layer', function() {
+  jQuery('.content-steamgraph').on('click', hueTilesSel + '.hue-layer', function() {
     var layerDataValue = jQuery(this).attr('data-value');
     // Get just the number (btw, make sure it's a divisor of 360)
     var layerHueWidth = layerDataValue.slice(11, layerDataValue.length);
@@ -485,7 +485,7 @@ UI.steamgraph.listen = function() {
 
   // Specific selects for levels
   var levelsTilesSel = '.controls-area[data-area-type="levels"] .tiles > div';
-  jQuery('.huehunt-results .content-3').on('click', levelsTilesSel, function() {
+  jQuery('.content-steamgraph').on('click', levelsTilesSel, function() {
 
     var myDataValue = jQuery(this).attr('data-value');
     if (!jQuery(this).hasClass('active')) {
@@ -512,7 +512,7 @@ UI.steamgraph.listen = function() {
   // Onkeyup deanonymization (S key)
   jQuery(window).on('keyup', function(event) {
     if (event.which == 83) {
-      jQuery('.huehunt-results .content-3 .controls-area[data-area-type=players] .tiles > div').each(function() {
+      jQuery('.content-steamgraph .controls-area[data-area-type=players] .tiles > div').each(function() {
         var dataValue = jQuery(this).attr('data-value') || 'error';
         if (dataValue != 'players-all') {
           jQuery(this).html(jQuery(this).attr('data-value'));
@@ -555,7 +555,7 @@ UI.steamgraph.update = function(isFirstTime) {
       .y1(function(d) { return y(d.y0 + d.y); });
 
 
-  var svg = d3.select(".huehunt-results .content-3 .steam-content svg");
+  var svg = d3.select(".content-steamgraph .steam-content svg");
 
   if (isFirstTime) {
     svg.attr("width", width).attr("height", height);
@@ -681,8 +681,8 @@ UI.hueLearningCurve.update = function(subsetHueRange) {
   UI.hueLearningCurve.HLC = analysis.smoothHueLearningCurve(HLC);
 
   // Force range input value, and indicator
-  jQuery('.content-4 .hlc .controls .range input').val(subsetHueRange);
-  jQuery('.content-4 .hlc .controls .range p.value-insight').html(subsetHueRange + '°');
+  jQuery('.content-hlc .hlc .controls .range input').val(subsetHueRange);
+  jQuery('.content-hlc .hlc .controls .range p.value-insight').html(subsetHueRange + '°');
 
   // Draw HLC
   UI.hueLearningCurve.drawHLC(UI.hueLearningCurve.HLC);
@@ -758,7 +758,7 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
 };
 UI.hueLearningCurve.listen = function() {
   // Range input listener
-  jQuery('.content-4 .hlc .controls .range input').on('change', function() {
+  jQuery('.content-hlc .hlc .controls .range input').on('change', function() {
     var subsetHueRange = jQuery(this).val();
     // Update graph
     UI.hueLearningCurve.update(subsetHueRange);
@@ -767,7 +767,7 @@ UI.hueLearningCurve.listen = function() {
   });
 
   // Animation button listener
-  jQuery('.content-4 .hlc .controls .animate').on('click', function() {
+  jQuery('.content-hlc .hlc .controls .animate').on('click', function() {
     if (!jQuery(this).hasClass('active')) {
       UI.hueLearningCurve.animationOn();
     } else {
@@ -777,7 +777,7 @@ UI.hueLearningCurve.listen = function() {
   });
 };
 UI.hueLearningCurve.animationOn = function() {
-  var animationDiv = jQuery('.content-4 .hlc .controls .animate');
+  var animationDiv = jQuery('.content-hlc .hlc .controls .animate');
   animationDiv.addClass('active').find('p').html('Stop');
   animationDiv.find('span.fa').removeClass('fa-play-circle').addClass('fa-stop-circle');
   // Start animation
@@ -792,7 +792,7 @@ UI.hueLearningCurve.animationOn = function() {
 
 };
 UI.hueLearningCurve.animationOff = function() {
-  var animationDiv = jQuery('.content-4 .hlc .controls .animate');
+  var animationDiv = jQuery('.content-hlc .hlc .controls .animate');
   animationDiv.removeClass('active').find('p').html('Animate');
   animationDiv.find('span.fa').removeClass('fa-stop-circle').addClass('fa-play-circle');
   // Stop animation
@@ -842,8 +842,8 @@ UI.hueLearningCurve.generateMegaHLC = function(smoothingDegree) {
 UI.showYourself = function() {
   jQuery('.huehunt-results').removeClass('loading');
   // Show first tab content
-  jQuery('.huehunt-results .content .content-1').show();
-  jQuery('.huehunt-results .side-menu p.tab:nth-of-type(1)').addClass('selected');
+  jQuery('.content .content-1').show();
+  jQuery('.side-menu p.tab:nth-of-type(1)').addClass('selected');
 };
 
 /* Data processing functions */
@@ -880,10 +880,10 @@ jQuery(document).ready(function() {
   jQuery('.huehunt-results').on('click', '.side-menu p.tab', function() {
     var tabNumber = 1 + jQuery(this).index('.side-menu p.tab');
     // Show according content
-    jQuery('.huehunt-results .content > div').hide();
-    jQuery('.huehunt-results .content .content-' + tabNumber).show();
+    jQuery('.content > div').hide();
+    jQuery('.content .content-' + tabNumber).show();
     // Highlight clicked tab
-    jQuery('.huehunt-results .side-menu p.tab').removeClass('selected');
+    jQuery('.side-menu p.tab').removeClass('selected');
     jQuery(this).addClass('selected');
   });
 
