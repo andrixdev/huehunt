@@ -69,6 +69,20 @@ p {
     /* Centers child elements */
     justify-content: center;
 }
+.axxxis {
+  /* Axes for graphs, override position at will */
+  /* Some parent should be position: relative; of course */
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  bottom: 14%;
+  &:nth-of-type(1) {
+    left: 4%;
+  }
+  &:nth-of-type(2) {
+    left: 16%;
+  }
+}
 /** Base style **/
 body {
   background: #DDD;
@@ -248,6 +262,19 @@ span.fa {
         }
       }
     }
+    .content-hpc {
+      position: relative;
+      .axxxis {
+        bottom: unset;
+        top: 5%;
+        &:nth-of-type(1) {
+          left: 35%;
+        }
+        &:nth-of-type(2) {
+          left: 51%;
+        }
+      }
+    }
     .content-steamgraph {
       .controls-area {
         background: rgba(0, 0, 0, 0.2);
@@ -359,10 +386,7 @@ span.fa {
         width: 100%;
         min-height: 50%;
         position: relative;
-        .axis {
-          position: absolute;
-          font-size: 30px;
-          font-weight: bold;
+        .axxxis {
           bottom: 14%;
           &:nth-of-type(1) {
             left: 4%;
@@ -374,6 +398,7 @@ span.fa {
       }
     }
     .content-hlc {
+      position: relative;
       .hlc .controls {
         .range {
           background: rgba(0, 0, 0, 0.2);
@@ -408,6 +433,17 @@ span.fa {
         }
         &:hover {
           background: rgba(255, 255, 255, 0.1);
+        }
+      }
+      .axxxis {
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+        &:nth-of-type(1) {
+          bottom: 12%;
+          left: 6.5%;
+        }
+        &:nth-of-type(2) {
+          bottom: 7%;
+          left: 9%;
         }
       }
     }
