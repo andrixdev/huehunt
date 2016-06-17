@@ -226,10 +226,14 @@ analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
 
   });
 
+  var averageContributors = 0;
   // Now average all learnings with their contributors count, 'cause so far it's just a sum
   _(HLC).each(function(d) {
     d.l /= (d.contributors > 0 ? d.contributors : 1);
+    averageContributors += d.contributors;
   });
+
+  console.log(averageContributors / 360);
 
   return HLC;
 };
@@ -540,12 +544,15 @@ UI.steamgraph.listen = function() {
   // Onkeyup deanonymization (S key)
   jQuery(window).on('keyup', function(event) {
     if (event.which == 83) {
+      // Change player names into their real values
       jQuery('.content-steamgraph .controls-area[data-area-type=players] .tiles > div').each(function() {
         var dataValue = jQuery(this).attr('data-value') || 'error';
         if (dataValue != 'players-all') {
           jQuery(this).html(jQuery(this).attr('data-value'));
         }
       });
+      // Remove indication that it is anonymized
+      jQuery('.content-steamgraph .controls-area[data-area-type=players] p.title span.anonymous').hide();
     }
   });
 
@@ -972,7 +979,7 @@ UI.hueLearningCurve.animationOff = function() {
 };
 UI.hueLearningCurve.rangeValue = 60;
 UI.hueLearningCurve.megaHLC = [];
-UI.hueLearningCurve.generateMegaHLC = function(smoothingDegree) {
+UI.hueLearningCurve.generateMegaHLC = function(minSHR, maxSHR, smoothingDegree) {
   // This calculation averages ALL the HLC with Subset Hue Ranges from 10° to 80°
   // OMG it takes so much time we have to space out all calculation steps
   var megaHLC = [];
@@ -984,14 +991,14 @@ UI.hueLearningCurve.generateMegaHLC = function(smoothingDegree) {
   jQuery('.huehunt-results').addClass('loading');
 
   // This will last 90 seconds
-  for (var SHR = 10; SHR < 80; SHR++) {
+  for (var SHR = minSHR; SHR <= maxSHR; SHR++) {
     (function(j) {
       setTimeout(function() {
         var HLC = analysis.getHueLearningCurve(rounds, j);
         for (var i = 0; i < 361; i++) {
           megaHLC[i].l += HLC[i].l;
         }
-      }, 1000 * (SHR - 10));
+      }, 1000 * (SHR - minSHR));
     })(SHR);
   }
   // This has to be launched after 80 seconds + extra lag
@@ -1005,7 +1012,7 @@ UI.hueLearningCurve.generateMegaHLC = function(smoothingDegree) {
 
     // Undo global loading
     jQuery('.huehunt-results').removeClass('loading');
-  }, 1000 * 100);
+  }, 1000 * (maxSHR - minSHR + 5)); // 5sec lag allowed
 
 };
 
