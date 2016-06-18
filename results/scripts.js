@@ -841,29 +841,29 @@ UI.huePerformanceCurve.drawHPC = function(HPC) {
   // Inspired of http://codepen.io/darrengriffith/pen/RPwrxp
 };
 
-UI.hueLearningCurve = {};
-UI.hueLearningCurve.OHLC = [];
-UI.hueLearningCurve.build = function() {
-  UI.hueLearningCurve.processData();
-  UI.hueLearningCurve.update(UI.hueLearningCurve.rangeValue);
-  UI.hueLearningCurve.listen();
+UI.overallHueLearningCurve = {};
+UI.overallHueLearningCurve.OHLC = [];
+UI.overallHueLearningCurve.build = function() {
+  UI.overallHueLearningCurve.processData();
+  UI.overallHueLearningCurve.update(UI.overallHueLearningCurve.rangeValue);
+  UI.overallHueLearningCurve.listen();
 };
-UI.hueLearningCurve.processData = function() {
-  this.OHLC = analysis.getOverallHueLearningCurve(rounds, UI.hueLearningCurve.rangeValue);
+UI.overallHueLearningCurve.processData = function() {
+  this.OHLC = analysis.getOverallHueLearningCurve(rounds, UI.overallHueLearningCurve.rangeValue);
 };
-UI.hueLearningCurve.update = function(subsetHueRange) {
+UI.overallHueLearningCurve.update = function(subsetHueRange) {
   // Get new OHLC and smooth it a bit
   var OHLC = analysis.getOverallHueLearningCurve(rounds, subsetHueRange);
-  UI.hueLearningCurve.OHLC = analysis.smoothOverallHueLearningCurve(OHLC);
+  UI.overallHueLearningCurve.OHLC = analysis.smoothOverallHueLearningCurve(OHLC);
 
   // Force range input value, and indicator
   jQuery('.content-ohlc .ohlc .controls .range input').val(subsetHueRange);
   jQuery('.content-ohlc .ohlc .controls .range p.value-insight').html(subsetHueRange + '°');
 
   // Draw OHLC
-  UI.hueLearningCurve.drawOHLC(UI.hueLearningCurve.OHLC);
+  UI.overallHueLearningCurve.drawOHLC(UI.overallHueLearningCurve.OHLC);
 };
-UI.hueLearningCurve.drawOHLC = function(OHLC) {
+UI.overallHueLearningCurve.drawOHLC = function(OHLC) {
   // Graph dimensions
   var width = jQuery('.huehunt-results').width() * 0.8,
       height = jQuery('.huehunt-results').height() - 180;
@@ -932,53 +932,53 @@ UI.hueLearningCurve.drawOHLC = function(OHLC) {
 
   // Inspired of http://codepen.io/darrengriffith/pen/RPwrxp
 };
-UI.hueLearningCurve.listen = function() {
+UI.overallHueLearningCurve.listen = function() {
   // Range input listener
   jQuery('.content-ohlc .ohlc .controls .range input').on('change', function() {
     var subsetHueRange = jQuery(this).val();
     // Update graph
-    UI.hueLearningCurve.update(subsetHueRange);
+    UI.overallHueLearningCurve.update(subsetHueRange);
     // Save current selection (in case of animation)
-    UI.hueLearningCurve.rangeValue = subsetHueRange;
+    UI.overallHueLearningCurve.rangeValue = subsetHueRange;
   });
 
   // Animation button listener
   jQuery('.content-ohlc .ohlc .controls .animate').on('click', function() {
     if (!jQuery(this).hasClass('active')) {
-      UI.hueLearningCurve.animationOn();
+      UI.overallHueLearningCurve.animationOn();
     } else {
-      UI.hueLearningCurve.animationOff();
+      UI.overallHueLearningCurve.animationOff();
     }
 
   });
 };
-UI.hueLearningCurve.animationOn = function() {
+UI.overallHueLearningCurve.animationOn = function() {
   var animationDiv = jQuery('.content-ohlc .ohlc .controls .animate');
   animationDiv.addClass('active').find('p').html('Stop');
   animationDiv.find('span.fa').removeClass('fa-play-circle').addClass('fa-stop-circle');
   // Start animation
   var i = 10;
-  UI.hueLearningCurve.animation = setInterval(function() {
-    UI.hueLearningCurve.update(i);
+  UI.overallHueLearningCurve.animation = setInterval(function() {
+    UI.overallHueLearningCurve.update(i);
     i++;
     if (i > 121) {
-      UI.hueLearningCurve.animationOff();
+      UI.overallHueLearningCurve.animationOff();
     }
   }, 1000);
 
 };
-UI.hueLearningCurve.animationOff = function() {
+UI.overallHueLearningCurve.animationOff = function() {
   var animationDiv = jQuery('.content-ohlc .ohlc .controls .animate');
   animationDiv.removeClass('active').find('p').html('Animate');
   animationDiv.find('span.fa').removeClass('fa-stop-circle').addClass('fa-play-circle');
   // Stop animation
-  clearInterval(UI.hueLearningCurve.animation);
+  clearInterval(UI.overallHueLearningCurve.animation);
   // Restore initial graph state
-  UI.hueLearningCurve.update(UI.hueLearningCurve.rangeValue);
+  UI.overallHueLearningCurve.update(UI.overallHueLearningCurve.rangeValue);
 };
-UI.hueLearningCurve.rangeValue = 60;
-UI.hueLearningCurve.megaOHLC = [];
-UI.hueLearningCurve.generateMegaOHLC = function(minSHR, maxSHR, smoothingDegree) {
+UI.overallHueLearningCurve.rangeValue = 60;
+UI.overallHueLearningCurve.megaOHLC = [];
+UI.overallHueLearningCurve.generateMegaOHLC = function(minSHR, maxSHR, smoothingDegree) {
   // This calculation averages ALL the OHLCs with Subset Hue Ranges from 10° to 80°
   // OMG it takes so much time we have to space out all calculation steps
   var megaOHLC = [];
@@ -1006,8 +1006,8 @@ UI.hueLearningCurve.generateMegaOHLC = function(minSHR, maxSHR, smoothingDegree)
     for (var i = 0; i < smoothingDegree; i++) {
       megaOHLC = analysis.smoothOverallHueLearningCurve(megaOHLC);
     }
-    UI.hueLearningCurve.megaOHLC = megaOHLC;// For future use
-    UI.hueLearningCurve.drawOHLC(megaOHLC);
+    UI.overallHueLearningCurve.megaOHLC = megaOHLC;// For future use
+    UI.overallHueLearningCurve.drawOHLC(megaOHLC);
 
     // Undo global loading
     jQuery('.huehunt-results').removeClass('loading');
@@ -1095,7 +1095,7 @@ jQuery(document).ready(function() {
     UI.showYourself();
     UI.steamgraph.build();
     UI.huePerformanceCurve.build();
-    UI.hueLearningCurve.build();
+    UI.overallHueLearningCurve.build();
 
   });
 
