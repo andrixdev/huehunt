@@ -189,22 +189,21 @@ analysis.getRoundsLearning = function(rounds) {
 
   return learning;
 };
-analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
-  // HLC (Hue Learning Curve) is an array of objects containing a hue, a learning value, and the number of contributions to the average learning
+analysis.getOverallHueLearningCurve = function(rounds, subsetHueRange) {
+  // OHLC (Overall Hue Learning Curve) is an array of objects containing a hue, a learning value, and the number of contributions to the average learning
   // The learning corresponds to the average learning for all players, within a hue subset centered in 'centralHue' and of a 'subsetHueRange' range
-  // The HLC array has 360 elements, and index is equal to hue
-  var HLC = [];
+  // The OHLC array has 360 elements, and index is equal to hue
+  var OHLC = [];
 
-  // Initialize HLC
+  // Initialize OHLC
   _(_.range(361)).each(function(d, i) {
-    HLC.push({h: i, l: 0, contributors: 0});
+    OHLC.push({h: i, l: 0, contributors: 0});
   });
 
   // Loop on all hues
   _(_.range(361)).each(function(centralHue, i) {
     var minHue = centralHue - subsetHueRange / 2;
     var maxHue = centralHue + subsetHueRange / 2;
-    //var hueSubset = filters.matchUsername(filters.matchUsername(filters.inHueRange(rounds, minHue, maxHue), '184', true), 'Rodrigo Roa Rodríguez', true);
     var hueSubset = filters.inHueRange(rounds, minHue, maxHue);
 
     // Loop on (nearly) all players
@@ -218,7 +217,7 @@ analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
       });
       // If there's something, add it!
       if (totalSubsetLearning > 0) {
-        var currentHueObject = HLC[i];
+        var currentHueObject = OHLC[i];
         currentHueObject.contributors++;
         currentHueObject.l += totalSubsetLearning;
       }
@@ -228,31 +227,31 @@ analysis.getHueLearningCurve = function(rounds, subsetHueRange) {
 
   var averageContributors = 0;
   // Now average all learnings with their contributors count, 'cause so far it's just a sum
-  _(HLC).each(function(d) {
+  _(OHLC).each(function(d) {
     d.l /= (d.contributors > 0 ? d.contributors : 1);
     averageContributors += d.contributors;
   });
 
   console.log(averageContributors / 360);
 
-  return HLC;
+  return OHLC;
 };
-analysis.smoothHueLearningCurve = function(HLC) {
-  var newHLC = [];
+analysis.smoothOverallHueLearningCurve = function(OHLC) {
+  var newOHLC = [];
 
   _(_.range(361)).each(function(d, i) {
     var smoothLearning = 0;
     var indexes = [(360 + i - 2) % 360, (360 + i - 1) % 360, ((360 + i) % 360) , (360 + i + 1) % 360, (360 + i + 2) % 360];
 
     _(indexes).each(function(d) {
-      smoothLearning -= -HLC[d].l;
+      smoothLearning -= -OHLC[d].l;
     });
     smoothLearning /= indexes.length;
 
-    newHLC.push({h: i, l: smoothLearning, contributors: HLC[i].contributors});
+    newOHLC.push({h: i, l: smoothLearning, contributors: OHLC[i].contributors});
   });
 
-  return newHLC;
+  return newOHLC;
 };
 analysis.getHuePerformanceCurve = function(rounds, subsetHueRange) {
   // HPC (Hue Performance Curve) is an array of objects containing a hue, a performance value, and the number of contributions to the average learning
@@ -843,33 +842,33 @@ UI.huePerformanceCurve.drawHPC = function(HPC) {
 };
 
 UI.hueLearningCurve = {};
-UI.hueLearningCurve.HLC = [];
+UI.hueLearningCurve.OHLC = [];
 UI.hueLearningCurve.build = function() {
   UI.hueLearningCurve.processData();
   UI.hueLearningCurve.update(UI.hueLearningCurve.rangeValue);
   UI.hueLearningCurve.listen();
 };
 UI.hueLearningCurve.processData = function() {
-  this.HLC = analysis.getHueLearningCurve(rounds, UI.hueLearningCurve.rangeValue);
+  this.OHLC = analysis.getOverallHueLearningCurve(rounds, UI.hueLearningCurve.rangeValue);
 };
 UI.hueLearningCurve.update = function(subsetHueRange) {
-  // Get new HLC and smooth it a bit
-  var HLC = analysis.getHueLearningCurve(rounds, subsetHueRange);
-  UI.hueLearningCurve.HLC = analysis.smoothHueLearningCurve(HLC);
+  // Get new OHLC and smooth it a bit
+  var OHLC = analysis.getOverallHueLearningCurve(rounds, subsetHueRange);
+  UI.hueLearningCurve.OHLC = analysis.smoothOverallHueLearningCurve(OHLC);
 
   // Force range input value, and indicator
-  jQuery('.content-hlc .hlc .controls .range input').val(subsetHueRange);
-  jQuery('.content-hlc .hlc .controls .range p.value-insight').html(subsetHueRange + '°');
+  jQuery('.content-ohlc .ohlc .controls .range input').val(subsetHueRange);
+  jQuery('.content-ohlc .ohlc .controls .range p.value-insight').html(subsetHueRange + '°');
 
-  // Draw HLC
-  UI.hueLearningCurve.drawHLC(UI.hueLearningCurve.HLC);
+  // Draw OHLC
+  UI.hueLearningCurve.drawOHLC(UI.hueLearningCurve.OHLC);
 };
-UI.hueLearningCurve.drawHLC = function(HLC) {
+UI.hueLearningCurve.drawOHLC = function(OHLC) {
   // Graph dimensions
   var width = jQuery('.huehunt-results').width() * 0.8,
       height = jQuery('.huehunt-results').height() - 180;
 
-  d3.select('.content-hlc .hlc svg').attr("width", width).attr("height", height);
+  d3.select('.content-ohlc .ohlc svg').attr("width", width).attr("height", height);
 
   // Scales
   var x = d3.scale.ordinal()
@@ -877,14 +876,14 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
       .rangeBands([0.05 * width, 0.95 * width], 0.15, 0);
 
   var y = d3.scale.linear()
-      .domain([0, d3.max(HLC, function(d, i) {
+      .domain([0, d3.max(OHLC, function(d, i) {
         return d.l;
       })])
       .range([0.05 * height, 0.9 * height]);
 
   // Draw the bar chart
-  var bars = d3.select('.content-hlc .hlc svg g.graph')
-      .selectAll('rect').data(HLC);
+  var bars = d3.select('.content-ohlc .ohlc svg g.graph')
+      .selectAll('rect').data(OHLC);
 
   bars.enter()
       .append('rect')
@@ -915,7 +914,7 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
         return d + '°';
       });
 
-  var hGuide = d3.select('.content-hlc .hlc svg g.axis');
+  var hGuide = d3.select('.content-ohlc .ohlc svg g.axis');
 
   hAxis(hGuide);
 
@@ -935,7 +934,7 @@ UI.hueLearningCurve.drawHLC = function(HLC) {
 };
 UI.hueLearningCurve.listen = function() {
   // Range input listener
-  jQuery('.content-hlc .hlc .controls .range input').on('change', function() {
+  jQuery('.content-ohlc .ohlc .controls .range input').on('change', function() {
     var subsetHueRange = jQuery(this).val();
     // Update graph
     UI.hueLearningCurve.update(subsetHueRange);
@@ -944,7 +943,7 @@ UI.hueLearningCurve.listen = function() {
   });
 
   // Animation button listener
-  jQuery('.content-hlc .hlc .controls .animate').on('click', function() {
+  jQuery('.content-ohlc .ohlc .controls .animate').on('click', function() {
     if (!jQuery(this).hasClass('active')) {
       UI.hueLearningCurve.animationOn();
     } else {
@@ -954,7 +953,7 @@ UI.hueLearningCurve.listen = function() {
   });
 };
 UI.hueLearningCurve.animationOn = function() {
-  var animationDiv = jQuery('.content-hlc .hlc .controls .animate');
+  var animationDiv = jQuery('.content-ohlc .ohlc .controls .animate');
   animationDiv.addClass('active').find('p').html('Stop');
   animationDiv.find('span.fa').removeClass('fa-play-circle').addClass('fa-stop-circle');
   // Start animation
@@ -969,7 +968,7 @@ UI.hueLearningCurve.animationOn = function() {
 
 };
 UI.hueLearningCurve.animationOff = function() {
-  var animationDiv = jQuery('.content-hlc .hlc .controls .animate');
+  var animationDiv = jQuery('.content-ohlc .ohlc .controls .animate');
   animationDiv.removeClass('active').find('p').html('Animate');
   animationDiv.find('span.fa').removeClass('fa-stop-circle').addClass('fa-play-circle');
   // Stop animation
@@ -978,13 +977,13 @@ UI.hueLearningCurve.animationOff = function() {
   UI.hueLearningCurve.update(UI.hueLearningCurve.rangeValue);
 };
 UI.hueLearningCurve.rangeValue = 60;
-UI.hueLearningCurve.megaHLC = [];
-UI.hueLearningCurve.generateMegaHLC = function(minSHR, maxSHR, smoothingDegree) {
-  // This calculation averages ALL the HLC with Subset Hue Ranges from 10° to 80°
+UI.hueLearningCurve.megaOHLC = [];
+UI.hueLearningCurve.generateMegaOHLC = function(minSHR, maxSHR, smoothingDegree) {
+  // This calculation averages ALL the OHLCs with Subset Hue Ranges from 10° to 80°
   // OMG it takes so much time we have to space out all calculation steps
-  var megaHLC = [];
+  var megaOHLC = [];
   for (var i = 0; i < 361; i++) {
-    megaHLC.push({h: i, l: 0, contributors: 0});
+    megaOHLC.push({h: i, l: 0, contributors: 0});
   }
 
   // Global loading
@@ -994,9 +993,9 @@ UI.hueLearningCurve.generateMegaHLC = function(minSHR, maxSHR, smoothingDegree) 
   for (var SHR = minSHR; SHR <= maxSHR; SHR++) {
     (function(j) {
       setTimeout(function() {
-        var HLC = analysis.getHueLearningCurve(rounds, j);
+        var OHLC = analysis.getOverallHueLearningCurve(rounds, j);
         for (var i = 0; i < 361; i++) {
-          megaHLC[i].l += HLC[i].l;
+          megaOHLC[i].l += OHLC[i].l;
         }
       }, 1000 * (SHR - minSHR));
     })(SHR);
@@ -1005,10 +1004,10 @@ UI.hueLearningCurve.generateMegaHLC = function(minSHR, maxSHR, smoothingDegree) 
   setTimeout(function() {
     // Several smoothing moments maybe?
     for (var i = 0; i < smoothingDegree; i++) {
-      megaHLC = analysis.smoothHueLearningCurve(megaHLC);
+      megaOHLC = analysis.smoothOverallHueLearningCurve(megaOHLC);
     }
-    UI.hueLearningCurve.megaHLC = megaHLC;// For future use
-    UI.hueLearningCurve.drawHLC(megaHLC);
+    UI.hueLearningCurve.megaOHLC = megaOHLC;// For future use
+    UI.hueLearningCurve.drawOHLC(megaOHLC);
 
     // Undo global loading
     jQuery('.huehunt-results').removeClass('loading');
