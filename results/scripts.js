@@ -1062,6 +1062,14 @@ jQuery(document).ready(function() {
     jQuery('.side-menu p.tab').removeClass('selected');
     jQuery(this).addClass('selected');
   });
+  
+  // To the game and To the report buttons
+  jQuery('.huehunt-results').on('click', '.side-menu .to-the-game', function() {
+    jQuery('.huehunt-results a.to-game').click();
+  });
+  jQuery('.huehunt-results').on('click', '.side-menu .to-the-report', function() {
+    jQuery('.huehunt-results a.to-report').click();
+  });
 
   // Dummy input dataset model
   firebaseRounds = {
